@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<monodoc>
+  <node label="Xamarin Components" name="components" parent="libraries" />
+  <node label="ZXing.Net.Mobile" name="zxing.net.mobile" parent="components" />
+  <source provider="ecma" basefile="zxing.net.mobile" path="zxing.net.mobile" />
+</monodoc>

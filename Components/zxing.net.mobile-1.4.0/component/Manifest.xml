@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="zxing.net.mobile">
+  <name>ZXing.Net.Mobile</name>
+  <publisher>Redth</publisher>
+  <publisher-url>https://github.com/Redth/ZXing.Net.Mobile</publisher-url>
+  <docs-url>https://github.com/Redth/ZXing.Net.Mobile</docs-url>
+  <src-url>https://github.com/Redth/ZXing.Net.Mobile</src-url>
+  <version>1.4.0</version>
+  <summary>ZXing.Net.Mobile is a C#/.NET Barcode Scanning Library</summary>
+  <samples>
+    <sample id="Sample.iOS">
+      <name>iOS.</name>
+      <summary>Demonstrates how to implement Barcode Scanning in a Xamarin.iOS application</summary>
+    </sample>
+    <sample id="Sample.Android">
+      <name>Android.</name>
+      <summary>Demonstrates how to implement Barcode Scanning in a Xamarin.Android application</summary>
+    </sample>
+    <sample id="Sample.WindowsPhone8">
+      <name>WindowsPhone8.</name>
+      <summary>Demonstrates how to implement Barcode Scanning in a Windows Phone 8 Application</summary>
+    </sample>
+  </samples>
+</component>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.MvvmCross.Plugins.DeviceInfo</id>
+        <version>0.1.0</version>
+        <description>Device information platform plugin for MvvmCross</description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>xamarin mvvmcross</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- PCL -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+
+        <!-- droid -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.dll" />
+        <file src="BootstrapContent\DeviceInfoPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
+
+        <!-- touch -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" />
+        <file src="TouchBootstrapContent\DeviceInfoPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
+
+        <!--winstore, wpf-->
+    </files>
+</package>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.MvvmCross.Plugins.Storage</id>
+        <version>0.3.0</version>
+        <title>MvvmCross Storage</title>
+        <description>An improved file store plugin for MvvmCross</description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>        
+        <tags>xamarin mvvmcross barcode scanner</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />            
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- PCL -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Storage.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.Plugins.Storage.dll" />
+
+        <!-- droid -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Storage.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Storage.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.Storage.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Storage.Droid.dll" />
+        <file src="BootstrapContent\StoragePluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\StoragePluginBootstrap.cs.pp" />
+
+        <!-- touch -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Storage.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Storage.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Storage.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Storage.Touch.dll" />
+        <file src="TouchBootstrapContent\StoragePluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\StoragePluginBootstrap.cs.pp" />
+
+        <!--winstore, wpf-->
+    </files>
+</package>
