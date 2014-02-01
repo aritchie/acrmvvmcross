@@ -8,5 +8,6 @@ namespace Acr.MvvmCross.Plugins.Network {
 
         MvxNetworkStatus CurrentStatus { get; }
         MvxSubscriptionToken Subscribe(Action<MvxNetworkStatusChanged> action);
+        //NetworkReachability IsHostReachable(string host);
     }
 }

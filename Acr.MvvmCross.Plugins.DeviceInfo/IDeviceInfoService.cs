@@ -10,5 +10,8 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo {
         string Manufacturer { get; }
         string Model { get; }
         string OperatingSystem { get; }
+        bool IsFrontCameraAvailable { get; }
+        bool IsRearCameraAvailable { get; }
+        bool IsSimulator { get; }
     }
 }

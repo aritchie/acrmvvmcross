@@ -1,10 +1,11 @@
 using System;
+using MonoTouch.ObjCRuntime;
 using MonoTouch.UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.DeviceInfo.Touch {
     
-    public class TouchDeviceInfoService : IDeviceInfoService {
+    public class TouchDeviceInfoService : AbstractDeviceInfoService {
         
         public TouchDeviceInfoService() {
             this.Manufacturer = "Apple";
@@ -14,16 +15,9 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Touch {
             var screen = UIScreen.MainScreen.Bounds;
             this.ScreenWidth = (int)screen.Width;
             this.ScreenHeight = (int)screen.Height;
+            this.IsFrontCameraAvailable = UIImagePickerController.IsCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Front);
+            this.IsRearCameraAvailable = UIImagePickerController.IsCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear);
+            this.IsSimulator = (Runtime.Arch == Arch.SIMULATOR);
         }
-
-        #region IDeviceInfoService Members
-
-        public int ScreenHeight { get; private set; }
-        public int ScreenWidth { get; private set; }
-        public string OperatingSystem { get; private set; }
-        public string Manufacturer { get; private set; }
-        public string Model { get; private set; }
-
-        #endregion
     }
 }
