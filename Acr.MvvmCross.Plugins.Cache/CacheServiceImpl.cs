@@ -85,6 +85,9 @@ namespace Acr.MvvmCross.Plugins.Cache {
                 return;
 
             lock (this.syncLock) {
+                if (this.cache.ContainsKey(key))
+                    return;
+
                 var expiry = DateTime.UtcNow.Add(CacheConfig.DefaultLifeSpan);
 
                 var cacheObj = new CacheItem {
