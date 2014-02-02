@@ -6,12 +6,30 @@ namespace Acr.MvvmCross.Plugins.ContactManager.Droid {
     
     public class DroidContactManager : IContactManager {
 
-        #region IContactManager Members
-
-        public Task<bool> RequestAccess() {
-            throw new NotImplementedException();
+        public async Task<bool> RequestAccess() {
+            return false;
         }
+        //public Task<bool> RequestPermission()
+        //{
+        //    return Task.Factory.StartNew (() =>
+        //    {
+        //        try
+        //        { 
+        //            ICursor cursor = this.content.Query (ContactsContract.Data.ContentUri, null, null, null, null);
+        //            cursor.Dispose();
 
-        #endregion
+        //            return true;
+        //        }
+        //        catch (Java.Lang.SecurityException)
+        //        {
+        //            return false;
+        //        }
+        //    });
+        //}
+
+        //public IEnumerator<Contact> GetEnumerator()
+        //{
+        //    return ContactHelper.GetContacts (!PreferContactAggregation, this.content, this.resources).GetEnumerator();
+        //}
     }
 }

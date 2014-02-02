@@ -36,6 +36,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Address.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="IContactManager.cs" />
     <Compile Include="PluginLoader.cs" />

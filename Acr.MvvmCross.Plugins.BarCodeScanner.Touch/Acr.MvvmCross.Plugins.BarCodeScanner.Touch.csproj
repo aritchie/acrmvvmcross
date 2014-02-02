@@ -42,12 +42,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="zxing.net.mobile">
-      <Visible>False</Visible>
-      <Version>1.4.0</Version>
-    </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1-beta4\lib\MonoTouch\Cirrious.CrossCore.dll</HintPath>
@@ -72,11 +66,13 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="zxing.monotouch">
-      <HintPath>..\Components\zxing.net.mobile-1.4.0\lib\ios\zxing.monotouch.dll</HintPath>
+    <Reference Include="zxing.monotouch, Version=0.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoTouch\zxing.monotouch.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile">
-      <HintPath>..\Components\zxing.net.mobile-1.4.0\lib\ios\ZXing.Net.Mobile.dll</HintPath>
+    <Reference Include="ZXing.Net.Mobile, Version=1.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoTouch\ZXing.Net.Mobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
