@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.Network</id>
-        <version>0.4.1</version>
+        <version>0.9.0</version>
         <title>MvvmCross Network Utilities</title>
         <description>MvvmCross improved network services</description>
         <authors>Allan Ritchie</authors>

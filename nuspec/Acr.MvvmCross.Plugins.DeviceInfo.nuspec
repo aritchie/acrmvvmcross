@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.DeviceInfo</id>
-        <version>0.1.0</version>
+        <version>0.9.0</version>
         <description>Device information platform plugin for MvvmCross</description>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
