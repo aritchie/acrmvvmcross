@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Cirrious.MvvmCross.Plugins.Messenger;
 
 
@@ -8,6 +9,6 @@ namespace Acr.MvvmCross.Plugins.Network {
 
         MvxNetworkStatus CurrentStatus { get; }
         MvxSubscriptionToken Subscribe(Action<MvxNetworkStatusChanged> action);
-        //NetworkReachability IsHostReachable(string host);
+        Task<bool> IsHostReachable(string host);
     }
 }

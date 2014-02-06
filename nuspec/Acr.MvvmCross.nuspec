@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.MvvmCross</id>
+        <version>0.3.0</version>
+        <title>MvvmCross Utilities</title>
+        <description>Just some easy utility classes that assist with MvvmCross</description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/mvvmcross-plugins</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>		
+        <tags>xamarin mvvmcross</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
+        </dependencies>
+    </metadata>
+    <files>		
+        <!-- PCL -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.dll" />
+
+        <!-- winphone, winstore, wpf -->
+        <!--<file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\sl5-wp8\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.WinPhone.dll" target="lib\sl5-wp8\Acr.MvvmCross.WinPhone.dll" />-->
+        
+        <!-- droid -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoAndroid\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Droid.dll" />
+        
+        <!-- touch -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoTouch\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Touch.dll" />
+    </files>
+</package>

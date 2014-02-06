@@ -1,9 +1,11 @@
 using System;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Net;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid;
 using Cirrious.MvvmCross.Plugins.Messenger;
+using Java.Net;
 
 
 namespace Acr.MvvmCross.Plugins.Network.Droid {
@@ -42,6 +44,20 @@ namespace Acr.MvvmCross.Plugins.Network.Droid {
 
         public MvxSubscriptionToken Subscribe(Action<MvxNetworkStatusChanged> action) {
             return this.messenger.Subscribe(action);
+        }
+
+
+        public Task<bool> IsHostReachable(string host) {
+            return Task<bool>.Run(() => {
+                try {
+                    return InetAddress
+                        .GetByName(host)
+                        .IsReachable(5000);
+                }
+                catch {
+                    return false;
+                }
+            });
         }
 
         #endregion

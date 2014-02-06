@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Messenger;
 
@@ -21,6 +22,11 @@ namespace Acr.MvvmCross.Plugins.Network.Touch {
             return Mvx
                 .Resolve<IMvxMessenger>()
                 .Subscribe(action);
+        }
+
+
+        public Task<bool> IsHostReachable(string host) {
+            return Task<bool>.Run(() => Reachability.IsHostReachable(host));
         }
 
         #endregion
