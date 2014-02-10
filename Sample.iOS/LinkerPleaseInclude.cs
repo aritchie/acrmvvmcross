@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Specialized;
 using System.Windows.Input;
-using BigTed;
 using MonoTouch.UIKit;
 
 namespace Sample.iOS
@@ -10,9 +9,9 @@ namespace Sample.iOS
         // are preserved in the deployed app
     public class LinkerPleaseInclude
     {
-        public void Include() {
-            BTProgressHUD.Show("", () => {}, "", 1, ProgressHUD.MaskType.Black);    
-        }
+        //public void Include() {
+        //    BTProgressHUD.Show("", () => {}, "", 1, ProgressHUD.MaskType.Black);    
+        //}
 
 
         public void Include(UIButton uiButton)

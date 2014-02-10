@@ -11,7 +11,7 @@ using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 using Cirrious.MvvmCross.ViewModels;
 
 
-namespace Acr.MvvmCross.Droid.Fragging {
+namespace Acr.MvvmCross.Droid.Fragments {
 
     public abstract class MvxTabFragment : Mvx2Fragment, TabHost.IOnTabChangeListener {
         private const string SavedTabIndexStateKey = "__savedTabIndex";

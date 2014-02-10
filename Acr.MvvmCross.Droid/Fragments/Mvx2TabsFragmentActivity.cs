@@ -2,7 +2,7 @@ using System;
 using Cirrious.MvvmCross.Droid.Fragging;
 
 
-namespace Acr.MvvmCross.Droid {
+namespace Acr.MvvmCross.Droid.Fragments {
     
     public abstract class Mvx2TabsFragmentActivity : MvxTabsFragmentActivity {
 
@@ -11,13 +11,13 @@ namespace Acr.MvvmCross.Droid {
 
         protected override void OnResume() {
             base.OnResume();
-            this.ViewModel.TryVisible(true);
+            this.ViewModel.TryResume();
         }
 
 
         protected override void OnPause() {
             base.OnPause();
-            this.ViewModel.TryVisible(false);
+            this.ViewModel.TryPause();
         }
 
 

@@ -16,8 +16,9 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk />
-    <TargetFrameworkVersion>v3.1</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>
+    </TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -103,11 +104,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.PortableSupport.3.1.1-beta4\lib\MonoAndroid\System.Xml.Serialization.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoAndroid\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
     <Reference Include="zxing.monoandroid">
-      <HintPath>..\Components\zxing.net.mobile-1.4.0\lib\android\zxing.monoandroid.dll</HintPath>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoAndroid\zxing.monoandroid.dll</HintPath>
     </Reference>
     <Reference Include="ZXing.Net.Mobile">
-      <HintPath>..\Components\zxing.net.mobile-1.4.0\lib\android\ZXing.Net.Mobile.dll</HintPath>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoAndroid\ZXing.Net.Mobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +151,10 @@
     <AndroidResource Include="Resources\Values\MvxBindingAttributes.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Acr.MvvmCross.Droid\Acr.MvvmCross.Droid.csproj">
+      <Project>{6123f79a-163e-45ba-b935-cebc8d08a278}</Project>
+      <Name>Acr.MvvmCross.Droid</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner.Droid\Acr.MvvmCross.Plugins.BarCodeScanner.Droid.csproj">
       <Project>{0ef6c543-9a82-4a29-a251-4d0a900232dd}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner.Droid</Name>
@@ -154,6 +162,26 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\Acr.MvvmCross.Plugins.BarCodeScanner.csproj">
       <Project>{1ed7e825-98ed-4740-8dd7-96e4aa3f1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Cache\Acr.MvvmCross.Plugins.Cache.csproj">
+      <Project>{88d59d24-d2ab-490f-9a4a-471ba5e0cb1d}</Project>
+      <Name>Acr.MvvmCross.Plugins.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager.Droid\Acr.MvvmCross.Plugins.CalendarManager.Droid.csproj">
+      <Project>{f31e017a-40f7-4a49-9450-b3f8af335a6f}</Project>
+      <Name>Acr.MvvmCross.Plugins.CalendarManager.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager\Acr.MvvmCross.Plugins.CalendarManager.csproj">
+      <Project>{e92c593d-3ff1-4174-89f2-5500a8b51616}</Project>
+      <Name>Acr.MvvmCross.Plugins.CalendarManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager.Droid\Acr.MvvmCross.Plugins.ContactManager.Droid.csproj">
+      <Project>{dc8f7425-f3e8-460d-b8d1-916926c84a19}</Project>
+      <Name>Acr.MvvmCross.Plugins.ContactManager.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager\Acr.MvvmCross.Plugins.ContactManager.csproj">
+      <Project>{e45df2a0-11d2-43a1-a392-05bb75b03a8d}</Project>
+      <Name>Acr.MvvmCross.Plugins.ContactManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.Droid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.csproj">
       <Project>{d4b35565-a9b3-4b4b-aa68-cce7d5a67f78}</Project>
@@ -203,6 +231,10 @@
       <Project>{fb69b463-0dd5-49d2-afed-6e3a31eb37a1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
+      <Project>{85e3c63b-a17e-46ef-87ce-9a8e58fede4d}</Project>
+      <Name>Acr.MvvmCross</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{ac537269-fd5f-43e8-ba62-cecd983eb9d9}</Project>
       <Name>Sample.Core</Name>
@@ -213,9 +245,9 @@
       <Visible>False</Visible>
       <Version>1.2</Version>
     </XamarinComponentReference>
-    <XamarinComponentReference Include="zxing.net.mobile">
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
       <Visible>False</Visible>
-      <Version>1.4.0</Version>
+      <Version>4.18.1</Version>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -129,8 +129,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Touch", "Acr.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Droid", "Acr.MvvmCross.Droid\Acr.MvvmCross.Droid.csproj", "{6123F79A-163E-45BA-B935-CEBC8D08A278}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Droid.Fragments", "Acr.MvvmCross.Droid.Fragments\Acr.MvvmCross.Droid.Fragments.csproj", "{97332537-1CC4-4414-BF46-081563F98581}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -1563,42 +1561,6 @@ Global
 		{6123F79A-163E-45BA-B935-CEBC8D08A278}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6123F79A-163E-45BA-B935-CEBC8D08A278}.Release|x64.ActiveCfg = Release|Any CPU
 		{6123F79A-163E-45BA-B935-CEBC8D08A278}.Release|x86.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|ARM.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|Mixed Platforms.Build.0 = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|x64.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Ad-Hoc|x86.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|Any CPU.Build.0 = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|ARM.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|iPhone.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|Mixed Platforms.Build.0 = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|x64.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.AppStore|x86.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|ARM.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|x64.ActiveCfg = Release|Any CPU
-		{97332537-1CC4-4414-BF46-081563F98581}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1609,6 +1571,5 @@ Global
 		{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D} = {B24E5835-6FC4-4109-B591-AB4AC5553EB2}
 		{AE58E621-B80E-45CC-B71E-BC6A1EF55939} = {B24E5835-6FC4-4109-B591-AB4AC5553EB2}
 		{6123F79A-163E-45BA-B935-CEBC8D08A278} = {B24E5835-6FC4-4109-B591-AB4AC5553EB2}
-		{97332537-1CC4-4414-BF46-081563F98581} = {B24E5835-6FC4-4109-B591-AB4AC5553EB2}
 	EndGlobalSection
 EndGlobal

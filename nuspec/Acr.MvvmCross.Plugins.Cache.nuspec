@@ -3,6 +3,7 @@
     <metadata>
         <id>Acr.MvvmCross.Plugins.Cache</id>
         <version>0.2.0</version>
+        <title>MvvmCross Caching Service</title>
         <description>Cache library for MvvmCross</description>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>

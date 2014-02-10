@@ -2,7 +2,6 @@
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
-using Acr.MvvmCross;
 using Acr.MvvmCross.Plugins.BarCodeScanner;
 using Acr.MvvmCross.Plugins.DeviceInfo;
 using Acr.MvvmCross.Plugins.ExternalApp;
@@ -10,6 +9,7 @@ using Acr.MvvmCross.Plugins.Network;
 using Acr.MvvmCross.Plugins.Settings;
 using Acr.MvvmCross.Plugins.Storage;
 using Acr.MvvmCross.Plugins.UserDialogs;
+using Acr.MvvmCross.ViewModels;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Messenger;
 using Cirrious.MvvmCross.ViewModels;
@@ -17,7 +17,7 @@ using Cirrious.MvvmCross.ViewModels;
 
 namespace Sample.Core.ViewModels {
     
-    public class MainViewModel : MvxViewModel {
+    public class MainViewModel : ViewModel {
         private readonly MvxSubscriptionToken networkSubscriptionToken;
 
         // TODO: something to show cache cleaning
