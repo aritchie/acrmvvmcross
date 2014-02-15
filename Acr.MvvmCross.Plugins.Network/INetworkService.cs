@@ -7,8 +7,10 @@ namespace Acr.MvvmCross.Plugins.Network {
 
     public interface INetworkService {
 
-        MvxNetworkStatus CurrentStatus { get; }
-        MvxSubscriptionToken Subscribe(Action<MvxNetworkStatusChanged> action);
+        bool IsConnected { get; }
+        bool IsWifi { get; }
+        bool IsMobile { get; }
         Task<bool> IsHostReachable(string host);
+        MvxSubscriptionToken Subscribe(Action<NetworkStatusChangedMessage> action);
     }
 }

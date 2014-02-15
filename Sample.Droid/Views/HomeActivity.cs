@@ -6,11 +6,11 @@ using Cirrious.MvvmCross.Droid.Views;
 namespace Sample.Droid.Views {
     
     [Activity]
-    public class MainActivity : MvxActivity {
+    public class HomeActivity : MvxActivity {
 
         protected override void OnViewModelSet() {
             base.OnViewModelSet();
-            this.SetContentView(Resource.Layout.Main);
+            this.SetContentView(Resource.Layout.Home);
         }
     }
 }

@@ -36,9 +36,9 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AbstractNetworkService.cs" />
     <Compile Include="INetworkService.cs" />
-    <Compile Include="MvxNetworkStatusChanged.cs" />
-    <Compile Include="MvxNetworkStatus.cs" />
+    <Compile Include="NetworkStatusChangedMessage.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

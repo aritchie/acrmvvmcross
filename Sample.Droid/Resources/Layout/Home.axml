@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MvxListView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    local:MvxBind="ItemsSource Menu; ItemClick View"
+    local:MvxItemTemplate="@layout/home_listitem" />

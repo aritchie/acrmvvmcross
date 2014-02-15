@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross cache</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.0.14" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
         </dependencies>
     </metadata>
     <files>

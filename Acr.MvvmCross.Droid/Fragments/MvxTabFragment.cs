@@ -6,14 +6,17 @@ using Android.OS;
 using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
+using Cirrious.CrossCore;
 using Cirrious.CrossCore.Core;
 using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+using Cirrious.MvvmCross.Droid.Fragging.Fragments;
 using Cirrious.MvvmCross.ViewModels;
+using Newtonsoft.Json;
 
 
 namespace Acr.MvvmCross.Droid.Fragments {
 
-    public abstract class MvxTabFragment : Mvx2Fragment, TabHost.IOnTabChangeListener {
+    public abstract class MvxTabFragment : MvxFragment, TabHost.IOnTabChangeListener {
         private const string SavedTabIndexStateKey = "__savedTabIndex";
 
         private readonly Dictionary<string, TabInfo> _lookup = new Dictionary<string, TabInfo>();
@@ -65,8 +68,11 @@ namespace Acr.MvvmCross.Droid.Fragments {
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             base.OnCreateView(inflater, container, savedInstanceState);
-
             var view = this.BindingInflate(this._layoutId, null);
+
+            if (savedInstanceState != null) {
+                this.OnViewStateRestored(savedInstanceState);
+            }
             this.InitializeTabHost(savedInstanceState, view);
 
             if (savedInstanceState != null) {
@@ -77,8 +83,20 @@ namespace Acr.MvvmCross.Droid.Fragments {
 
 
         public override void OnSaveInstanceState(Bundle outState) {
+            var state = this.ViewModel.SaveStateBundle();
+            outState.PutObject("ViewModelBundle", state);
+            outState.PutType("ViewModelType", this.ViewModel.GetType());
             outState.PutString(SavedTabIndexStateKey, _tabHost.CurrentTabTag);
             base.OnSaveInstanceState(outState);
+        }
+
+
+        public override void OnViewStateRestored(Bundle savedInstanceState) {
+            base.OnViewStateRestored(savedInstanceState);
+            var viewModelType = savedInstanceState.GetType("ViewModelType");
+            var state = savedInstanceState.GetObject<MvxBundle>("ViewModelBundle");
+            var request = MvxViewModelRequest.GetDefaultRequest(viewModelType);
+            this.ViewModel = Mvx.Resolve<IMvxViewModelLoader>().LoadViewModel(request, state);
         }
 
 
