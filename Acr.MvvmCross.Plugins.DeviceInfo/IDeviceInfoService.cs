@@ -13,5 +13,8 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo {
         bool IsFrontCameraAvailable { get; }
         bool IsRearCameraAvailable { get; }
         bool IsSimulator { get; }
+
+        //BatteryState BatteryState { get; }
+        //int BatteryPercentage { get; }
     }
 }

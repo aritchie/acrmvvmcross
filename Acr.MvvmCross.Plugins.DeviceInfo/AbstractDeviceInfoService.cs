@@ -13,5 +13,8 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo {
         public bool IsSimulator { get; protected set; }
         public bool IsFrontCameraAvailable { get; protected set; }
         public bool IsRearCameraAvailable { get; protected set; }
+
+        //public int BatteryPercentage { get; protected set; }
+        //public BatteryState BatteryState { get; protected set; }
     }
 }

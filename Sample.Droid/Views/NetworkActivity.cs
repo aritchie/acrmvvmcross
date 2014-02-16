@@ -10,7 +10,7 @@ namespace Sample.Droid.Views {
 
         protected override void OnViewModelSet() {
             base.OnViewModelSet();
-            this.SetContentView(Resource.Layout.DeviceInfo);
+            this.SetContentView(Resource.Layout.Network);
         }
     }
 }

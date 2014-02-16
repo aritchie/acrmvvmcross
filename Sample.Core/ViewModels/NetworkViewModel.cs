@@ -7,7 +7,11 @@ namespace Sample.Core.ViewModels {
     
     public class NetworkViewModel : MvxViewModel {
 
+        public INetworkService Network { get; private set; }
+
+
         public NetworkViewModel(INetworkService networkService) {
+            this.Network = networkService;
         }
     }
 }

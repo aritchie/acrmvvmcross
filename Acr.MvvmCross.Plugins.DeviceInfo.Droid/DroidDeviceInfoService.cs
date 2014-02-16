@@ -19,10 +19,15 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Droid {
             var d = Resources.System.DisplayMetrics;
             this.ScreenWidth = (int)(d.WidthPixels / d.Density);
             this.ScreenHeight = (int)(d.HeightPixels / d.Density);
-             Mvx.CallbackWhenRegistered<IMvxAndroidGlobals>(x => {
+            Mvx.CallbackWhenRegistered<IMvxAndroidGlobals>(x => {
                 var m = x.ApplicationContext.PackageManager;
                 this.IsRearCameraAvailable = m.HasSystemFeature(PackageManager.FeatureCamera);
                 this.IsFrontCameraAvailable = m.HasSystemFeature(PackageManager.FeatureCameraFront);
+                //var filter = new IntentFilter(Intent.ActionBatteryChanged);
+                //var battery = RegisterReceiver(null, filter);
+                //var level = battery.GetIntExtra(BatteryManager.ExtraLevel, -1);
+                //var scale = battery.GetIntExtra(BatteryManager.ExtraScale, -1);
+                //this.BatteryPercentage = Convert.ToInt32(Math.Floor(level * 100D / scale));
             });
         }
     }

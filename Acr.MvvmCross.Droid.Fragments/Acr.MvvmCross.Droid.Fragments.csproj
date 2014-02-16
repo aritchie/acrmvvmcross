@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6123F79A-163E-45BA-B935-CEBC8D08A278}</ProjectGuid>
+    <ProjectGuid>{80A8F665-8DC7-4492-936A-8941F47E61EB}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Acr.MvvmCross.Droid</RootNamespace>
-    <AssemblyName>Acr.MvvmCross.Droid</AssemblyName>
+    <RootNamespace>Acr.MvvmCross.Droid.Fragments</RootNamespace>
+    <AssemblyName>Acr.MvvmCross.Droid.Fragments</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -54,11 +54,17 @@
     <Reference Include="Cirrious.MvvmCross.Droid">
       <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Droid.Fragging">
+      <HintPath>..\packages\MvvmCross.HotTuna.Droid.Fragging.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Droid.Fragging.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.Localization">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\portable-net40+sl5+wp80+win8+monotouch+monoandroid\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -74,8 +80,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.PortableSupport.3.1.1\lib\MonoAndroid\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\Components\xamandroidsupportv7appcompat-7.18.0\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
@@ -86,22 +91,25 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Controls\DateTimePicker.cs" />
-    <Compile Include="Controls\DateTimePickerValueTargetBinding.cs" />
-    <Compile Include="Mvx2Activity.cs" />
-    <Compile Include="MvxActionBarActivity.cs" />
-    <Compile Include="MvxActionBarEventSourceActivity.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Mvx2Fragment.cs" />
+    <Compile Include="Mvx2TabsFragmentActivity.cs" />
+    <Compile Include="MvxTabFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
       <Project>{85e3c63b-a17e-46ef-87ce-9a8e58fede4d}</Project>
       <Name>Acr.MvvmCross</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv7appcompat">

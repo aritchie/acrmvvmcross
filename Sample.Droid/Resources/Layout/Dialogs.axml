@@ -1,84 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
-        android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        local:MvxBind="Text Result"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <TextView
-            local:MvxBind="Text NetworkInfo"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        
-        <TextView
-            local:MvxBind="Text Result"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click Alert"
-            android:text="Alert"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click Confirm"
-            android:text="Confirm"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click Prompt"
-            android:text="Prompt and Settings"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click Loading"
-            android:text="Loading Dialog"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click Toast"
-            android:text="Toast Popup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        
-        <Button
-            local:MvxBind="Click Progress"
-            android:text="Progress Dialog"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click ScanBarCode"
-            android:text="Scan Bar Code"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <Button
-            local:MvxBind="Click OpenExternalApp"
-            android:text="Open File Viewer"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            local:MvxBind="Text Format('Resolution: {0}x{1}', DeviceInfo.ScreenWidth, DeviceInfo.ScreenHeight)"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            local:MvxBind="Text Format('Device: {0} {1}', DeviceInfo.Manufacturer, DeviceInfo.Model)"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            local:MvxBind="Text Format('Operating System: {0}', DeviceInfo.OperatingSystem)"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        
-    </LinearLayout>
-</ScrollView>
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Alert"
+        android:text="Alert"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Confirm"
+        android:text="Confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Prompt"
+        android:text="Prompt and Settings"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Loading"
+        android:text="Loading Dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Toast"
+        android:text="Toast Popup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Progress"
+        android:text="Progress Dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

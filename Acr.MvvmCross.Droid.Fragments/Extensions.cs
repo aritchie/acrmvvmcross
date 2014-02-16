@@ -3,7 +3,7 @@ using Android.OS;
 using Newtonsoft.Json;
 
 
-namespace Acr.MvvmCross.Droid {
+namespace Acr.MvvmCross.Droid.Fragments {
     
     public static class Extensions {
 
