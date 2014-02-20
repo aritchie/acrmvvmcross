@@ -1,5 +1,6 @@
 using System;
 using BigTed;
+using MonoTouch.UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
@@ -90,11 +91,13 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 return;
 
             var p = (this.IsDeterministic ? this.Progress : -1);
-            BTProgressHUD.Show(
-                this.cancelText, 
-                this.cancelAction, 
-                this.Title, 
-                p
+            UIApplication.SharedApplication.InvokeOnMainThread(() => 
+                BTProgressHUD.Show(
+                    this.cancelText, 
+                    this.cancelAction, 
+                    this.Title, 
+                    p
+                )
             );
         }
 

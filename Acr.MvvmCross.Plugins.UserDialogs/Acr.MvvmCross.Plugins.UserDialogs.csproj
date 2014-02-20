@@ -41,6 +41,7 @@
     <Compile Include="IProgressDialog.cs" />
     <Compile Include="PromptResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SheetOption.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

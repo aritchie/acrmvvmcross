@@ -87,7 +87,6 @@
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Controls\DateTimePicker.cs" />
-    <Compile Include="Controls\DateTimePickerValueTargetBinding.cs" />
     <Compile Include="Mvx2Activity.cs" />
     <Compile Include="MvxActionBarActivity.cs" />
     <Compile Include="MvxActionBarEventSourceActivity.cs" />

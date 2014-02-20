@@ -78,7 +78,7 @@ namespace Acr.MvvmCross.Droid.Controls {
             this.SetLabels();
         }
 
-         #region Internals
+        #region Internals
 
         protected virtual void OnDateTimeChanged() {
             if (this.SelectedDateTimeChanged != null) {

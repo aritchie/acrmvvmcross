@@ -9,6 +9,7 @@ namespace Sample.Core.ViewModels {
     public class DialogsViewModel : MvxViewModel {
 
         public IMvxCommand Alert { get; private set; }
+        public IMvxCommand ActionSheet { get; private set; }
         public IMvxCommand Confirm { get; private set; }
         public IMvxCommand Progress { get; private set; }
         public IMvxCommand Loading { get; private set; }
@@ -74,6 +75,16 @@ namespace Sample.Core.ViewModels {
                 dialogService.Toast("Test Toast", 3);
                 this.Result = "Toast clicked";
             });
+
+            this.ActionSheet = new MvxCommand(() => 
+                dialogService.ActionSheet(
+                    "Test Title",
+                    "Cancel",
+                    new SheetOption("Option 1", () => this.Result = "Option 1"),
+                    new SheetOption("Option 2", () => this.Result = "Option 2"),
+                    new SheetOption("Option 3", () => this.Result = "Option 3")
+                )
+            );
         }
     }
 }

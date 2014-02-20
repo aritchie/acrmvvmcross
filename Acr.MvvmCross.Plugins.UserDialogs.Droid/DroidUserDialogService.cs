@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Android.App;
+using Android.Views;
 using Android.Widget;
 using AndroidHUD;
 using Cirrious.CrossCore;
@@ -35,6 +37,24 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             );
 
             return tcs.Task;
+        }
+
+
+        public virtual void ActionSheet(string title, string cancelText, params SheetOption[] options) {
+            this.DoOnActivity(activity => {
+                var popup = new PopupMenu(activity, null);
+                
+                for (var i = 0; i < options.Length; i++) {
+                    popup.Menu.Add(0, i, i, options[i].Text);
+                }
+
+                popup.MenuItemClick += (sender, args) => {
+                    options[args.Item.ItemId].Action();
+                    args.Handled = true;
+                    popup.Dismiss();
+                };
+                popup.Show();
+            });
         }
 
 

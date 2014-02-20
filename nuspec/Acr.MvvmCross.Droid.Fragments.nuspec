@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Droid.Fragments</id>
-        <version>0.8.0</version>
-        <title>MvvmCross Utilities</title>
+        <version>0.8.1</version>
+        <title>MvvmCross Android Fragment Utilities</title>
         <description>Just some easy utility classes that assist with MvvmCross</description>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>

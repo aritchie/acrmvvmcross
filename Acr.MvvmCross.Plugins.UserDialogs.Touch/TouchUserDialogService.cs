@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using BigTed;
 using Cirrious.CrossCore;
@@ -91,6 +92,15 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
             }
 
             return dlg;
+        }
+
+
+        public virtual void ActionSheet(string title, string cancelText, params SheetOption[] sheets) {
+            var action = new UIActionSheet(title);
+            sheets.ToList().ForEach(x => action.AddButton(x.Text));
+            action.Clicked += (sender, btn) => sheets[btn.ButtonIndex].Action();
+            var view = UIApplication.SharedApplication.KeyWindow.RootViewController.View;
+            action.ShowInView(view);
         }
 
 
