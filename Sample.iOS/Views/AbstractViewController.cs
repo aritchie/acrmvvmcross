@@ -20,12 +20,32 @@ namespace Sample.iOS.Views {
         }
 
 
-        protected UITextView Label() {
+        protected UITextField Text(string label, string placeholder = null) {
+            this.Label(label);
+            var txt = new UITextField(new RectangleF(10, this.CurrentYCoord, 300, 40));
+            if (placeholder != null) {
+                txt.Placeholder = placeholder;
+            }
+            this.CurrentYCoord += 40;
+            return txt;
+        }
+
+
+        protected UITextView Label(string text = null) {
             var lbl = new UITextView(new RectangleF(10, this.CurrentYCoord, 300, 40));
             this.View.AddSubview(lbl);
             //this.View.ContentSize += lbl.ContentSize;
             this.CurrentYCoord += 40;
+            lbl.Text = text ?? "";
             return lbl;
+        }
+
+
+        protected UISwitch Switch(string text) {
+            this.Label(text);
+            var cb = new UISwitch(new RectangleF(10, this.CurrentYCoord, 300, 40));
+            this.CurrentYCoord += 40;
+            return cb;
         }
 
 
