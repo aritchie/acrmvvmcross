@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.Settings</id>
-        <version>0.9.0</version>
-        <title>MvvmCross Settings</title>
+        <version>1.0.0</version>
+        <title>MvvmCross Settings Plugin</title>
         <description>MvvmCross settings platform plugin</description>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>

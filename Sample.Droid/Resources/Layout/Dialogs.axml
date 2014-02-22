@@ -9,13 +9,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <Button
-        local:MvxBind="Click Alert"
-        android:text="Alert"
+        local:MvxBind="Click ActionSheet"
+        android:text="Action Sheet"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <Button
-        local:MvxBind="Click ActionSheet"
-        android:text="Action Sheet"
+        local:MvxBind="Click Alert"
+        android:text="Alert"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <Button
@@ -25,12 +25,7 @@
         android:layout_height="wrap_content" />
     <Button
         local:MvxBind="Click Prompt"
-        android:text="Prompt and Settings"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        local:MvxBind="Click Loading"
-        android:text="Loading Dialog"
+        android:text="Prompt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <Button
@@ -39,8 +34,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <Button
+        local:MvxBind="Click Loading"
+        android:text="Loading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click LoadingNoCancel"
+        android:text="Loading (No Cancel)"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
         local:MvxBind="Click Progress"
         android:text="Progress Dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click ProgressNoCancel"
+        android:text="Progress (No Cancel)"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

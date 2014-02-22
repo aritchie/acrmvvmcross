@@ -31,27 +31,22 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
         }
 
 
-        private int max;
-        public virtual int Max {
-            get { return this.max; }            
+        private int percentComplete;
+        public virtual int PercentComplete {
+            get { return this.percentComplete; }
             set {
-                if (this.max == value)
+                if (this.percentComplete == value)
                     return;
 
-                this.max = value;
-                this.Refresh();
-            }
-        }
-
-
-        private int progress;
-        public virtual int Progress {
-            get { return this.progress; }
-            set {
-                if (this.progress == value)
-                    return;
-
-                this.progress = value;
+                if (value > 100) {
+                    this.percentComplete = 100;
+                }
+                else if (value < 0) {
+                    this.percentComplete = 0;
+                }
+                else {
+                    this.percentComplete = value;
+                }
                 this.Refresh();
             }
         }
@@ -63,8 +58,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
 
         private Action cancelAction;
-        public virtual void SetCancel(Action onCancel, string cancelText) {
+        private string cancelText;
+        public virtual void SetCancel(Action onCancel, string cancel) {
             this.cancelAction = onCancel;
+            this.cancelText = cancel;
         }
 
 
@@ -95,11 +92,27 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
         #region Internals
 
         protected virtual void Refresh() {
-            var p = (this.IsDeterministic ? this.Progress : -1);
+            if (!this.IsShowing)
+                return;
+
+            var p = -1;
+            var txt = this.Title;
+            if (this.IsDeterministic) {
+                p = this.PercentComplete;
+                if (!String.IsNullOrWhiteSpace(txt)) {
+                    txt += "\n";
+                }
+                txt += p + "%\n";
+            }
+
+            if (this.cancelAction != null) {
+                txt += "\n" + this.cancelText;
+            }
+
             this.Dispatcher.RequestMainThreadAction(() => 
                 AndHUD.Shared.Show(
                     this.context, 
-                    this.Title,
+                    txt,
                     p, 
                     MaskType.Clear,
                     null,
@@ -110,9 +123,11 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
 
         private void OnCancelClick() {
+            if (this.cancelAction == null)
+                return;
+
             this.Hide();
-            if (this.cancelAction != null)
-                this.cancelAction();
+            this.cancelAction();
         }
 
         #endregion

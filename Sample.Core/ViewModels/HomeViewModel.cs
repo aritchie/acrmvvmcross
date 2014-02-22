@@ -37,32 +37,24 @@ namespace Sample.Core.ViewModels {
                             ? String.Format("Barcode Result - Format: {0} - Code: {1}", r.Format, r.Code)
                             : "Cancelled barcode scan"
                         );
-                        await dialogService.Alert(result);
+                        dialogService.Alert(result);
                     }
                 },
                 new MenuItem {
                     Title = "Open External App",
-                    Command = async () => {
-                        await dialogService.Alert("TODO");
-                    }
+                    Command = () => dialogService.Alert("TODO")
                 },
                 new MenuItem {
                     Title = "Storage",
-                    Command = async () => {
-                        await dialogService.Alert("TODO");
-                    }
+                    Command = () => dialogService.Alert("TODO")
                 },
                 new MenuItem {
                     Title = "Calendar Management",
-                    Command = async () => {
-                        await dialogService.Alert("TODO");
-                    }
+                    Command = () => dialogService.Alert("TODO")
                 },
                 new MenuItem {
                     Title = "Contact Management",
-                    Command = async () => {
-                        await dialogService.Alert("TODO");
-                    }
+                    Command = () => dialogService.Alert("TODO")
                 },
             };
             this.View = new MvxCommand<MenuItem>(menu => menu.Command());

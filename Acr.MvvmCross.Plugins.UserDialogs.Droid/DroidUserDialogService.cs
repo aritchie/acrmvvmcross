@@ -1,148 +1,155 @@
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 using Android.App;
-using Android.Views;
 using Android.Widget;
 using AndroidHUD;
 using Cirrious.CrossCore;
+using Cirrious.CrossCore.Core;
 using Cirrious.CrossCore.Droid.Platform;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
     
-    public class DroidUserDialogService : MvxAndroidTask, IUserDialogService {
+    public class DroidUserDialogService : AbstractUserDialogService {
 
-        public virtual void Toast(string message, int timeoutSeconds) {
-            var activity = GetTopActivity();
-            AndHUD.Shared.ShowToast(
-                activity, 
-                message, 
-                MaskType.Black, 
-                TimeSpan.FromSeconds(timeoutSeconds)
-            );
-        }
-
-
-        public virtual Task Alert(string message, string title, string okText) {            
-            var tcs = new TaskCompletionSource<object>();
-            var act = GetTopActivity();
-
-            this.Dispatcher.RequestMainThreadAction(() => 
-                new AlertDialog.Builder(act)
+        public override void Alert(string message, string title, string okText, Action onOk) {
+            this.Dispatch(activity => 
+                new AlertDialog
+                    .Builder(activity)
                     .SetMessage(message)
                     .SetTitle(title)
-                    .SetPositiveButton(okText, (o, e) => tcs.SetResult(null))
+                    .SetPositiveButton(okText, (o, e) => {
+                        if (onOk != null) {
+                            onOk();
+                        }
+                    })
                     .Show()
             );
-
-            return tcs.Task;
         }
 
 
-        public virtual void ActionSheet(string title, string cancelText, params SheetOption[] options) {
-            this.DoOnActivity(activity => {
-                var popup = new PopupMenu(activity, null);
-                
-                for (var i = 0; i < options.Length; i++) {
-                    popup.Menu.Add(0, i, i, options[i].Text);
-                }
+        public override void ActionSheet(string title,  params SheetOption[] options) {
+            var array = options
+                .Select(x => x.Text)
+                .ToArray();
 
-                popup.MenuItemClick += (sender, args) => {
-                    options[args.Item.ItemId].Action();
-                    args.Handled = true;
-                    popup.Dismiss();
-                };
-                popup.Show();
-            });
+            this.Dispatch(activity => 
+                new AlertDialog
+                    .Builder(activity)
+                    .SetTitle(title)
+                    .SetItems(array, (sender, args) => options[args.Which].Action())
+                    .Show()
+            );
         }
 
 
-        public virtual Task<bool> Confirm(string message, string title, string okText, string cancelText) {
-            var tcs = new TaskCompletionSource<bool>();
-            var act = GetTopActivity();
-
-            this.Dispatcher.RequestMainThreadAction(() => 
-                new AlertDialog.Builder(act)
+        public override void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText) {
+            this.Dispatch(activity => 
+                new AlertDialog
+                    .Builder(activity)
                     .SetMessage(message)
                         .SetTitle(title)
-                        .SetPositiveButton(okText, (o, e) => tcs.SetResult(true))
-                        .SetNegativeButton(cancelText, (o, e) => tcs.SetResult(false))
+                        .SetPositiveButton(okText, (o, e) => onConfirm(true))
+                        .SetNegativeButton(cancelText, (o, e) => onConfirm(false))
                         .Show()
             );
-
-            return tcs.Task;
         }
 
 
-        public virtual Task<PromptResult> Prompt(string message, string title, string okText, string cancelText, string hint) {
-            var tcs = new TaskCompletionSource<PromptResult>();
-            var act = GetTopActivity();
-
-            this.Dispatcher.RequestMainThreadAction(() => {
-                var txt = new EditText(act) {
+        public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
+            this.Dispatch(activity => {
+                var txt = new EditText(activity) {
                     Hint = hint
                 };
 
-                new AlertDialog.Builder(act)
+                new AlertDialog
+                    .Builder(activity)
                     .SetMessage(message)
                     .SetTitle(title)
                     .SetView(txt)
-                    .SetPositiveButton(okText, (o, e) => 
-                        tcs.SetResult(new PromptResult {
+                    .SetPositiveButton(okText, (o, e) =>
+                        promptResult(new PromptResult {
                             Ok = true, 
                             Text = txt.Text
                         })
                     )
                     .SetNegativeButton(cancelText, (o, e) => 
-                        tcs.SetResult(new PromptResult {
+                        promptResult(new PromptResult {
                             Ok = false, 
                             Text = txt.Text
                         })
                     )
                     .Show();
             });
-            return tcs.Task;
         }
 
 
-        public virtual IProgressDialog Progress(string title, int max, Action onCancel, string cancelText) {
+        public override void Toast(string message, int timeoutSeconds, Action onClick) {
+            this.Dispatch(activity => 
+                AndHUD.Shared.ShowToast(
+                    activity, 
+                    message, 
+                    MaskType.Clear,
+                    TimeSpan.FromSeconds(timeoutSeconds),
+                    false,
+                    onClick
+                )
+            );
+        }
+
+
+        public override IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show) {
             var activity = GetTopActivity();
 
             var dlg = new DroidProgressDialog(activity) {
                 Title = title,
-                IsDeterministic = true,
-                Max = max,
-                Progress = 0
+                IsDeterministic = true
             };
 
             if (onCancel != null) {
                 dlg.SetCancel(onCancel, cancelText);
             }
 
+            if (show) {
+                dlg.Show();
+            }
             return dlg;
         }
 
 
-        public virtual IProgressDialog Loading(string title, int max, Action onCancel, string cancelText) {
+        public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
             var activity = GetTopActivity();
 
             var dlg = new DroidProgressDialog(activity) {
                 Title = title,
-                IsDeterministic = false,
-                Max = max,
-                Progress = 0
+                IsDeterministic = false
             };
 
             if (onCancel != null) {
                 dlg.SetCancel(onCancel, cancelText);
             }
 
+            if (show) {
+                dlg.Show();
+            }
             return dlg;
         }
 
 
-        protected static Activity GetTopActivity() {
+        protected virtual void Dispatch(Action action) {
+            Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(action);    
+        }
+
+
+        protected virtual void Dispatch(Action<Activity> action) {
+            this.Dispatch(() => {
+                var activity = this.GetTopActivity();
+                action(activity);
+            });
+        }
+
+
+        protected virtual Activity GetTopActivity() {
             return Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
         }
     }

@@ -1,21 +1,14 @@
 using System;
 using BigTed;
-using MonoTouch.UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     
     public class TouchProgressDialog : IProgressDialog {
 
-        private string title;
-        private int progress;
-        private int max;
-        private string cancelText;
-        private Action cancelAction;
-
-
         #region IProgressDialog Members
 
+        private string title;
         public virtual string Title {
             get { return this.title; }
             set {  
@@ -28,25 +21,22 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
-        public virtual int Progress {
-            get { return this.progress; }
+        private int percentComplete;
+        public virtual int PercentComplete {
+            get { return this.percentComplete; }
             set {
-                if (this.progress == value)
+                if (this.percentComplete == value)
                     return;
 
-                this.progress = value;
-                this.Refresh();
-            }
-        }
-
-
-        public virtual int Max {
-            get { return this.max; }
-            set {
-                if (this.max == value)
-                    return;
-
-                this.max = value;
+                if (value > 100) {
+                    this.percentComplete = 100;
+                }
+                else if (value < 0) {
+                    this.percentComplete = 0;
+                }
+                else {
+                    this.percentComplete = value;
+                }
                 this.Refresh();
             }
         }
@@ -56,6 +46,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         public virtual bool IsShowing { get; private set; }
 
 
+        private string cancelText;
+        private Action cancelAction;
         public virtual void SetCancel(Action onCancel, string cancel) {
             this.cancelAction = onCancel;
             this.cancelText = cancel;
@@ -87,17 +79,27 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         #region Internals
 
         protected virtual void Refresh() {
-            if (this.IsShowing)
+            if (!this.IsShowing)
                 return;
 
-            var p = (this.IsDeterministic ? this.Progress : -1);
-            UIApplication.SharedApplication.InvokeOnMainThread(() => 
-                BTProgressHUD.Show(
-                    this.cancelText, 
-                    this.cancelAction, 
-                    this.Title, 
-                    p
-                )
+            var txt = this.Title;
+            float p = -1;
+
+            // TODO: below causes BTProgressHUD to shrink
+            if (this.IsDeterministic) {
+                p = (float)this.PercentComplete / 100;
+                if (!String.IsNullOrWhiteSpace(txt)) {
+                    txt += "\n";
+                }
+                txt += this.PercentComplete + "%";
+            }
+
+            // TODO: cancel text shows up if I call this no matter what
+            BTProgressHUD.Show(
+                (this.cancelAction == null ? null : this.cancelText), 
+                this.cancelAction,
+                txt,
+                p
             );
         }
 

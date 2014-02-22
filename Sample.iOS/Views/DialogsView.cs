@@ -11,13 +11,17 @@ namespace Sample.iOS.Views {
         public override void ViewDidLoad() {
             base.ViewDidLoad();
             var lblResult = this.Label();
+            var btnActionSheet = this.Button("Action Sheet");
             var btnAlert = this.Button("Alert");
             var btnConfirm = this.Button("Confirm");
             var btnPrompt = this.Button("Prompt");
-            var btnLoading = this.Button("Loading");
-            var btnProgress = this.Button("Progress");
             var btnToast = this.Button("Toast Popup");
-            var btnActionSheet = this.Button("Action Sheet");
+
+            var btnLoading = this.Button("Loading");
+            var btnLoadingNoCancel = this.Button("Loading (No Cancel)");
+            var btnProgress = this.Button("Progress");
+            var btnProgressNoCancel = this.Button("Progress (No Cancel)");
+            
 
             var set = this.CreateBindingSet<DialogsView, DialogsViewModel>();
             set.Bind(lblResult).To(x => x.Result);
@@ -28,6 +32,8 @@ namespace Sample.iOS.Views {
             set.Bind(btnProgress).To(x => x.Progress);
             set.Bind(btnToast).To(x => x.Toast);
             set.Bind(btnActionSheet).To(x => x.ActionSheet);
+            set.Bind(btnLoadingNoCancel).To(x => x.LoadingNoCancel);
+            set.Bind(btnProgressNoCancel).To(x => x.ProgressNoCancel);
             set.Apply();
         }
     }

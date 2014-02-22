@@ -1,4 +1,6 @@
 ﻿using System.Reflection;
+using System.Resources;
+
 
 #if DEBUG
 [assembly: AssemblyConfiguration("DEBUG")]
@@ -6,7 +8,8 @@
 [assembly: AssemblyConfiguration("")]
 #endif
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Acr.MvvmCross")]
+[assembly: AssemblyProduct("Acr.MvvmCross.Plugins")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: NeutralResourcesLanguage("en")]

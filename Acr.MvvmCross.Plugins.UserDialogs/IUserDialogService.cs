@@ -6,14 +6,20 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
 
     public interface IUserDialogService {
 
-        void Toast(string message, int timeoutSeconds = 3);
-        Task Alert(string message, string title = null, string okText = "OK");
-        Task<bool> Confirm(string message, string title = null, string okText = "OK", string cancelText = "Cancel");
-        Task<PromptResult> Prompt(string message, string title = null, string okText = "OK", string cancelText = "Cancel", string hint = null);
+        void Alert(string message, string title = null, string okText = "OK", Action onOk = null);
+        Task AlertAsync(string message, string title = null, string okText = "OK");
+        
+        void ActionSheet(string title = null, params SheetOption[] options);
+        
+        void Confirm(string message, Action<bool> onConfirm, string title = null, string okText = "OK", string cancelText = "Cancel");
+        Task<bool> ConfirmAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel");
 
-        // TODO: cancel & destroy options on iOS
-        void ActionSheet(string title = null, string cancelText = "Cancel", params SheetOption[] options);        
-        IProgressDialog Progress(string title = null, int max = 100, Action onCancel = null, string cancelText = "Cancel");
-        IProgressDialog Loading(string title = "Loading", int max = 100, Action onCancel = null, string cancelText = "Cancel");
+        void Prompt(string message, Action<PromptResult> promptResult, string title = null, string okText = "OK", string cancelText = "Cancel", string hint = null);
+        Task<PromptResult> PromptAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel", string hint = null);
+        
+        IProgressDialog Progress(string title = null, Action onCancel = null, string cancelText = "Cancel", bool show = true);
+        IProgressDialog Loading(string title = "Loading", Action onCancel = null, string cancelText = "Cancel", bool show = true);
+
+        void Toast(string message, int timeoutSeconds = 3, Action onClick = null);
     }
 }

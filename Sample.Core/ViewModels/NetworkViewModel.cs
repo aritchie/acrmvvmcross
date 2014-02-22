@@ -17,14 +17,18 @@ namespace Sample.Core.ViewModels {
             this.Network = networkService;
             this.Ping = new MvxCommand(async () => {
                 if (String.IsNullOrWhiteSpace(this.Host)) {
-                    await dialogService.Alert("You must enter a host");
+                    dialogService.Alert("You must enter a host");
                 }
                 else {
-                    var msg = (await networkService.IsHostReachable(this.Host)
+                    var reached = false;
+                    using (dialogService.Loading()) {
+                        reached = await networkService.IsHostReachable(this.Host);
+                    }
+                    var msg = (reached
                         ? " is reachable"
                         : " cannot be reached"
                     );
-                    await dialogService.Alert(this.Host + msg);
+                    dialogService.Alert(this.Host + msg);
                 }
             });
         }

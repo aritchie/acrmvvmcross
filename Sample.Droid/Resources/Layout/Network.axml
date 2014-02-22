@@ -22,4 +22,17 @@
         android:layout_height="wrap_content"
         android:enabled="false"
         android:text="Mobile" />
+    <TextView
+        android:text="Host Test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        local:MvxBind="Text Host"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Ping"
+        android:text="Ping Test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

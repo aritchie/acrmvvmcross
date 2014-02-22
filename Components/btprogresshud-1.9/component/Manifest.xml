@@ -3,7 +3,7 @@
   <name>BTProgressHUD</name>
   <publisher>Nic Wise / Big Ted Ltd</publisher>
   <publisher-url>http://fastchicken.co.nz/</publisher-url>
-  <version>1.8</version>
+  <version>1.9</version>
   <summary>Add awesome HUDs to your iOS apps.</summary>
   <samples>
     <sample id="BTProgressHUDSample">

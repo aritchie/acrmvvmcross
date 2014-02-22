@@ -11,13 +11,20 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner.Droid {
 
         public async Task<BarCodeResult> Read(string topText, string bottomText, string flashlightText, string cancelText) {
             var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
-            var scanner = new MobileBarcodeScanner(activity) {
-                UseCustomOverlay = false,
-                TopText = topText,
-                BottomText = bottomText,
-                FlashButtonText = flashlightText,
-                CancelButtonText = cancelText
-            };
+            var scanner = new MobileBarcodeScanner(activity) { UseCustomOverlay = false };
+            
+            if (!String.IsNullOrWhiteSpace(topText)) {
+                scanner.TopText = topText;
+            }
+            if (!String.IsNullOrWhiteSpace(bottomText)) {
+                scanner.BottomText = bottomText;
+            }
+            if (!String.IsNullOrWhiteSpace(flashlightText)) {
+                scanner.FlashButtonText = flashlightText;
+            }
+            if (!String.IsNullOrWhiteSpace(cancelText)) {
+                scanner.CancelButtonText = cancelText;
+            }
 
             var result = await scanner.Scan();
             return (result == null || String.IsNullOrWhiteSpace(result.Text)
