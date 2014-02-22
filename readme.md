@@ -8,6 +8,22 @@ on a few projects with great success.
 * WinStore & WinPhone platform plugins are in the works
 
 
+
+##User Dialogs
+Allows for messagebox style dialogs
+
+* Action Sheet (multiple choice menu)
+* Alert
+* Prompt
+* Confirm
+* Loading
+* Progress
+* Toast
+
+1. Droid progress & loading uses AndHUD
+2. iOS progress & loading uses BTProgressHUD
+
+
 ##Bar Code Scanner
 This is based on Redth's ZXing.Net.Mobile.
 
@@ -22,12 +38,26 @@ This is based on Redth's ZXing.Net.Mobile.
     });
 
 
-##Cache
-TODO
+##Network
+I needed something beyond what MvvmCross had out of the box.  I had 
+a requirement for detecting network state changes so that we could inform
+the user when they were working in an offline state.
+
+* INetworkService subscribes to INotifyPropertyChanged and monitors the device network status
+* You can also use MvxMessenger to subscribe to NetworkStatusChangedMessage to watch for changes outside of your view model
+
+
+##Settings
+Just a simple setting access platform service.  The only difference is that objects can be (de)serialize into a settings variable using JSON.NET out of the box
 
 
 ##Device Info
 Allows you to get the information of the device for auditing purposes
+
+* Device Manufacturer
+* Operating System and Version
+* Front and rear facing cameras
+* Screen Resolution
 
 
 ##External App
@@ -42,33 +72,6 @@ repository style app
     }
 
 
-##Network
-I needed something beyond what MvvmCross had out of the box.  I had
-a requirement for detecting network state changes so that we could inform
-the user when they were working in an offline state.
-
-    public MyViewModel(INetworkService networkService) {
-        MvxSubscriptionToken networkSubscriptionToken = networkService.Subscribe(e => OnNetworkChange(e.Status));
-        OnNetworkChange(networkService.CurrentStatus);
-    }
-
-    private void OnNetworkChange(MvxNetworkStatus e) {
-        if (!e.IsConnected) {
-            NetworkInfo = "Not Connected";
-        }
-        else if (e.IsMobile) {
-            NetworkInfo = "Mobile Connection";
-        }
-        else {
-            NetworkInfo = "WiFi Connection";
-        }
-    }
-
-
-##Settings
-Just a simple setting access platform service
-
-
 ##Storage
 Allows for PCL use of 
 
@@ -77,15 +80,5 @@ Allows for PCL use of
 * and File Streams
 
 
-##User Dialogs
-Allows for messagebox style dialogs
-
-* Alert
-* Prompt
-* Confirm
-* Loading
-* Progress
-* Toast
-
-1. Droid progress & loading uses AndHUD
-2. iOS progress & loading uses BTProgressHUD
+##Calendar, Contact, and Cache Managers
+Work in progress
