@@ -66,27 +66,47 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
 
 
         public DateTime LastWriteTime {
-            get { return this.file.LastAccessTime; }
+            get { return this.file.LastWriteTime; }
+            set { this.file.LastWriteTime = value; }
         }
 
 
         public DateTime LastWriteTimeUtc {
             get { return this.file.LastWriteTimeUtc; }
+            set { this.file.LastWriteTimeUtc = value; }
         }
 
 
         public DateTime LastAccessTime {
             get { return this.file.LastAccessTime; }
+            set { this.file.LastAccessTime = value; }
         }
 
 
         public DateTime LastAccessTimeUtc {
             get { return this.file.LastAccessTimeUtc; }
+            set { this.file.LastAccessTimeUtc = value; }
         }
 
 
         public void Delete() {
             this.file.Delete();
+        }
+
+
+        public void Rename(string newName) {
+            File.Move(this.FullName, Path.Combine(this.Directory.FullName, newName)); 
+        }
+
+
+        public void Move(string destination) {
+            this.file.MoveTo(destination);
+        }
+
+
+        public IFileInfo Copy(string destination) {
+            var f = this.file.CopyTo(destination);
+            return new FileInfoImpl(f);
         }
 
 

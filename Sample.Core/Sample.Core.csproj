@@ -89,7 +89,7 @@
     <Compile Include="ViewModels\DialogsViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\NetworkViewModel.cs" />
-    <Compile Include="ViewModels\StorageViewModel.cs" />
+    <Compile Include="ViewModels\FileManagerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="test.pdf" />

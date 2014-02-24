@@ -11,7 +11,6 @@ namespace Sample.iOS.Views {
     [Register("MainView")]
     public class HomeView : MvxTableViewController {
 
-
         public override void ViewDidLoad() {
             base.ViewDidLoad();
             var src = new MvxStandardTableViewSource(this.TableView, "TitleText Title");

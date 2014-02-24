@@ -41,23 +41,27 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
         }
 
 
-        public DateTime LastAccessTime {
-            get {  return this.directory.LastAccessTime; }
-        }
-
-
-        public DateTime LastAccessTimeUtc {
-            get { return this.directory.LastAccessTimeUtc; }
-        }
-
-
         public DateTime LastWriteTime {
             get { return this.directory.LastWriteTime; }
+            set { this.directory.LastWriteTime = value; }
         }
 
 
         public DateTime LastWriteTimeUtc {
             get { return this.directory.LastWriteTimeUtc; }
+            set { this.directory.LastWriteTimeUtc = value; }
+        }
+
+
+        public DateTime LastAccessTime {
+            get { return this.directory.LastAccessTime; }
+            set { this.directory.LastAccessTime = value; }
+        }
+
+
+        public DateTime LastAccessTimeUtc {
+            get { return this.directory.LastAccessTimeUtc; }
+            set { this.directory.LastAccessTimeUtc = value; }
         }
 
 
@@ -69,7 +73,7 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
         public IEnumerable<IFileInfo> GetFiles(string searchPattern, bool recursive) {
             var search = (recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
             return this.directory
-                .GetFiles(searchPattern, search)
+                .GetFiles(searchPattern ?? "*.*", search)
                 .Select(x => new FileInfoImpl(x));
         }
 
@@ -77,13 +81,14 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
         public IEnumerable<IDirectoryInfo> GetSubDirectories(string searchPattern, bool recursive) {
             var search = (recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
             return this.directory
-                .GetDirectories(searchPattern, search)
+                .GetDirectories(searchPattern ?? "*.*", search)
                 .Select(x => new DirectoryInfoImpl(x));
         }
 
 
         public void CreateSubDirectory(string name) {
             this.directory.CreateSubdirectory(name);
+            this.directory.Refresh();
         }
 
 
@@ -94,6 +99,26 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
 
         public void Create() {
             this.directory.Create();
+            this.directory.Refresh();
+        }
+
+
+        public void Rename(string newName) {
+            Directory.Move(this.Name, newName);
+        }
+
+
+        public void Refresh() {
+            this.directory.Refresh();
+        }
+
+
+        //public void Copy(string destination) {
+        //}
+
+
+        public void Move(string destination) {
+            Directory.Move(this.FullName, destination);
         }
 
         #endregion

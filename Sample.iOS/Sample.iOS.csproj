@@ -105,7 +105,7 @@
     <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="Views\NetworkView.cs" />
-    <Compile Include="Views\StorageView.cs" />
+    <Compile Include="Views\FileManagerView.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />

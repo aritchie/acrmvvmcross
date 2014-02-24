@@ -72,7 +72,7 @@ namespace Sample.Core.ViewModels {
 
                 using (var dlg = dialogService.Progress("Test Progress")) {
                     dlg.SetCancel(() => cancelled = true);
-                    while (!cancelled && dlg.PercentComplete <= 100) {
+                    while (!cancelled && dlg.PercentComplete < 100) {
                         await Task.Delay(TimeSpan.FromMilliseconds(500));
                         dlg.PercentComplete += 2;
                     }
@@ -82,7 +82,7 @@ namespace Sample.Core.ViewModels {
 
             this.ProgressNoCancel = new MvxCommand(async () => {
                 using (var dlg = dialogService.Progress("Progress (No Cancel)")) {
-                    while (dlg.PercentComplete <= 100) {
+                    while (dlg.PercentComplete < 100) {
                         await Task.Delay(TimeSpan.FromSeconds(1));
                         dlg.PercentComplete += 20;
                     }

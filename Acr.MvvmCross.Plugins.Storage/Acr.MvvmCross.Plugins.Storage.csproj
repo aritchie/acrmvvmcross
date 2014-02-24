@@ -40,6 +40,7 @@
     <Compile Include="IFileInfo.cs" />
     <None Include="Impl\DirectoryInfoImpl.cs" />
     <None Include="Impl\FileInfoImpl.cs" />
+    <Compile Include="IFileSystemEntry.cs" />
     <Compile Include="IStorageService.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

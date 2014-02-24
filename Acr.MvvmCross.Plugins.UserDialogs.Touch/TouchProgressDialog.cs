@@ -37,6 +37,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 else {
                     this.percentComplete = value;
                 }
+                
                 this.Refresh();
             }
         }
@@ -84,23 +85,30 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
             var txt = this.Title;
             float p = -1;
-
-            // TODO: below causes BTProgressHUD to shrink
             if (this.IsDeterministic) {
                 p = (float)this.PercentComplete / 100;
                 if (!String.IsNullOrWhiteSpace(txt)) {
-                    txt += "\n";
+                    txt += "... ";
                 }
                 txt += this.PercentComplete + "%";
             }
 
-            // TODO: cancel text shows up if I call this no matter what
-            BTProgressHUD.Show(
-                (this.cancelAction == null ? null : this.cancelText), 
-                this.cancelAction,
-                txt,
-                p
-            );
+            if (this.cancelAction == null) {
+                BTProgressHUD.Show(
+                    this.Title,
+                    p,
+                    ProgressHUD.MaskType.Black
+                );
+            }
+            else {
+                BTProgressHUD.Show(
+                    this.cancelText, 
+                    this.cancelAction,
+                    txt,
+                    p,
+                    ProgressHUD.MaskType.Black
+                );
+            }
         }
 
         #endregion

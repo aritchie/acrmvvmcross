@@ -41,12 +41,8 @@ namespace Sample.Core.ViewModels {
                     }
                 },
                 new MenuItem {
-                    Title = "Open External App",
-                    Command = () => dialogService.Alert("TODO")
-                },
-                new MenuItem {
-                    Title = "Storage",
-                    Command = () => dialogService.Alert("TODO")
+                    Title = "File Manager Example",
+                    Command = () => this.ShowViewModel<FileManagerViewModel>()
                 },
                 new MenuItem {
                     Title = "Calendar Management",

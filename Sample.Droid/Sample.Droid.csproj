@@ -126,6 +126,7 @@
     <Compile Include="Views\ContactsActivity.cs" />
     <Compile Include="Views\DeviceInfoActivity.cs" />
     <Compile Include="Views\DialogsActivity.cs" />
+    <Compile Include="Views\FileManagerActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="Views\NetworkActivity.cs" />
     <Compile Include="Views\SplashActivity.cs" />
@@ -143,7 +144,7 @@
     <AndroidResource Include="Resources\Layout\Dialogs.axml" />
     <AndroidResource Include="Resources\Layout\DeviceInfo.axml" />
     <AndroidResource Include="Resources\Layout\Network.axml" />
-    <AndroidResource Include="Resources\Layout\Storage.axml">
+    <AndroidResource Include="Resources\Layout\FileManager.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\Contacts.axml">
