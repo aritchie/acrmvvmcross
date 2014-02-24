@@ -153,6 +153,7 @@
     <AndroidResource Include="Resources\Layout\home_listitem.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Layout\filemanager_listitem.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Home.axml" />
