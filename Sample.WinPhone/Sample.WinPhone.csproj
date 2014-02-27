@@ -94,6 +94,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\BarCodeScannerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\CalendarManagerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ContactManagerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
@@ -188,6 +190,22 @@
       <Project>{88D59D24-D2AB-490F-9A4A-471BA5E0CB1D}</Project>
       <Name>Acr.MvvmCross.Plugins.Cache</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager.WinPhone\Acr.MvvmCross.Plugins.CalendarManager.WinPhone.csproj">
+      <Project>{42D85D1F-3CA8-4DFD-AD21-61C50BFF6269}</Project>
+      <Name>Acr.MvvmCross.Plugins.CalendarManager.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager\Acr.MvvmCross.Plugins.CalendarManager.csproj">
+      <Project>{E92C593D-3FF1-4174-89F2-5500A8B51616}</Project>
+      <Name>Acr.MvvmCross.Plugins.CalendarManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager.WinPhone\Acr.MvvmCross.Plugins.ContactManager.WinPhone.csproj">
+      <Project>{D992F29F-2FAE-4B36-9934-EE6E4996B220}</Project>
+      <Name>Acr.MvvmCross.Plugins.ContactManager.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager\Acr.MvvmCross.Plugins.ContactManager.csproj">
+      <Project>{E45DF2A0-11D2-43A1-A392-05BB75B03A8D}</Project>
+      <Name>Acr.MvvmCross.Plugins.ContactManager</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.csproj">
       <Project>{18AD7705-C9A9-42C0-9265-14A9559E441F}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo.WinPhone</Name>
@@ -195,6 +213,14 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo\Acr.MvvmCross.Plugins.DeviceInfo.csproj">
       <Project>{62822DE8-CEB9-4602-B780-84E9E3D11B88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp.WinPhone\Acr.MvvmCross.Plugins.ExternalApp.WinPhone.csproj">
+      <Project>{9CD3C386-57AB-48E2-8E07-7F98C0C41E86}</Project>
+      <Name>Acr.MvvmCross.Plugins.ExternalApp.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp\Acr.MvvmCross.Plugins.ExternalApp.csproj">
+      <Project>{B0665F5A-3F57-459D-9031-514D04E6D58E}</Project>
+      <Name>Acr.MvvmCross.Plugins.ExternalApp</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.WinPhone\Acr.MvvmCross.Plugins.Network.WinPhone.csproj">
       <Project>{9EAB5CDB-1DA9-48C4-B406-E2B4034BA54C}</Project>
@@ -204,9 +230,17 @@
       <Project>{3B14346E-92D8-425C-AA46-7DFC88CC6F1C}</Project>
       <Name>Acr.MvvmCross.Plugins.Network</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings.WinPhone\Acr.MvvmCross.Plugins.Settings.WinPhone.csproj">
+      <Project>{248FFFFA-1E77-4E93-A1ED-236C5501C32A}</Project>
+      <Name>Acr.MvvmCross.Plugins.Settings.WinPhone</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
       <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage.WinPhone\Acr.MvvmCross.Plugins.Storage.WinPhone.csproj">
+      <Project>{8E5FF62F-E466-434A-BA68-36D9C157FF6B}</Project>
+      <Name>Acr.MvvmCross.Plugins.Storage.WinPhone</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
       <Project>{48E3C97D-92D5-4CDA-891F-C89AABC03CEB}</Project>
@@ -219,6 +253,14 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
       <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.WinPhone\Acr.MvvmCross.WinPhone.csproj">
+      <Project>{F1C282D2-9D63-4088-B74D-1DDB752D4058}</Project>
+      <Name>Acr.MvvmCross.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
+      <Project>{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D}</Project>
+      <Name>Acr.MvvmCross</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{AC537269-FD5F-43E8-BA62-CECD983EB9D9}</Project>

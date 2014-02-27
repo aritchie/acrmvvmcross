@@ -28,6 +28,9 @@
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.CalendarManager.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.CalendarManager.Touch.dll" />
         <file src="TouchBootstrapContent\CalendarManagerPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\CalendarManagerPluginBootstrap.cs.pp" />
 
-        <!--winstore, wpf-->
+        <!-- winphone -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.CalendarManager.dll" target="lib\wp8\Acr.MvvmCross.Plugins.CalendarManager.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.CalendarManager.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.CalendarManager.WinPhone.dll" />
+        <file src="BootstrapContent\ContactManagerPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\ContactManagerPluginBootstrap.cs.pp" />
     </files>
 </package>

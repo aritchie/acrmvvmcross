@@ -71,6 +71,10 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.Layout.zxingscannerfragmentlayout = global::Sample.Droid.Resource.Layout.zxingscannerfragmentlayout;
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
+			global::Acr.MvvmCross.Plugins.CalendarManager.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
+			global::Acr.MvvmCross.Plugins.CalendarManager.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
+			global::Acr.MvvmCross.Plugins.ContactManager.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
+			global::Acr.MvvmCross.Plugins.ContactManager.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.DeviceInfo.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.DeviceInfo.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.ExternalApp.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;

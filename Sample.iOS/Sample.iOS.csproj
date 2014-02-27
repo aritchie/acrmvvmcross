@@ -87,6 +87,8 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\CalendarManagerScannerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ContactManagerScannerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
@@ -122,6 +124,22 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Cache\Acr.MvvmCross.Plugins.Cache.csproj">
       <Project>{88d59d24-d2ab-490f-9a4a-471ba5e0cb1d}</Project>
       <Name>Acr.MvvmCross.Plugins.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager.Touch\Acr.MvvmCross.Plugins.CalendarManager.Touch.csproj">
+      <Project>{37ad58cc-ea2c-42f4-ae81-3191d288a19c}</Project>
+      <Name>Acr.MvvmCross.Plugins.CalendarManager.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager\Acr.MvvmCross.Plugins.CalendarManager.csproj">
+      <Project>{e92c593d-3ff1-4174-89f2-5500a8b51616}</Project>
+      <Name>Acr.MvvmCross.Plugins.CalendarManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager.Touch\Acr.MvvmCross.Plugins.ContactManager.Touch.csproj">
+      <Project>{54d17e5b-c7f8-4da2-83fe-f73e5072edde}</Project>
+      <Name>Acr.MvvmCross.Plugins.ContactManager.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager\Acr.MvvmCross.Plugins.ContactManager.csproj">
+      <Project>{e45df2a0-11d2-43a1-a392-05bb75b03a8d}</Project>
+      <Name>Acr.MvvmCross.Plugins.ContactManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.Touch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.csproj">
       <Project>{fd60e343-6dad-4164-aac2-70b4d8d00ef5}</Project>

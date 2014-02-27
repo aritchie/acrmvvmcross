@@ -19,10 +19,6 @@
         <!-- PCL -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.dll" />
 
-        <!-- winphone, winstore, wpf -->
-        <!--<file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\sl5-wp8\Acr.MvvmCross.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.WinPhone.dll" target="lib\sl5-wp8\Acr.MvvmCross.WinPhone.dll" />-->
-        
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoAndroid\Acr.MvvmCross.dll" />
         <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Droid.dll" />
