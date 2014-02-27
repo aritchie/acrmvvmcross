@@ -20,6 +20,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         IProgressDialog Progress(string title = null, Action onCancel = null, string cancelText = "Cancel", bool show = true);
         IProgressDialog Loading(string title = "Loading", Action onCancel = null, string cancelText = "Cancel", bool show = true);
 
+        void ShowLoading(string title = "Loading");
+        void HideLoading();
+
         void Toast(string message, int timeoutSeconds = 3, Action onClick = null);
     }
 }

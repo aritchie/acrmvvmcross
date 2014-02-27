@@ -47,24 +47,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
-        public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
-            var dlg = new TouchProgressDialog {
-                Title = title,
-                IsDeterministic = false
-            };
-
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-
-            if (show) {
-                dlg.Show();
-            }
-
-            return dlg;
-        }
-
-
         public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
             this.Dispatch(() => {
                 var result = new PromptResult();
@@ -99,6 +81,34 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
             }
 
             return dlg;
+        }
+
+
+        public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
+            var dlg = new TouchProgressDialog {
+                Title = title,
+                IsDeterministic = false
+            };
+
+            if (onCancel != null) {
+                dlg.SetCancel(onCancel, cancelText);
+            }
+
+            if (show) {
+                dlg.Show();
+            }
+
+            return dlg;
+        }
+
+
+        public override void ShowLoading(string title) {
+            BTProgressHUD.Show(title, -1, ProgressHUD.MaskType.Black);
+        }
+
+
+        public override void HideLoading() {
+            BTProgressHUD.Dismiss();
         }
 
 

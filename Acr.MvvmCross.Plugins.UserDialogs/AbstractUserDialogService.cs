@@ -13,7 +13,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         public abstract void Toast(string message, int timeoutSeconds, Action onClick);
         public abstract IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show);
         public abstract IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show);        
-
+        public abstract void ShowLoading(string title);
+        public abstract void HideLoading();
 
         public Task AlertAsync(string message, string title, string okText) {
             var tcs = new TaskCompletionSource<object>();

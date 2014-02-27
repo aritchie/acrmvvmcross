@@ -136,6 +136,16 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
         }
 
 
+        public override void ShowLoading(string title) {
+            this.Dispatch(activity => AndHUD.Shared.Show(activity, title));
+        }
+
+
+        public override void HideLoading() {
+            this.Dispatch(activity => AndHUD.Shared.Dismiss(activity));
+        }
+
+
         protected virtual void Dispatch(Action action) {
             Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(action);    
         }
