@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.Settings</id>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <title>MvvmCross Settings Plugin</title>
         <description>MvvmCross settings platform plugin</description>
         <authors>Allan Ritchie</authors>
@@ -32,7 +32,7 @@
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Settings.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Settings.Droid.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Settings.Droid.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Settings.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Settings.WinPhone.dll" />
         <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\SettingsPluginBootstrap.cs.pp" />        
     </files>
 </package>

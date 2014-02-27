@@ -27,8 +27,11 @@
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.ExternalApp.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.ExternalApp.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.ExternalApp.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.ExternalApp.Touch.dll" />
-        <file src="TouchBootstrapContent\ExternalAppPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\ExternalAppPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchExternalAppPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\ExternalAppPluginBootstrap.cs.pp" />
 
-        <!--winstore, wpf-->
+        <!-- winphone -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.ExternalApp.dll" target="lib\wp8\Acr.MvvmCross.Plugins.ExternalApp.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.ExternalApp.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.ExternalApp.WinPhone.dll" />
+        <file src="BootstrapContent\ExternalAppPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\ExternalAppPluginBootstrap.cs.pp" />        
     </files>
 </package>
