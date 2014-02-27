@@ -28,8 +28,11 @@
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Settings.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Settings.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Settings.Touch.dll" />
-        <file src="TouchBootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchSettingsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\SettingsPluginBootstrap.cs.pp" />
 
-        <!--winstore, wpf-->
+        <!--winphone-->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Settings.Droid.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Settings.Droid.dll" />
+        <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\SettingsPluginBootstrap.cs.pp" />        
     </files>
 </package>

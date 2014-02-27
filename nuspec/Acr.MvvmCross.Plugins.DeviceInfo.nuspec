@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.DeviceInfo</id>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <title>MvvmCross Device Information</title>
         <description>Device information platform plugin for MvvmCross</description>
         <authors>Allan Ritchie</authors>
@@ -27,8 +27,11 @@
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" />
-        <file src="TouchBootstrapContent\DeviceInfoPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchDeviceInfoPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
 
-        <!--winstore, wpf-->
+        <!--winphone-->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\wp8\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.dll" />
+        <file src="BootstrapContent\DeviceInfoPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
     </files>
 </package>

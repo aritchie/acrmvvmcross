@@ -67,25 +67,11 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
 
         public DateTime LastWriteTime {
             get { return this.file.LastWriteTime; }
-            set { this.file.LastWriteTime = value; }
-        }
-
-
-        public DateTime LastWriteTimeUtc {
-            get { return this.file.LastWriteTimeUtc; }
-            set { this.file.LastWriteTimeUtc = value; }
         }
 
 
         public DateTime LastAccessTime {
-            get { return this.file.LastAccessTime; }
-            set { this.file.LastAccessTime = value; }
-        }
-
-
-        public DateTime LastAccessTimeUtc {
-            get { return this.file.LastAccessTimeUtc; }
-            set { this.file.LastAccessTimeUtc = value; }
+            get { return this.file.LastWriteTime; }
         }
 
 

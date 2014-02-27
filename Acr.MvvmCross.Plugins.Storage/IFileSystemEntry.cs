@@ -9,10 +9,8 @@ namespace Acr.MvvmCross.Plugins.Storage {
         string FullName { get; }
         bool Exists { get; }
 
-        DateTime LastWriteTime { get; set; }
-        DateTime LastWriteTimeUtc { get; set; }
-        DateTime LastAccessTime { get; set; }
-        DateTime LastAccessTimeUtc { get; set; }
+        DateTime LastWriteTime { get; }
+        DateTime LastAccessTime { get; }
 
         //void Copy(string destination);
         void Delete();

@@ -93,6 +93,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Bootstrap\BarCodeScannerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -115,6 +122,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
@@ -146,6 +154,76 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cirrious.CrossCore">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.CrossCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.CrossCore.WindowsPhone">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.CrossCore.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Localization">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.1.1\lib\wp8\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.WindowsPhone">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner.WinPhone\Acr.MvvmCross.Plugins.BarCodeScanner.WinPhone.csproj">
+      <Project>{DC51E5AC-4DFB-449E-95E3-A471C0EBB53C}</Project>
+      <Name>Acr.MvvmCross.Plugins.BarCodeScanner.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\Acr.MvvmCross.Plugins.BarCodeScanner.csproj">
+      <Project>{1ED7E825-98ED-4740-8DD7-96E4AA3F1128}</Project>
+      <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Cache\Acr.MvvmCross.Plugins.Cache.csproj">
+      <Project>{88D59D24-D2AB-490F-9A4A-471BA5E0CB1D}</Project>
+      <Name>Acr.MvvmCross.Plugins.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.csproj">
+      <Project>{18AD7705-C9A9-42C0-9265-14A9559E441F}</Project>
+      <Name>Acr.MvvmCross.Plugins.DeviceInfo.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo\Acr.MvvmCross.Plugins.DeviceInfo.csproj">
+      <Project>{62822DE8-CEB9-4602-B780-84E9E3D11B88}</Project>
+      <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.WinPhone\Acr.MvvmCross.Plugins.Network.WinPhone.csproj">
+      <Project>{9EAB5CDB-1DA9-48C4-B406-E2B4034BA54C}</Project>
+      <Name>Acr.MvvmCross.Plugins.Network.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network\Acr.MvvmCross.Plugins.Network.csproj">
+      <Project>{3B14346E-92D8-425C-AA46-7DFC88CC6F1C}</Project>
+      <Name>Acr.MvvmCross.Plugins.Network</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
+      <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
+      <Name>Acr.MvvmCross.Plugins.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
+      <Project>{48E3C97D-92D5-4CDA-891F-C89AABC03CEB}</Project>
+      <Name>Acr.MvvmCross.Plugins.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.csproj">
+      <Project>{732D3A68-83F1-4CC0-97CB-AB5095998D70}</Project>
+      <Name>Acr.MvvmCross.Plugins.UserDialogs.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
+      <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
+      <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
+      <Project>{AC537269-FD5F-43E8-BA62-CECD983EB9D9}</Project>
+      <Name>Sample.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />

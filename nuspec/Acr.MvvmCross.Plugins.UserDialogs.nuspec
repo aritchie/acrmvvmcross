@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.UserDialogs</id>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
         <title>MvvmCross User Dialogs</title>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
@@ -29,8 +29,11 @@
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.Touch.dll" />
         <file src="..\bin\Release\MonoTouch\BTProgressHUD.dll" target="lib\MonoTouch\BTProgressHUD.dll" />
-        <file src="TouchBootstrapContent\UserDialogsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchUserDialogsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
 
-        <!--winstore, wpf-->
+        <!-- winphone -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.dll" />
+        <file src="BootstrapContent\UserDialogsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
     </files>
 </package>

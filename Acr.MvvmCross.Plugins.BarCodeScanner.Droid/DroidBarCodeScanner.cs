@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid.Platform;
+using ZXing;
 using ZXing.Mobile;
 
 
@@ -10,8 +12,11 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner.Droid {
     public class DroidBarCodeScanner : IBarCodeScanner {
 
         public async Task<BarCodeResult> Read(string topText, string bottomText, string flashlightText, string cancelText) {
-            var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
-            var scanner = new MobileBarcodeScanner(activity) { UseCustomOverlay = false };
+            var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;            
+
+            var scanner = new MobileBarcodeScanner(activity) {
+                UseCustomOverlay = false
+            };
             
             if (!String.IsNullOrWhiteSpace(topText)) {
                 scanner.TopText = topText;
@@ -31,6 +36,26 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner.Droid {
                 ? BarCodeResult.Fail
                 : new BarCodeResult(result.Text, result.BarcodeFormat.ToString())
             );
+        }
+
+
+        public void SetConfiguration(BarCodeScanningConfig cfg) {
+            var def = ZXing.Mobile.MobileBarcodeScanningOptions.Default;
+            def.AutoRotate = cfg.AutoRotate;
+            if (!String.IsNullOrWhiteSpace(cfg.CharacterSet)) {
+                def.CharacterSet = cfg.CharacterSet;
+            }
+            def.DelayBetweenAnalyzingFrames = cfg.DelayBetweenAnalyzingFrames ?? def.DelayBetweenAnalyzingFrames;
+            if (cfg.Formats != null && cfg.Formats.Count > 0) {
+                def.PossibleFormats = cfg.Formats
+                    .Select(x => (BarcodeFormat)(int)x)
+                    .ToList();
+            }
+            def.PureBarcode = cfg.PureBarcode;
+            def.InitialDelayBeforeAnalyzingFrames = (cfg.InitialDelayBeforeAnalyzingFrames ?? def.InitialDelayBeforeAnalyzingFrames);
+            def.TryHarder = cfg.TryHarder;
+            def.TryInverted = cfg.TryInverted;
+            def.UseFrontCameraIfAvailable = cfg.UseFrontCameraIfAvailable;
         }
     }
 }

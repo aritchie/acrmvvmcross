@@ -29,6 +29,9 @@
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Storage.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Storage.Touch.dll" />
         <file src="TouchBootstrapContent\StoragePluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\StoragePluginBootstrap.cs.pp" />
 
-        <!--winstore, wpf-->
+        <!-- winphone -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Storage.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Storage.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Storage.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Storage.WinPhone.dll" />
+        <file src="BootstrapContent\StoragePluginBootstrap.cs.pp" target="content\wp8\Bootstrap\StoragePluginBootstrap.cs.pp" />
     </files>
 </package>

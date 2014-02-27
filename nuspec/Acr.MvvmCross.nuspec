@@ -32,5 +32,9 @@
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoTouch\Acr.MvvmCross.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Touch.dll" />
+
+        <!-- winphone -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\wp8\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.WinPhone.dll" />        
     </files>
 </package>

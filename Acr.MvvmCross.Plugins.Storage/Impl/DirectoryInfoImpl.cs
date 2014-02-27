@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 
 namespace Acr.MvvmCross.Plugins.Storage.Impl {
@@ -43,25 +42,11 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
 
         public DateTime LastWriteTime {
             get { return this.directory.LastWriteTime; }
-            set { this.directory.LastWriteTime = value; }
-        }
-
-
-        public DateTime LastWriteTimeUtc {
-            get { return this.directory.LastWriteTimeUtc; }
-            set { this.directory.LastWriteTimeUtc = value; }
         }
 
 
         public DateTime LastAccessTime {
             get { return this.directory.LastAccessTime; }
-            set { this.directory.LastAccessTime = value; }
-        }
-
-
-        public DateTime LastAccessTimeUtc {
-            get { return this.directory.LastAccessTimeUtc; }
-            set { this.directory.LastAccessTimeUtc = value; }
         }
 
 
@@ -71,18 +56,26 @@ namespace Acr.MvvmCross.Plugins.Storage.Impl {
 
 
         public IEnumerable<IFileInfo> GetFiles(string searchPattern, bool recursive) {
+#if WINDOWS_PHONE
+            throw new NotImplementedException(); // TODO
+#else
             var search = (recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
             return this.directory
                 .GetFiles(searchPattern ?? "*.*", search)
                 .Select(x => new FileInfoImpl(x));
+#endif
         }
 
 
         public IEnumerable<IDirectoryInfo> GetSubDirectories(string searchPattern, bool recursive) {
+#if WINDOWS_PHONE
+            throw new NotImplementedException(); // TODO
+#else
             var search = (recursive ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly);
             return this.directory
                 .GetDirectories(searchPattern ?? "*.*", search)
                 .Select(x => new DirectoryInfoImpl(x));
+#endif
         }
 
 
