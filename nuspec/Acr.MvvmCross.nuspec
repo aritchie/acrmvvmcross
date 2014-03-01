@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross</id>
-        <version>0.8.5</version>
+        <version>0.9.0</version>
         <title>MvvmCross Utilities</title>
         <description>Just some easy utility classes that assist with MvvmCross</description>
         <authors>Allan Ritchie</authors>
@@ -12,7 +12,13 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>		
         <tags>xamarin mvvmcross</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+            <group>
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+                <dependency id="Newtonsoft.Json" version="6.0.1" />
+            </group>
+            <group targetFramework="MonoAndroid">
+                <dependency id="MvvmCross.HotTuna.Droid.Fragging" version="3.1.1" />
+            </group>
         </dependencies>
     </metadata>
     <files>		

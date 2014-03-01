@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
+using Windows.Foundation.Metadata;
+using Coding4Fun.Toolkit.Controls;
+using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
 
@@ -9,41 +11,100 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     public class WinPhoneUserDialogService : AbstractUserDialogService {
 
         public override void ActionSheet(string title, params SheetOption[] options) {
-            throw new NotImplementedException();
+            var list = new ListPicker();
+            list.SelectionMode = ;
         }
 
 
         public override void Alert(string message, string title, string okText, Action onOk) {
-            Deployment.Current.Dispatcher.BeginInvoke(() =>
-                MessageBox.Show(message, title, MessageBoxButton.OK)
-            );
+            Deployment.Current.Dispatcher.BeginInvoke(() => {
+                var messageBox = new CustomMessageBox {
+                    Caption = title,
+                    Message = message,
+                    LeftButtonContent = okText
+                };
+                messageBox.Dismissed += (sender, args) => onOk();
+                messageBox.Show();
+            });
         }
 
 
         public override void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText) {
-            throw new NotImplementedException();
+            Deployment.Current.Dispatcher.BeginInvoke(() => {
+                var messageBox = new CustomMessageBox {
+                    Caption = title,
+                    Message = message,
+                    LeftButtonContent = okText,
+                    RightButtonContent = cancelText
+                };
+                messageBox.Dismissed += (sender, args) => {
+                    switch (args.Result) {
+                    
+                        case CustomMessageBoxResult.LeftButton:
+                            onConfirm(true);
+                            break;
+
+                        case CustomMessageBoxResult.RightButton:
+                            onConfirm(false);
+                            break;
+                    }
+                };
+                messageBox.Show();
+            });
         }
 
 
         public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
-            throw new NotImplementedException();
+            // TODO: hint
+            var input = new InputPrompt {
+                Title = title,
+                Message = message,
+                IsCancelVisible = true
+            };
+            input.Completed += (sender, args) => promptResult(new PromptResult {
+                Ok = (args.PopUpResult == PopUpResult.Ok),
+                Text = args.Result
+            });
+            input.Show();
         }
 
 
         public override void Toast(string message, int timeoutSeconds, Action onClick) {
-            throw new NotImplementedException();
+            var toast = new ToastPrompt {
+                Message = message,
+                MillisecondsUntilHidden = timeoutSeconds * 1000
+            };
+            toast.Tap += (sender, args) => onClick();
+            toast.Show();
         }
 
 
         public override IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show) {
-            //var progress = new ProgressBar();
-            //var progress = new ProgressIndicator();
-            throw new NotImplementedException();
+            //var dlg = new ProgressDialog();
+            var dlg = new WinPhoneDialog {
+                Title = title
+            };
+            if (onCancel != null) {
+                dlg.SetCancel(onCancel, cancelText);
+            }
+            if (show) {
+                dlg.Show();
+            }
+            return dlg;
         }
 
 
         public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
-            throw new NotImplementedException();
+            var dlg = new WinPhoneDialog {
+                Title = title
+            };
+            if (onCancel != null) {
+                dlg.SetCancel(onCancel, cancelText);
+            }
+            if (show) {
+                dlg.Show();
+            }
+            return dlg;
         }
 
 
