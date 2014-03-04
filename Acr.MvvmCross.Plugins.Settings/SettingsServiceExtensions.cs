@@ -19,5 +19,32 @@ namespace Acr.MvvmCross.Plugins.Settings {
 
             return JsonConvert.DeserializeObject<T>(value);
         }
+
+
+        public static void SetIfNotSet(this ISettingsService settings, string key, object obj) {
+            if (!settings.Contains(key))
+                settings.Set(key, JsonConvert.SerializeObject(obj));
+        }
+
+
+        public static void SetIfNotSet(this ISettingsService settings, string key, string value) {
+            if (settings.Contains(key))
+                settings.Set(key, value);
+        }
+
+
+        //public static void AddOrUpdate(this ISettingsService settings, string key, object value) {
+        //    if (settings.Contains(key)) {
+                
+        //    }
+        //    else {
+                
+        //    }
+        //}
+
+
+        //public static void AddOrUpdate(this ISettingsService settings, string key, string value) {
+            
+        }
     }
 }
