@@ -101,6 +101,7 @@
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -245,6 +246,14 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
       <Project>{48E3C97D-92D5-4CDA-891F-C89AABC03CEB}</Project>
       <Name>Acr.MvvmCross.Plugins.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone.csproj">
+      <Project>{1D01630A-71EB-4297-9A2A-38FC07409D6A}</Project>
+      <Name>Acr.MvvmCross.Plugins.TextToSpeech.WinPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
+      <Project>{71342AA8-BDE5-4F15-8306-0E260E32DFA9}</Project>
+      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.csproj">
       <Project>{732D3A68-83F1-4CC0-97CB-AB5095998D70}</Project>

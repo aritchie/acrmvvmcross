@@ -90,6 +90,7 @@
     <Compile Include="Bootstrap\CalendarManagerScannerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ContactManagerScannerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -180,6 +181,14 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
       <Project>{48e3c97d-92d5-4cda-891f-c89aabc03ceb}</Project>
       <Name>Acr.MvvmCross.Plugins.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.Touch\Acr.MvvmCross.Plugins.TextToSpeech.Touch.csproj">
+      <Project>{e85b3e83-2cf5-48bc-86a5-6824dc189ec4}</Project>
+      <Name>Acr.MvvmCross.Plugins.TextToSpeech.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
+      <Project>{71342aa8-bde5-4f15-8306-0e260e32dfa9}</Project>
+      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Touch\Acr.MvvmCross.Plugins.UserDialogs.Touch.csproj">
       <Project>{290f8977-f101-4bd8-8a29-19c78b4ebc23}</Project>

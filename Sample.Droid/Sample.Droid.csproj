@@ -116,6 +116,7 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ExternalAppPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
     <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
@@ -238,6 +239,14 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
       <Project>{48e3c97d-92d5-4cda-891f-c89aabc03ceb}</Project>
       <Name>Acr.MvvmCross.Plugins.Storage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.Droid\Acr.MvvmCross.Plugins.TextToSpeech.Droid.csproj">
+      <Project>{7d65299c-b4d6-4028-8c7a-b4e098634d21}</Project>
+      <Name>Acr.MvvmCross.Plugins.TextToSpeech.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
+      <Project>{71342aa8-bde5-4f15-8306-0e260e32dfa9}</Project>
+      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Droid\Acr.MvvmCross.Plugins.UserDialogs.Droid.csproj">
       <Project>{f68a14ab-0965-4582-9399-f22f5c4ceb15}</Project>

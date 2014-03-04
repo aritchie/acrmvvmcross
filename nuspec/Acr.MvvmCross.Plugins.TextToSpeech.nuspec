@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.MvvmCross.Plugins.TextToSpeech</id>
+        <version>1.0.0</version>
+        <title>MvvmCross Text-To-Speech Plugin</title>
+        <description>Text-to-speech MvvmCross Plugin</description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>xamarin mvvmcross</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- PCL -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.TextToSpeech.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.Plugins.TextToSpeech.dll" />
+
+        <!-- droid -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.TextToSpeech.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.TextToSpeech.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.TextToSpeech.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.TextToSpeech.Droid.dll" />
+        <file src="BootstrapContent\TextToSpeechPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\TextToSpeechPluginBootstrap.cs.pp" />
+
+        <!-- touch -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.TextToSpeech.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.TextToSpeech.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.TextToSpeech.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.TextToSpeech.Touch.dll" />
+        <file src="TouchBootstrapContent\TouchTextToSpeechPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\TextToSpeechPluginBootstrap.cs.pp" />
+
+        <!--winphone-->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.TextToSpeech.dll" target="lib\wp8\Acr.MvvmCross.Plugins.TextToSpeech.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone.dll" />
+        <file src="BootstrapContent\TextToSpeechPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\TextToSpeechPluginBootstrap.cs.pp" />
+    </files>
+</package>
