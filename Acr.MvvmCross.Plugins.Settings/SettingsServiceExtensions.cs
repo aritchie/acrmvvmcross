@@ -45,6 +45,6 @@ namespace Acr.MvvmCross.Plugins.Settings {
 
         //public static void AddOrUpdate(this ISettingsService settings, string key, string value) {
             
-        }
+        //}
     }
 }

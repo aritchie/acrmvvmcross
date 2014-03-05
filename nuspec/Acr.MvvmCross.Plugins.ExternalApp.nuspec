@@ -31,7 +31,7 @@
 
         <!-- winphone -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.ExternalApp.dll" target="lib\wp8\Acr.MvvmCross.Plugins.ExternalApp.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.ExternalApp.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.ExternalApp.WinPhone.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.ExternalApp.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.ExternalApp.WindowsPhone.dll" />
         <file src="BootstrapContent\ExternalAppPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\ExternalAppPluginBootstrap.cs.pp" />        
     </files>
 </package>

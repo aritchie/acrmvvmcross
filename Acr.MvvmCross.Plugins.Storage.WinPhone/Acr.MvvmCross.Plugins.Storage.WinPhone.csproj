@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Acr.MvvmCross.Plugins.Storage.WinPhone</RootNamespace>
-    <AssemblyName>Acr.MvvmCross.Plugins.Storage.WinPhone</AssemblyName>
+    <AssemblyName>Acr.MvvmCross.Plugins.Storage.WindowsPhone</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>

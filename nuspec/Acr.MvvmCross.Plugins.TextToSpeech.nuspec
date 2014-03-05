@@ -31,7 +31,7 @@
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.TextToSpeech.dll" target="lib\wp8\Acr.MvvmCross.Plugins.TextToSpeech.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.TextToSpeech.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.TextToSpeech.WindowsPhone.dll" />
         <file src="BootstrapContent\TextToSpeechPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\TextToSpeechPluginBootstrap.cs.pp" />
     </files>
 </package>

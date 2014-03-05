@@ -85,6 +85,8 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.Settings.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.Storage.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.Storage.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
+			global::Acr.MvvmCross.Plugins.TextToSpeech.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
+			global::Acr.MvvmCross.Plugins.TextToSpeech.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.barColor = global::Sample.Droid.Resource.Attribute.barColor;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.barLength = global::Sample.Droid.Resource.Attribute.barLength;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.barWidth = global::Sample.Droid.Resource.Attribute.barWidth;
@@ -1311,10 +1313,13 @@ namespace Sample.Droid
 			public const int support_simple_spinner_dropdown_item = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int zxingscanneractivitylayout = 2130903078;
+			public const int TextToSpeech = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int zxingscannerfragmentlayout = 2130903079;
+			public const int zxingscanneractivitylayout = 2130903079;
+			
+			// aapt resource value: 0x7f030028
+			public const int zxingscannerfragmentlayout = 2130903080;
 			
 			static Layout()
 			{

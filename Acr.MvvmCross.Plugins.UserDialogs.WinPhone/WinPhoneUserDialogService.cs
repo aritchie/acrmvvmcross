@@ -3,7 +3,6 @@ using System.Windows;
 using Windows.Foundation.Metadata;
 using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
-using Microsoft.Phone.Shell;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
@@ -11,8 +10,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     public class WinPhoneUserDialogService : AbstractUserDialogService {
 
         public override void ActionSheet(string title, params SheetOption[] options) {
-            var list = new ListPicker();
-            list.SelectionMode = ;
         }
 
 

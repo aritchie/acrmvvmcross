@@ -133,6 +133,7 @@
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="Views\NetworkActivity.cs" />
     <Compile Include="Views\SplashActivity.cs" />
+    <Compile Include="Views\TextToSpeechActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -157,6 +158,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\filemanager_listitem.axml" />
+    <AndroidResource Include="Resources\Layout\TextToSpeech.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Home.axml" />

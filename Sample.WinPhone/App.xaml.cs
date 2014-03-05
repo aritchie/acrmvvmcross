@@ -4,32 +4,23 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Cirrious.CrossCore;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Sample.WinPhone.Resources;
 
 namespace Sample.WinPhone {
+    
     public partial class App : Application {
-        /// <summary>
-        /// Provides easy access to the root frame of the Phone Application.
-        /// </summary>
-        /// <returns>The root frame of the Phone Application.</returns>
+        
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
-        /// <summary>
-        /// Constructor for the Application object.
-        /// </summary>
+
         public App() {
-            // Global handler for uncaught exceptions.
-            UnhandledException += Application_UnhandledException;
+            this.UnhandledException += this.Application_UnhandledException;
 
-            // Standard XAML initialization
             InitializeComponent();
-
-            // Phone-specific initialization
             InitializePhoneApplication();
-
-            // Language display initialization
             InitializeLanguage();
 
             // Show graphics profiling information while debugging.
@@ -50,12 +41,23 @@ namespace Sample.WinPhone {
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
+            var setup = new Setup(RootFrame);
+            setup.Initialize();
+        }
 
+
+
+        private void RootFrameOnNavigating(object sender, NavigatingCancelEventArgs args)
+        {
+            args.Cancel = true;
+            RootFrame.Navigating -= RootFrameOnNavigating;
+            RootFrame.Dispatcher.BeginInvoke(() => Mvx.Resolve<Cirrious.MvvmCross.ViewModels.IMvxAppStart>().Start());
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e) {
+            RootFrame.Navigating += RootFrameOnNavigating;
         }
 
         // Code to execute when the application is activated (brought to foreground)
@@ -109,6 +111,7 @@ namespace Sample.WinPhone {
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
+
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;

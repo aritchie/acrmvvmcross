@@ -32,7 +32,7 @@
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.BarCodeScanner.dll" target="lib\wp8\Acr.MvvmCross.Plugins.BarCodeScanner.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.BarCodeScanner.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.BarCodeScanner.WinPhone.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.BarCodeScanner.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.BarCodeScanner.WindowsPhone.dll" />
         <file src="BootstrapContent\BarCodeScannerPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\BarCodeScannerPluginBootstrap.cs.pp" />
     </files>
 </package>

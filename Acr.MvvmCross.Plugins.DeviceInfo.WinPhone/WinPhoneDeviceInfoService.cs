@@ -15,8 +15,8 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.WinPhone {
             this.Model = DeviceStatus.DeviceName;
             this.OperatingSystem = Env.OSVersion.ToString();
             
-            this.IsRearCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.Primary);
-            this.IsFrontCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.FrontFacing);
+            //this.IsRearCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.Primary);
+            //this.IsFrontCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.FrontFacing);
             this.IsSimulator = (DevEnv.DeviceType == DeviceType.Emulator);
 
             switch (GetScaleFactor()) {               

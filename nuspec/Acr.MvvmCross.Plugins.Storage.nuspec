@@ -31,7 +31,7 @@
 
         <!-- winphone -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Storage.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Storage.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Storage.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Storage.WinPhone.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Storage.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Storage.WindowsPhone.dll" />
         <file src="BootstrapContent\StoragePluginBootstrap.cs.pp" target="content\wp8\Bootstrap\StoragePluginBootstrap.cs.pp" />
     </files>
 </package>

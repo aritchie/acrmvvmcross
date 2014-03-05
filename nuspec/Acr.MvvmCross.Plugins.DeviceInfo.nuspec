@@ -31,7 +31,7 @@
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\wp8\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.DeviceInfo.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.DeviceInfo.WindowsPhone.dll" />
         <file src="BootstrapContent\DeviceInfoPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
     </files>
 </package>

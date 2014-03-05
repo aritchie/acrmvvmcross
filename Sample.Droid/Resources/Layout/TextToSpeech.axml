@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <EditText
+        local:MvxBind="Text Text"
+        android:hint="Text to Say"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Speak"
+        android:text="Speak"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

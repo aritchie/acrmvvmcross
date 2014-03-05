@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Acr.MvvmCross.Plugins.DeviceInfo.WinPhone</RootNamespace>
-    <AssemblyName>Acr.MvvmCross.Plugins.DeviceInfo.WinPhone</AssemblyName>
+    <AssemblyName>Acr.MvvmCross.Plugins.DeviceInfo.WindowsPhone</AssemblyName>
     <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
