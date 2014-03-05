@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-using Windows.Foundation.Metadata;
+using System.Windows.Controls;
 using Coding4Fun.Toolkit.Controls;
 using Microsoft.Phone.Controls;
 
@@ -10,6 +10,14 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     public class WinPhoneUserDialogService : AbstractUserDialogService {
 
         public override void ActionSheet(string title, params SheetOption[] options) {
+            //var lb = new ListBox {
+            //    ItemsSource = options,
+            //    ItemTemplate = new DataTemplate {
+                    
+            //    }
+            //};
+            //lb.SelectionChanged += (sender, args) => {  
+            //};
         }
 
 
@@ -20,7 +28,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
                     Message = message,
                     LeftButtonContent = okText
                 };
-                messageBox.Dismissed += (sender, args) => onOk();
+                messageBox.Dismissed += (sender, args) => {
+                    if (onOk != null)
+                        onOk();
+                };
                 messageBox.Show();
             });
         }
@@ -106,12 +117,12 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public override void ShowLoading(string title) {
-            throw new NotImplementedException();
+            // TODO
         }
 
 
         public override void HideLoading() {
-            throw new NotImplementedException();
+            // TODO
         }
     }
 }

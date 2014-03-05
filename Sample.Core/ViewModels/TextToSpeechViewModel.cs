@@ -38,7 +38,7 @@ namespace Sample.Core.ViewModels {
                         this.dialogService.Alert("Please enter the text!");
                     }
                     else { 
-                        this.speechService.Speak(this.Text);
+                        await this.speechService.Speak(this.Text);
                     }
                 });
             }

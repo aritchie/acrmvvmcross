@@ -62,5 +62,20 @@ namespace Sample.Core.ViewModels {
             };
             this.View = new MvxCommand<MenuItem>(menu => menu.Command());
         }
+
+
+        // for windows phone
+        private MenuItem menuItem;
+        public MenuItem SelectedItem {
+            get { return this.menuItem; }
+            set {
+                if (this.menuItem == value)
+                    return;
+
+                this.menuItem = value;
+                value.Command();
+                this.RaisePropertyChanged("SelectedItem");
+            }
+        }
     }
 }

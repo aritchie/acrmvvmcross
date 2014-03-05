@@ -80,5 +80,9 @@ Allows for PCL use of
 * and File Streams
 
 
+##Text-To-Speech (TTS)
+Pass any text to async method
+TODO
+
 ##Calendar, Contact, and Cache Managers
 Work in progress

@@ -3,8 +3,8 @@
     <metadata>
         <id>Acr.MvvmCross.Plugins.Storage</id>
         <version>0.3.0</version>
-        <title>MvvmCross Storage</title>
-        <description>An improved file store plugin for MvvmCross</description>
+        <title>MvvmCross Storage Plugin</title>
+        <description>An improved file store plugin for MvvmCross (iOS, Android, and WP8)</description>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>

@@ -9,6 +9,7 @@ nuget pack Acr.MvvmCross.Plugins.Settings.nuspec
 nuget pack Acr.MvvmCross.Plugins.Storage.nuspec
 nuget pack Acr.MvvmCross.Plugins.UserDialogs.nuspec
 nuget pack Acr.MvvmCross.Plugins.Network.nuspec
-rem nuget pack Acr.MvvmCross.Plugins.ContactManager.nuspec
-rem nuget pack Acr.MvvmCross.Plugins.CalendarManager.nuspec
+nuget pack Acr.MvvmCross.Plugins.TextToSpeech.nuspec
+nuget pack Acr.MvvmCross.Plugins.ContactManager.nuspec
+nuget pack Acr.MvvmCross.Plugins.CalendarManager.nuspec
 pause

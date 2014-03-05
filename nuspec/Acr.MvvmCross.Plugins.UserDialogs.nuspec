@@ -6,7 +6,7 @@
         <title>MvvmCross User Dialogs</title>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
-        <description>Alert, Confirm, Prompt, Toast, Action Sheet, Loading, and Progress Dialogs calls for your core PCL MvvmCross library. Loading and Progress dialogs courtesy of AndHUD and BTProgressHUD</description>
+        <description>Alert, Confirm, Prompt, Toast, Action Sheet, Loading, and Progress Dialogs calls for your core PCL MvvmCross library. Loading and Progress dialogs courtesy of AndHUD, BTProgressHUD, WPToolkit, and Coding4Fun toolkit (iOS, Android, and WP8)</description>
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
         <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>

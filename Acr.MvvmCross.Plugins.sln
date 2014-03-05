@@ -54,7 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Common", ".Common", "{E950
 		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
 		license.txt = license.txt
 		nuspec\nuget.exe = nuspec\nuget.exe
-		nuspec\pack.bat = nuspec\pack.bat
+		nuspec\pack.cmd = nuspec\pack.cmd
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -185,7 +185,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Text-To-Speech (TODO)", "Te
 	ProjectSection(SolutionItems) = preProject
 		nuspec\Acr.MvvmCross.Plugins.TextToSpeech.nuspec = nuspec\Acr.MvvmCross.Plugins.TextToSpeech.nuspec
 		nuspec\BootstrapContent\TextToSpeechPluginBootstrap.cs.pp = nuspec\BootstrapContent\TextToSpeechPluginBootstrap.cs.pp
-		nuspec\TouchBootstrapContent\TouchTextToSpeechPluginBootstrap.pp = nuspec\TouchBootstrapContent\TouchTextToSpeechPluginBootstrap.pp
+		nuspec\TouchBootstrapContent\TouchTextToSpeechPluginBootstrap.cs.pp = nuspec\TouchBootstrapContent\TouchTextToSpeechPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Plugins.TextToSpeech.Droid", "Acr.MvvmCross.Plugins.TextToSpeech.Droid\Acr.MvvmCross.Plugins.TextToSpeech.Droid.csproj", "{7D65299C-B4D6-4028-8C7A-B4E098634D21}"
