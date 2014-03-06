@@ -12,11 +12,14 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
         // run as singleton or instance - instance may be better for android mechanism
         public Task Speak(string text) {
             return Task.Factory.StartNew(() => 
+                // TODO: terrible
                 this.DoOnActivity(activity => {
                     var voice = new Android.Speech.Tts.TextToSpeech(activity, this); // TODO: engine?
-                    var status = voice.Speak(text, QueueMode.Flush, new Dictionary<string, string>());
-                    if (status == OperationResult.Error)
-                        throw new ArgumentException("Unable to send TTS request");
+                    this.Dispatcher.RequestMainThreadAction(() => {
+                        var status = voice.Speak(text, QueueMode.Flush, new Dictionary<string, string>());
+                        if (status == OperationResult.Error)
+                            throw new ArgumentException("Unable to send TTS request");
+                    });
                 })
             );
         }

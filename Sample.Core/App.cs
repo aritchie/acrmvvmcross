@@ -16,7 +16,6 @@ namespace Sample.Core {
         public override void LoadPlugins(IMvxPluginManager pluginManager) {
             base.LoadPlugins(pluginManager);
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.BarCodeScanner.PluginLoader>();
-            pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.Cache.PluginLoader>();
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.DeviceInfo.PluginLoader>();
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.ExternalApp.PluginLoader>();
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.Settings.PluginLoader>();

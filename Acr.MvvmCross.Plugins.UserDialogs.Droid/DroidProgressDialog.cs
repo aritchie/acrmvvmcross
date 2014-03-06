@@ -54,7 +54,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
         public virtual bool IsDeterministic { get; set; }
         public virtual bool IsShowing { get; private set; }
-        
 
 
         private Action cancelAction;
@@ -76,7 +75,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
         public virtual void Hide() {
             this.IsShowing = false;
-            AndHUD.Shared.Dismiss(this.context);
+            this.Dispatcher.RequestMainThreadAction(() => AndHUD.Shared.Dismiss(this.context));
         }
 
         #endregion
@@ -114,7 +113,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                     this.context, 
                     txt,
                     p, 
-                    MaskType.Clear,
+                    MaskType.Black,
                     null,
                     this.OnCancelClick
                 )

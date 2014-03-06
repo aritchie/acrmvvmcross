@@ -44,20 +44,9 @@ namespace Sample.Core.ViewModels {
                     Title = "Text-To-Speech (TTS)",
                     Command = () => this.ShowViewModel<TextToSpeechViewModel>()
                 },
-
-
-                // TODO
                 new MenuItem {
-                    Title = "File Manager Example",
+                    Title = "File Manager Example (TODO)",
                     Command = () => this.ShowViewModel<FileManagerViewModel>()
-                },
-                new MenuItem {
-                    Title = "Calendar Management",
-                    Command = () => dialogService.Alert("TODO")
-                },
-                new MenuItem {
-                    Title = "Contact Management",
-                    Command = () => dialogService.Alert("TODO")
                 }
             };
             this.View = new MvxCommand<MenuItem>(menu => menu.Command());

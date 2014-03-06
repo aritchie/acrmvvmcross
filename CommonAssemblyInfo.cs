@@ -7,7 +7,7 @@ using System.Resources;
 #else
 [assembly: AssemblyConfiguration("")]
 #endif
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Allan Ritchie")]
 [assembly: AssemblyProduct("Acr.MvvmCross.Plugins")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]

@@ -38,18 +38,6 @@
       <Project>{1ed7e825-98ed-4740-8dd7-96e4aa3f1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Cache\Acr.MvvmCross.Plugins.Cache.csproj">
-      <Project>{88d59d24-d2ab-490f-9a4a-471ba5e0cb1d}</Project>
-      <Name>Acr.MvvmCross.Plugins.Cache</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager\Acr.MvvmCross.Plugins.CalendarManager.csproj">
-      <Project>{e92c593d-3ff1-4174-89f2-5500a8b51616}</Project>
-      <Name>Acr.MvvmCross.Plugins.CalendarManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager\Acr.MvvmCross.Plugins.ContactManager.csproj">
-      <Project>{e45df2a0-11d2-43a1-a392-05bb75b03a8d}</Project>
-      <Name>Acr.MvvmCross.Plugins.ContactManager</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo\Acr.MvvmCross.Plugins.DeviceInfo.csproj">
       <Project>{62822de8-ceb9-4602-b780-84e9e3d11b88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
@@ -87,8 +75,6 @@
     <Compile Include="App.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\CalendarViewModel.cs" />
-    <Compile Include="ViewModels\ContactsViewModel.cs" />
     <Compile Include="ViewModels\DeviceInfoViewModel.cs" />
     <Compile Include="ViewModels\DialogsViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />

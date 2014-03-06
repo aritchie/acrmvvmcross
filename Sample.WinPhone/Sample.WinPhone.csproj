@@ -94,8 +94,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\BarCodeScannerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\CalendarManagerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ContactManagerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
@@ -223,26 +221,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\Acr.MvvmCross.Plugins.BarCodeScanner.csproj">
       <Project>{1ED7E825-98ED-4740-8DD7-96E4AA3F1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Cache\Acr.MvvmCross.Plugins.Cache.csproj">
-      <Project>{88D59D24-D2AB-490F-9A4A-471BA5E0CB1D}</Project>
-      <Name>Acr.MvvmCross.Plugins.Cache</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager.WinPhone\Acr.MvvmCross.Plugins.CalendarManager.WinPhone.csproj">
-      <Project>{42D85D1F-3CA8-4DFD-AD21-61C50BFF6269}</Project>
-      <Name>Acr.MvvmCross.Plugins.CalendarManager.WinPhone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager\Acr.MvvmCross.Plugins.CalendarManager.csproj">
-      <Project>{E92C593D-3FF1-4174-89F2-5500A8B51616}</Project>
-      <Name>Acr.MvvmCross.Plugins.CalendarManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager.WinPhone\Acr.MvvmCross.Plugins.ContactManager.WinPhone.csproj">
-      <Project>{D992F29F-2FAE-4B36-9934-EE6E4996B220}</Project>
-      <Name>Acr.MvvmCross.Plugins.ContactManager.WinPhone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager\Acr.MvvmCross.Plugins.ContactManager.csproj">
-      <Project>{E45DF2A0-11D2-43A1-A392-05BB75B03A8D}</Project>
-      <Name>Acr.MvvmCross.Plugins.ContactManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone\Acr.MvvmCross.Plugins.DeviceInfo.WinPhone.csproj">
       <Project>{18AD7705-C9A9-42C0-9265-14A9559E441F}</Project>

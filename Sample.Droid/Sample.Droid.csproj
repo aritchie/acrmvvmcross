@@ -111,8 +111,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrap\CalendarManagerPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ContactManagerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\ExternalAppPluginBootstrap.cs" />
@@ -142,16 +140,10 @@
     <AndroidResource Include="Resources\Layout\Splash.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Layout\Calendar.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\Layout\Dialogs.axml" />
     <AndroidResource Include="Resources\Layout\DeviceInfo.axml" />
     <AndroidResource Include="Resources\Layout\Network.axml" />
     <AndroidResource Include="Resources\Layout\FileManager.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\Layout\Contacts.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\home_listitem.axml">
@@ -187,22 +179,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\Acr.MvvmCross.Plugins.BarCodeScanner.csproj">
       <Project>{1ed7e825-98ed-4740-8dd7-96e4aa3f1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager.Droid\Acr.MvvmCross.Plugins.CalendarManager.Droid.csproj">
-      <Project>{f31e017a-40f7-4a49-9450-b3f8af335a6f}</Project>
-      <Name>Acr.MvvmCross.Plugins.CalendarManager.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.CalendarManager\Acr.MvvmCross.Plugins.CalendarManager.csproj">
-      <Project>{e92c593d-3ff1-4174-89f2-5500a8b51616}</Project>
-      <Name>Acr.MvvmCross.Plugins.CalendarManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager.Droid\Acr.MvvmCross.Plugins.ContactManager.Droid.csproj">
-      <Project>{dc8f7425-f3e8-460d-b8d1-916926c84a19}</Project>
-      <Name>Acr.MvvmCross.Plugins.ContactManager.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ContactManager\Acr.MvvmCross.Plugins.ContactManager.csproj">
-      <Project>{e45df2a0-11d2-43a1-a392-05bb75b03a8d}</Project>
-      <Name>Acr.MvvmCross.Plugins.ContactManager</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.Droid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.csproj">
       <Project>{d4b35565-a9b3-4b4b-aa68-cce7d5a67f78}</Project>
