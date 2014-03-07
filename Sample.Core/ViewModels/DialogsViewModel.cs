@@ -36,9 +36,9 @@ namespace Sample.Core.ViewModels {
             this.ActionSheet = new MvxCommand(() => 
                 dialogService.ActionSheet(
                     "Test Title",
-                    new SheetOption("Option 1", () => this.Result = "Option 1"),
-                    new SheetOption("Option 2", () => this.Result = "Option 2"),
-                    new SheetOption("Option 3", () => this.Result = "Option 3")
+                    new SheetOption("Option 1", () => this.Result = "Option 1 Selected"),
+                    new SheetOption("Option 2", () => this.Result = "Option 2 Selected"),
+                    new SheetOption("Option 3", () => this.Result = "Option 3 Selected")
                 )
             );
 
@@ -62,9 +62,10 @@ namespace Sample.Core.ViewModels {
             });
 
             this.Toast = new MvxCommand(() => {
-                var pressed = false;
-                dialogService.Toast("Test Toast", onClick: () => pressed = true);
-                this.Result = (pressed ? "Toast Pressed" : "Toast Shown");
+                this.Result = "Toast Shown";
+                dialogService.Toast("Test Toast", () => {
+                    this.Result = "Toast Pressed";
+                });
             });
 
             this.Progress = new MvxCommand(async () => {

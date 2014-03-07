@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using BigTed;
 using MonoTouch.UIKit;
 
 
@@ -99,16 +98,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
             }
 
             return dlg;
-        }
-
-
-        public override void ShowLoading(string title) {
-            BTProgressHUD.Show(title, -1, ProgressHUD.MaskType.Black);
-        }
-
-
-        public override void HideLoading() {
-            BTProgressHUD.Dismiss();
         }
 
 

@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using Android.App;
 using Android.Widget;
-using AndroidHUD;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Core;
 using Cirrious.CrossCore.Droid.Platform;
@@ -133,16 +132,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 dlg.Show();
             }
             return dlg;
-        }
-
-
-        public override void ShowLoading(string title) {
-            this.Dispatch(activity => AndHUD.Shared.Show(activity, title));
-        }
-
-
-        public override void HideLoading() {
-            this.Dispatch(activity => AndHUD.Shared.Dismiss(activity));
         }
 
 

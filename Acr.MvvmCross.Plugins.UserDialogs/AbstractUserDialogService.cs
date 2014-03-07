@@ -13,8 +13,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         public abstract void Toast(string message, int timeoutSeconds, Action onClick);
         public abstract IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show);
         public abstract IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show);        
-        public abstract void ShowLoading(string title);
-        public abstract void HideLoading();
+
 
         public Task AlertAsync(string message, string title, string okText) {
             var tcs = new TaskCompletionSource<object>();
@@ -34,6 +33,22 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
             var tcs = new TaskCompletionSource<PromptResult>();
             this.Prompt(message, tcs.SetResult, title, okText, cancelText, hint);
             return tcs.Task;
+        }
+
+
+        private IProgressDialog loading;
+        public virtual void ShowLoading(string title) {
+            if (this.loading == null) {
+                this.Loading(title, null, null, true);
+            }
+        }
+
+
+        public virtual void HideLoading() {
+            if (this.loading != null) {
+                this.loading.Dispose();
+                this.loading = null;
+            }
         }
     }
 }

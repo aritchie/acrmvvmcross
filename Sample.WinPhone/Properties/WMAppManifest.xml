@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{cf81af67-3fb4-4790-bb7d-80696b15430d}" Title="Sample.WinPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Sample.WinPhone author" Description="Sample description" Publisher="Sample.WinPhone" PublisherID="{f94d7b01-555e-4ad5-b66b-87e7dde15bb3}">
+  <App xmlns="" ProductID="{cf81af67-3fb4-4790-bb7d-80696b15430d}" Title="ACR MvvmCross Plugins" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Allan Ritchie" Description="Sample description" Publisher="Allan Ritchie" PublisherID="{f94d7b01-555e-4ad5-b66b-87e7dde15bb3}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -11,9 +11,9 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
       <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
       <Capability Name="ID_CAP_ISV_CAMERA" />
-      <Capability Name="ID_CAP_CONTACTS" />
-      <Capability Name="ID_CAP_APPOINTMENTS" />
       <Capability Name="ID_CAP_MICROPHONE" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
     </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
@@ -24,7 +24,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Sample.WinPhone</Title>
+          <Title>ACR MvvmCross Plugins</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

@@ -123,8 +123,6 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Views\CalendarActivity.cs" />
-    <Compile Include="Views\ContactsActivity.cs" />
     <Compile Include="Views\DeviceInfoActivity.cs" />
     <Compile Include="Views\DialogsActivity.cs" />
     <Compile Include="Views\FileManagerActivity.cs" />
