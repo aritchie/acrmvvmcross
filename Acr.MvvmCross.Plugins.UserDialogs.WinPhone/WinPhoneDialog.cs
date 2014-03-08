@@ -3,18 +3,32 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Acr.MvvmCross.Plugins.UserDialogs.WinPhone.Views;
+using Coding4Fun.Toolkit.Controls;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     
     public class WinPhoneProgressDialog : IProgressDialog {
-        private readonly Popup popup;
-        private readonly ProgressDialogControl control;
+        private readonly ProgressOverlay progress;
+        private readonly TextBlock loadingText;
+        private readonly TextBlock percentText;
+        private readonly Button cancelButton;
+        private readonly StackPanel content;
 
 
         public WinPhoneProgressDialog() {
-            this.control = new ProgressDialogControl();
-            this.popup = this.CreatePopup(this.control);
+            this.loadingText = new TextBlock();
+            this.percentText = new TextBlock { Visibility = Visibility.Collapsed };
+            this.cancelButton = new Button { Visibility = Visibility.Collapsed };
+
+            this.content = new StackPanel();
+            this.content.Children.Add(this.loadingText);
+            this.content.Children.Add(this.percentText);
+            this.content.Children.Add(this.cancelButton);
+
+            this.progress = new ProgressOverlay {
+                Content = this.content
+            };
         }
 
         #region IProgressDialog Members
@@ -58,31 +72,26 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public bool IsShowing {
-            get { return this.popup.IsOpen; }
+            get { return (this.progress.Visibility == Visibility.Visible); }
         }
 
 
         private Action onCancel;
         private string cancelText;
         public void SetCancel(Action onCancel, string cancelText) {
-            this.control.CancelButton.Visibility = Visibility.Visible;
-            this.control.CancelButton.Content = cancelText;
-            this.control.CancelButton.Click += (sender, args) => onCancel();
+            this.cancelButton.Visibility = Visibility.Visible;
+            this.cancelButton.Content = cancelText;
+            this.cancelButton.Click += (sender, args) => onCancel();
         }
 
 
         public void Show() {
-            this.Dispatch(() => this.popup.IsOpen = true);
+            this.progress.Show();
         }
 
 
         public void Hide() {
-            this.Dispatch(() => this.popup.IsOpen = false);
-        }
-
-
-        protected virtual Popup CreatePopup(UserControl control) {
-            return Helpers.CreatePopup(control);
+            this.progress.Hide();
         }
 
 
@@ -93,10 +102,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
         private void Refresh() {
             this.Dispatch(() => {
-                this.control.LoadingText.Text = this.text;
-                if (this.IsDeterministic) {
-                    this.control.ProgressBar.Value = this.PercentComplete;
-                }
+                this.loadingText.Text = this.text;
+                if (this.IsDeterministic)
+                    this.percentText.Text = this.percentComplete + "%";
             });
         }
 

@@ -38,7 +38,10 @@ namespace Sample.Core.ViewModels {
                     "Test Title",
                     new SheetOption("Option 1", () => this.Result = "Option 1 Selected"),
                     new SheetOption("Option 2", () => this.Result = "Option 2 Selected"),
-                    new SheetOption("Option 3", () => this.Result = "Option 3 Selected")
+                    new SheetOption("Option 3", () => this.Result = "Option 3 Selected"),
+                    new SheetOption("Option 4", () => this.Result = "Option 4 Selected"),
+                    new SheetOption("Option 5", () => this.Result = "Option 5 Selected"),
+                    new SheetOption("Option 6", () => this.Result = "Option 6 Selected")
                 )
             );
 

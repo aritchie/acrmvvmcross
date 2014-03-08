@@ -1,10 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using Acr.MvvmCross.Plugins.UserDialogs.WinPhone.Views;
 using Coding4Fun.Toolkit.Controls;
-using Microsoft.Phone.Controls;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
@@ -12,72 +11,91 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     public class WinPhoneUserDialogService : AbstractUserDialogService {
 
         public override void ActionSheet(string title, params SheetOption[] options) {
-            var actionSheet = new ActionSheet();
-            if (String.IsNullOrEmpty(title)) {
-                actionSheet.Title.Visibility = Visibility.Collapsed;
-            }
-            else {
-                actionSheet.Title.Text = title;
-            }
+            var alert = new MessagePrompt { Title = title };
+            alert.ActionPopUpButtons.Clear();
 
-            var popup = this.CreatePopup(actionSheet);            
-            actionSheet.List.ItemsSource = options;
-            actionSheet.List.SelectionChanged += (sender, args) => {
-                popup.IsOpen = false;
-                var action = options[actionSheet.List.SelectedIndex].Action;
-                if (action != null)
-                    action();
-            };
-            popup.IsOpen = true;
+            options.ToList().ForEach(x => {
+                var btn = new Button { Content = x.Text };
+                btn.Click += (sender, args) => {
+                    alert.Hide();
+                    if (x.Action != null)
+                        x.Action();
+                };
+                alert.ActionPopUpButtons.Add(btn);
+            });
+            alert.Show();
         }
 
 
         public override void Alert(string message, string title, string okText, Action onOk) {
-            var messageBox = new CustomMessageBox {
-                Caption = title,
-                Message = message,
-                LeftButtonContent = okText
+            var alert = new MessagePrompt {
+                Title = title,
+                Message = message
             };
-            messageBox.Dismissed += (sender, args) => {
-                if (onOk != null)
-                    onOk();
-            };
-            this.Dispatch(messageBox.Show);
+            var btn = new Button { Content = okText };
+            btn.Click += (sender, args) => alert.Hide();
+
+            if (onOk != null) { 
+                alert.Completed += (sender, args) => onOk();
+            }
+            alert.ActionPopUpButtons.Clear();
+            alert.ActionPopUpButtons.Add(btn);
+            alert.Show();
         }
 
 
         public override void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText) {
-            var messageBox = new CustomMessageBox {
-                Caption = title,
-                Message = message,
-                LeftButtonContent = okText,
-                RightButtonContent = cancelText
+            var alert = new MessagePrompt {
+                Title = title,
+                Message = message
             };
-            messageBox.Dismissed += (sender, args) => onConfirm(args.Result == CustomMessageBoxResult.LeftButton);
-            this.Dispatch(messageBox.Show);
+            var btnYes = new Button { Content = okText };
+            btnYes.Click += (sender, args) => {
+                alert.Hide();
+                onConfirm(true);
+            };
+
+            var btnNo = new Button { Content = cancelText };
+            btnNo.Click += (sender, args) => {
+                alert.Hide();
+                onConfirm(false);
+            };
+
+            alert.ActionPopUpButtons.Clear();
+            alert.ActionPopUpButtons.Add(btnYes);
+            alert.ActionPopUpButtons.Add(btnNo);
+            alert.Show();
         }
 
 
         public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
-            // TODO: hint
+            var yes = false;
+
             var input = new InputPrompt {
                 Title = title,
                 Message = message,
                 IsCancelVisible = true,
             };
-            input.ActionPopUpButtons[0].Content = okText;
-            if (cancelText == null) {
-                input.ActionPopUpButtons[0].Visibility = Visibility.Collapsed;
-            }
-            else { 
-                input.ActionPopUpButtons[1].Content = cancelText;
-            }
+            input.ActionPopUpButtons.Clear();
 
+            var btnYes = new Button { Content = okText };
+            btnYes.Click += (sender, args) => {
+                yes = true;
+                input.Hide();
+            };
+
+            var btnNo = new Button { Content = cancelText };
+            btnNo.Click += (sender, args) => input.Hide();
+
+            input.ActionPopUpButtons.Clear();
+            input.ActionPopUpButtons.Add(btnYes);
+            input.ActionPopUpButtons.Add(btnNo);
+            
             input.Completed += (sender, args) => promptResult(new PromptResult {
-                Ok = (args.PopUpResult == PopUpResult.Ok),
-                Text = args.Result
+                Ok = yes,
+                Text = input.Value
             });
-            this.Dispatch(input.Show);
+            input.Show();
         }
 
 
@@ -86,11 +104,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
                 Message = message,
                 MillisecondsUntilHidden = timeoutSeconds * 1000
             };
-            toast.Tap += (sender, args) => {
-                if (onClick != null) 
-                    onClick();
-            };
-            this.Dispatch(toast.Show);
+            if (onClick != null) {
+                toast.Tap += (sender, args) => onClick();
+            }
+            toast.Show();
         }
 
 
@@ -123,12 +140,15 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         protected virtual Popup CreatePopup(UserControl control) {
-            return Helpers.CreatePopup(control);
-        }
+            var size = Application.Current.RootVisual.RenderSize;
 
-
-        protected virtual void Dispatch(Action action) {
-            Deployment.Current.Dispatcher.BeginInvoke(action);
+            return new Popup {
+                VerticalOffset = (size.Width - control.ActualWidth) / 2,
+                HorizontalOffset = (size.Height - control.ActualHeight) / 2,
+                Width = size.Width,
+                Height = size.Height,
+                Child = control
+            };
         }
     }
 }

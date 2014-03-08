@@ -6,8 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:winPhone="clr-namespace:Acr.MvvmCross.WinPhone;assembly=Acr.MvvmCross.WinPhone"
-    xmlns:commands="clr-namespace:Cirrious.MvvmCross.WindowsPhone.Commands;assembly=Cirrious.MvvmCross.WindowsPhone"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -29,19 +27,22 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel>
-                <ListBox Grid.Row="1" ItemsSource="{Binding Menu}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Title}" FontSize="30"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>
-        </Grid>
+        <StackPanel Grid.Row="1" Margin="12,0,12,0">
+            <ListBox  ItemsSource="{Binding Menu}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                <!--<i:Interaction.Triggers>
+                        <EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding ItemSelected, Mode=OneWay}"/>
+                        </EventTrigger>
+                    </i:Interaction.Triggers>-->
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Title}" FontSize="{StaticResource PhoneFontSizeLarge}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
     </Grid>
 
 </winPhone:Mvx2PhonePage>

@@ -38,7 +38,7 @@
                 <Button Content="Loading" Command="{Binding Loading}"></Button>
                 <Button Content="Loading (No Cancel)" Command="{Binding LoadingNoCancel}"></Button>
                 <Button Content="Progress" Command="{Binding Progress}"></Button>
-                <Button Content="ProgressNoCancel" Command="{Binding ProgressNoCancel}"></Button>
+                <Button Content="Progress (No Cancel)" Command="{Binding ProgressNoCancel}"></Button>
             </StackPanel>
         </ScrollViewer>
     </Grid>
