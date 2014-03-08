@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using Acr.MvvmCross.Plugins.UserDialogs.WinPhone.Views;
 using Coding4Fun.Toolkit.Controls;
 
 
@@ -27,7 +25,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             this.content.Children.Add(this.cancelButton);
 
             this.progress = new ProgressOverlay {
-                Content = this.content
+                //Content = this.content
+                Content = "Loading"
             };
         }
 
@@ -71,8 +70,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         public bool IsDeterministic { get; set; }
 
 
+
+        private bool isShowing;
         public bool IsShowing {
-            get { return (this.progress.Visibility == Visibility.Visible); }
+            get { return this.isShowing; }
         }
 
 
@@ -86,11 +87,17 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public void Show() {
+            if (this.isShowing)
+                return;
+
             this.progress.Show();
         }
 
 
         public void Hide() {
+            if (!this.isShowing)
+                return;
+
             this.progress.Hide();
         }
 

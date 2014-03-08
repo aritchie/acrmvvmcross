@@ -66,7 +66,7 @@ namespace Sample.Core.ViewModels {
 
             this.Toast = new MvxCommand(() => {
                 this.Result = "Toast Shown";
-                dialogService.Toast("Test Toast", () => {
+                dialogService.Toast("Test Toast", onClick: () => {
                     this.Result = "Toast Pressed";
                 });
             });

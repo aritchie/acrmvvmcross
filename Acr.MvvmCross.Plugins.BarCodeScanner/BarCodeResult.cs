@@ -7,7 +7,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 
         public bool Success { get; private set; }
         public string Code { get; private set; }
-        public string Format { get; private set; }
+        public BarCodeFormat Format { get; private set; }
 
 
         public static BarCodeResult Fail { get; private set; }
@@ -20,7 +20,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 
         private BarCodeResult() { }
 
-        public BarCodeResult(string code, string format) {
+        public BarCodeResult(string code, BarCodeFormat format) {
             this.Success = true;
             this.Code = code;
             this.Format = format;

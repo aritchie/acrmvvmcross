@@ -83,9 +83,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\BarCodeScanner.cs">
+      <Link>BarCodeScanner.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Plugin.cs" />
-    <Compile Include="WinPhoneBarCodeScanner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

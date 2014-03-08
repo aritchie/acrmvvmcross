@@ -38,6 +38,7 @@
     </Compile>
     <Compile Include="BarCodeFormat.cs" />
     <Compile Include="BarCodeResult.cs" />
+    <None Include="BarCodeScanner.cs" />
     <Compile Include="BarCodeScanningConfig.cs" />
     <Compile Include="IBarCodeScanner.cs" />
     <Compile Include="PluginLoader.cs" />
