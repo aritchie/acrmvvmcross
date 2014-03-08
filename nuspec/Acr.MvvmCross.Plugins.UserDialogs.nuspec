@@ -19,6 +19,13 @@
                 <dependency id="Coding4Fun.Toolkit.Controls" version="2.0.7" />
             </group>
         </dependencies>
+        <releaseNotes>
+            1.1
+            Adds Windows Phone 8 Support
+
+            1.0
+            Initial Release
+        </releaseNotes>
     </metadata>
     <files>
         <!-- PCL -->

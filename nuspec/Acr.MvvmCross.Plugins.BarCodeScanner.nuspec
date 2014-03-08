@@ -10,11 +10,19 @@
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
         <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <tags>xamarin mvvmcross barcode scanner</tags>
+        <tags>xamarin mvvmcross barcode android ios winphone</tags>
         <dependencies>
             <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
             <dependency id="ZXing.Net.Mobile" version="1.4.2.1" />
         </dependencies>
+        <releaseNotes>
+            1.1
+            FEATURE: Adds support for Windows Phone 8
+            FEATURE: Adds support for passing advanced configuration options
+            
+            1.0
+            Initial Release
+        </releaseNotes>
     </metadata>
     <files>
         <!-- PCL -->

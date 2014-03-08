@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Android.App;
 using Android.Widget;
+using AndroidHUD;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Core;
 using Cirrious.CrossCore.Droid.Platform;

@@ -10,11 +10,18 @@
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
         <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <tags>xamarin mvvmcross</tags>
+        <tags>xamarin mvvmcross android ios winphone</tags>
         <dependencies>
             <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
             <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="3.1.1" />
         </dependencies>
+        <releaseNotes>
+            1.1
+            Adds Windows Phone 8 Support
+            
+            1.0
+            Initial Release
+        </releaseNotes>
     </metadata>
     <files>
         <!-- PCL -->

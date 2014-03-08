@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+#if WINDOWS_PHONE
 using System.Windows;
+#elif ANDROID
 using Cirrious.CrossCore;
+using Cirrious.CrossCore.Droid.Platform;
+#endif
 using ZXing;
 using ZXing.Mobile;
 
