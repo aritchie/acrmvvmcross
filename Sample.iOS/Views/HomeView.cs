@@ -13,6 +13,7 @@ namespace Sample.iOS.Views {
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
+            this.Title = "ACR MvvmCross Plugins";
             var src = new MvxStandardTableViewSource(this.TableView, "TitleText Title");
 
             var set = this.CreateBindingSet<HomeView, HomeViewModel>();

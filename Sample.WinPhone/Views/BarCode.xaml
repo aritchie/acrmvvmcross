@@ -1,5 +1,5 @@
 ﻿<winPhone:Mvx2PhonePage
-    x:Class="Sample.WinPhone.Views.TextToSpeechView"
+    x:Class="Sample.WinPhone.Views.BarCode"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
@@ -23,34 +23,32 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="ACR MvvmCross Plugins" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Text-To-Speech" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Bar Codes" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <StackPanel Grid.Row="1" Margin="12,0,12,0">
-            <StackPanel Orientation="Horizontal">
-                <Button Command="{Binding Speak}">Speak</Button>
-                <Button Command="{Binding Cancel}">Cancel</Button>
-            </StackPanel>
+            <Button Command="{Binding Scan}">Scan Barcode</Button>
+
             <ScrollViewer>
                 <StackPanel>
-                    <TextBlock Text="Text To Say:"></TextBlock>
-                    <TextBox Text="{Binding Text, Mode=TwoWay}" />
-                    
-                    <TextBlock Text="Speed" />
-                    <TextBox Text="{Binding SpeechService.DefaultOptions.SpeechRate, Mode=TwoWay}" />
-                    
-                    <TextBlock Text="Pitch" />
-                    <TextBox Text="{Binding SpeechService.DefaultOptions.VoicePitch, Mode=TwoWay}" />
-                    
-                    <TextBlock Text="Voice Selection" />
-                    <ListBox ItemsSource="{Binding Voices}" SelectedItem="{Binding SpeechService.DefaultOptions.Voice}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding DisplayName}" TextWrapping="Wrap"/>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                    <TextBlock Text="Top Text" />
+                    <TextBox Text="{Binding Scanner.DefaultOptions.TopText, Mode=TwoWay}" />
+            
+                    <TextBlock Text="Bottom Text" />
+                    <TextBox Text="{Binding Scanner.DefaultOptions.BottomText, Mode=TwoWay}" />
+            
+                    <TextBlock Text="Cancel Text" />
+                    <TextBox Text="{Binding Scanner.DefaultOptions.CancelText, Mode=TwoWay}" />
+            
+                    <TextBlock Text="Flashlight Text" />
+                    <TextBox Text="{Binding Scanner.DefaultOptions.FlashlightText, Mode=TwoWay}" />
+
+                    <CheckBox IsChecked="{Binding Scanner.DefaultOptions.AutoRotate, Mode=TwoWay}">Auto Rotate</CheckBox>
+                    <CheckBox IsChecked="{Binding Scanner.DefaultOptions.UseFrontCameraIfAvailable, Mode=TwoWay}">Use Front Camera</CheckBox>
+        
+                    <TextBlock Text="Format" />
+                    <ListBox ItemsSource="{Binding Formats}" SelectedItem="{Binding SelectedFormat}" />
                 </StackPanel>
             </ScrollViewer>
         </StackPanel>

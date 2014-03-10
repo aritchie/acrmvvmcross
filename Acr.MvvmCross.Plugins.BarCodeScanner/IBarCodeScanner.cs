@@ -6,12 +6,11 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 
     public interface IBarCodeScanner {
 
-        Task<BarCodeResult> Read(
-            string topText = "Hold the camera up to the barcode\nAbout 6 inches away", 
-            string bottomText = "Wait for the barcode to automatically scan", 
-            string flashlightText = null,
-            string cancelText = null,
-            BarCodeScanningConfig options = null
-        );
+        BarCodeScannerOptions DefaultOptions { get; }
+
+        // TODO: none async?
+        //void Read(Action<BarCodeResult> onRead, BarCodeScannerOptions options = null);
+        //Task<BarCodeResult> ReadAsync(BarCodeScannerOptions options = null);
+        Task<BarCodeResult> Read(BarCodeScannerOptions options = null);
     }
 }

@@ -15,13 +15,30 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
     
 #if __IOS__
     public class TouchBarCodeScanner : IBarCodeScanner {
+
+        public TouchBarCodeScanner() {
+            this.DefaultOptions = new BarCodeScannerOptions();
+        }
+
 #elif ANDROID
     public class DroidBarCodeScanner : IBarCodeScanner {
+
+        public DroidBarCodeScanner() {
+            this.DefaultOptions = new BarCodeScannerOptions();
+        }
+
 #elif WINDOWS_PHONE
     public class WinPhoneBarCodeScanner : IBarCodeScanner {
+
+        public WinPhoneBarCodeScanner() {
+            this.DefaultOptions = new BarCodeScannerOptions();
+        }
 #endif
 
-        public async Task<BarCodeResult> Read(string topText, string bottomText, string flashlightText, string cancelText, BarCodeScanningConfig config) {
+        public BarCodeScannerOptions DefaultOptions { get; private set; }
+
+
+        public async Task<BarCodeResult> Read(BarCodeScannerOptions options) {
 #if __IOS__
             var scanner = new MobileBarcodeScanner { UseCustomOverlay = false };
 #elif ANDROID
@@ -30,20 +47,20 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 #elif WINDOWS_PHONE
             var scanner = new MobileBarcodeScanner(Deployment.Current.Dispatcher) { UseCustomOverlay = false };
 #endif
-
-            if (!String.IsNullOrWhiteSpace(topText)) {
-                scanner.TopText = topText;
+            options = options ?? this.DefaultOptions;
+            if (!String.IsNullOrWhiteSpace(options.TopText)) {
+                scanner.TopText = options.TopText;
             }
-            if (!String.IsNullOrWhiteSpace(bottomText)) {
-                scanner.BottomText = bottomText;
+            if (!String.IsNullOrWhiteSpace(options.BottomText)) {
+                scanner.BottomText = options.BottomText;
             }
-            if (!String.IsNullOrWhiteSpace(flashlightText)) {
-                scanner.FlashButtonText = flashlightText;
+            if (!String.IsNullOrWhiteSpace(options.FlashlightText)) {
+                scanner.FlashButtonText = options.FlashlightText;
             }
-            if (!String.IsNullOrWhiteSpace(cancelText)) {
-                scanner.CancelButtonText = cancelText;
+            if (!String.IsNullOrWhiteSpace(options.CancelText)) {
+                scanner.CancelButtonText = options.CancelText;
             }
-            var result = await scanner.Scan(GetXingConfig(config));
+            var result = await scanner.Scan(GetXingConfig(options));
             return (result == null || String.IsNullOrWhiteSpace(result.Text)
                 ? BarCodeResult.Fail
                 : new BarCodeResult(result.Text, FromXingFormat(result.BarcodeFormat))
@@ -56,23 +73,21 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
         }
 
 
-        private static MobileBarcodeScanningOptions GetXingConfig(BarCodeScanningConfig cfg) {
+        private static MobileBarcodeScanningOptions GetXingConfig(BarCodeScannerOptions opts) {
             var def = ZXing.Mobile.MobileBarcodeScanningOptions.Default;
-            if (cfg == null)
-                return def;
 
             var config = new MobileBarcodeScanningOptions {
-                AutoRotate = cfg.AutoRotate,
-                CharacterSet = cfg.CharacterSet ?? def.CharacterSet,
-                DelayBetweenAnalyzingFrames = cfg.DelayBetweenAnalyzingFrames ?? def.DelayBetweenAnalyzingFrames,
-                InitialDelayBeforeAnalyzingFrames = (cfg.InitialDelayBeforeAnalyzingFrames ?? def.InitialDelayBeforeAnalyzingFrames),
-                PureBarcode = cfg.PureBarcode,
-                TryHarder = cfg.TryHarder,
-                TryInverted = cfg.TryInverted,
-                UseFrontCameraIfAvailable = cfg.UseFrontCameraIfAvailable
+                AutoRotate = def.AutoRotate,
+                CharacterSet = opts.CharacterSet ?? def.CharacterSet,
+                DelayBetweenAnalyzingFrames = opts.DelayBetweenAnalyzingFrames ?? def.DelayBetweenAnalyzingFrames,
+                InitialDelayBeforeAnalyzingFrames = (opts.InitialDelayBeforeAnalyzingFrames ?? def.InitialDelayBeforeAnalyzingFrames),
+                PureBarcode = opts.PureBarcode,
+                TryHarder = opts.TryHarder,
+                TryInverted = opts.TryInverted,
+                UseFrontCameraIfAvailable = opts.UseFrontCameraIfAvailable
             };
-            if (cfg.Formats != null && cfg.Formats.Count > 0) {
-                config.PossibleFormats = cfg.Formats
+            if (opts.Formats != null && opts.Formats.Count > 0) {
+                config.PossibleFormats = opts.Formats
                     .Select(x => (BarcodeFormat)(int)x)
                     .ToList();
             }

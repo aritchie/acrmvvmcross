@@ -1,70 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using Acr.MvvmCross.Plugins.BarCodeScanner;
-using Acr.MvvmCross.Plugins.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
-using Sample.Core.Models;
 
 
 namespace Sample.Core.ViewModels {
     
     public class HomeViewModel : MvxViewModel {
 
-        public IList<MenuItem> Menu { get; private set; }
-        public MvxCommand<MenuItem> View { get; private set; }
-
-
-        public HomeViewModel(IBarCodeScanner barcodeScanner,
-                             IUserDialogService dialogService) {
-            this.Menu = new List<MenuItem> {
-                new MenuItem {
-                    Title = "Dialogs",
-                    Command = () => this.ShowViewModel<DialogsViewModel>()
-                },
-                new MenuItem {
-                    Title = "Device Info",
-                    Command = () => this.ShowViewModel<DeviceInfoViewModel>()
-                },
-                new MenuItem {
-                    Title = "Network",
-                    Command = () => this.ShowViewModel<NetworkViewModel>()
-                },
-                new MenuItem {
-                    Title = "Scan Bar Code",
-                    Command = async () => {
-                        var r = await barcodeScanner.Read(flashlightText: "Turn on flashlight", cancelText: "Cancel");
-                        var result = (r.Success 
-                            ? String.Format("Barcode Result - Format: {0} - Code: {1}", r.Format, r.Code)
-                            : "Cancelled barcode scan"
-                        );
-                        dialogService.Alert(result);
-                    }
-                },
-                new MenuItem {
-                    Title = "Text-To-Speech (TTS)",
-                    Command = () => this.ShowViewModel<TextToSpeechViewModel>()
-                },
-                new MenuItem {
-                    Title = "File Manager Example (TODO)",
-                    Command = () => this.ShowViewModel<FileManagerViewModel>()
-                }
-            };
-            this.View = new MvxCommand<MenuItem>(menu => menu.Command());
+        public IList<MenuItemViewModel> Menu { get; private set; }
+        public MvxCommand<MenuItemViewModel> View {
+            get {
+                return new MvxCommand<MenuItemViewModel>(item => item.Command.Execute());
+            }
         }
 
 
-        // for windows phone
-        private MenuItem menuItem;
-        public MenuItem SelectedItem {
-            get { return this.menuItem; }
-            set {
-                if (this.menuItem == value)
-                    return;
-
-                this.menuItem = value;
-                value.Command();
-                this.RaisePropertyChanged("SelectedItem");
-            }
+        public HomeViewModel() {
+            this.Menu = new List<MenuItemViewModel> {
+                new MenuItemViewModel(
+                    "Barcode Scanning",
+                    () => this.ShowViewModel<BarCodeViewModel>()
+                ),
+                new MenuItemViewModel(
+                    "Device Info",
+                    () => this.ShowViewModel<DeviceInfoViewModel>()
+                ),
+                new MenuItemViewModel(
+                    "Dialogs",
+                    () => this.ShowViewModel<DialogsViewModel>()
+                ),
+                new MenuItemViewModel(
+                    "Network",
+                    () => this.ShowViewModel<NetworkViewModel>()
+                ),
+                new MenuItemViewModel(
+                    "Text-To-Speech (TTS)",
+                    () => this.ShowViewModel<TextToSpeechViewModel>()
+                ),
+                new MenuItemViewModel(
+                    "File Manager Example (TODO)",
+                    () => this.ShowViewModel<FileManagerViewModel>()
+                )
+            };
         }
     }
 }

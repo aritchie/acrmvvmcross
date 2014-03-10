@@ -28,16 +28,11 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel Grid.Row="1" Margin="12,0,12,0">
-            <ListBox  ItemsSource="{Binding Menu}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
-                <!--<i:Interaction.Triggers>
-                        <EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding ItemSelected, Mode=OneWay}"/>
-                        </EventTrigger>
-                    </i:Interaction.Triggers>-->
+            <ListBox ItemsSource="{Binding Menu}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Title}" FontSize="{StaticResource PhoneFontSizeLarge}"></TextBlock>
+                            <Button Content="{Binding Title}" Command="{Binding Command}" FontSize="{StaticResource PhoneFontSizeLarge}"></Button>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -46,18 +41,3 @@
     </Grid>
 
 </winPhone:Mvx2PhonePage>
-    <!--
-    <ListBox ItemsSource="{Binding Items}" x:Name="TheListBox">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <TextBlock Text="{Binding Key}" Margin="12" FontSize="24" TextWrapping="Wrap">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="Tap">
-                            <commandbinding:MvxEventToCommand Command="{Binding Path=DataContext.ShowItemCommand, ElementName=TheListBox}" CommandParameter="{Binding}" />
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </TextBlock>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
-    -->

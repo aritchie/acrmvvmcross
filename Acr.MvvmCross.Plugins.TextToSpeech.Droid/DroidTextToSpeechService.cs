@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Android.Speech.Tts;
 using Cirrious.CrossCore.Droid.Platform;
@@ -9,6 +10,14 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
 
     public class DroidTextToSpeechService : MvxAndroidTask, Android.Speech.Tts.TextToSpeech.IOnInitListener,  ITextToSpeechService {
 
+
+        public DroidTextToSpeechService() {
+            this.DefaultOptions = new TtsOptions();
+        }
+
+        #region ITextToSpeechService Members
+
+        public TtsOptions DefaultOptions { get; private set; }
         // run as singleton or instance - instance may be better for android mechanism
             //IList<TextToSpeech.EngineInfo> engines = _tts.Engines;
             //try
@@ -17,7 +26,7 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
             //}
 
             //foreach (TextToSpeech.EngineInfo ei in engines)
-        public Task Speak(string text) {
+        public Task Speak(string text, TtsOptions options, CancellationToken token) {
             return Task.Factory.StartNew(() => 
                 // TODO: terrible
                 this.DoOnActivity(activity => {
@@ -30,6 +39,14 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
                 })
             );
         }
+
+
+        public bool IsSpeaking { get; private set; }
+        public IEnumerable<VoiceDescriptor> GetVoices() {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
         #region IOnInitListener Members
 

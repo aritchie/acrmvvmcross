@@ -4,7 +4,12 @@ using System.Collections.Generic;
 
 namespace Acr.MvvmCross.Plugins.BarCodeScanner {
     
-    public class BarCodeScanningConfig {
+    public class BarCodeScannerOptions {
+
+        public string TopText { get; set; }
+        public string BottomText { get; set; }
+        public string FlashlightText { get; set; }
+        public string CancelText { get; set; }
 
         public bool? AutoRotate { get; set; }
         public string CharacterSet { get; set; }
@@ -17,11 +22,10 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 
         public List<BarCodeFormat> Formats { get; set; }
 
-
-        public BarCodeScanningConfig AddFormat(BarCodeFormat format) {
-            this.Formats = this.Formats ?? new List<BarCodeFormat>();
-            this.Formats.Add(format);
-            return this;
+        public BarCodeScannerOptions() {
+            this.TopText = "Hold the camera up to the barcode\nAbout 6 inches away";
+            this.BottomText = "Wait for the barcode to automatically scan";
+            this.Formats = new List<BarCodeFormat>(3);
         }
     }
 }

@@ -1267,49 +1267,52 @@ namespace Sample.Droid
 			public const int abc_search_view = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int DeviceInfo = 2130903064;
+			public const int BarCode = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int Dialogs = 2130903065;
+			public const int DeviceInfo = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int FileManager = 2130903066;
+			public const int Dialogs = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int filemanager_listitem = 2130903067;
+			public const int FileManager = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int Home = 2130903068;
+			public const int filemanager_listitem = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int home_listitem = 2130903069;
+			public const int Home = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
-			public const int loading = 2130903070;
+			public const int home_listitem = 2130903070;
 			
 			// aapt resource value: 0x7f03001f
-			public const int loadingimage = 2130903071;
+			public const int loading = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int loadingprogress = 2130903072;
+			public const int loadingimage = 2130903072;
 			
 			// aapt resource value: 0x7f030021
-			public const int Network = 2130903073;
+			public const int loadingprogress = 2130903073;
 			
 			// aapt resource value: 0x7f030022
-			public const int Splash = 2130903074;
+			public const int Network = 2130903074;
 			
 			// aapt resource value: 0x7f030023
-			public const int support_simple_spinner_dropdown_item = 2130903075;
+			public const int Splash = 2130903075;
 			
 			// aapt resource value: 0x7f030024
-			public const int TextToSpeech = 2130903076;
+			public const int support_simple_spinner_dropdown_item = 2130903076;
 			
 			// aapt resource value: 0x7f030025
-			public const int zxingscanneractivitylayout = 2130903077;
+			public const int TextToSpeech = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int zxingscannerfragmentlayout = 2130903078;
+			public const int zxingscanneractivitylayout = 2130903078;
+			
+			// aapt resource value: 0x7f030027
+			public const int zxingscannerfragmentlayout = 2130903079;
 			
 			static Layout()
 			{

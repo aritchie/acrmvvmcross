@@ -11,18 +11,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     public class WinPhoneUserDialogService : AbstractUserDialogService {
 
         public override void ActionSheet(string title, params SheetOption[] options) {
-            var alert = new MessagePrompt { Title = title };
+            var alert = new ActionSheetPopUp { Title = title };
             alert.ActionPopUpButtons.Clear();
-
-            options.ToList().ForEach(x => {
-                var btn = new Button { Content = x.Text };
-                btn.Click += (sender, args) => {
-                    alert.Hide();
-                    if (x.Action != null)
-                        x.Action();
-                };
-                alert.ActionPopUpButtons.Add(btn);
-            });
+            options.ToList().ForEach(x => alert.AddButton(x.Text, x.Action));
             alert.Show();
         }
 

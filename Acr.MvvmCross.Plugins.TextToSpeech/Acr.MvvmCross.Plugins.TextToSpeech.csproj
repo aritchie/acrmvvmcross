@@ -43,6 +43,8 @@
     <Compile Include="ITextToSpeechService.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TtsOptions.cs" />
+    <Compile Include="VoiceDescriptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">

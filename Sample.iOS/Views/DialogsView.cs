@@ -1,5 +1,7 @@
 using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
+using Cirrious.MvvmCross.Dialog.Touch;
+using CrossUI.Touch.Dialog.Elements;
 using MonoTouch.Foundation;
 using Sample.Core.ViewModels;
 
@@ -7,34 +9,29 @@ using Sample.Core.ViewModels;
 namespace Sample.iOS.Views {
     
     [Register("DialogsView")]
-    public class DialogsView : AbstractViewController {
+    public class DialogsView : MvxDialogViewController {
+
+        public DialogsView() : base(pushing: true) { }
+
+
         public override void ViewDidLoad() {
             base.ViewDidLoad();
-            var lblResult = this.Label();
-            var btnActionSheet = this.Button("Action Sheet");
-            var btnAlert = this.Button("Alert");
-            var btnConfirm = this.Button("Confirm");
-            var btnPrompt = this.Button("Prompt");
-            var btnToast = this.Button("Toast Popup");
 
-            var btnLoading = this.Button("Loading");
-            var btnLoadingNoCancel = this.Button("Loading (No Cancel)");
-            var btnProgress = this.Button("Progress");
-            var btnProgressNoCancel = this.Button("Progress (No Cancel)");
-            
-
-            var set = this.CreateBindingSet<DialogsView, DialogsViewModel>();
-            set.Bind(lblResult).To(x => x.Result);
-            set.Bind(btnAlert).To(x => x.Alert);
-            set.Bind(btnConfirm).To(x => x.Confirm);
-            set.Bind(btnPrompt).To(x => x.Prompt);
-            set.Bind(btnLoading).To(x => x.Loading);
-            set.Bind(btnProgress).To(x => x.Progress);
-            set.Bind(btnToast).To(x => x.Toast);
-            set.Bind(btnActionSheet).To(x => x.ActionSheet);
-            set.Bind(btnLoadingNoCancel).To(x => x.LoadingNoCancel);
-            set.Bind(btnProgressNoCancel).To(x => x.ProgressNoCancel);
-            set.Apply();
+            var bindings = this.CreateInlineBindingTarget<DialogsViewModel>();
+            this.Root = new RootElement("Dialogs") {
+                new Section {
+                    new StringElement().Bind(bindings, x => x.Caption, x => x.Result),
+                    new StringElement("Action Sheet").Bind(bindings, x => x.SelectedCommand, x => x.ActionSheet),
+                    new StringElement("Alert").Bind(bindings, x => x.SelectedCommand, x => x.Alert),
+                    new StringElement("Confirm").Bind(bindings, x => x.SelectedCommand, x => x.Confirm),
+                    new StringElement("Prompt").Bind(bindings, x => x.SelectedCommand, x => x.Prompt),
+                    new StringElement("Toast").Bind(bindings, x => x.SelectedCommand, x => x.Toast),
+                    new StringElement("Loading").Bind(bindings, x => x.SelectedCommand, x => x.Loading),
+                    new StringElement("Loading (No Cancel)").Bind(bindings, x => x.SelectedCommand, x => x.LoadingNoCancel),
+                    new StringElement("Progress").Bind(bindings, x => x.SelectedCommand, x => x.Progress),
+                    new StringElement("Progress (No Cancel)").Bind(bindings, x => x.SelectedCommand, x => x.ProgressNoCancel)
+                }
+            };
         }
     }
 }

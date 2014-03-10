@@ -21,8 +21,8 @@ namespace Sample.Core.ViewModels {
 
 
         public FileManagerViewModel(IStorageService storageService, 
-                                IExternalAppService externalApp,
-                                IUserDialogService dialogService) {
+                                    IExternalAppService externalApp,
+                                    IUserDialogService dialogService) {
             this.store = storageService;
             this.externalApp = externalApp;
             this.dialogService = dialogService;
