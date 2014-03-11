@@ -84,9 +84,6 @@
     <Compile Include="ViewModels\TextToSpeechViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="test.pdf" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

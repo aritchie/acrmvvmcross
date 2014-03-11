@@ -28,40 +28,40 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid
 		{
 			
 			// aapt resource value: 0x7f010003
-			public static int barColor = 2130771971;
+			public static int ahBarColor = 2130771971;
 			
 			// aapt resource value: 0x7f01000b
-			public static int barLength = 2130771979;
+			public static int ahBarLength = 2130771979;
 			
 			// aapt resource value: 0x7f01000a
-			public static int barWidth = 2130771978;
+			public static int ahBarWidth = 2130771978;
 			
 			// aapt resource value: 0x7f010008
-			public static int circleColor = 2130771976;
+			public static int ahCircleColor = 2130771976;
 			
 			// aapt resource value: 0x7f010007
-			public static int delayMillis = 2130771975;
+			public static int ahDelayMillis = 2130771975;
 			
 			// aapt resource value: 0x7f010009
-			public static int radius = 2130771977;
+			public static int ahRadius = 2130771977;
 			
 			// aapt resource value: 0x7f010004
-			public static int rimColor = 2130771972;
+			public static int ahRimColor = 2130771972;
 			
 			// aapt resource value: 0x7f010005
-			public static int rimWidth = 2130771973;
+			public static int ahRimWidth = 2130771973;
 			
 			// aapt resource value: 0x7f010006
-			public static int spinSpeed = 2130771974;
+			public static int ahSpinSpeed = 2130771974;
 			
 			// aapt resource value: 0x7f010000
-			public static int text = 2130771968;
+			public static int ahText = 2130771968;
 			
 			// aapt resource value: 0x7f010001
-			public static int textColor = 2130771969;
+			public static int ahTextColor = 2130771969;
 			
 			// aapt resource value: 0x7f010002
-			public static int textSize = 2130771970;
+			public static int ahTextSize = 2130771970;
 			
 			static Attribute()
 			{
@@ -185,40 +185,40 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid
 					2130771979};
 			
 			// aapt resource value: 3
-			public static int ProgressWheel_barColor = 3;
+			public static int ProgressWheel_ahBarColor = 3;
 			
 			// aapt resource value: 11
-			public static int ProgressWheel_barLength = 11;
+			public static int ProgressWheel_ahBarLength = 11;
 			
 			// aapt resource value: 10
-			public static int ProgressWheel_barWidth = 10;
+			public static int ProgressWheel_ahBarWidth = 10;
 			
 			// aapt resource value: 8
-			public static int ProgressWheel_circleColor = 8;
+			public static int ProgressWheel_ahCircleColor = 8;
 			
 			// aapt resource value: 7
-			public static int ProgressWheel_delayMillis = 7;
+			public static int ProgressWheel_ahDelayMillis = 7;
 			
 			// aapt resource value: 9
-			public static int ProgressWheel_radius = 9;
+			public static int ProgressWheel_ahRadius = 9;
 			
 			// aapt resource value: 4
-			public static int ProgressWheel_rimColor = 4;
+			public static int ProgressWheel_ahRimColor = 4;
 			
 			// aapt resource value: 5
-			public static int ProgressWheel_rimWidth = 5;
+			public static int ProgressWheel_ahRimWidth = 5;
 			
 			// aapt resource value: 6
-			public static int ProgressWheel_spinSpeed = 6;
+			public static int ProgressWheel_ahSpinSpeed = 6;
 			
 			// aapt resource value: 0
-			public static int ProgressWheel_text = 0;
+			public static int ProgressWheel_ahText = 0;
 			
 			// aapt resource value: 1
-			public static int ProgressWheel_textColor = 1;
+			public static int ProgressWheel_ahTextColor = 1;
 			
 			// aapt resource value: 2
-			public static int ProgressWheel_textSize = 2;
+			public static int ProgressWheel_ahTextSize = 2;
 			
 			static Styleable()
 			{

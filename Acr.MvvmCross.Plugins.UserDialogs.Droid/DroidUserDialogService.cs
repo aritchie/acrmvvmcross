@@ -85,15 +85,16 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
 
         public override void Toast(string message, int timeoutSeconds, Action onClick) {
-            this.Dispatch(activity => 
-                AndHUD.Shared.ShowToast(
-                    activity, 
-                    message, 
-                    MaskType.Clear,
-                    TimeSpan.FromSeconds(timeoutSeconds),
-                    false,
-                    onClick
-                )
+            onClick = onClick ?? (() => {});
+            var activity = GetTopActivity();
+
+            AndHUD.Shared.ShowToast(
+                activity, 
+                message, 
+                MaskType.Clear,
+                TimeSpan.FromSeconds(timeoutSeconds),
+                false,
+                onClick
             );
         }
 

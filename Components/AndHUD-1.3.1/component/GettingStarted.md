@@ -33,7 +33,8 @@ AndHUD.Shared.ShowToast(this, "Click this toast to close it!", MaskType.Clear, n
 
 Other Options
 -------------
- - **MaskType:** By default, MaskType.Black dims the background behind the HUD.  Use MaskType.Clear to prevent the dimming
+ - **MaskType:** By default, MaskType.Black dims the background behind the HUD.  Use MaskType.Clear to prevent the dimming.  Use MaskType.None to allow interaction with views behind the HUD.
  - **Timeout:** If you provide a timeout, the HUD will automatically be dismissed after the timeout elapses, if you have not already dismissed it manually.
  - **Click Callback:** If you provide a clickCallback parameter, when the HUD is tapped by the user, the action supplied will be executed.
+ - **Cancel Callback:** If you provide a cancelCallback parameter, the HUD can be cancelled by the user pressing the back button, which will cause the cancelCallback action to be executed.
 

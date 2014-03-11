@@ -5,7 +5,7 @@
   <publisher-url>https://github.com/Redth/AndHUD</publisher-url>
   <docs-url>https://github.com/Redth/AndHUD</docs-url>
   <src-url>https://github.com/Redth/AndHUD</src-url>
-  <version>1.2</version>
+  <version>1.3.1</version>
   <summary>Add amazing HUDs to your Android apps.</summary>
   <samples>
     <sample id="AndHUD.Sample">

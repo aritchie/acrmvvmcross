@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Android.Speech.Tts;
 using Cirrious.CrossCore.Droid.Platform;
+using atts = Android.Speech.Tts;
 
 
 namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
 
-    public class DroidTextToSpeechService : MvxAndroidTask, Android.Speech.Tts.TextToSpeech.IOnInitListener,  ITextToSpeechService {
+    public class DroidTextToSpeechService : MvxAndroidTask, atts.TextToSpeech.IOnInitListener,  ITextToSpeechService {
+
+        private IList<VoiceDescriptor> voiceDescriptors;
+        private TaskCompletionSource<object> tcs;
 
 
         public DroidTextToSpeechService() {
@@ -18,32 +23,50 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
         #region ITextToSpeechService Members
 
         public TtsOptions DefaultOptions { get; private set; }
-        // run as singleton or instance - instance may be better for android mechanism
-            //IList<TextToSpeech.EngineInfo> engines = _tts.Engines;
-            //try
-            //{
-            //    _tts.Shutdown();
-            //}
 
-            //foreach (TextToSpeech.EngineInfo ei in engines)
-        public Task Speak(string text, TtsOptions options, CancellationToken token) {
-            return Task.Factory.StartNew(() => 
-                // TODO: terrible
-                this.DoOnActivity(activity => {
-                    var voice = new Android.Speech.Tts.TextToSpeech(activity, this); // TODO: engine?
-                    this.Dispatcher.RequestMainThreadAction(() => {
-                        var status = voice.Speak(text, QueueMode.Flush, new Dictionary<string, string>());
-                        if (status == OperationResult.Error)
-                            throw new ArgumentException("Unable to send TTS request");
+
+        public Task Speak(string text, TtsOptions options, CancellationToken cancelToken) {
+            if (this.tcs != null)
+                this.tcs.SetCanceled();
+
+            this.tcs = new TaskCompletionSource<object>();
+            var opts = options ?? this.DefaultOptions;
+
+            this.DoOnActivity(activity => {
+                using (var tts = new atts.TextToSpeech(activity, this)) {
+                    cancelToken.Register(() => {
+                        this.tcs.TrySetCanceled();
+                        tts.Stop();
+                        this.IsSpeaking = false;
                     });
-                })
-            );
+                    //tts.SetSpeechRate(opts.SpeechRate);
+                    //tts.SetPitch(opts.VoicePitch);
+                    this.IsSpeaking = true;
+                    tts.Speak(text, QueueMode.Flush, new Dictionary<string, string>());
+                }
+            });
+            return this.tcs.Task;
         }
 
 
         public bool IsSpeaking { get; private set; }
+
+
         public IEnumerable<VoiceDescriptor> GetVoices() {
-            throw new NotImplementedException();
+            if (this.voiceDescriptors == null) {
+                this.DoOnActivity(activity => {
+                    // build list now so I can dispose of tts
+                    using (var tts = new atts.TextToSpeech(activity, this)) {
+                        this.voiceDescriptors = tts.Engines
+                            .Select(x => new VoiceDescriptor {
+                                Id = x.Label,
+                                DisplayName = x.Name
+                            })
+                            .ToList();
+                    }
+                });
+            }
+            return this.voiceDescriptors;
         }
 
         #endregion
@@ -51,6 +74,19 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
         #region IOnInitListener Members
 
         public void OnInit(OperationResult status) {
+            if (this.tcs == null)
+                return;
+
+            switch (status) {
+                case OperationResult.Error:
+                    this.tcs.TrySetException(new ArgumentException("Error starting TTS engine"));
+                    break;
+
+                case OperationResult.Success:
+                    this.tcs.TrySetResult(null);
+                    break;
+            }
+            this.IsSpeaking = false;
         }
 
         #endregion
@@ -69,6 +105,7 @@ namespace Acr.MvvmCross.Plugins.TextToSpeech.Droid {
         }
 
         #endregion
+
     }
 }
 /*

@@ -13,6 +13,7 @@ Features
  - Xamarin.Android Support
  - Xamarin Component store
  - Similar API and functionality to BTProgressHUD for iOS
+ - XHUD Optional API that is in parity with BTProgressHUD's XHUD API
  
 
 Quick and Simple

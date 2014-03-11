@@ -26,18 +26,18 @@ namespace Sample.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::AndroidHUD.Resource.Attribute.barColor = global::Sample.Droid.Resource.Attribute.barColor;
-			global::AndroidHUD.Resource.Attribute.barLength = global::Sample.Droid.Resource.Attribute.barLength;
-			global::AndroidHUD.Resource.Attribute.barWidth = global::Sample.Droid.Resource.Attribute.barWidth;
-			global::AndroidHUD.Resource.Attribute.circleColor = global::Sample.Droid.Resource.Attribute.circleColor;
-			global::AndroidHUD.Resource.Attribute.delayMillis = global::Sample.Droid.Resource.Attribute.delayMillis;
-			global::AndroidHUD.Resource.Attribute.radius = global::Sample.Droid.Resource.Attribute.radius;
-			global::AndroidHUD.Resource.Attribute.rimColor = global::Sample.Droid.Resource.Attribute.rimColor;
-			global::AndroidHUD.Resource.Attribute.rimWidth = global::Sample.Droid.Resource.Attribute.rimWidth;
-			global::AndroidHUD.Resource.Attribute.spinSpeed = global::Sample.Droid.Resource.Attribute.spinSpeed;
-			global::AndroidHUD.Resource.Attribute.text = global::Sample.Droid.Resource.Attribute.text;
-			global::AndroidHUD.Resource.Attribute.textColor = global::Sample.Droid.Resource.Attribute.textColor;
-			global::AndroidHUD.Resource.Attribute.textSize = global::Sample.Droid.Resource.Attribute.textSize;
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::Sample.Droid.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::Sample.Droid.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::Sample.Droid.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::Sample.Droid.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::Sample.Droid.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::Sample.Droid.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::Sample.Droid.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::Sample.Droid.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::Sample.Droid.Resource.Attribute.ahTextSize;
 			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::Sample.Droid.Resource.Drawable.ic_errorstatus;
 			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::Sample.Droid.Resource.Drawable.ic_successstatus;
 			global::AndroidHUD.Resource.Drawable.roundedbg = global::Sample.Droid.Resource.Drawable.roundedbg;
@@ -51,18 +51,18 @@ namespace Sample.Droid
 			global::AndroidHUD.Resource.Layout.loadingprogress = global::Sample.Droid.Resource.Layout.loadingprogress;
 			global::AndroidHUD.Resource.String.library_name = global::Sample.Droid.Resource.String.library_name;
 			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::Sample.Droid.Resource.Styleable.ProgressWheel;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_barColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_barColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_barLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_barLength;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_barWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_barWidth;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_circleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_circleColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_delayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_delayMillis;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_radius = global::Sample.Droid.Resource.Styleable.ProgressWheel_radius;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_rimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_rimColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_rimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_rimWidth;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_spinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_spinSpeed;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_text = global::Sample.Droid.Resource.Styleable.ProgressWheel_text;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_textColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_textColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_textSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_textSize;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::ZXing.Mobile.Resource.Id.contentFrame = global::Sample.Droid.Resource.Id.contentFrame;
 			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Sample.Droid.Resource.Layout.zxingscanneractivitylayout;
 			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Sample.Droid.Resource.Layout.zxingscannerfragmentlayout;
@@ -83,18 +83,18 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.Storage.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.TextToSpeech.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.TextToSpeech.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.barColor = global::Sample.Droid.Resource.Attribute.barColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.barLength = global::Sample.Droid.Resource.Attribute.barLength;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.barWidth = global::Sample.Droid.Resource.Attribute.barWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.circleColor = global::Sample.Droid.Resource.Attribute.circleColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.delayMillis = global::Sample.Droid.Resource.Attribute.delayMillis;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.radius = global::Sample.Droid.Resource.Attribute.radius;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.rimColor = global::Sample.Droid.Resource.Attribute.rimColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.rimWidth = global::Sample.Droid.Resource.Attribute.rimWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.spinSpeed = global::Sample.Droid.Resource.Attribute.spinSpeed;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.text = global::Sample.Droid.Resource.Attribute.text;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.textColor = global::Sample.Droid.Resource.Attribute.textColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.textSize = global::Sample.Droid.Resource.Attribute.textSize;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahCircleColor = global::Sample.Droid.Resource.Attribute.ahCircleColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahDelayMillis = global::Sample.Droid.Resource.Attribute.ahDelayMillis;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahRadius = global::Sample.Droid.Resource.Attribute.ahRadius;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahRimColor = global::Sample.Droid.Resource.Attribute.ahRimColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahRimWidth = global::Sample.Droid.Resource.Attribute.ahRimWidth;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahSpinSpeed = global::Sample.Droid.Resource.Attribute.ahSpinSpeed;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahText = global::Sample.Droid.Resource.Attribute.ahText;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahTextColor = global::Sample.Droid.Resource.Attribute.ahTextColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahTextSize = global::Sample.Droid.Resource.Attribute.ahTextSize;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.ic_errorstatus = global::Sample.Droid.Resource.Drawable.ic_errorstatus;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.ic_successstatus = global::Sample.Droid.Resource.Drawable.ic_successstatus;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.roundedbg = global::Sample.Droid.Resource.Drawable.roundedbg;
@@ -110,18 +110,18 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.String.library_name = global::Sample.Droid.Resource.String.library_name;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel = global::Sample.Droid.Resource.Styleable.ProgressWheel;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_barColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_barColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_barLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_barLength;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_barWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_barWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_circleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_circleColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_delayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_delayMillis;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_radius = global::Sample.Droid.Resource.Styleable.ProgressWheel_radius;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_rimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_rimColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_rimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_rimWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_spinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_spinSpeed;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_text = global::Sample.Droid.Resource.Styleable.ProgressWheel_text;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_textColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_textColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_textSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_textSize;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahBarColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahBarLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahBarWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahCircleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahRadius = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahRimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahRimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahText = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahTextColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahTextSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 		}
 		
 		public partial class Animation
@@ -269,6 +269,42 @@ namespace Sample.Droid
 			// aapt resource value: 0x7f010068
 			public const int activityChooserViewStyle = 2130772072;
 			
+			// aapt resource value: 0x7f01006d
+			public const int ahBarColor = 2130772077;
+			
+			// aapt resource value: 0x7f010075
+			public const int ahBarLength = 2130772085;
+			
+			// aapt resource value: 0x7f010074
+			public const int ahBarWidth = 2130772084;
+			
+			// aapt resource value: 0x7f010072
+			public const int ahCircleColor = 2130772082;
+			
+			// aapt resource value: 0x7f010071
+			public const int ahDelayMillis = 2130772081;
+			
+			// aapt resource value: 0x7f010073
+			public const int ahRadius = 2130772083;
+			
+			// aapt resource value: 0x7f01006e
+			public const int ahRimColor = 2130772078;
+			
+			// aapt resource value: 0x7f01006f
+			public const int ahRimWidth = 2130772079;
+			
+			// aapt resource value: 0x7f010070
+			public const int ahSpinSpeed = 2130772080;
+			
+			// aapt resource value: 0x7f01006a
+			public const int ahText = 2130772074;
+			
+			// aapt resource value: 0x7f01006b
+			public const int ahTextColor = 2130772075;
+			
+			// aapt resource value: 0x7f01006c
+			public const int ahTextSize = 2130772076;
+			
 			// aapt resource value: 0x7f01002b
 			public const int background = 2130772011;
 			
@@ -278,29 +314,14 @@ namespace Sample.Droid
 			// aapt resource value: 0x7f01002c
 			public const int backgroundStacked = 2130772012;
 			
-			// aapt resource value: 0x7f01006d
-			public const int barColor = 2130772077;
-			
-			// aapt resource value: 0x7f010075
-			public const int barLength = 2130772085;
-			
-			// aapt resource value: 0x7f010074
-			public const int barWidth = 2130772084;
-			
 			// aapt resource value: 0x7f010014
 			public const int buttonBarButtonStyle = 2130771988;
 			
 			// aapt resource value: 0x7f010013
 			public const int buttonBarStyle = 2130771987;
 			
-			// aapt resource value: 0x7f010072
-			public const int circleColor = 2130772082;
-			
 			// aapt resource value: 0x7f01002e
 			public const int customNavigationLayout = 2130772014;
-			
-			// aapt resource value: 0x7f010071
-			public const int delayMillis = 2130772081;
 			
 			// aapt resource value: 0x7f010050
 			public const int disableChildrenWhenDisabled = 2130772048;
@@ -413,15 +434,6 @@ namespace Sample.Droid
 			// aapt resource value: 0x7f010057
 			public const int queryHint = 2130772055;
 			
-			// aapt resource value: 0x7f010073
-			public const int radius = 2130772083;
-			
-			// aapt resource value: 0x7f01006e
-			public const int rimColor = 2130772078;
-			
-			// aapt resource value: 0x7f01006f
-			public const int rimWidth = 2130772079;
-			
 			// aapt resource value: 0x7f010058
 			public const int searchDropdownBackground = 2130772056;
 			
@@ -464,9 +476,6 @@ namespace Sample.Droid
 			// aapt resource value: 0x7f010051
 			public const int showDividers = 2130772049;
 			
-			// aapt resource value: 0x7f010070
-			public const int spinSpeed = 2130772080;
-			
 			// aapt resource value: 0x7f010054
 			public const int spinnerDropDownItemStyle = 2130772052;
 			
@@ -481,9 +490,6 @@ namespace Sample.Droid
 			
 			// aapt resource value: 0x7f010027
 			public const int subtitleTextStyle = 2130772007;
-			
-			// aapt resource value: 0x7f01006a
-			public const int text = 2130772074;
 			
 			// aapt resource value: 0x7f010069
 			public const int textAllCaps = 2130772073;
@@ -506,14 +512,8 @@ namespace Sample.Droid
 			// aapt resource value: 0x7f010011
 			public const int textAppearanceSmallPopupMenu = 2130771985;
 			
-			// aapt resource value: 0x7f01006b
-			public const int textColor = 2130772075;
-			
 			// aapt resource value: 0x7f010064
 			public const int textColorSearchUrl = 2130772068;
-			
-			// aapt resource value: 0x7f01006c
-			public const int textSize = 2130772076;
 			
 			// aapt resource value: 0x7f010021
 			public const int title = 2130772001;
@@ -2117,40 +2117,40 @@ namespace Sample.Droid
 					2130772085};
 			
 			// aapt resource value: 3
-			public const int ProgressWheel_barColor = 3;
+			public const int ProgressWheel_ahBarColor = 3;
 			
 			// aapt resource value: 11
-			public const int ProgressWheel_barLength = 11;
+			public const int ProgressWheel_ahBarLength = 11;
 			
 			// aapt resource value: 10
-			public const int ProgressWheel_barWidth = 10;
+			public const int ProgressWheel_ahBarWidth = 10;
 			
 			// aapt resource value: 8
-			public const int ProgressWheel_circleColor = 8;
+			public const int ProgressWheel_ahCircleColor = 8;
 			
 			// aapt resource value: 7
-			public const int ProgressWheel_delayMillis = 7;
+			public const int ProgressWheel_ahDelayMillis = 7;
 			
 			// aapt resource value: 9
-			public const int ProgressWheel_radius = 9;
+			public const int ProgressWheel_ahRadius = 9;
 			
 			// aapt resource value: 4
-			public const int ProgressWheel_rimColor = 4;
+			public const int ProgressWheel_ahRimColor = 4;
 			
 			// aapt resource value: 5
-			public const int ProgressWheel_rimWidth = 5;
+			public const int ProgressWheel_ahRimWidth = 5;
 			
 			// aapt resource value: 6
-			public const int ProgressWheel_spinSpeed = 6;
+			public const int ProgressWheel_ahSpinSpeed = 6;
 			
 			// aapt resource value: 0
-			public const int ProgressWheel_text = 0;
+			public const int ProgressWheel_ahText = 0;
 			
 			// aapt resource value: 1
-			public const int ProgressWheel_textColor = 1;
+			public const int ProgressWheel_ahTextColor = 1;
 			
 			// aapt resource value: 2
-			public const int ProgressWheel_textSize = 2;
+			public const int ProgressWheel_ahTextSize = 2;
 			
 			public static int[] SearchView = new int[] {
 					16843039,
