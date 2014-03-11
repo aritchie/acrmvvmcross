@@ -26,7 +26,6 @@ namespace Sample.Core.ViewModels {
         }
 
 
-
         public IList<VoiceDescriptor> Voices { get; private set; }
 
 
@@ -57,18 +56,18 @@ namespace Sample.Core.ViewModels {
 
 
         // TODO: this is only necessary until I get loading cancel working on WP8
-        public IMvxCommand Cancel {
-            get {
-                return new MvxCommand(() => {
-                    if (this.cancelSource == null)
-                        this.dialogService.Alert("Nothing to cancel");
-                    else {
-                        this.cancelSource.Cancel();
-                        this.dialogService.Alert("Cancelled");
-                    }
-                });
-            }
-        }
+        //public IMvxCommand Cancel {
+        //    get {
+        //        return new MvxCommand(() => {
+        //            if (this.cancelSource == null)
+        //                this.dialogService.Alert("Nothing to cancel");
+        //            else {
+        //                this.cancelSource.Cancel();
+        //                this.dialogService.Alert("Cancelled");
+        //            }
+        //        });
+        //    }
+        //}
 
 
         public IMvxCommand Speak {
@@ -80,9 +79,9 @@ namespace Sample.Core.ViewModels {
                         this.dialogService.Alert("Please enter the text!");
                     else {
                         using (this.cancelSource = new CancellationTokenSource()) {
-                            //using (this.dialogService.Loading("Speaking", () => this.cancelSource.Cancel(false))) { 
+                            using (this.dialogService.Loading("Speaking", () => this.cancelSource.Cancel(false))) { 
                                 await this.SpeechService.Speak(this.Text, cancelToken: this.cancelSource.Token);
-                            //}
+                            }
                         } 
                         this.cancelSource = null;
                     }
