@@ -1,0 +1,26 @@
+<windowsStore:Mvx2StorePage
+    x:Class="Sample.WinStore.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:windowsStore="using:Acr.MvvmCross.WindowsStore"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <GridView ItemsSource="{Binding Menu}" CanReorderItems="True" CanDragItems="True">
+            <DataTemplate>
+                <Button Content="{Binding Title}" Command="{Binding Command}" />
+            </DataTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid 
+                        MaximumRowsOrColumns="1" 
+                        VerticalChildrenAlignment="Top" 
+                        HorizontalChildrenAlignment="Center"
+                    />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+</windowsStore:Mvx2StorePage>

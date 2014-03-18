@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Acr.MvvmCross.Plugins.DeviceInfo;
+using Acr.MvvmCross.Plugins.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
 
 
@@ -15,11 +17,18 @@ namespace Sample.Core.ViewModels {
         }
 
 
-        public HomeViewModel() {
+        public HomeViewModel(IDeviceInfoService deviceInfo, IUserDialogService dialogs) {
             this.Menu = new List<MenuItemViewModel> {
                 new MenuItemViewModel(
                     "Barcode Scanning",
-                    () => this.ShowViewModel<BarCodeViewModel>()
+                    () => {
+                        if (deviceInfo.IsRearCameraAvailable) {
+                            this.ShowViewModel<BarCodeViewModel>();
+                        }
+                        else {
+                            dialogs.Alert("Rear camera is unavailable");
+                        }
+                    }
                 ),
                 new MenuItemViewModel(
                     "Device Info",

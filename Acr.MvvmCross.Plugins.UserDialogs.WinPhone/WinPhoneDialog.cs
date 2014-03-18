@@ -25,8 +25,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             this.content.Children.Add(this.cancelButton);
 
             this.progress = new ProgressOverlay {
-                //Content = this.content
-                Content = "Loading"
+                Content = this.content
             };
         }
 
@@ -68,13 +67,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public bool IsDeterministic { get; set; }
-
-
-
-        private bool isShowing;
-        public bool IsShowing {
-            get { return this.isShowing; }
-        }
+        public bool IsShowing { get; private set; }
 
 
         private Action onCancel;
@@ -87,7 +80,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public void Show() {
-            if (this.isShowing)
+            if (this.IsShowing)
                 return;
 
             this.progress.Show();
@@ -95,7 +88,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public void Hide() {
-            if (!this.isShowing)
+            if (!this.IsShowing)
                 return;
 
             this.progress.Hide();
