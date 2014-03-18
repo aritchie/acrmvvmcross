@@ -29,16 +29,16 @@
         <!--ContentPanel - place additional content here-->
         <ScrollViewer Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <TextBlock FontSize="20" Text="{Binding Result}"></TextBlock>
-                <Button Content="Action Sheet" Command="{Binding ActionSheet}"></Button>
-                <Button Content="Alert" Command="{Binding Alert}"></Button>
-                <Button Content="Confirm" Command="{Binding Confirm}"></Button>
-                <Button Content="Prompt" Command="{Binding Prompt}"></Button>
-                <Button Content="Toast" Command="{Binding Toast}"></Button>
-                <Button Content="Loading" Command="{Binding Loading}"></Button>
-                <Button Content="Loading (No Cancel)" Command="{Binding LoadingNoCancel}"></Button>
-                <Button Content="Progress" Command="{Binding Progress}"></Button>
-                <Button Content="Progress (No Cancel)" Command="{Binding ProgressNoCancel}"></Button>
+                <TextBlock FontSize="20" Text="{Binding Result}" />
+                <Button Content="Action Sheet" Command="{Binding ActionSheet}" />
+                <Button Content="Alert" Command="{Binding Alert}" />
+                <Button Content="Confirm" Command="{Binding Confirm}" />
+                <Button Content="Prompt" Command="{Binding Prompt}" />
+                <Button Content="Toast" Command="{Binding Toast}" />
+                <Button Content="Loading" Command="{Binding Loading}" />
+                <Button Content="Loading (No Cancel)" Command="{Binding LoadingNoCancel}" />
+                <Button Content="Progress" Command="{Binding Progress}" />
+                <Button Content="Progress (No Cancel)" Command="{Binding ProgressNoCancel}" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

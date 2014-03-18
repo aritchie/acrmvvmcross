@@ -10,7 +10,7 @@ using Cirrious.CrossCore.Droid.Platform;
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
     
-    public class DroidUserDialogService : AbstractUserDialogService {
+    public class DroidUserDialogService : AbstractUserDialogService<DroidProgressDialog> {
 
         public override void Alert(string message, string title, string okText, Action onOk) {
             this.Dispatch(activity => 
@@ -99,41 +99,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
         }
 
 
-        public override IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show) {
+        protected override DroidProgressDialog CreateProgressDialogInstance() {
             var activity = GetTopActivity();
-
-            var dlg = new DroidProgressDialog(activity) {
-                Title = title,
-                IsDeterministic = true
-            };
-
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-
-            if (show) {
-                dlg.Show();
-            }
-            return dlg;
-        }
-
-
-        public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
-            var activity = GetTopActivity();
-
-            var dlg = new DroidProgressDialog(activity) {
-                Title = title,
-                IsDeterministic = false
-            };
-
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-
-            if (show) {
-                dlg.Show();
-            }
-            return dlg;
+            return new DroidProgressDialog(activity);
         }
 
 

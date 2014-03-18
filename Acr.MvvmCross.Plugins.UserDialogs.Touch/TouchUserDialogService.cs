@@ -6,7 +6,7 @@ using MonoTouch.UIKit;
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     
-    public class TouchUserDialogService : AbstractUserDialogService {
+    public class TouchUserDialogService : AbstractUserDialogService<TouchProgressDialog> {
 
         public override void ActionSheet(string title, params SheetOption[] sheets) {
             var action = new UIActionSheet(title);
@@ -66,39 +66,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
-        public override IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show) {
-            var dlg = new TouchProgressDialog {
-                Title = title,
-                IsDeterministic = true
-            };
-
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-
-            if (show) {
-                dlg.Show();
-            }
-
-            return dlg;
-        }
-
-
-        public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
-            var dlg = new TouchProgressDialog {
-                Title = title,
-                IsDeterministic = false
-            };
-
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-
-            if (show) {
-                dlg.Show();
-            }
-
-            return dlg;
+        protected override TouchProgressDialog CreateProgressDialogInstance() {
+            return new TouchProgressDialog();
         }
 
 

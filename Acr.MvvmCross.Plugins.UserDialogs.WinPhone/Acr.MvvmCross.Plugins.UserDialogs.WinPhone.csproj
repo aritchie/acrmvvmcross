@@ -89,7 +89,7 @@
     <Compile Include="ActionSheetPopUp.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinPhoneDialog.cs" />
+    <Compile Include="WinPhoneProgressDialog.cs" />
     <Compile Include="WinPhoneUserDialogService.cs" />
   </ItemGroup>
   <ItemGroup>

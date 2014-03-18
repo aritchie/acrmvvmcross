@@ -8,7 +8,7 @@ using Coding4Fun.Toolkit.Controls;
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     
-    public class WinPhoneUserDialogService : AbstractUserDialogService {
+    public class WinPhoneUserDialogService : AbstractUserDialogService<WinPhoneProgressDialog> {
 
         public override void ActionSheet(string title, params SheetOption[] options) {
             var alert = new ActionSheetPopUp { Title = title };
@@ -102,31 +102,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         }
 
 
-        public override IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show) {
-            var dlg = new WinPhoneProgressDialog {
-                Title = title
-            };
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-            if (show) {
-                dlg.Show();
-            }
-            return dlg;
-        }
-
-
-        public override IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show) {
-            var dlg = new WinPhoneProgressDialog {
-                Title = title
-            };
-            if (onCancel != null) {
-                dlg.SetCancel(onCancel, cancelText);
-            }
-            if (show) {
-                dlg.Show();
-            }
-            return dlg;
+        protected override WinPhoneProgressDialog CreateProgressDialogInstance() {
+            return new WinPhoneProgressDialog();
         }
 
 
