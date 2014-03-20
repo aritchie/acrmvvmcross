@@ -47,5 +47,10 @@
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.dll" />
         <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.UserDialogs.WindowsPhone.dll" />
         <file src="BootstrapContent\UserDialogsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
+
+        <!-- winstore -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\netcore45\Acr.MvvmCross.Plugins.UserDialogs.dll" />
+        <file src="..\bin\Release\WinStore\Acr.MvvmCross.Plugins.UserDialogs.WindowsStore.dll" target="lib\netcore45\Acr.MvvmCross.Plugins.UserDialogs.WindowsStore.dll" />
+        <file src="BootstrapContent\UserDialogsPluginBootstrap.cs.pp" target="content\netcore45\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
     </files>
 </package>

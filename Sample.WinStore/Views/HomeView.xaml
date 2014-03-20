@@ -12,7 +12,7 @@
             <DataTemplate>
                 <Button Content="{Binding Title}" Command="{Binding Command}" />
             </DataTemplate>
-            <GridView.ItemsPanel>
+            <!--<GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapGrid 
                         MaximumRowsOrColumns="1" 
@@ -20,7 +20,7 @@
                         HorizontalChildrenAlignment="Center"
                     />
                 </ItemsPanelTemplate>
-            </GridView.ItemsPanel>
+            </GridView.ItemsPanel>-->
         </GridView>
     </Grid>
 </windowsStore:Mvx2StorePage>

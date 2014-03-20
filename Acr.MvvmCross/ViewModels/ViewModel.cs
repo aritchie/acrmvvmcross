@@ -7,7 +7,7 @@ namespace Acr.MvvmCross.ViewModels {
     
     public abstract class ViewModel : MvxViewModel, IViewModelLifecycle {
         
-        protected virtual bool RaisePropertyChanged<T>(ref T property, T value, [CallerMemberName] string propertyName = null){
+        protected virtual bool SetPropertyChange<T>(ref T property, T value, [CallerMemberName] string propertyName = null){
             if (Object.Equals(property, value)) 
                 return false;
 
@@ -15,6 +15,11 @@ namespace Acr.MvvmCross.ViewModels {
             this.RaisePropertyChanged(propertyName);
 
             return true;
+        }
+
+
+        protected virtual void PropertyChanged([CallerMemberName] string propertyName = null) {
+            this.RaisePropertyChanged(propertyName);
         }
 
         #region IViewModelLifecycle Members

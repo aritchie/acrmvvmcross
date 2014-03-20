@@ -2,12 +2,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Acr.MvvmCross.Plugins.UserDialogs;
+using Acr.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.ViewModels;
 
 
 namespace Sample.Core.ViewModels {
     
-    public class DialogsViewModel : MvxViewModel {
+    public class DialogsViewModel : ViewModel {
 
         public IMvxCommand Alert { get; private set; }
         public IMvxCommand ActionSheet { get; private set; }
@@ -19,15 +20,12 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Prompt { get; private set; }
         public IMvxCommand Toast { get; private set; }
 
+
         private string result;
         public string Result {
             get { return this.result; }
             set {
-                if (this.result == value)
-                    return;
-
-                this.result = value;
-                this.RaisePropertyChanged("Result");
+                this.SetPropertyChange(ref this.result, value);
             }
         }
 

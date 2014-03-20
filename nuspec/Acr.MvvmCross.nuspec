@@ -37,6 +37,10 @@
 
         <!-- winphone -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\wp8\Acr.MvvmCross.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.WinPhone.dll" />        
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.WinPhone.dll" />
+
+        <!-- store -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\netcore45\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\WinStore\Acr.MvvmCross.WindowsStore.dll" target="lib\netcore45\Acr.MvvmCross.WindowsStore.dll" />
     </files>
 </package>
