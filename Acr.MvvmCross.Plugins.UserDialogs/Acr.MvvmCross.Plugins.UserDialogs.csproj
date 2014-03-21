@@ -37,6 +37,9 @@
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AbstractUserDialogService.cs" />
+    <Compile Include="Impl\ProgressDialogProxyImpl.cs" />
+    <Compile Include="Impl\SafeUserDialogServiceImpl.cs" />
+    <Compile Include="ISafeUserDialogService.cs" />
     <Compile Include="IUserDialogService.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="IProgressDialog.cs" />

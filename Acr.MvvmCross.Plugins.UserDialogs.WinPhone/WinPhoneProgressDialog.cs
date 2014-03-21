@@ -70,8 +70,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         public bool IsShowing { get; private set; }
 
 
-        private Action onCancel;
-        private string cancelText;
         public void SetCancel(Action onCancel, string cancelText) {
             this.cancelButton.Visibility = Visibility.Visible;
             this.cancelButton.Content = cancelText;
@@ -91,6 +89,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             if (!this.IsShowing)
                 return;
 
+            this.IsShowing = true;
             this.progress.Hide();
         }
 

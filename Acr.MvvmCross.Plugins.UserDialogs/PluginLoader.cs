@@ -1,4 +1,5 @@
 ﻿using System;
+using Acr.MvvmCross.Plugins.UserDialogs.Impl;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
@@ -9,6 +10,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         public static readonly PluginLoader Instance = new PluginLoader();
 
         public void EnsureLoaded() {
+            Mvx.RegisterSingleton<ISafeUserDialogService>(new SafeUserDialogServiceImpl());
             var manager = Mvx.Resolve<IMvxPluginManager>();
             manager.EnsurePlatformAdaptionLoaded<PluginLoader>();
         }

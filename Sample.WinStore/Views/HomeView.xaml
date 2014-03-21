@@ -9,9 +9,11 @@
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <GridView ItemsSource="{Binding Menu}" CanReorderItems="True" CanDragItems="True">
-            <DataTemplate>
-                <Button Content="{Binding Title}" Command="{Binding Command}" />
-            </DataTemplate>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Title}" Command="{Binding Command}" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
             <!--<GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapGrid 
