@@ -14,7 +14,10 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.WinPhone {
             this.Manufacturer = DeviceStatus.DeviceManufacturer; 
             this.Model = DeviceStatus.DeviceName;
             this.OperatingSystem = Env.OSVersion.ToString();
-            
+
+            var deviceIdBytes = (byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId");
+            this.DeviceId = Convert.ToBase64String(deviceIdBytes);
+
             this.IsRearCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.Primary);
             this.IsFrontCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.FrontFacing);
             this.IsSimulator = (DevEnv.DeviceType == DeviceType.Emulator);

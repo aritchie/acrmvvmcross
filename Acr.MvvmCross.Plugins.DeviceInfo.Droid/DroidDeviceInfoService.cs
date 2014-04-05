@@ -1,6 +1,8 @@
 using System;
+using Android.Content;
 using Android.Content.PM;
 using Android.Content.Res;
+using Android.Telephony;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid;
 using B = Android.OS.Build;
@@ -23,6 +25,10 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Droid {
                 var m = x.ApplicationContext.PackageManager;
                 this.IsRearCameraAvailable = m.HasSystemFeature(PackageManager.FeatureCamera);
                 this.IsFrontCameraAvailable = m.HasSystemFeature(PackageManager.FeatureCameraFront);
+
+                var tel = (TelephonyManager)x.ApplicationContext.GetSystemService(Context.TelephonyService);
+                this.DeviceId = tel.DeviceId;
+
                 //var filter = new IntentFilter(Intent.ActionBatteryChanged);
                 //var battery = RegisterReceiver(null, filter);
                 //var level = battery.GetIntExtra(BatteryManager.ExtraLevel, -1);

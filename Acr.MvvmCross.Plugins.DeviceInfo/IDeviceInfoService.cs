@@ -7,6 +7,7 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo {
 
         int ScreenHeight { get; }
         int ScreenWidth { get; }
+        string DeviceId { get; }
         string Manufacturer { get; }
         string Model { get; }
         string OperatingSystem { get; }
