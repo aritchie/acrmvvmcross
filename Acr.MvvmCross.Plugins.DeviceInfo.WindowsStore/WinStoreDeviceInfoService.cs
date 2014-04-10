@@ -13,7 +13,6 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.WindowsStore {
             this.ScreenHeight = Convert.ToInt32(Window.Current.Bounds.Height);
             this.ScreenWidth = Convert.ToInt32(Window.Current.Bounds.Width);
 
-            Windows.System
             //this.Manufacturer = DeviceStatus.DeviceManufacturer; 
             //this.Model = DeviceStatus.DeviceName;
             //this.OperatingSystem = Environment.OSVersion.ToString();
