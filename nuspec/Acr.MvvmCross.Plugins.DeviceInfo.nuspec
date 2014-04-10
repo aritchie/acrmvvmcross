@@ -17,6 +17,7 @@
         <releaseNotes>
             1.1
             Adds Windows Phone 8 Support
+            Add DeviceId - useful for tracking phones
 
             1.0
             Initial Release

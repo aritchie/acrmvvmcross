@@ -5,6 +5,8 @@ namespace Acr.MvvmCross.Services {
     
     public interface ITimerService {
 
-        bool Enabled { get; set; }
+        bool IsStarted { get; }
+        void Start();
+        void Stop();
     }
 }

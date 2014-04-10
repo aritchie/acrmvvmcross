@@ -61,7 +61,7 @@
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoTouch\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
     <Reference Include="ModernHttpClient.iOS">
-      <HintPath>..\packages\modernhttpclient.1.2.1\lib\MonoTouch\ModernHttpClient.iOS.dll</HintPath>
+      <HintPath>..\packages\modernhttpclient.1.2.2\lib\MonoTouch\ModernHttpClient.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO">

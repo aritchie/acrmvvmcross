@@ -28,11 +28,30 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Text="{Binding Device.ScreenWidth}"></TextBlock>
-            <TextBlock Text="{Binding Device.ScreenHeight}"></TextBlock>
-            <TextBlock Text="{Binding Device.Manufacturer}"></TextBlock>
-            <TextBlock Text="{Binding Device.Model}"></TextBlock>
-            <TextBlock Text="{Binding Device.OperatingSystem}"></TextBlock>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Device ID:" />
+                <TextBlock Text="{Binding Device.DeviceId}" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Screen Width:" />
+                <TextBlock Text="{Binding Device.ScreenWidth}" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Screen Height:" />
+                <TextBlock Text="{Binding Device.ScreenHeight}" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Manufacturer:" />
+                <TextBlock Text="{Binding Device.Manufacturer}" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Model:" />
+                <TextBlock Text="{Binding Device.Model}" />
+            </StackPanel> 
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Operating System:" />
+                <TextBlock Text="{Binding Device.OperatingSystem}" />
+            </StackPanel>
             <CheckBox IsChecked="{Binding Device.IsFrontCameraAvailable}" IsEnabled="False">Front Camera</CheckBox>
             <CheckBox IsChecked="{Binding Device.IsRearCameraAvailable}" IsEnabled="False">Primary/Rear Camera</CheckBox>
             <CheckBox IsChecked="{Binding Device.IsSimulator}" IsEnabled="False">Simulator Detected</CheckBox>

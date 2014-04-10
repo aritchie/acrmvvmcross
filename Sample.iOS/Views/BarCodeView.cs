@@ -18,7 +18,7 @@ namespace Sample.iOS.Views {
             base.ViewDidLoad();
             var bindings = this.CreateInlineBindingTarget<BarCodeViewModel>();
 
-            this.Root = new RootElement("Text-To-Speech") {
+            this.Root = new RootElement("Barcode Scanning") {
                 new Section {
                     new StringElement("Scan Barcode").Bind(bindings, x => x.SelectedCommand, x => x.Scan)
                 },
