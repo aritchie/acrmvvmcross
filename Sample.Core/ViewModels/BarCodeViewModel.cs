@@ -31,7 +31,7 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Scan {
             get {
                 return new MvxCommand(async () => {
-                    var result = await this.Scanner.Read();
+                    var result = await this.Scanner.ReadAsync();
                     if (result.Success) { 
                         this.dialogs.Alert(String.Format(
                             "Bar Code: {0} - Type: {1}",
@@ -46,7 +46,7 @@ namespace Sample.Core.ViewModels {
             }
         }
 
-        
+
         public IList<string> Formats { get; private set; }
 
 

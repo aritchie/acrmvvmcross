@@ -38,7 +38,30 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
         public BarCodeScannerOptions DefaultOptions { get; private set; }
 
 
-        public async Task<BarCodeResult> Read(BarCodeScannerOptions options) {
+        public void Read(Action<BarCodeResult> onRead, Action<Exception> onError, BarCodeScannerOptions options) {
+            this.ReadAsync(options)
+                .ContinueWith(x => {
+                    if (x.Exception != null && onError != null)
+                        onError(x.Exception);
+
+                    onRead(x.Result);
+                });
+        }
+
+        //public Task<BarCodeResult> ReadAsync(string topText, string bottomText, string flashlightText, string cancelText) {
+        //    var opts = new BarCodeScannerOptions();
+
+        //    // leave defaults
+        //    opts.TopText = topText ?? opts.TopText;
+        //    opts.BottomText = bottomText ?? opts.BottomText;
+        //    opts.FlashlightText = flashlightText ?? opts.FlashlightText; 
+        //    opts.CancelText = cancelText ?? opts.CancelText;
+
+        //    return this.ReadAsync(opts);
+        //}
+
+
+        public async Task<BarCodeResult> ReadAsync(BarCodeScannerOptions options) {
 #if __IOS__
             var scanner = new MobileBarcodeScanner { UseCustomOverlay = false };
 #elif ANDROID
@@ -60,7 +83,9 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
             if (!String.IsNullOrWhiteSpace(options.CancelText)) {
                 scanner.CancelButtonText = options.CancelText;
             }
-            var result = await scanner.Scan(GetXingConfig(options));
+
+            var cfg = GetXingConfig(options);
+            var result = await scanner.Scan(cfg);
             return (result == null || String.IsNullOrWhiteSpace(result.Text)
                 ? BarCodeResult.Fail
                 : new BarCodeResult(result.Text, FromXingFormat(result.BarcodeFormat))

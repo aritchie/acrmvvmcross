@@ -16,12 +16,14 @@
             <dependency id="ZXing.Net.Mobile" version="1.4.2.1" />
         </dependencies>
         <releaseNotes>
-            1.1
-            FEATURE: Adds support for Windows Phone 8
-            FEATURE: Adds support for passing advanced configuration options
-            
-            1.0
-            Initial Release
+1.1
+Support for Windows Phone 8
+Support for passing advanced configuration options
+Default options so you can set and forget instead of constantly setting the text values (good for multilingual apps)
+Add callback method signature along side async version
+
+1.0
+Initial Release
         </releaseNotes>
     </metadata>
     <files>
