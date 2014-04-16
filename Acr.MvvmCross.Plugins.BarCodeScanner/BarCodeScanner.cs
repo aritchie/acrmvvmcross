@@ -41,10 +41,10 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
         public void Read(Action<BarCodeResult> onRead, Action<Exception> onError, BarCodeScannerOptions options) {
             this.ReadAsync(options)
                 .ContinueWith(x => {
-                    if (x.Exception != null && onError != null)
+                    if (x.Exception == null)
+                        onRead(x.Result);
+                    else if (onError != null)
                         onError(x.Exception);
-
-                    onRead(x.Result);
                 });
         }
 
@@ -71,18 +71,17 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
             var scanner = new MobileBarcodeScanner(Deployment.Current.Dispatcher) { UseCustomOverlay = false };
 #endif
             options = options ?? this.DefaultOptions;
-            if (!String.IsNullOrWhiteSpace(options.TopText)) {
+            if (!String.IsNullOrWhiteSpace(options.TopText)) 
                 scanner.TopText = options.TopText;
-            }
-            if (!String.IsNullOrWhiteSpace(options.BottomText)) {
+            
+            if (!String.IsNullOrWhiteSpace(options.BottomText)) 
                 scanner.BottomText = options.BottomText;
-            }
-            if (!String.IsNullOrWhiteSpace(options.FlashlightText)) {
+            
+            if (!String.IsNullOrWhiteSpace(options.FlashlightText)) 
                 scanner.FlashButtonText = options.FlashlightText;
-            }
-            if (!String.IsNullOrWhiteSpace(options.CancelText)) {
+            
+            if (!String.IsNullOrWhiteSpace(options.CancelText)) 
                 scanner.CancelButtonText = options.CancelText;
-            }
 
             var cfg = GetXingConfig(options);
             var result = await scanner.Scan(cfg);
