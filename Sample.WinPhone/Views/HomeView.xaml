@@ -28,12 +28,10 @@
 
         <!--ContentPanel - place additional content here-->
         <StackPanel Grid.Row="1" Margin="12,0,12,0">
-            <ListBox ItemsSource="{Binding Menu}">
+            <ListBox HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Menu}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Button Content="{Binding Title}" Command="{Binding Command}" FontSize="{StaticResource PhoneFontSizeLarge}"></Button>
-                        </StackPanel>
+                        <Button Content="{Binding Title}" Command="{Binding Command}" FontSize="{StaticResource PhoneFontSizeLarge}" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

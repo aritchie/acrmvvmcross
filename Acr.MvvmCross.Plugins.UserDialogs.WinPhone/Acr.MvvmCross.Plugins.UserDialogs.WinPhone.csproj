@@ -87,6 +87,7 @@
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ActionSheetPopUp.cs" />
+    <Compile Include="ProgressPopUp.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinPhoneProgressDialog.cs" />

@@ -1,33 +1,11 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using Coding4Fun.Toolkit.Controls;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     
     public class WinPhoneProgressDialog : IProgressDialog {
-        private readonly ProgressOverlay progress;
-        private readonly TextBlock loadingText;
-        private readonly TextBlock percentText;
-        private readonly Button cancelButton;
-        private readonly StackPanel content;
-
-
-        public WinPhoneProgressDialog() {
-            this.loadingText = new TextBlock();
-            this.percentText = new TextBlock { Visibility = Visibility.Collapsed };
-            this.cancelButton = new Button { Visibility = Visibility.Collapsed };
-
-            this.content = new StackPanel();
-            this.content.Children.Add(this.loadingText);
-            this.content.Children.Add(this.percentText);
-            this.content.Children.Add(this.cancelButton);
-
-            this.progress = new ProgressOverlay {
-                Content = this.content
-            };
-        }
+        private readonly ProgressPopUp progress = new ProgressPopUp();
 
         #region IProgressDialog Members
 
@@ -66,14 +44,17 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         }
 
 
-        public bool IsDeterministic { get; set; }
+        public bool IsDeterministic {
+            get { return !this.progress.IsIndeterminate; }
+            set { this.progress.IsIndeterminate = !value; }
+        }
+
+
         public bool IsShowing { get; private set; }
 
 
         public void SetCancel(Action onCancel, string cancelText) {
-            this.cancelButton.Visibility = Visibility.Visible;
-            this.cancelButton.Content = cancelText;
-            this.cancelButton.Click += (sender, args) => onCancel();
+            this.progress.SetCancel(onCancel, cancelText);
         }
 
 
@@ -81,7 +62,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             if (this.IsShowing)
                 return;
 
-            this.progress.Show();
+            this.IsShowing = true;
+            this.Dispatch(this.progress.Show);
         }
 
 
@@ -89,21 +71,23 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             if (!this.IsShowing)
                 return;
 
-            this.IsShowing = true;
-            this.progress.Hide();
+            this.IsShowing = false;
+            this.Dispatch(this.progress.Hide);
         }
 
 
         protected void Dispatch(Action action) {
-            Deployment.Current.Dispatcher.BeginInvoke(action);    
+            Deployment.Current.Dispatcher.BeginInvoke(action);
         }
 
 
         private void Refresh() {
             this.Dispatch(() => {
-                this.loadingText.Text = this.text;
-                if (this.IsDeterministic)
-                    this.percentText.Text = this.percentComplete + "%";
+                this.progress.LoadingText = this.text;
+                if (this.IsDeterministic) { 
+                    this.progress.PercentComplete = this.percentComplete;
+                    this.progress.CompletionText = this.percentComplete + "%";
+                }
             });
         }
 
