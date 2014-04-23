@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <Button
-        local:MvxBind="Click CurrentDirectoryActions"
-        android:text="Actions"
+    <TextView
+        local:MvxBind="Text Key"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-    <MvxListView
-        local:MvxBind="ItemsSource Nodes; ItemClick SelectNode"
-        local:MvxItemTemplate="@layout/filemanagerlistitem"
+    <TextView
+        local:MvxBind="Text Value"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="wrap_content" />
 </LinearLayout>

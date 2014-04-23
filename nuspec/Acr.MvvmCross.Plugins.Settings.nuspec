@@ -16,11 +16,12 @@
             <dependency id="Newtonsoft.Json" version="6.0.2" />
         </dependencies>
         <releaseNotes>
-            1.1
-            Adds Windows Phone 8 Support
+2.0
+Now works as an observable observable dictionary
+Adds support for WinPhone and WinStore
 
-            1.0
-            Initial Release
+1.0
+Initial Release
         </releaseNotes>
     </metadata>
     <files>

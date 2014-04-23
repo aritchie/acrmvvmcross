@@ -16,7 +16,6 @@ namespace Sample.iOS.Views {
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
-
             var bindings = this.CreateInlineBindingTarget<TextToSpeechViewModel>();
             this.Root = new RootElement("Text-To-Speech") {
                 new Section("Main Functionality") {

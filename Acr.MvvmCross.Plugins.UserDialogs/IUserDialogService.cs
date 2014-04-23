@@ -10,12 +10,12 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         Task AlertAsync(string message, string title = null, string okText = "OK");
         
         void ActionSheet(string title = null, params SheetOption[] options);
-        
+        void ActionSheet(Action<ActionSheetOptions> config);
+        void ActionSheet(ActionSheetOptions options);
+
         void Confirm(string message, Action<bool> onConfirm, string title = null, string okText = "OK", string cancelText = "Cancel");
         Task<bool> ConfirmAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel");
 
-        // TODO: multi-select picker
-        // TODO: no cancel options?  prompt with ok only?
         void Prompt(string message, Action<PromptResult> promptResult, string title = null, string okText = "OK", string cancelText = "Cancel", string hint = null);
         Task<PromptResult> PromptAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel", string hint = null);
         

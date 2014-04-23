@@ -63,7 +63,9 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AbstractSettingsService.cs" />
     <Compile Include="ISettingsService.cs" />
+    <Compile Include="ObservableDictionary.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingsServiceExtensions.cs" />

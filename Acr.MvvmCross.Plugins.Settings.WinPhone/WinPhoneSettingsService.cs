@@ -1,54 +1,35 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO.IsolatedStorage;
+using System.Linq;
 
 
 namespace Acr.MvvmCross.Plugins.Settings.WinPhone {
     
-    public class WinPhoneSettingsService : ISettingsService {
-        private readonly object config = IsolatedStorageSettings.ApplicationSettings;
+    public class WinPhoneSettingsService : AbstractSettingsService {
+        private readonly IsolatedStorageSettings set = IsolatedStorageSettings.ApplicationSettings;
 
-        #region ISettingsService Members
 
-        public string Get(string key, string defaultValue = null) {
-            var set = IsolatedStorageSettings.ApplicationSettings;
-            if (set.Contains(key))
-                return (string)set[key];
-
-            return defaultValue;
+        protected override void SaveSetting(string key, string value) {
+            this.set[key] = value;
+            this.set.Save();
         }
 
 
-        public void Set(string key, string value) {
-            var set = IsolatedStorageSettings.ApplicationSettings;
-            if (set.Contains(key)) {
-                set[key] = value;
-            }
-            else {
-                set.Add(key, value);
-            }
-            set.Save();
+        protected override void RemoveSetting(string key) {
+            this.set.Remove(key);
+            this.set.Save();
         }
 
 
-        public void Remove(string key) {
-            var set = IsolatedStorageSettings.ApplicationSettings;
-            if (set.Contains(key)) {
-                set.Remove(key);
-            }
-            set.Save();
-        }
-
-        
-        public void Clear() {
-            IsolatedStorageSettings.ApplicationSettings.Clear();
-            IsolatedStorageSettings.ApplicationSettings.Save();
+        protected override void ClearSettings() {
+            this.set.Clear();
+            this.set.Save();
         }
 
 
-        public bool Contains(string key) {
-            return IsolatedStorageSettings.ApplicationSettings.Contains(key);
+        protected override IDictionary<string, string> GetAllSettings() {
+            return this.set.ToDictionary(x => x.Key, x => x.Value.ToString());
         }
-
-        #endregion
     }
 }

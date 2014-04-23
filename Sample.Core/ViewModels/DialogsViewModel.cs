@@ -3,11 +3,21 @@ using System.Threading;
 using System.Threading.Tasks;
 using Acr.MvvmCross.Plugins.UserDialogs;
 using Acr.MvvmCross.ViewModels;
+using Cirrious.MvvmCross.Plugins.Messenger;
 using Cirrious.MvvmCross.ViewModels;
 
 
 namespace Sample.Core.ViewModels {
+
+    public class BackgroundAlert : MvxMessage {
+        public string Message { get; private set; }
+
+        public BackgroundAlert(object sender, string msg) : base(sender) {
+            this.Message = msg;
+        }
+    }
     
+
     public class DialogsViewModel : ViewModel {
 
         public IMvxCommand Alert { get; private set; }
@@ -20,6 +30,8 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Prompt { get; private set; }
         public IMvxCommand Toast { get; private set; }
 
+        public IMvxCommand SendBackgroundAlert { get; private set; }
+
 
         private string result;
         public string Result {
@@ -30,7 +42,15 @@ namespace Sample.Core.ViewModels {
         }
 
 
-        public DialogsViewModel(IUserDialogService dialogService) {
+        public DialogsViewModel(IUserDialogService dialogService, IMvxMessenger messenger) {
+            messenger.Subscribe<BackgroundAlert>(msg => 
+                dialogService.Toast(msg.Message)
+            );
+
+            this.SendBackgroundAlert = new MvxCommand(() => 
+                messenger.Publish(new BackgroundAlert(this, "Test"))
+            );
+
             this.ActionSheet = new MvxCommand(() => 
                 dialogService.ActionSheet(
                     "Test Title",

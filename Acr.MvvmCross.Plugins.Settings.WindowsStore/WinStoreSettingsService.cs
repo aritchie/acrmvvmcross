@@ -1,32 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Windows.Foundation.Collections;
+using Windows.Storage;
 
 
 namespace Acr.MvvmCross.Plugins.Settings.WindowsStore {
     
-    public class WinStoreSettingsService : ISettingsService {
+    public class WinStoreSettingsService : AbstractSettingsService {
+        private readonly IPropertySet container = ApplicationData.Current.LocalSettings.Values;
 
-        #region ISettingsService Members
 
-        public string Get(string key, string defaultValue = null) {
-            throw new NotImplementedException();
+        protected override void SaveSetting(string key, string value) {
+            this.container[key] = value;
         }
 
-        public void Set(string key, string value) {
-            throw new NotImplementedException();
+
+        protected override void RemoveSetting(string key) {
+            this.container.Remove(key);
         }
 
-        public void Remove(string key) {
-            throw new NotImplementedException();
+
+        protected override void ClearSettings() {
+            this.container.Clear();
         }
 
-        public void Clear() {
-            throw new NotImplementedException();
-        }
 
-        public bool Contains(string key) {
-            throw new NotImplementedException();
+        protected override IDictionary<string, string> GetAllSettings() {
+            return this.container.ToDictionary(x => x.Key, x => x.Value.ToString());
         }
-
-        #endregion
     }
 }

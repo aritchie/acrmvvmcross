@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Android.Content;
 using Android.Preferences;
 using Cirrious.CrossCore;
@@ -7,7 +10,7 @@ using Cirrious.CrossCore.Droid;
 
 namespace Acr.MvvmCross.Plugins.Settings.Droid {
 
-    public class DroidSettingsService : ISettingsService {
+    public class DroidSettingsService : AbstractSettingsService {
         private readonly ISharedPreferences prefs;
         
 
@@ -17,12 +20,12 @@ namespace Acr.MvvmCross.Plugins.Settings.Droid {
         }
 
 
-        public string Get(string key, string defaultValue = null) {
-            return this.prefs.GetString(key, defaultValue);
+        protected override IDictionary<string, string> GetAllSettings() {
+            return this.prefs.All.ToDictionary(x => x.Key, x => x.Value.ToString());
         }
 
 
-        public void Set(string key, string value) {
+        protected override void SaveSetting(string key, string value) {
             using (var editor = this.prefs.Edit()) {
                 editor.PutString(key, value);
                 editor.Commit();
@@ -30,10 +33,7 @@ namespace Acr.MvvmCross.Plugins.Settings.Droid {
         }
 
 
-        public void Remove(string key) {
-            if (!this.Contains(key))
-                return;
-
+        protected override void RemoveSetting(string key) {
             using (var editor = this.prefs.Edit()) {
                 editor.Remove(key);
                 editor.Commit();
@@ -41,16 +41,11 @@ namespace Acr.MvvmCross.Plugins.Settings.Droid {
         }
 
 
-        public void Clear() {
+        protected override void ClearSettings() {
             using (var editor = this.prefs.Edit()) {
                 editor.Clear();
                 editor.Commit();
             }
-        }
-
-
-        public bool Contains(string key) {
-            return this.prefs.Contains(key);
         }
     }
 }

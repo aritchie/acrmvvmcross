@@ -1,45 +1,37 @@
 using System;
-using Cirrious.CrossCore;
+using System.Collections.Generic;
+using System.Linq;
 using MonoTouch.Foundation;
 
 
 namespace Acr.MvvmCross.Plugins.Settings.Touch {
 
-    public class TouchSettingsService : ISettingsService {
+    public class TouchSettingsService : AbstractSettingsService {
         private readonly NSUserDefaults defaults = NSUserDefaults.StandardUserDefaults;
 
 
-        public string Get(string key, string defaultValue = null) {
-			try {
-				return defaults.StringForKey(key);
-			}
-			catch(Exception ex)  {
-                Mvx.Warning("Error retrieving setting - " + key, ex);
-                return defaultValue;
-			}
+        protected override IDictionary<string, string> GetAllSettings() {
+            return this.defaults
+                .AsDictionary()
+                .ToDictionary(x => x.Key.ToString(), x => x.Value.ToString());
         }
 
 
-        public void Set(string key, string value) {
-			defaults.SetString(value,key);
+        protected override void SaveSetting(string key, string value) {
+            this.defaults.SetString(value, key);
+            this.defaults.Synchronize();
         }
 
 
-        public void Clear() {
-			defaults.RemovePersistentDomain(NSBundle.MainBundle.BundleIdentifier);
+        protected override void ClearSettings() {
+            this.defaults.RemovePersistentDomain(NSBundle.MainBundle.BundleIdentifier);
+            this.defaults.Synchronize();
         }
 
 
-        public bool Contains(string key) {
-            return (this.Get(key) != null);
-        }
-
-
-        public void Remove(string key) {
-            if (!this.Contains(key))
-                return;
-
-            defaults.RemoveObject(key);
+        protected override void RemoveSetting(string key) {
+            this.defaults.RemoveObject(key);
+            this.defaults.Synchronize();
         }
     }
 }

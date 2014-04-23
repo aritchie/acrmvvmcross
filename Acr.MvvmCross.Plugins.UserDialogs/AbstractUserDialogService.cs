@@ -1,17 +1,18 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs {
 
     public abstract class AbstractUserDialogService : IUserDialogService {
-        public abstract void ActionSheet(string title, params SheetOption[] options);
+        
+        public abstract void ActionSheet(ActionSheetOptions options);
         public abstract void Alert(string message, string title, string okText, Action onOk);
         public abstract void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText);
         public abstract void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint);
         public abstract void Toast(string message, int timeoutSeconds, Action onClick);
         
-
         public abstract IProgressDialog Progress(string title, Action onCancel, string cancelText, bool show);
         public abstract IProgressDialog Loading(string title, Action onCancel, string cancelText, bool show);
 
@@ -30,6 +31,21 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
                 this.loading = null;
             }
         }
+
+
+        public void ActionSheet(string title, params SheetOption[] options) {
+            this.ActionSheet(new ActionSheetOptions {
+                Title = title,
+                Options = options.ToList()
+            });            
+        }
+
+
+        public void ActionSheet(Action<ActionSheetOptions> config) {
+            var options = new ActionSheetOptions();
+            config(options);
+            this.ActionSheet(options);
+        } 
 
 
         public Task AlertAsync(string message, string title, string okText) {
@@ -64,12 +80,12 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
             dlg.Title = title;
             dlg.IsDeterministic = isdeterministic;
 
-            if (onCancel != null) {
+            if (onCancel != null) 
                 dlg.SetCancel(onCancel, cancelText);
-            }
-            if (show) {
+            
+            if (show) 
                 dlg.Show();
-            }
+            
             return dlg;                
         }
 

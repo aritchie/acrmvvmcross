@@ -8,12 +8,19 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     
     public class TouchUserDialogService : AbstractUserDialogService<TouchProgressDialog> {
 
-        public override void ActionSheet(string title, params SheetOption[] sheets) {
-            var action = new UIActionSheet(title);
-            sheets.ToList().ForEach(x => action.AddButton(x.Text));
-            action.Clicked += (sender, btn) => sheets[btn.ButtonIndex].Action();
-            var view = UIApplication.SharedApplication.KeyWindow.RootViewController.View;
-            action.ShowInView(view);
+        public override void ActionSheet(ActionSheetOptions options) {
+            this.Dispatch(() => {
+                var action = new UIActionSheet(options.Title);
+                options.Options.ToList().ForEach(x => action.AddButton(x.Text));
+                //if (options.Cancel != null) {
+                //    action.AddButton(options.Cancel.Text);
+                //    action.CancelButtonIndex = options.Options.Count + 1;
+                //}
+
+                action.Clicked += (sender, btn) => options.Options[btn.ButtonIndex].Action();
+                var view = UIApplication.SharedApplication.KeyWindow.RootViewController.View;
+                action.ShowInView(view);
+            });
         }
 
 
@@ -41,9 +48,12 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
 
         public override void Toast(string message, int timeoutSeconds, Action onClick) {
-            var ms = timeoutSeconds * 1000;
-            BTProgressHUD.ShowToast(message, false, ms);
             // TODO: no click callback in showtoast at the moment
+            this.Dispatch(() => {
+                var ms = timeoutSeconds * 1000;
+                BTProgressHUD.ShowToast(message, false, ms);
+            });
+            
         }
 
 

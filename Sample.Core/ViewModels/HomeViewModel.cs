@@ -43,6 +43,10 @@ namespace Sample.Core.ViewModels {
                     () => this.ShowViewModel<NetworkViewModel>()
                 ),
                 new MenuItemViewModel(
+                    "Settings",
+                    () => this.ShowViewModel<SettingsViewModel>()
+                ),
+                new MenuItemViewModel(
                     "Text-To-Speech (TTS)",
                     () => this.ShowViewModel<TextToSpeechViewModel>()
                 ),

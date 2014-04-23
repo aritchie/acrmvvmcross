@@ -53,4 +53,9 @@
         android:text="Progress (No Cancel)"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click SendBackgroundAlert"
+        android:text="Send Background Alert via Messenger"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

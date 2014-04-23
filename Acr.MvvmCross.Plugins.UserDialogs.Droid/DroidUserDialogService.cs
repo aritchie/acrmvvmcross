@@ -28,8 +28,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
         }
 
 
-        public override void ActionSheet(string title,  params SheetOption[] options) {
+        public override void ActionSheet(ActionSheetOptions options) {
             var array = options
+                .Options
                 .Select(x => x.Text)
                 .ToArray();
 
@@ -37,7 +38,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 new AlertDialog
                     .Builder(activity)
                     .SetTitle(title)
-                    .SetItems(array, (sender, args) => options[args.Which].Action())
+                    .SetItems(array, (sender, args) => options.Options[args.Which].Action())
                     .Show()
             );
         }
@@ -85,17 +86,18 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
 
         public override void Toast(string message, int timeoutSeconds, Action onClick) {
-            onClick = onClick ?? (() => {});
-            var activity = GetTopActivity();
+            this.Dispatch(activity => {
+                onClick = onClick ?? (() => {});
 
-            AndHUD.Shared.ShowToast(
-                activity, 
-                message, 
-                MaskType.Clear,
-                TimeSpan.FromSeconds(timeoutSeconds),
-                false,
-                onClick
-            );
+                AndHUD.Shared.ShowToast(
+                    activity, 
+                    message, 
+                    MaskType.Clear,
+                    TimeSpan.FromSeconds(timeoutSeconds),
+                    false,
+                    onClick
+                );
+            });
         }
 
 
@@ -106,7 +108,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
 
         protected virtual void Dispatch(Action action) {
-            Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(action);    
+            Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(action);
         }
 
 
