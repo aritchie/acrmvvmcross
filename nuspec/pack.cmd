@@ -9,4 +9,5 @@ nuget pack Acr.MvvmCross.Plugins.Storage.nuspec
 nuget pack Acr.MvvmCross.Plugins.UserDialogs.nuspec
 nuget pack Acr.MvvmCross.Plugins.Network.nuspec
 nuget pack Acr.MvvmCross.Plugins.TextToSpeech.nuspec
+nuget pack Acr.MvvmCross.Plugins.ModernHttpClient.nuspec
 pause

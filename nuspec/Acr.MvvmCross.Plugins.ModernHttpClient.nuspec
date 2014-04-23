@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.MvvmCross.Plugins.ModernHttpClient</id>
+        <version>1.0.0</version>
+        <title>MvvmCross Device Information</title>
+        <description>Modern HTTP Client Factory for MvvmCross based on Paul Betts Modern HTTP Client</description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>xamarin mvvmcross android ios</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+            <package id="modernhttpclient" version="1.2.2" />
+        </dependencies>
+        <releaseNotes>
+            1.0
+            Initial Release
+        </releaseNotes>
+    </metadata>
+    <files>
+        <!-- PCL -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.ModernHttpClient.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.Plugins.ModernHttpClient.dll" />
+
+        <!-- droid -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.ModernHttpClient.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.ModernHttpClient.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.ModernHttpClient.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.ModernHttpClient.Droid.dll" />
+        <file src="BootstrapContent\ModernHttpClientPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\ModernHttpClientPluginBootstrap.cs.pp" />
+
+        <!-- touch -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.ModernHttpClient.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.ModernHttpClient.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.ModernHttpClient.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.ModernHttpClient.Touch.dll" />
+        <file src="TouchBootstrapContent\TouchModernHttpClientPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\ModernHttpClientPluginBootstrap.cs.pp" />
+    </files>
+</package>
