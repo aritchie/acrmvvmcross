@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
 
@@ -7,13 +6,14 @@ using MonoTouch.Foundation;
 namespace Acr.MvvmCross.Plugins.Settings.Touch {
 
     public class TouchSettingsService : AbstractSettingsService {
-        private readonly NSUserDefaults defaults = NSUserDefaults.StandardUserDefaults;
+        private readonly NSUserDefaults defaults;
 
-
-        protected override IDictionary<string, string> GetAllSettings() {
-            return this.defaults
+        public TouchSettingsService() {
+            this.defaults = NSUserDefaults.StandardUserDefaults;
+            var dict = this.defaults
                 .AsDictionary()
                 .ToDictionary(x => x.Key.ToString(), x => x.Value.ToString());
+            this.SetSettings(dict);
         }
 
 

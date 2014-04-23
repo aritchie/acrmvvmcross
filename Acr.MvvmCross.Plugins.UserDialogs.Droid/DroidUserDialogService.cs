@@ -37,7 +37,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             this.Dispatch(activity => 
                 new AlertDialog
                     .Builder(activity)
-                    .SetTitle(title)
+                    .SetTitle(options.Title)
                     .SetItems(array, (sender, args) => options.Options[args.Which].Action())
                     .Show()
             );

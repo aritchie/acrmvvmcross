@@ -1164,13 +1164,13 @@ namespace Sample.Droid
 			public const int FileManager = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int filemanager_listitem = 2130903067;
+			public const int FileManagerListItem = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
 			public const int Home = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int home_listitem = 2130903069;
+			public const int HomeListItem = 2130903069;
 			
 			// aapt resource value: 0x7f03001e
 			public const int Network = 2130903070;
@@ -1179,7 +1179,7 @@ namespace Sample.Droid
 			public const int Settings = 2130903071;
 			
 			// aapt resource value: 0x7f030020
-			public const int Settings_ListItem = 2130903072;
+			public const int SettingsListItem = 2130903072;
 			
 			// aapt resource value: 0x7f030021
 			public const int Splash = 2130903073;

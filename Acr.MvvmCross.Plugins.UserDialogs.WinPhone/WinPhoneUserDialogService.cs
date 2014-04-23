@@ -10,11 +10,11 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     
     public class WinPhoneUserDialogService : AbstractUserDialogService<WinPhoneProgressDialog> {
 
-        public override void ActionSheet(string title, params SheetOption[] options) {
+        public override void ActionSheet(ActionSheetOptions options) {
             this.Dispatch(() => {
-                var alert = new ActionSheetPopUp { Title = title };
+                var alert = new ActionSheetPopUp { Title = options.Title };
                 alert.ActionPopUpButtons.Clear();
-                options.ToList().ForEach(x => alert.AddButton(x.Text, x.Action));
+                options.Options.ToList().ForEach(x => alert.AddButton(x.Text, x.Action));
                 alert.Show();
             });
         }

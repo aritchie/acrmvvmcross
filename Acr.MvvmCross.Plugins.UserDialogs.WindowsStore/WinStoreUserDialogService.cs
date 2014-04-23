@@ -7,17 +7,22 @@ using WinRTXamlToolkit.Controls;
 namespace Acr.MvvmCross.Plugins.UserDialogs.WindowsStore {
 
     public class WinStoreUserDialogService : AbstractUserDialogService<WinStoreProgressDialog> {
+        // TODO: dispatching
 
-        public override void ActionSheet(string title, params SheetOption[] options) {
+        public override void ActionSheet(ActionSheetOptions options) {
             var input = new InputDialog {
                 ButtonsPanelOrientation = Orientation.Vertical
             };
 
-            var buttons = options.Select(x => x.Text).ToArray();
+            var buttons = options.Options
+                .Select(x => x.Text)
+                .ToArray();
+
             input
-                .ShowAsync(title, null, buttons)
+                .ShowAsync(options.Title, null, buttons)
                 .ContinueWith(x => 
                     options
+                        .Options
                         .Single(y => y.Text == x.Result)
                         .Action() 
                 );

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -8,7 +7,14 @@ using Windows.Storage;
 namespace Acr.MvvmCross.Plugins.Settings.WindowsStore {
     
     public class WinStoreSettingsService : AbstractSettingsService {
-        private readonly IPropertySet container = ApplicationData.Current.LocalSettings.Values;
+        private readonly IPropertySet container;
+
+
+        public WinStoreSettingsService() {
+            this.container = ApplicationData.Current.LocalSettings.Values;
+            var dict = this.container.ToDictionary(x => x.Key, x => x.Value.ToString());
+            this.SetSettings(dict);
+        }
 
 
         protected override void SaveSetting(string key, string value) {
@@ -23,11 +29,6 @@ namespace Acr.MvvmCross.Plugins.Settings.WindowsStore {
 
         protected override void ClearSettings() {
             this.container.Clear();
-        }
-
-
-        protected override IDictionary<string, string> GetAllSettings() {
-            return this.container.ToDictionary(x => x.Key, x => x.Value.ToString());
         }
     }
 }

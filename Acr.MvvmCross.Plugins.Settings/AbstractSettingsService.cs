@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.ComponentModel;
 using System.Linq;
 
 
@@ -12,16 +11,19 @@ namespace Acr.MvvmCross.Plugins.Settings {
 
         public IDictionary<string, string> All { get; private set; }
 
-
-        protected AbstractSettingsService() {
-            var observable = new ObservableDictionary<string, string>(this.GetAllSettings());
-            observable.CollectionChanged += this.OnCollectionChanged;
-            this.All = observable;
-        }
-
         #region Internals
 
-        protected abstract IDictionary<string, string> GetAllSettings(); 
+        /// <summary>
+        /// This should be called when everything is loaded up
+        /// </summary>
+        /// <param name="dictionary"></param>
+        protected void SetSettings(IDictionary<string, string> dictionary) {
+            var observable = new ObservableDictionary<string, string>(dictionary);
+            observable.CollectionChanged += this.OnCollectionChanged;
+            this.All = observable;            
+        }
+
+
         protected abstract void SaveSetting(string key, string value);
         protected abstract void RemoveSetting(string key);
         protected abstract void ClearSettings();
