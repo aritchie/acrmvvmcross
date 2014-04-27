@@ -25,7 +25,7 @@
     </metadata>
     <files>		
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.dll" />
 
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoAndroid\Acr.MvvmCross.dll" />

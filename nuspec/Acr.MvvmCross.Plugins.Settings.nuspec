@@ -27,7 +27,7 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.Plugins.Settings.dll" />
 
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Settings.dll" />
