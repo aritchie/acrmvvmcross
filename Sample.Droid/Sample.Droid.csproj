@@ -50,6 +50,9 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AndHUD">
+      <HintPath>..\Components\AndHUD-1.3.1\lib\android\AndHUD.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\MonoAndroid\Cirrious.CrossCore.dll</HintPath>
     </Reference>
@@ -94,14 +97,13 @@
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoAndroid\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
-      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.19.0.2\lib\MonoAndroid10\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
-    </Reference>
     <Reference Include="zxing.monoandroid">
       <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoAndroid\zxing.monoandroid.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="ZXing.Net.Mobile">
       <HintPath>..\packages\ZXing.Net.Mobile.1.4.2.1\lib\MonoAndroid\ZXing.Net.Mobile.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +125,7 @@
     <Compile Include="Views\FileManagerActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="Views\NetworkActivity.cs" />
+    <Compile Include="Views\SettingsActivity.cs" />
     <Compile Include="Views\SplashActivity.cs" />
     <Compile Include="Views\TextToSpeechActivity.cs" />
   </ItemGroup>
@@ -244,6 +247,12 @@
       <Project>{ac537269-fd5f-43e8-ba62-cecd983eb9d9}</Project>
       <Name>Sample.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="AndHUD">
+      <Visible>False</Visible>
+      <Version>1.3.1</Version>
+    </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

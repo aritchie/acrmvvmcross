@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MvxListView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    local:MvxBind="ItemsSource Settings; ItemClick Select"
-    local:MvxItemTemplate="@layout/settingslistitem" />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <MvxListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        local:MvxBind="Visible If(Settings.Count &gt; 0, true, false); ItemsSource Settings; ItemClick Select"
+        local:MvxItemTemplate="@layout/settingslistitem" />
+    <TextView
+        local:MvxBind="Visible If(Settings.Count &gt; 0, true, false)"
+        android:text="No Settings Found.  Add new ones from the menu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

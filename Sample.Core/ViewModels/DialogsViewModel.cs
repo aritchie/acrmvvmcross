@@ -36,14 +36,18 @@ namespace Sample.Core.ViewModels {
         private string result;
         public string Result {
             get { return this.result; }
-            set {
+            private set {
                 this.SetPropertyChange(ref this.result, value);
+                //this.result = value;
+                //this.RaisePropertyChanged("Result");
             }
         }
 
+        private MvxSubscriptionToken backgroundToken;
+
 
         public DialogsViewModel(IUserDialogService dialogService, IMvxMessenger messenger) {
-            messenger.Subscribe<BackgroundAlert>(msg => 
+            this.backgroundToken = messenger.Subscribe<BackgroundAlert>(msg => 
                 dialogService.Toast(msg.Message)
             );
 

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.UserDialogs</id>
-        <version>1.2.0</version>
+        <version>1.1.1</version>
         <title>MvvmCross User Dialogs</title>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
@@ -20,9 +20,11 @@
             </group>
         </dependencies>
         <releaseNotes>
-1.2
+1.1.1
 Minor Bugfixes to WinPhone dispatching
 Additional overrides for actionsheet to prepare for future updates
+Switching to profile 158
+Fix nuget issue with winphone
 
 1.1
 Adds Windows Phone 8 Support
