@@ -198,10 +198,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner.WindowsStore\Acr.MvvmCross.Plugins.BarCodeScanner.WindowsStore.csproj">
-      <Project>{6e80304c-9f59-49ac-9839-29818741a8f6}</Project>
-      <Name>Acr.MvvmCross.Plugins.BarCodeScanner.WindowsStore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\Acr.MvvmCross.Plugins.BarCodeScanner.csproj">
       <Project>{1ed7e825-98ed-4740-8dd7-96e4aa3f1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
