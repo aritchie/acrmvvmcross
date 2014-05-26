@@ -22,24 +22,11 @@ namespace Sample.Droid.Views {
         }
 
 
-        public override bool OnCreateOptionsMenu(IMenu menu) {
-            menu.Add(1, 1, 1, "Clear Settings");
-            menu.Add(1, 2, 2, "Add Item");
-            return true;
-        }
+        public override bool OnKeyUp(Keycode keyCode, KeyEvent e) {
+            if (e.KeyCode == Keycode.Menu)
+                this.ViewModel.Actions.Execute();
 
-
-        public override bool OnOptionsItemSelected(IMenuItem item) {
-            switch (item.ItemId) {
-                case 1 :
-                    this.ViewModel.Clear.Execute();
-                    return true;
-
-                case 2 :
-                    this.ViewModel.Add.Execute();
-                    return true;
-            }
-            return base.OnOptionsItemSelected(item);
+            return base.OnKeyUp(keyCode, e);
         }
     }
 }

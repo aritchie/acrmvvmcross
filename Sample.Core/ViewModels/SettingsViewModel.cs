@@ -4,6 +4,7 @@ using Acr.MvvmCross.Plugins.Settings;
 using Acr.MvvmCross.Plugins.UserDialogs;
 using Acr.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.ViewModels;
+using System.Threading.Tasks;
 
 
 namespace Sample.Core.ViewModels {
@@ -27,7 +28,7 @@ namespace Sample.Core.ViewModels {
         public MvxCommand<KeyValuePair<string, string>> Select {
             get {
                 return new MvxCommand<KeyValuePair<string, string>>(setting => this.dialogs.ActionSheet(x => x
-                    .SetTitle("Actions")
+                    .SetTitle("Item Actions")
                     .Add("Remove", async () => {
                         var r = await this.dialogs.ConfirmAsync("Are you sure you wish to remove " + setting.Key);
                         if (r)
@@ -44,31 +45,35 @@ namespace Sample.Core.ViewModels {
         } 
 
 
-        public IMvxCommand Add {
+        public IMvxCommand Actions {
             get {
-                return new MvxCommand(async () => {
-                    var key = await this.dialogs.PromptAsync("Enter key");
-                    if (!key.Ok || String.IsNullOrWhiteSpace(key.Text)) 
-                        return;
 
-                    var value = await this.dialogs.PromptAsync("Enter value");
-                    if (!value.Ok)
-                        return;
-                    
-                    this.settings.Set(key.Text, value.Text);
-                });
+                return new MvxCommand(() => this.dialogs.ActionSheet(x => x
+                    .SetTitle("Actions")
+                    .Add("Add Setting", () => this.OnAdd())
+                    .Add("Clear All", () => this.OnClear())
+                ));
             }
         }
 
 
-        public IMvxCommand Clear {
-            get {
-                return new MvxCommand(async () => {
-                    var r = await this.dialogs.ConfirmAsync("Are you sure you want to clear settings?");
-                    if (r)
-                        this.settings.Clear();
-                });
-            }
+        private async Task OnAdd() {
+            var key = await this.dialogs.PromptAsync("Enter key");
+            if (!key.Ok || String.IsNullOrWhiteSpace(key.Text)) 
+                return;
+
+            var value = await this.dialogs.PromptAsync("Enter value");
+            if (!value.Ok)
+                return;
+
+            this.settings.Set(key.Text, value.Text);
+        }
+
+
+        private async Task OnClear() {
+            var r = await this.dialogs.ConfirmAsync("Are you sure you want to clear settings?");
+            if (r)
+                this.settings.Clear();
         }
     }
 }
