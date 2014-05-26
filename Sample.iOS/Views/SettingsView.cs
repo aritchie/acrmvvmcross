@@ -17,15 +17,13 @@ namespace Sample.iOS.Views {
             this.Title = "Settings";
             var src = new MvxStandardTableViewSource(this.TableView, "TitleText Key; DetailText Value");
 
-            var btnAdd = new UIBarButtonItem(UIBarButtonSystemItem.Add);
-            var btnClear = new UIBarButtonItem(UIBarButtonSystemItem.Trash);
-            this.NavigationItem.RightBarButtonItems = new [] { btnAdd, btnClear };
+            var btnAction = new UIBarButtonItem(UIBarButtonSystemItem.Add);
+            this.NavigationItem.RightBarButtonItem = btnAction;
 
             var set = this.CreateBindingSet<SettingsView, SettingsViewModel>();
             set.Bind(src).To(x => x.Settings);
             set.Bind(src).For(x => x.SelectionChangedCommand).To(x => x.Select);
-            set.Bind(btnAdd).To(x => x.Add);
-            set.Bind(btnClear).To(x => x.Clear);
+            set.Bind(btnAction).To(x => x.Actions);
             set.Apply();
 
             this.TableView.Source = src;
