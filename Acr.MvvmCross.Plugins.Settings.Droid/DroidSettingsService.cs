@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Android.Content;
 using Android.Preferences;
@@ -12,12 +13,10 @@ namespace Acr.MvvmCross.Plugins.Settings.Droid {
         private ISharedPreferences prefs;
         
 
-        public DroidSettingsService() {
-            Mvx.CallbackWhenRegistered<IMvxAndroidGlobals>(x => {
-                this.prefs = PreferenceManager.GetDefaultSharedPreferences(x.ApplicationContext);
-                var dict = this.prefs.All.ToDictionary(y => y.Key, y => y.Value.ToString());
-                this.SetSettings(dict);
-            });
+        protected override IDictionary<string, string> GetNativeSettings() {
+            var globals = Mvx.Resolve<IMvxAndroidGlobals>();
+            this.prefs = PreferenceManager.GetDefaultSharedPreferences(globals.ApplicationContext);
+            return this.prefs.All.ToDictionary(y => y.Key, y => y.Value.ToString());
         }
 
 

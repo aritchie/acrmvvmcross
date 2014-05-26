@@ -13,7 +13,7 @@
         <tags>xamarin mvvmcross android ios</tags>
         <dependencies>
             <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
-            <dependency id="modernhttpclient" version="1.2.2" />
+            <dependency id="modernhttpclient" version="2.0.0" />
         </dependencies>
         <releaseNotes>
 1.0

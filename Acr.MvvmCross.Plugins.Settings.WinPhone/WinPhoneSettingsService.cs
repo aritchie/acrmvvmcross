@@ -7,30 +7,32 @@ using System.Linq;
 namespace Acr.MvvmCross.Plugins.Settings.WinPhone {
     
     public class WinPhoneSettingsService : AbstractSettingsService {
-        private readonly IsolatedStorageSettings set = IsolatedStorageSettings.ApplicationSettings;
-
-
-        public WinPhoneSettingsService() {
-            this.set = IsolatedStorageSettings.ApplicationSettings;
-            var dict = this.set.ToDictionary(x => x.Key, x => x.Value.ToString());
-            this.SetSettings(dict);
+       
+        protected IsolatedStorageSettings Set {
+            get { return IsolatedStorageSettings.ApplicationSettings; }
         }
 
+
+        protected override IDictionary<string, string> GetNativeSettings() {
+            return this.Set.ToDictionary(x => x.Key, x => x.Value.ToString());;
+        }
+
+
         protected override void SaveSetting(string key, string value) {
-            this.set[key] = value;
-            this.set.Save();
+            this.Set[key] = value;
+            this.Set.Save();
         }
 
 
         protected override void RemoveSetting(string key) {
-            this.set.Remove(key);
-            this.set.Save();
+            this.Set.Remove(key);
+            this.Set.Save();
         }
 
 
         protected override void ClearSettings() {
-            this.set.Clear();
-            this.set.Save();
+            this.Set.Clear();
+            this.Set.Save();
         }
     }
 }

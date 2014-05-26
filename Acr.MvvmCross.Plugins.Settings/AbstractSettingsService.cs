@@ -11,18 +11,35 @@ namespace Acr.MvvmCross.Plugins.Settings {
 
         public IDictionary<string, string> All { get; private set; }
 
+
+        protected AbstractSettingsService() {
+            this.Resync();
+        }
+
         #region Internals
 
         /// <summary>
-        /// This should be called when everything is loaded up
+        /// This resynchronizes the settings from the native settings dictionary
         /// </summary>
         /// <param name="dictionary"></param>
-        protected void SetSettings(IDictionary<string, string> dictionary) {
-            var observable = new ObservableDictionary<string, string>(dictionary);
-            observable.CollectionChanged += this.OnCollectionChanged;
-            this.All = observable;            
+        /// 
+        public virtual void Resync() {
+            var settings = this.GetNativeSettings();
+
+            if (this.All == null) {
+                 var observable = new ObservableDictionary<string, string>(settings);
+                observable.CollectionChanged += this.OnCollectionChanged;
+                this.All = observable;
+            }
+            else {
+                this.All.Clear();
+                foreach (var set in settings)
+                    this.All.Add(set);
+            }
         }
 
+
+        protected abstract IDictionary<string, string> GetNativeSettings(); 
 
         protected abstract void SaveSetting(string key, string value);
         protected abstract void RemoveSetting(string key);
