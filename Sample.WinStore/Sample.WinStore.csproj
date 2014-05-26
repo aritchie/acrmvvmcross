@@ -106,12 +106,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ExternalAppPluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -129,9 +126,6 @@
     </Compile>
     <Compile Include="Views\NetworkView.xaml.cs">
       <DependentUpon>NetworkView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TextToSpeechView.xaml.cs">
-      <DependentUpon>TextToSpeechView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +166,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TextToSpeechView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">
@@ -210,14 +200,6 @@
       <Project>{62822de8-ceb9-4602-b780-84e9e3d11b88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp.WindowsStore\Acr.MvvmCross.Plugins.ExternalApp.WindowsStore.csproj">
-      <Project>{9aff2360-4e71-4539-82ba-bc07bfd517fa}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp.WindowsStore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp\Acr.MvvmCross.Plugins.ExternalApp.csproj">
-      <Project>{b0665f5a-3f57-459d-9031-514d04e6d58e}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.WindowsStore\Acr.MvvmCross.Plugins.Network.WindowsStore.csproj">
       <Project>{b4db6dd8-0a80-452e-a5ab-6c238fa45a61}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.WindowsStore</Name>
@@ -233,22 +215,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
       <Project>{90ab40eb-c012-482c-8c61-fcf2ba56fb60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage.WindowsStore\Acr.MvvmCross.Plugins.Storage.WindowsStore.csproj">
-      <Project>{f3397682-7e1c-4970-b023-1284d9e95215}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage.WindowsStore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
-      <Project>{48e3c97d-92d5-4cda-891f-c89aabc03ceb}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.WindowsStore\Acr.MvvmCross.Plugins.TextToSpeech.WindowsStore.csproj">
-      <Project>{9d3eb350-6910-4160-b7a8-423a68d649ed}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech.WindowsStore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
-      <Project>{71342aa8-bde5-4f15-8306-0e260e32dfa9}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WindowsStore\Acr.MvvmCross.Plugins.UserDialogs.WindowsStore.csproj">
       <Project>{f8374c3e-5b22-4b97-b05e-d09a7bd6525f}</Project>

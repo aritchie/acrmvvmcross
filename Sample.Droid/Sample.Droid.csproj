@@ -109,9 +109,6 @@
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ExternalAppPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
     <Compile Include="Bootstrap\BarCodeScannerPluginBootstrap.cs" />
@@ -122,12 +119,10 @@
     <Compile Include="Views\BarCodeActivity.cs" />
     <Compile Include="Views\DeviceInfoActivity.cs" />
     <Compile Include="Views\DialogsActivity.cs" />
-    <Compile Include="Views\FileManagerActivity.cs" />
     <Compile Include="Views\HomeActivity.cs" />
     <Compile Include="Views\NetworkActivity.cs" />
     <Compile Include="Views\SettingsActivity.cs" />
     <Compile Include="Views\SplashActivity.cs" />
-    <Compile Include="Views\TextToSpeechActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -139,13 +134,9 @@
     <AndroidResource Include="Resources\Layout\Dialogs.axml" />
     <AndroidResource Include="Resources\Layout\DeviceInfo.axml" />
     <AndroidResource Include="Resources\Layout\Network.axml" />
-    <AndroidResource Include="Resources\Layout\FileManager.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\Layout\HomeListItem.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Layout\FileManagerListItem.axml" />
     <AndroidResource Include="Resources\Layout\TextToSpeech.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -191,14 +182,6 @@
       <Project>{62822de8-ceb9-4602-b780-84e9e3d11b88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp.Droid\Acr.MvvmCross.Plugins.ExternalApp.Droid.csproj">
-      <Project>{7d9084f0-7164-4f94-a961-5175baae9962}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp\Acr.MvvmCross.Plugins.ExternalApp.csproj">
-      <Project>{b0665f5a-3f57-459d-9031-514d04e6d58e}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.Droid\Acr.MvvmCross.Plugins.Network.Droid.csproj">
       <Project>{872c26ac-5559-4e0d-8b8d-dbf39f7f4331}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.Droid</Name>
@@ -214,22 +197,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
       <Project>{90ab40eb-c012-482c-8c61-fcf2ba56fb60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage.Droid\Acr.MvvmCross.Plugins.Storage.Droid.csproj">
-      <Project>{a88d1426-729a-4b50-9121-56dd05e5ac4f}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
-      <Project>{48e3c97d-92d5-4cda-891f-c89aabc03ceb}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.Droid\Acr.MvvmCross.Plugins.TextToSpeech.Droid.csproj">
-      <Project>{7d65299c-b4d6-4028-8c7a-b4e098634d21}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
-      <Project>{71342aa8-bde5-4f15-8306-0e260e32dfa9}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Droid\Acr.MvvmCross.Plugins.UserDialogs.Droid.csproj">
       <Project>{f68a14ab-0965-4582-9399-f22f5c4ceb15}</Project>

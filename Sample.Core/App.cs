@@ -17,9 +17,7 @@ namespace Sample.Core {
             base.LoadPlugins(pluginManager);
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.BarCodeScanner.PluginLoader>();
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.DeviceInfo.PluginLoader>();
-            pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.ExternalApp.PluginLoader>();
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.Settings.PluginLoader>();
-            pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.Storage.PluginLoader>();
             pluginManager.EnsurePluginLoaded<Acr.MvvmCross.Plugins.UserDialogs.PluginLoader>();
 
             pluginManager.EnsurePluginLoaded<Cirrious.MvvmCross.Plugins.Messenger.PluginLoader>();

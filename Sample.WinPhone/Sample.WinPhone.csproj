@@ -98,8 +98,6 @@
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LocalizedStrings.cs" />
@@ -130,9 +128,6 @@
     </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TextToSpeechView.xaml.cs">
-      <DependentUpon>TextToSpeechView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -165,10 +160,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SettingsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TextToSpeechView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,14 +235,6 @@
       <Project>{62822DE8-CEB9-4602-B780-84E9E3D11B88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp.WinPhone\Acr.MvvmCross.Plugins.ExternalApp.WinPhone.csproj">
-      <Project>{9CD3C386-57AB-48E2-8E07-7F98C0C41E86}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp.WinPhone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp\Acr.MvvmCross.Plugins.ExternalApp.csproj">
-      <Project>{B0665F5A-3F57-459D-9031-514D04E6D58E}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.WinPhone\Acr.MvvmCross.Plugins.Network.WinPhone.csproj">
       <Project>{9EAB5CDB-1DA9-48C4-B406-E2B4034BA54C}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.WinPhone</Name>
@@ -267,22 +250,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
       <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage.WinPhone\Acr.MvvmCross.Plugins.Storage.WinPhone.csproj">
-      <Project>{8E5FF62F-E466-434A-BA68-36D9C157FF6B}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage.WinPhone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
-      <Project>{48E3C97D-92D5-4CDA-891F-C89AABC03CEB}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone\Acr.MvvmCross.Plugins.TextToSpeech.WinPhone.csproj">
-      <Project>{1D01630A-71EB-4297-9A2A-38FC07409D6A}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech.WinPhone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
-      <Project>{71342AA8-BDE5-4F15-8306-0E260E32DFA9}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.csproj">
       <Project>{732D3A68-83F1-4CC0-97CB-AB5095998D70}</Project>

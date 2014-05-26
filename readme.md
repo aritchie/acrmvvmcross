@@ -48,7 +48,8 @@ the user when they were working in an offline state.
 
 
 ##Settings
-Just a simple setting access platform service.  The only difference is that objects can be (de)serialize into a settings variable using JSON.NET out of the box
+A simple settings library that works differently than the traditional setting plugins out there.  Instead, my approach was to work
+with an observable dictionary.
 
 
 ##Device Info
@@ -58,28 +59,3 @@ Allows you to get the information of the device for auditing purposes
 * Operating System and Version
 * Front and rear facing cameras
 * Screen Resolution
-
-
-##External App
-This allows you to open documents in other applications.  Useful if you have a document
-repository style app
-
-    if (ExternalAppService.Open("document.pdf")) {
-        // app selection is already open
-    }   
-    else {
-        throw new Exception("BOOM");
-    }
-
-
-##Storage
-Allows for PCL use of 
-
-* DirectoryInfo
-* FileInfo
-* and File Streams
-
-
-##Text-To-Speech (TTS)
-Pass any text to async method
-TODO

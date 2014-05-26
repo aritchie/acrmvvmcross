@@ -45,14 +45,6 @@ namespace Sample.Core.ViewModels {
                 new MenuItemViewModel(
                     "Settings",
                     () => this.ShowViewModel<SettingsViewModel>()
-                ),
-                new MenuItemViewModel(
-                    "Text-To-Speech (TTS)",
-                    () => this.ShowViewModel<TextToSpeechViewModel>()
-                ),
-                new MenuItemViewModel(
-                    "File Manager Example (TODO)",
-                    () => this.ShowViewModel<FileManagerViewModel>()
                 )
             };
         }

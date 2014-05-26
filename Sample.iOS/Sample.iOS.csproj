@@ -90,7 +90,6 @@
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\TextToSpeechPluginBootstrap.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -101,14 +100,10 @@
     <Compile Include="Views\HomeView.cs" />
     <Compile Include="Bootstrap\BarCodeScannerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\ExternalAppPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
-    <Compile Include="Bootstrap\StoragePluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="Views\NetworkView.cs" />
-    <Compile Include="Views\FileManagerView.cs" />
     <Compile Include="Views\SettingsView.cs" />
-    <Compile Include="Views\TextToSpeechView.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
@@ -130,14 +125,6 @@
       <Project>{62822de8-ceb9-4602-b780-84e9e3d11b88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp.Touch\Acr.MvvmCross.Plugins.ExternalApp.Touch.csproj">
-      <Project>{63094a74-56a8-47ff-9aaa-790976369c0a}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp.Touch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.ExternalApp\Acr.MvvmCross.Plugins.ExternalApp.csproj">
-      <Project>{b0665f5a-3f57-459d-9031-514d04e6d58e}</Project>
-      <Name>Acr.MvvmCross.Plugins.ExternalApp</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.Touch\Acr.MvvmCross.Plugins.Network.Touch.csproj">
       <Project>{e23d6213-060d-4fd3-9f9d-f49f55f4db68}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.Touch</Name>
@@ -153,22 +140,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
       <Project>{90ab40eb-c012-482c-8c61-fcf2ba56fb60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage.Touch\Acr.MvvmCross.Plugins.Storage.Touch.csproj">
-      <Project>{6d2fc25d-ab33-45da-a7f7-bd01a8c0690f}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage.Touch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.Storage\Acr.MvvmCross.Plugins.Storage.csproj">
-      <Project>{48e3c97d-92d5-4cda-891f-c89aabc03ceb}</Project>
-      <Name>Acr.MvvmCross.Plugins.Storage</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech.Touch\Acr.MvvmCross.Plugins.TextToSpeech.Touch.csproj">
-      <Project>{e85b3e83-2cf5-48bc-86a5-6824dc189ec4}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech.Touch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.TextToSpeech\Acr.MvvmCross.Plugins.TextToSpeech.csproj">
-      <Project>{71342aa8-bde5-4f15-8306-0e260e32dfa9}</Project>
-      <Name>Acr.MvvmCross.Plugins.TextToSpeech</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Touch\Acr.MvvmCross.Plugins.UserDialogs.Touch.csproj">
       <Project>{290f8977-f101-4bd8-8a29-19c78b4ebc23}</Project>
