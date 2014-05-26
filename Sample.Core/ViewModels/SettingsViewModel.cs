@@ -26,26 +26,20 @@ namespace Sample.Core.ViewModels {
 
         public MvxCommand<KeyValuePair<string, string>> Select {
             get {
-                return new MvxCommand<KeyValuePair<string, string>>(setting => this.dialogs.ActionSheet(
-                    "Action",
-                    new SheetOption(
-                        "Remove",
-                        async () => {
-                            var r = await this.dialogs.ConfirmAsync("Are you sure you wish to remove " + setting.Key);
-                            if (r)
-                                this.settings.Remove(setting.Key);
-                        }
-                    ),
-                    new SheetOption(
-                        "Edit",
-                        async () => {
-                            var r = await this.dialogs.PromptAsync("Update setting " + setting.Key);
-                            if (r.Ok)
-                                this.settings.Set(setting.Key, r.Text);                           
-                        }
-                    ),
-                    new SheetOption("Cancel")
-                ));                
+                return new MvxCommand<KeyValuePair<string, string>>(setting => this.dialogs.ActionSheet(x => x
+                    .SetTitle("Actions")
+                    .Add("Remove", async () => {
+                        var r = await this.dialogs.ConfirmAsync("Are you sure you wish to remove " + setting.Key);
+                        if (r)
+                            this.settings.Remove(setting.Key);
+                    })
+                    .Add("Edit", async () => {
+                        var r = await this.dialogs.PromptAsync("Update setting " + setting.Key);
+                        if (r.Ok)
+                            this.settings.Set(setting.Key, r.Text);
+                    })
+                    .Add("Cancel")
+                ));
             }
         } 
 

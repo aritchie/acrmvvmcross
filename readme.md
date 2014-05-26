@@ -20,12 +20,14 @@ Allows for messagebox style dialogs
 * Progress
 * Toast
 
-1. Droid progress & loading uses AndHUD
-2. iOS progress & loading uses BTProgressHUD
+#Powered By:
+* Android - Progress/Loading uses AndHUD
+* iOS - Progress/Loading uses BTProgressHUD
+* WinPhone - All dialogs by Coding4Fun Toolkit  
 
 
 ##Bar Code Scanner
-This is based on Redth's ZXing.Net.Mobile.
+Powered by Redth's ZXing.Net.Mobile
 
     new MvxCommand(async () => {
         var scan = Mvx.Resolve<IBarCodeScanner>();

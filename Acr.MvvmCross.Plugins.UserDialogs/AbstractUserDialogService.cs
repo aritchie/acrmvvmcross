@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -42,7 +43,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
 
 
         public void ActionSheet(Action<ActionSheetOptions> config) {
-            var options = new ActionSheetOptions();
+            var options = new ActionSheetOptions {
+                Options = new List<SheetOption>()
+            };
             config(options);
             this.ActionSheet(options);
         } 

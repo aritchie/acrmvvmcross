@@ -56,14 +56,14 @@ namespace Sample.Core.ViewModels {
             );
 
             this.ActionSheet = new MvxCommand(() => 
-                dialogService.ActionSheet(
-                    "Test Title",
-                    new SheetOption("Option 1", () => this.Result = "Option 1 Selected"),
-                    new SheetOption("Option 2", () => this.Result = "Option 2 Selected"),
-                    new SheetOption("Option 3", () => this.Result = "Option 3 Selected"),
-                    new SheetOption("Option 4", () => this.Result = "Option 4 Selected"),
-                    new SheetOption("Option 5", () => this.Result = "Option 5 Selected"),
-                    new SheetOption("Option 6", () => this.Result = "Option 6 Selected")
+                dialogService.ActionSheet(x => x
+                    .SetTitle("Test Title")
+                    .Add("Option 1", () => this.Result = "Option 1 Selected")
+                    .Add("Option 2", () => this.Result = "Option 2 Selected")
+                    .Add("Option 3", () => this.Result = "Option 3 Selected")
+                    .Add("Option 4", () => this.Result = "Option 4 Selected")
+                    .Add("Option 5", () => this.Result = "Option 5 Selected")
+                    .Add("Option 6", () => this.Result = "Option 6 Selected")
                 )
             );
 
