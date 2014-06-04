@@ -23,9 +23,9 @@ namespace Acr.MvvmCross.Plugins.Network.Droid {
 
         private void SetFromInfo(NetworkInfo network, bool fireEvent) {
             this.SetStatus(
-                network.IsConnected,
-                (network.Type == ConnectivityType.Wifi),
-                (network.Type == ConnectivityType.Mobile),
+                network != null && network.IsConnected,
+                (network != null && network.Type == ConnectivityType.Wifi),
+                (network != null && network.Type == ConnectivityType.Mobile),
                 fireEvent
             );
         }
