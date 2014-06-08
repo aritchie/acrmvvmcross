@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.Network</id>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
         <title>MvvmCross Network Utilities</title>
         <description>Network Detection Plugin for MvvmCross (iOS, Android, and WP8)</description>
         <authors>Allan Ritchie</authors>
@@ -16,14 +16,17 @@
             <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="3.1.1" />
         </dependencies>
         <releaseNotes>
-            1.1.1
-            Move to profile 158 (fix defect for wrong profile)
+1.1.2
+NullRef fix on missing active network for android
+
+1.1.1
+Move to profile 158 (fix defect for wrong profile)
             
-            1.1
-            Adds Windows Phone 8 Support
+1.1
+Adds Windows Phone 8 Support
             
-            1.0
-            Initial Release
+1.0
+Initial Release
         </releaseNotes>
     </metadata>
     <files>
