@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows;
 using Microsoft.Devices;
 using Microsoft.Phone.Info;
@@ -8,21 +8,17 @@ using DevEnv = Microsoft.Devices.Environment;
 
 namespace Acr.MvvmCross.Plugins.DeviceInfo.WinPhone {
     
-    public class WinPhoneDeviceInfoService : AbstractDeviceInfoService {
-        
+    public class WinPhoneDeviceInfoService : IDeviceInfoService {
+
+        private readonly Lazy<string> deviceId;
+
+
         public WinPhoneDeviceInfoService() {
-            this.Manufacturer = DeviceStatus.DeviceManufacturer; 
-            this.Model = DeviceStatus.DeviceName;
-            this.OperatingSystem = Env.OSVersion.ToString();
-
-            var deviceIdBytes = (byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId");
-            this.DeviceId = Convert.ToBase64String(deviceIdBytes);
-
-            this.IsRearCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.Primary);
-            this.IsFrontCameraAvailable = PhotoCamera.IsCameraTypeSupported(CameraType.FrontFacing);
-            this.IsSimulator = (DevEnv.DeviceType == DeviceType.Emulator);
-
-            switch (GetScaleFactor()) {               
+            this.deviceId = new Lazy<string>(() => {
+                var deviceIdBytes = (byte[])DeviceExtendedProperties.GetValue("DeviceUniqueId");
+                return Convert.ToBase64String(deviceIdBytes);
+            });
+            switch (GetScaleFactor()) {
 
                 case 150:
                     this.ScreenWidth = 720;
@@ -48,6 +44,45 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.WinPhone {
             var getMethod = instance.GetType().GetProperty("ScaleFactor").GetGetMethod();
             var value = (int)getMethod.Invoke(instance, null);
             return value;
+        }
+
+
+        public int ScreenHeight { get; private set; }
+        public int ScreenWidth { get; private set; }
+
+
+        public string DeviceId {
+            get { return this.deviceId.Value; }
+        }
+
+
+        public string Manufacturer {
+            get { return DeviceStatus.DeviceManufacturer; }
+        }
+
+
+        public string Model {
+            get { return DeviceStatus.DeviceName; }
+        }
+
+
+        public string OperatingSystem {
+            get { return Env.OSVersion.ToString(); }
+        }
+
+
+        public bool IsFrontCameraAvailable {
+            get { return PhotoCamera.IsCameraTypeSupported(CameraType.FrontFacing); }
+        }
+
+
+        public bool IsRearCameraAvailable {
+            get { return PhotoCamera.IsCameraTypeSupported(CameraType.Primary); }
+        }
+
+
+        public bool IsSimulator {
+            get { return (DevEnv.DeviceType == DeviceType.Emulator); }
         }
     }
 }
