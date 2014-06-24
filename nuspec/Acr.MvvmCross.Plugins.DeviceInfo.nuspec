@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.DeviceInfo</id>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
         <title>MvvmCross Device Information</title>
         <description>Device information platform plugin for MvvmCross (iOS, Android, and WP8)</description>
         <authors>Allan Ritchie</authors>
@@ -15,12 +15,16 @@
             <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
         </dependencies>
         <releaseNotes>
-            1.1
-            Adds Windows Phone 8 Support
-            Add DeviceId - useful for tracking phones
+1.2
+BREAKING: Android library no longer has the readphonestate permission built-in to allow the user the choice if they want to use it or not
+Certrain properties now lazy load, so you don't need to use them and the appropriate permissions
 
-            1.0
-            Initial Release
+1.1
+Adds Windows Phone 8 Support
+Add DeviceId - useful for tracking phones
+
+1.0
+Initial Release
         </releaseNotes>
     </metadata>
     <files>
