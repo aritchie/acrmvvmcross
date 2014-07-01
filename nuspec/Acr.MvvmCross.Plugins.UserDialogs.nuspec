@@ -20,6 +20,12 @@
             </group>
         </dependencies>
         <releaseNotes>
+2.0
+Create better method structure on main class
+NEW - Date/Time Dialog
+NEW - Duration Dialog
+NEW - secure and multi-line prompts
+
 1.1.3
 Nuspec fix
 

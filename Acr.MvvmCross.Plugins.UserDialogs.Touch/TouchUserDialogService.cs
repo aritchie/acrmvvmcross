@@ -6,41 +6,37 @@ using MonoTouch.UIKit;
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     
-    public class TouchUserDialogService : AbstractUserDialogService<TouchProgressDialog> {
+    public class TouchUserDialogService : AbstractUserDialogService {
 
-        public override void ActionSheet(ActionSheetOptions options) {
+        public override void ActionSheet(ActionSheetConfig config) {
             this.Dispatch(() => {
-                var action = new UIActionSheet(options.Title);
-                options.Options.ToList().ForEach(x => action.AddButton(x.Text));
-                //if (options.Cancel != null) {
-                //    action.AddButton(options.Cancel.Text);
-                //    action.CancelButtonIndex = options.Options.Count + 1;
-                //}
+                var action = new UIActionSheet(config.Title);
+                config.Options.ToList().ForEach(x => action.AddButton(x.Text));
 
-                action.Clicked += (sender, btn) => options.Options[btn.ButtonIndex].Action();
-                var view = UIApplication.SharedApplication.KeyWindow.RootViewController.View;
+                action.Clicked += (sender, btn) => config.Options[btn.ButtonIndex].Action();
+                var view = this.GetTopView();
                 action.ShowInView(view);
             });
         }
 
 
-        public override void Alert(string message, string title, string okText, Action onOk) {
+        public override void Alert(AlertConfig config) {
             this.Dispatch(() => {
-                var dlg = new UIAlertView(title ?? String.Empty, message, null, null, okText);
-                if (onOk != null) { 
-                    dlg.Clicked += (s, e) => onOk();
-                }
+                var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, null, config.OkText);
+                if (config.OnOk != null) 
+                    dlg.Clicked += (s, e) => config.OnOk();
+                
                 dlg.Show();
             });
         }
 
 
-        public override void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText) {
+        public override void Confirm(ConfirmConfig config) {
             this.Dispatch(() => {
-                var dlg = new UIAlertView(title ?? String.Empty, message, null, cancelText, okText);
+                var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, config.CancelText, config.OkText);
                 dlg.Clicked += (s, e) => {
                     var ok = (dlg.CancelButtonIndex != e.ButtonIndex);
-                    onConfirm(ok);
+                    config.OnConfirm(ok);
                 };
                 dlg.Show();
             });
@@ -57,27 +53,50 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
-        public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
+        public override void DateTimePrompt(DateTimePromptConfig config) {
+            // TODO
+        }
+
+
+        public override void DurationPrompt(DurationPromptConfig config) {
+            // TODO
+        }
+
+
+        public override void Prompt(PromptConfig config) {
             this.Dispatch(() => {
                 var result = new PromptResult();
-                var dlg = new UIAlertView(title ?? String.Empty, message, null, cancelText, okText) {
-                    AlertViewStyle = UIAlertViewStyle.PlainTextInput
+                var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, config.CancelText, config.OkText) {
+                    AlertViewStyle = config.Type == PromptType.Secure 
+                        ? UIAlertViewStyle.SecureTextInput 
+                        : UIAlertViewStyle.PlainTextInput
                 };
+                // TODO: multiline
+                //dlg.Add(new UITextView {
+                //    Editable = true
+                //});
                 var txt = dlg.GetTextField(0);
-                txt.Placeholder = hint;
+                txt.SecureTextEntry = (config.Type == PromptType.Secure);
+                txt.Placeholder = config.Placeholder;
 
+                //UITextView = editable
                 dlg.Clicked += (s, e) => {
                     result.Ok = (dlg.CancelButtonIndex != e.ButtonIndex);
                     result.Text = txt.Text;
-                    promptResult(result);
+                    config.OnResult(result);
                 };
                 dlg.Show();
             });
         }
 
 
-        protected override TouchProgressDialog CreateProgressDialogInstance() {
+        protected override IProgressDialog CreateDialogInstance() {
             return new TouchProgressDialog();
+        }
+
+
+        protected virtual UIView GetTopView() {
+            return UIApplication.SharedApplication.KeyWindow.RootViewController.View;
         }
 
 

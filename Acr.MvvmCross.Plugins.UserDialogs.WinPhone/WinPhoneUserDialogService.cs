@@ -4,34 +4,35 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using Coding4Fun.Toolkit.Controls;
+using Button = System.Windows.Controls.Button;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     
-    public class WinPhoneUserDialogService : AbstractUserDialogService<WinPhoneProgressDialog> {
+    public class WinPhoneUserDialogService : AbstractUserDialogService {
 
-        public override void ActionSheet(ActionSheetOptions options) {
+        public override void ActionSheet(ActionSheetConfig config) {
             this.Dispatch(() => {
-                var alert = new ActionSheetPopUp { Title = options.Title };
+                var alert = new ActionSheetPopUp { Title = config.Title };
                 alert.ActionPopUpButtons.Clear();
-                options.Options.ToList().ForEach(x => alert.AddButton(x.Text, x.Action));
+                config.Options.ToList().ForEach(x => alert.AddButton(x.Text, x.Action));
                 alert.Show();
             });
         }
 
 
-        public override void Alert(string message, string title, string okText, Action onOk) {
+        public override void Alert(AlertConfig config) {
             this.Dispatch(() => {
                 var alert = new MessagePrompt {
-                    Title = title,
-                    Message = message
+                    Title = config.Title,
+                    Message = config.Message
                 };
-                var btn = new Button { Content = okText };
+                var btn = new Button { Content = config.OkText };
                 btn.Click += (sender, args) => alert.Hide();
 
-                if (onOk != null) { 
-                    alert.Completed += (sender, args) => onOk();
-                }
+                if (config.OnOk != null)  
+                    alert.Completed += (sender, args) => config.OnOk();
+                
                 alert.ActionPopUpButtons.Clear();
                 alert.ActionPopUpButtons.Add(btn);
                 alert.Show();
@@ -39,22 +40,22 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         }
 
 
-        public override void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText) {
+        public override void Confirm(ConfirmConfig config) {
             this.Dispatch(() => {
                 var alert = new MessagePrompt {
-                    Title = title,
-                    Message = message
+                    Title = config.Title,
+                    Message = config.Message
                 };
-                var btnYes = new Button { Content = okText };
+                var btnYes = new Button { Content = config.OkText };
                 btnYes.Click += (sender, args) => {
                     alert.Hide();
-                    onConfirm(true);
+                    config.OnConfirm(true);
                 };
 
-                var btnNo = new Button { Content = cancelText };
+                var btnNo = new Button { Content = config.CancelText };
                 btnNo.Click += (sender, args) => {
                     alert.Hide();
-                    onConfirm(false);
+                    config.OnConfirm(false);
                 };
 
                 alert.ActionPopUpButtons.Clear();
@@ -65,36 +66,55 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         }
 
 
-        public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
+        //public override void PickDate(Action<DatePickerResult> callback, string title, DateTime? selectedDateTime, DateTime? minDate, DateTime? maxDate) {
+        //    var picker = new DatePickerPage();
+        //}
+
+
+        public override void Prompt(PromptConfig config) {
+            // TODO: multiline text
+            // TODO: secure text
             this.Dispatch(() => {
                 var yes = false;
 
                 var input = new InputPrompt {
-                    Title = title,
-                    Message = message,
+                    Title = config.Title,
+                    Message = config.Message,
                     IsCancelVisible = true,
                 };
                 input.ActionPopUpButtons.Clear();
 
-                var btnYes = new Button { Content = okText };
+                var btnYes = new Button { Content = config.OkText };
                 btnYes.Click += (sender, args) => {
                     yes = true;
                     input.Hide();
                 };
 
-                var btnNo = new Button { Content = cancelText };
+                var btnNo = new Button { Content = config.CancelText };
                 btnNo.Click += (sender, args) => input.Hide();
 
                 input.ActionPopUpButtons.Clear();
                 input.ActionPopUpButtons.Add(btnYes);
                 input.ActionPopUpButtons.Add(btnNo);
             
-                input.Completed += (sender, args) => promptResult(new PromptResult {
+                input.Completed += (sender, args) => config.OnResult(new PromptResult {
                     Ok = yes,
                     Text = input.Value
                 });
                 input.Show();
             });
+        }
+
+
+        public override void DateTimePrompt(DateTimePromptConfig config) {
+            // TODO
+            throw new NotImplementedException();
+        }
+
+
+        public override void DurationPrompt(DurationPromptConfig config) {
+            // TODO
+            throw new NotImplementedException();
         }
 
 
@@ -117,7 +137,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
         }
 
 
-        protected override WinPhoneProgressDialog CreateProgressDialogInstance() {
+        protected override IProgressDialog CreateDialogInstance() {
             return new WinPhoneProgressDialog();
         }
 

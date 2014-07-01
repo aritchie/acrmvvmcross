@@ -1,43 +1,43 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Android.App;
 using Android.Content;
 using Android.Preferences;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Droid;
 
 
 namespace Acr.MvvmCross.Plugins.Settings.Droid {
-
+    
     public class DroidSettingsService : AbstractSettingsService {
-        private ISharedPreferences prefs;
-        
+        private static readonly ISharedPreferences prefs = PreferenceManager.GetDefaultSharedPreferences(Application.Context.ApplicationContext);
+
 
         protected override IDictionary<string, string> GetNativeSettings() {
-            var globals = Mvx.Resolve<IMvxAndroidGlobals>();
-            this.prefs = PreferenceManager.GetDefaultSharedPreferences(globals.ApplicationContext);
-            return this.prefs.All.ToDictionary(y => y.Key, y => y.Value.ToString());
+            return prefs.All.ToDictionary(y => y.Key, y => y.Value.ToString());
         }
 
 
-        protected override void SaveSetting(string key, string value) {
-            using (var editor = this.prefs.Edit()) {
-                editor.PutString(key, value);
+        protected override void AddOrUpdateNative(IEnumerable<KeyValuePair<string, string>> saves) {
+            using (var editor = prefs.Edit()) {
+                foreach (var item in saves)
+                    editor.PutString(item.Key, item.Value);
+                        
                 editor.Commit();
             }
         }
 
 
-        protected override void RemoveSetting(string key) {
-            using (var editor = this.prefs.Edit()) {
-                editor.Remove(key);
+        protected override void RemoveNative(IEnumerable<KeyValuePair<string, string>> deletes) {
+            using (var editor = prefs.Edit()) {
+                foreach (var item in deletes) 
+                    editor.Remove(item.Key);
+
                 editor.Commit();
-            }            
+            }
         }
 
-
-        protected override void ClearSettings() {
-            using (var editor = this.prefs.Edit()) {
+        protected override void ClearNative() {
+            using (var editor = prefs.Edit()) {
                 editor.Clear();
                 editor.Commit();
             }

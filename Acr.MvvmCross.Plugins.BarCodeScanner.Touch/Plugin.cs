@@ -8,7 +8,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner.Touch {
     public class Plugin : IMvxPlugin {
 
         public void Load() {
-            Mvx.RegisterSingleton<IBarCodeScanner>(new TouchBarCodeScanner());
+            Mvx.RegisterSingleton<IBarCodeScanner>(new BarCodeScanner());
         }
     }
 }

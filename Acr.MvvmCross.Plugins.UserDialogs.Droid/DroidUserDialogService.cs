@@ -1,81 +1,104 @@
 using System;
 using System.Linq;
 using Android.App;
+using Android.Text.Method;
+using Android.Views.InputMethods;
 using Android.Widget;
 using AndroidHUD;
-using Cirrious.CrossCore;
-using Cirrious.CrossCore.Core;
-using Cirrious.CrossCore.Droid.Platform;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
     
-    public class DroidUserDialogService : AbstractUserDialogService<DroidProgressDialog> {
+    public class DroidUserDialogService : AbstractUserDialogService {
 
-        public override void Alert(string message, string title, string okText, Action onOk) {
-            this.Dispatch(activity => 
+        public override void Alert(AlertConfig config) {
+            Utils.RequestMainThread(() => 
                 new AlertDialog
-                    .Builder(activity)
-                    .SetMessage(message)
-                    .SetTitle(title)
-                    .SetPositiveButton(okText, (o, e) => {
-                        if (onOk != null) {
-                            onOk();
-                        }
+                    .Builder(Utils.GetActivityContext())
+                    .SetMessage(config.Message)
+                    .SetTitle(config.Title)
+                    .SetPositiveButton(config.OkText, (o, e) => {
+                        if (config.OnOk != null) 
+                            config.OnOk();
                     })
                     .Show()
             );
         }
 
 
-        public override void ActionSheet(ActionSheetOptions options) {
-            var array = options
+        public override void ActionSheet(ActionSheetConfig config) {
+            var array = config
                 .Options
                 .Select(x => x.Text)
                 .ToArray();
 
-            this.Dispatch(activity => 
+            Utils.RequestMainThread(() => 
                 new AlertDialog
-                    .Builder(activity)
-                    .SetTitle(options.Title)
-                    .SetItems(array, (sender, args) => options.Options[args.Which].Action())
+                    .Builder(Utils.GetActivityContext())
+                    .SetTitle(config.Title)
+                    .SetItems(array, (sender, args) => config.Options[args.Which].Action())
                     .Show()
             );
         }
 
 
-        public override void Confirm(string message, Action<bool> onConfirm, string title, string okText, string cancelText) {
-            this.Dispatch(activity => 
+        public override void Confirm(ConfirmConfig config) {
+            Utils.RequestMainThread(() => 
                 new AlertDialog
-                    .Builder(activity)
-                    .SetMessage(message)
-                        .SetTitle(title)
-                        .SetPositiveButton(okText, (o, e) => onConfirm(true))
-                        .SetNegativeButton(cancelText, (o, e) => onConfirm(false))
-                        .Show()
+                    .Builder(Utils.GetActivityContext())
+                    .SetMessage(config.Message)
+                    .SetTitle(config.Title)
+                    .SetPositiveButton(config.OkText, (o, e) => config.OnConfirm(true))
+                    .SetNegativeButton(config.CancelText, (o, e) => config.OnConfirm(false))
+                    .Show()
             );
         }
 
 
-        public override void Prompt(string message, Action<PromptResult> promptResult, string title, string okText, string cancelText, string hint) {
-            this.Dispatch(activity => {
-                var txt = new EditText(activity) {
-                    Hint = hint
+        public override void DateTimePrompt(DateTimePromptConfig config) {
+            // TODO
+            throw new NotImplementedException();
+        }
+
+
+        public override void DurationPrompt(DurationPromptConfig config) {
+            // TODO
+            throw new NotImplementedException();
+        }
+
+
+        public override void Prompt(PromptConfig config) {
+            Utils.RequestMainThread(() => {
+                var txt = new EditText(Utils.GetActivityContext()) {
+                    Hint = config.Placeholder
                 };
+                switch (config.Type) {
+
+                    case PromptType.Secure:
+                        //txt.InputType = InputTypes.ClassText | InputTypes.TextVariationPassword;
+                        txt.TransformationMethod = PasswordTransformationMethod.Instance;
+                        break;
+
+                    case PromptType.MultiLine:
+                        txt.SetLines(3);
+                        txt.SetSingleLine(false);
+                        txt.ImeOptions = ImeAction.Next;
+                        break;
+                }
 
                 new AlertDialog
-                    .Builder(activity)
-                    .SetMessage(message)
-                    .SetTitle(title)
+                    .Builder(Utils.GetActivityContext())
+                    .SetMessage(config.Message)
+                    .SetTitle(config.Title)
                     .SetView(txt)
-                    .SetPositiveButton(okText, (o, e) =>
-                        promptResult(new PromptResult {
+                    .SetPositiveButton(config.OkText, (o, e) =>
+                        config.OnResult(new PromptResult {
                             Ok = true, 
                             Text = txt.Text
                         })
                     )
-                    .SetNegativeButton(cancelText, (o, e) => 
-                        promptResult(new PromptResult {
+                    .SetNegativeButton(config.CancelText, (o, e) => 
+                        config.OnResult(new PromptResult {
                             Ok = false, 
                             Text = txt.Text
                         })
@@ -86,11 +109,11 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
 
         public override void Toast(string message, int timeoutSeconds, Action onClick) {
-            this.Dispatch(activity => {
+            Utils.RequestMainThread(() => {
                 onClick = onClick ?? (() => {});
 
                 AndHUD.Shared.ShowToast(
-                    activity, 
+                    Utils.GetActivityContext(), 
                     message, 
                     MaskType.Clear,
                     TimeSpan.FromSeconds(timeoutSeconds),
@@ -101,27 +124,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
         }
 
 
-        protected override DroidProgressDialog CreateProgressDialogInstance() {
-            var activity = GetTopActivity();
-            return new DroidProgressDialog(activity);
-        }
-
-
-        protected virtual void Dispatch(Action action) {
-            Mvx.Resolve<IMvxMainThreadDispatcher>().RequestMainThreadAction(action);
-        }
-
-
-        protected virtual void Dispatch(Action<Activity> action) {
-            this.Dispatch(() => {
-                var activity = this.GetTopActivity();
-                action(activity);
-            });
-        }
-
-
-        protected virtual Activity GetTopActivity() {
-            return Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+        protected override IProgressDialog CreateDialogInstance() {
+            return new ProgressDialog();
         }
     }
 }

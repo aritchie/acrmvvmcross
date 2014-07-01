@@ -58,10 +58,10 @@ namespace Sample.Core.ViewModels {
                     return;
 
                 this.selectedFormat = value;
-                this.Scanner.DefaultOptions.Formats.Clear();
+                this.Scanner.Configuration.Formats.Clear();
                 if (value != "Any") {
                     var format = (BarCodeFormat)Enum.Parse(typeof(BarCodeFormat), value);
-                    this.Scanner.DefaultOptions.Formats.Add(format);
+                    this.Scanner.Configuration.Formats.Add(format);
                 }
                 this.RaisePropertyChanged(() => this.SelectedFormat);
             }

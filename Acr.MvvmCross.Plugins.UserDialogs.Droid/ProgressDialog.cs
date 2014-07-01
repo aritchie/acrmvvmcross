@@ -1,20 +1,10 @@
 using System;
-using Android.App;
 using AndroidHUD;
-using Cirrious.CrossCore.Droid.Platform;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
     
-    public class DroidProgressDialog : MvxAndroidTask, IProgressDialog {
-
-        private readonly Activity context;
-
-
-        public DroidProgressDialog(Activity topActivity) {
-            this.context = topActivity;
-        }
-
+    public class ProgressDialog : IProgressDialog {
 
         #region IProgressDialog Members
 
@@ -75,7 +65,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
 
         public virtual void Hide() {
             this.IsShowing = false;
-            this.Dispatcher.RequestMainThreadAction(() => AndHUD.Shared.Dismiss(this.context));
+            Utils.RequestMainThread(() => AndHUD.Shared.Dismiss(Utils.GetActivityContext()));
         }
 
         #endregion
@@ -98,26 +88,23 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             var txt = this.Title;
             if (this.IsDeterministic) {
                 p = this.PercentComplete;
-                if (!String.IsNullOrWhiteSpace(txt)) {
+                if (!String.IsNullOrWhiteSpace(txt)) 
                     txt += "\n";
-                }
+                
                 txt += p + "%\n";
             }
 
-            if (this.cancelAction != null) {
+            if (this.cancelAction != null) 
                 txt += "\n" + this.cancelText;
-            }
-
-            this.Dispatcher.RequestMainThreadAction(() => 
-                AndHUD.Shared.Show(
-                    this.context, 
-                    txt,
-                    p, 
-                    MaskType.Black,
-                    null,
-                    this.OnCancelClick
-                )
-            );
+            
+            Utils.RequestMainThread(() => AndHUD.Shared.Show(
+                Utils.GetActivityContext(), 
+                txt,
+                p, 
+                MaskType.Black,
+                null,
+                this.OnCancelClick
+            ));
         }
 
 

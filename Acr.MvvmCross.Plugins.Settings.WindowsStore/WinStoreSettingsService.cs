@@ -8,29 +8,28 @@ using Windows.Storage;
 namespace Acr.MvvmCross.Plugins.Settings.WindowsStore {
     
     public class WinStoreSettingsService : AbstractSettingsService {
-
-        protected IPropertySet Container {
-            get { return ApplicationData.Current.LocalSettings.Values; }
-        }
+        private readonly IPropertySet container = ApplicationData.Current.LocalSettings.Values;
 
 
         protected override IDictionary<string, string> GetNativeSettings() {
-            return this.Container.ToDictionary(x => x.Key, x => x.Value.ToString());
+            return this.container.ToDictionary(x => x.Key, x => x.Value.ToString());
         }
 
 
-        protected override void SaveSetting(string key, string value) {
-            this.Container[key] = value;
+        protected override void AddOrUpdateNative(IEnumerable<KeyValuePair<string, string>> saves) {
+            foreach (var save in saves)
+                this.container[save.Key] = save.Value;
         }
 
 
-        protected override void RemoveSetting(string key) {
-            this.Container.Remove(key);
+        protected override void RemoveNative(IEnumerable<KeyValuePair<string, string>> dels) {
+            foreach (var item in dels)
+                this.container.Remove(item.Key);
         }
 
 
-        protected override void ClearSettings() {
-            this.Container.Clear();
+        protected override void ClearNative() {
+            this.container.Clear();
         }
     }
 }

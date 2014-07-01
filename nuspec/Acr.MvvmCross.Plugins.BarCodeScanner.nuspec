@@ -26,6 +26,9 @@
             </group>
         </dependencies>
         <releaseNotes>
+1.2
+Simplifying API calls
+
 1.1.1
 Fix broken nuspec reference
 Retarget to profile 158

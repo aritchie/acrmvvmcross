@@ -27,7 +27,7 @@ namespace Sample.Core.ViewModels {
 
         public MvxCommand<KeyValuePair<string, string>> Select {
             get {
-                return new MvxCommand<KeyValuePair<string, string>>(setting => this.dialogs.ActionSheet(x => x
+                return new MvxCommand<KeyValuePair<string, string>>(setting => this.dialogs.ActionSheet(new ActionSheetConfig()
                     .SetTitle("Item Actions")
                     .Add("Remove", async () => {
                         var r = await this.dialogs.ConfirmAsync("Are you sure you wish to remove " + setting.Key);
@@ -48,7 +48,7 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Actions {
             get {
 
-                return new MvxCommand(() => this.dialogs.ActionSheet(x => x
+                return new MvxCommand(() => this.dialogs.ActionSheet(new ActionSheetConfig()
                     .SetTitle("Actions")
                     .Add("Add Setting", () => this.OnAdd())
                     .Add("Clear All", () => this.OnClear())

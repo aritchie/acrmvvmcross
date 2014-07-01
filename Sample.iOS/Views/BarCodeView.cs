@@ -23,13 +23,13 @@ namespace Sample.iOS.Views {
                     new StringElement("Scan Barcode").Bind(bindings, x => x.SelectedCommand, x => x.Scan)
                 },
                 new Section("Configuration") {
-                    new StringElement("Top Text").Bind(bindings, x => x.Value, x => x.Scanner.DefaultOptions.TopText),
-                    new StringElement("Bottom Text").Bind(bindings, x => x.Value, x => x.Scanner.DefaultOptions.BottomText),
-                    new StringElement("Cancel Text").Bind(bindings, x => x.Value, x => x.Scanner.DefaultOptions.CancelText),
-                    new StringElement("Flashlight Text").Bind(bindings, x => x.Value, x => x.Scanner.DefaultOptions.FlashlightText),
+                    new StringElement("Top Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.TopText),
+                    new StringElement("Bottom Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.BottomText),
+                    new StringElement("Cancel Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.CancelText),
+                    new StringElement("Flashlight Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.FlashlightText),
 
-                    new CheckboxElement("Auto-Rotate").Bind(bindings, x => x.Value, x => x.Scanner.DefaultOptions.AutoRotate),
-                    new CheckboxElement("Try Harder").Bind(bindings, x => x.Value,  x => x.Scanner.DefaultOptions.TryHarder)
+                    new CheckboxElement("Auto-Rotate").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.AutoRotate),
+                    new CheckboxElement("Try Harder").Bind(bindings, x => x.Value,  x => x.Scanner.Configuration.TryHarder)
                 }
             };
         }

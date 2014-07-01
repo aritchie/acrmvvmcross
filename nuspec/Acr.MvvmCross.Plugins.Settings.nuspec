@@ -16,6 +16,10 @@
             <dependency id="Newtonsoft.Json" version="[6, 7)" />
         </dependencies>
         <releaseNotes>
+2.1
+Better structure to observable dictionary of settings
+FIX: bug with resync calling clear event which removes some necessary iOS settings
+
 2.0
 Now works as an observable observable dictionary
 New extension methods for supporting several other data types

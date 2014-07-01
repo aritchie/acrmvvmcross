@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 
@@ -9,41 +8,12 @@ namespace Acr.MvvmCross.Plugins.Settings {
     
     public abstract class AbstractSettingsService : ISettingsService {
 
-        public IDictionary<string, string> All { get; private set; }
-
-
-        protected AbstractSettingsService() {
-            this.Resync();
-        }
+        protected abstract IDictionary<string, string> GetNativeSettings();
+        protected abstract void AddOrUpdateNative(IEnumerable<KeyValuePair<string, string>> saves);
+        protected abstract void RemoveNative(IEnumerable<KeyValuePair<string, string>> deletes);
+        protected abstract void ClearNative();
 
         #region Internals
-
-        /// <summary>
-        /// This resynchronizes the settings from the native settings dictionary
-        /// </summary>
-        /// <param name="dictionary"></param>
-        /// 
-        public virtual void Resync() {
-            var settings = this.GetNativeSettings();
-
-            if (this.All == null) {
-                 var observable = new ObservableDictionary<string, string>(settings);
-                observable.CollectionChanged += this.OnCollectionChanged;
-                this.All = observable;
-            }
-            else {
-                this.All.Clear();
-                foreach (var set in settings)
-                    this.All.Add(set);
-            }
-        }
-
-
-        protected abstract IDictionary<string, string> GetNativeSettings(); 
-
-        protected abstract void SaveSetting(string key, string value);
-        protected abstract void RemoveSetting(string key);
-        protected abstract void ClearSettings();
 
 
         private void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e) {
@@ -51,25 +21,50 @@ namespace Acr.MvvmCross.Plugins.Settings {
                 case NotifyCollectionChangedAction.Add:
                 case NotifyCollectionChangedAction.Replace:
                     var saves = e.NewItems.Cast<KeyValuePair<string, string>>();
-                    foreach (var item in saves)
-                        this.SaveSetting(item.Key, item.Value);
+                    this.AddOrUpdateNative(saves);
                     break;
 
                 case NotifyCollectionChangedAction.Remove:
                     var dels = e.OldItems.Cast<KeyValuePair<string, string>>();
-                    foreach (var item in dels)
-                        this.RemoveSetting(item.Key);
+                    this.RemoveNative(dels);
                     break;
 
                 case NotifyCollectionChangedAction.Reset:
-                    this.ClearSettings();
+                    this.ClearNative();
                     break;
             }
         }
 
         #endregion
 
-        #region ISettingsService Members
+        #region ISettings Members
+
+        private ISettingsDictionary all;
+        public ISettingsDictionary All {
+            get {
+                if (this.all == null)
+                    this.Resync();
+
+                return this.all;
+            }
+        }
+
+
+        /// <summary>
+        /// This resynchronizes the settings from the native settings dictionary
+        /// </summary>
+        /// <param name="dictionary"></param>
+        /// 
+        public void Resync() {
+            if (this.all != null) {
+                this.all.CollectionChanged -= this.OnCollectionChanged;
+                this.all = null;
+            }
+            var settings = this.GetNativeSettings();
+            this.all = new SettingsDictionary(settings);
+            this.all.CollectionChanged += this.OnCollectionChanged;
+        }
+
 
         public virtual string Get(string key, string defaultValue = null) {
             return (this.All.ContainsKey(key)

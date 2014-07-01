@@ -78,14 +78,15 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="DroidProgressDialog.cs" />
-    <Compile Include="DroidUserDialogService.cs" />
     <Compile Include="Plugin.cs" />
+    <Compile Include="ProgressDialog.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="DroidUserDialogService.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

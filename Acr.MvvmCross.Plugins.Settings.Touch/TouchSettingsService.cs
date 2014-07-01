@@ -5,36 +5,36 @@ using MonoTouch.Foundation;
 
 
 namespace Acr.MvvmCross.Plugins.Settings.Touch {
-
+    
     public class TouchSettingsService : AbstractSettingsService {
-
-        protected NSUserDefaults Cfg {
-            get { return NSUserDefaults.StandardUserDefaults; }
-        }
+        private static readonly NSUserDefaults prefs = NSUserDefaults.StandardUserDefaults;
 
 
         protected override IDictionary<string, string> GetNativeSettings() {
-            return this.Cfg
+            return prefs
                 .AsDictionary()
                 .ToDictionary(x => x.Key.ToString(), x => x.Value.ToString());
         }
 
 
-        protected override void SaveSetting(string key, string value) {
-            this.Cfg.SetString(value, key);
-            this.Cfg.Synchronize();
+        protected override void AddOrUpdateNative(IEnumerable<KeyValuePair<string, string>> saves) {
+            foreach (var item in saves)
+                prefs.SetString(item.Key, item.Value);
+
+            prefs.Synchronize();
         }
 
 
-        protected override void ClearSettings() {
-            this.Cfg.RemovePersistentDomain(NSBundle.MainBundle.BundleIdentifier);
-            this.Cfg.Synchronize();
+        protected override void RemoveNative(IEnumerable<KeyValuePair<string, string>> dels) {
+            foreach (var item in dels)
+                prefs.RemoveObject(item.Key);
+
+            prefs.Synchronize();
         }
 
-
-        protected override void RemoveSetting(string key) {
-            this.Cfg.RemoveObject(key);
-            this.Cfg.Synchronize();
+        protected override void ClearNative() {
+            prefs.RemovePersistentDomain(NSBundle.MainBundle.BundleIdentifier);
+            prefs.Synchronize();
         }
     }
 }

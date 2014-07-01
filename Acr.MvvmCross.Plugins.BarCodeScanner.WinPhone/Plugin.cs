@@ -8,7 +8,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner.WinPhone {
     public class Plugin : IMvxPlugin {
 
         public void Load() {
-            Mvx.RegisterSingleton<IBarCodeScanner>(new WinPhoneBarCodeScanner());
+            Mvx.RegisterSingleton<IBarCodeScanner>(new BarCodeScanner());
         }
     }
 }

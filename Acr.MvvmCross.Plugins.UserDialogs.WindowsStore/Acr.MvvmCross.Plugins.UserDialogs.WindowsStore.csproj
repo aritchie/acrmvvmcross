@@ -107,7 +107,6 @@
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Plugin.cs" />
-    <Compile Include="WinStoreProgressDialog.cs" />
     <Compile Include="WinStoreUserDialogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
