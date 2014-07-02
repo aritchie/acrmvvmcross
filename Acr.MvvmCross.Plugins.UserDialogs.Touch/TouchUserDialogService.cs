@@ -96,7 +96,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
 
         protected virtual UIView GetTopView() {
-            return UIApplication.SharedApplication.KeyWindow.RootViewController.View;
+            return UIApplication.SharedApplication.KeyWindow.Subviews.Last();
         }
 
 
