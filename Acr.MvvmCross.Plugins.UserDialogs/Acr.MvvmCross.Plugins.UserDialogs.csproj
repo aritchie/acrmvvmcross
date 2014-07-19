@@ -42,10 +42,6 @@
     <Compile Include="ActionSheetOptions.cs" />
     <Compile Include="AlertConfig.cs" />
     <Compile Include="ConfirmConfig.cs" />
-    <Compile Include="DateTimePromptConfig.cs" />
-    <Compile Include="DateTimePromptResult.cs" />
-    <Compile Include="DurationPromptConfig.cs" />
-    <Compile Include="DurationPromptResult.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IUserDialogService.cs" />
     <Compile Include="PluginLoader.cs" />

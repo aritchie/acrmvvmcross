@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.UserDialogs</id>
-        <version>1.1.3</version>
+        <version>2.0.0</version>
         <title>MvvmCross User Dialogs</title>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
-        <description>Alert, Confirm, Prompt, Toast, Action Sheet, Loading, and Progress Dialogs calls for your core PCL MvvmCross library. Loading and Progress dialogs courtesy of AndHUD, BTProgressHUD, and Coding4Fun toolkit (iOS, Android, and WP8)</description>
+        <description>Alert, Confirm, Prompt, Toast, Action Sheet, Loading, and Progress Dialogs calls for your core PCL MvvmCross library (iOS, Android, and WP8)</description>
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
         <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,15 +16,15 @@
                 <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
             </group>
             <group targetFramework="wp8">
-                <dependency id="Coding4Fun.Toolkit.Controls" version="2.0.7" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+                <dependency id="WPtoolkit" version="[4.2013.08.16, 5.0)" />
             </group>
         </dependencies>
         <releaseNotes>
 2.0
 Create better method structure on main class
-NEW - Date/Time Dialog
-NEW - Duration Dialog
-NEW - secure and multi-line prompts
+WP dialogs are now driven by WP Toolkit
+NEW - Secure text prompt
 
 1.1.3
 Nuspec fix

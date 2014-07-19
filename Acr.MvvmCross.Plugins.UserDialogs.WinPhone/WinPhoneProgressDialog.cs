@@ -72,7 +72,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
                 return;
 
             this.IsShowing = false;
-            this.Dispatch(this.progress.Hide);
+            this.Dispatch(this.progress.Dismiss);
         }
 
 

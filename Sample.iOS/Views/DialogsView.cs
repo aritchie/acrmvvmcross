@@ -25,6 +25,7 @@ namespace Sample.iOS.Views {
                     new StringElement("Alert").Bind(bindings, x => x.SelectedCommand, x => x.Alert),
                     new StringElement("Confirm").Bind(bindings, x => x.SelectedCommand, x => x.Confirm),
                     new StringElement("Prompt").Bind(bindings, x => x.SelectedCommand, x => x.Prompt),
+                    new StringElement("Prompt (Secure)").Bind(bindings, x => x.SelectedCommand, x => x.PromptSecure),
                     new StringElement("Toast").Bind(bindings, x => x.SelectedCommand, x => x.Toast),
                     new StringElement("Background Task").Bind(bindings, x => x.SelectedCommand, x => x.SendBackgroundAlert),
                     new StringElement("Loading").Bind(bindings, x => x.SelectedCommand, x => x.Loading),

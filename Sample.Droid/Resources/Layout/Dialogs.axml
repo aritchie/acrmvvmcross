@@ -29,6 +29,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <Button
+        local:MvxBind="Click PromptSecure"
+        android:text="Prompt (Secure)"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <Button
         local:MvxBind="Click Toast"
         android:text="Toast Popup"
         android:layout_width="fill_parent"

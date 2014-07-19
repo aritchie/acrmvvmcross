@@ -215,10 +215,6 @@
       <Project>{90ab40eb-c012-482c-8c61-fcf2ba56fb60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WindowsStore\Acr.MvvmCross.Plugins.UserDialogs.WindowsStore.csproj">
-      <Project>{f8374c3e-5b22-4b97-b05e-d09a7bd6525f}</Project>
-      <Name>Acr.MvvmCross.Plugins.UserDialogs.WindowsStore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
       <Project>{fb69b463-0dd5-49d2-afed-6e3a31eb37a1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>

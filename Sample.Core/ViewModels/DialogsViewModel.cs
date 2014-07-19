@@ -28,6 +28,7 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Loading { get; private set; }
         public IMvxCommand LoadingNoCancel { get; private set; }
         public IMvxCommand Prompt { get; private set; }
+        public IMvxCommand PromptSecure { get; private set; }
         public IMvxCommand Toast { get; private set; }
 
         public IMvxCommand SendBackgroundAlert { get; private set; }
@@ -80,17 +81,21 @@ namespace Sample.Core.ViewModels {
 
             this.Prompt = new MvxCommand(async () => {
                 var r = await dialogService.PromptAsync("Enter a value");
-                this.Result = (r.Ok
+                this.Result = r.Ok
                     ? "OK " + r.Text
-                    : "Prompt Cancelled"
-                );
+                    : "Prompt Cancelled";
+            });
+
+            this.PromptSecure = new MvxCommand(async () => {
+                var r = await dialogService.PromptAsync("Enter a value", secure: true);
+                this.Result = r.Ok
+                    ? "OK " + r.Text
+                    : "Secure Prompt Cancelled";
             });
 
             this.Toast = new MvxCommand(() => {
                 this.Result = "Toast Shown";
-                dialogService.Toast("Test Toast", onClick: () => {
-                    this.Result = "Toast Pressed";
-                });
+                dialogService.Toast("Test Toast", onClick: () => this.Result = "Toast Pressed");
             });
 
             this.Progress = new MvxCommand(async () => {
@@ -130,9 +135,9 @@ namespace Sample.Core.ViewModels {
             });
 
             this.LoadingNoCancel = new MvxCommand(async () => {
-                using (dialogService.Loading()) {
+                using (dialogService.Loading("Loading (No Cancel)")) 
                     await Task.Delay(TimeSpan.FromSeconds(3));
-                }
+
                 this.Result = "Loading Complete";
             });
         }

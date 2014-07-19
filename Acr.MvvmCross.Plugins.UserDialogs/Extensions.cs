@@ -20,7 +20,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
             var tcs = new TaskCompletionSource<object>();
             config.OnOk = () => tcs.SetResult(null);
             dialogs.Alert(config);
-            return tcs.Task;    
+            return tcs.Task;
         }
 
 
@@ -39,9 +39,25 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         }
 
 
-        public static Task<PromptResult> PromptAsync(this IUserDialogService dialogs, string message, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = "", PromptType type = PromptType.SingleLine) {
+        //public static Task<DateTimePromptResult> DateTimePromptAsync(this IUserDialogService dialogs, DateTimePromptConfig config) {
+        //    var tcs = new TaskCompletionSource<DateTimePromptResult>();
+        //    config.OnResult = tcs.SetResult;
+        //    dialogs.DateTimePrompt(config);
+        //    return tcs.Task;
+        //}
+
+
+        //public static Task<DurationPromptResult> DurationPromptAsync(this IUserDialogService dialogs, DurationPromptConfig config) {
+        //    var tcs = new TaskCompletionSource<DurationPromptResult>();
+        //    config.OnResult = tcs.SetResult;
+        //    dialogs.DurationPrompt(config);
+        //    return tcs.Task;
+        //}
+
+
+        public static Task<PromptResult> PromptAsync(this IUserDialogService dialogs, string message, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = "", bool secure = false) {
             var tcs = new TaskCompletionSource<PromptResult>();
-            dialogs.Prompt(message, tcs.SetResult, title, okText, cancelText, placeholder, type);
+            dialogs.Prompt(message, tcs.SetResult, title, okText, cancelText, placeholder, secure);
             return tcs.Task;
         }
 
@@ -54,9 +70,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         }
 
 
-        //void DurationPrompt(DurationConfig config);
-
         #endregion
+
 
         #region Legacy Methods
 
@@ -89,7 +104,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         }
 
 
-        public static void Prompt(this IUserDialogService dialogs, string message, Action<PromptResult> onResult, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = null, PromptType type = PromptType.SingleLine) {
+        public static void Prompt(this IUserDialogService dialogs, string message, Action<PromptResult> onResult, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = null, bool secure = false) {
             dialogs.Prompt(new PromptConfig {
                 CancelText = cancelText,
                 Message = message,
@@ -97,7 +112,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
                 OnResult = onResult,
                 Title = title,
                 Placeholder = placeholder,
-                Type = type
+                IsSecure = secure
             });
         }
 

@@ -1,23 +1,35 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
-using Coding4Fun.Toolkit.Controls;
+using Microsoft.Phone.Controls;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     
-    public class ProgressPopUp : MessagePrompt {
+    public class ProgressPopUp : CustomMessageBox {
 
         private readonly TextBlock percentText = new TextBlock {
-            HorizontalAlignment = HorizontalAlignment.Center
-        };
-        private readonly Button cancelButton = new Button {
             Visibility = Visibility.Collapsed,
-            HorizontalAlignment = HorizontalAlignment.Center
+            Margin = new Thickness(0, 10, 0, 0)
         };
         private readonly ProgressBar progressBar = new ProgressBar {
-            HorizontalAlignment = HorizontalAlignment.Stretch
+            HorizontalAlignment = HorizontalAlignment.Stretch,
+            Margin = new Thickness(0, 10, 0, 0)
         };
+
+
+        public ProgressPopUp() {
+            this.IsRightButtonEnabled = false;
+            this.IsLeftButtonEnabled = false;
+
+            var stack = new StackPanel {
+                Orientation = Orientation.Vertical,
+                HorizontalAlignment = HorizontalAlignment.Stretch
+            };
+            stack.Children.Add(this.progressBar);
+            stack.Children.Add(this.percentText);
+            this.Content = stack;
+        }
 
 
         public bool IsIndeterminate {
@@ -33,8 +45,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public string LoadingText {
-            get { return this.Title; }
-            set { this.Title = value; }
+            get { return this.Caption; }
+            set { this.Caption = value; }
         }
 
 
@@ -51,26 +63,12 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
 
 
         public void SetCancel(Action action, string cancelText) {
-            this.cancelButton.Click += (sender, args) => action();
-            this.cancelButton.Content = cancelText;
-            this.cancelButton.Visibility = Visibility.Visible;
-        }
-
-
-        public override void OnApplyTemplate() {
-            base.OnApplyTemplate();
-            this.ActionButtonArea.Children.Clear();
-            
-            var stackPanel = new StackPanel {
-                Orientation = Orientation.Vertical,
-                Margin = new Thickness(),
-                HorizontalAlignment = HorizontalAlignment.Stretch
+            this.Dismissed += (sender, args) => {
+                if (args.Result == CustomMessageBoxResult.RightButton)
+                    action();
             };
-            stackPanel.Children.Add(this.progressBar);
-            stackPanel.Children.Add(this.percentText);
-            stackPanel.Children.Add(this.cancelButton);
-
-            this.ActionButtonArea.Children.Add(stackPanel);
+            this.RightButtonContent = cancelText;
+            this.IsRightButtonEnabled = true;
         }
     }
 }

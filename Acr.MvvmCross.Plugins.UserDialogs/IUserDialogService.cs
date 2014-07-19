@@ -1,4 +1,6 @@
 using System;
+using Acr.MvvmCross.Plugins.UserDialogs;
+
 
 namespace Acr.MvvmCross.Plugins.UserDialogs {
 
@@ -9,6 +11,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         
         void Confirm(ConfirmConfig config);
         void Prompt(PromptConfig config);
+        //void DateTimePrompt(DateTimePromptConfig config);
+        //void DurationPrompt(DurationPromptConfig config);
         IProgressDialog Progress(ProgressConfig config);
 
         void ShowLoading(string title = "Loading");

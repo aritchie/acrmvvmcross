@@ -9,19 +9,19 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     public class TouchUserDialogService : AbstractUserDialogService {
 
         public override void ActionSheet(ActionSheetConfig config) {
-            this.Dispatch(() => {
+            this.Dispatch(() =>  {
                 var action = new UIActionSheet(config.Title);
                 config.Options.ToList().ForEach(x => action.AddButton(x.Text));
 
                 action.Clicked += (sender, btn) => config.Options[btn.ButtonIndex].Action();
-                var view = this.GetTopView();
+                var view = Utils.GetTopView();
                 action.ShowInView(view);
             });
         }
 
 
         public override void Alert(AlertConfig config) {
-            this.Dispatch(() => {
+            this.Dispatch(() =>  {
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, null, config.OkText);
                 if (config.OnOk != null) 
                     dlg.Clicked += (s, e) => config.OnOk();
@@ -32,7 +32,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
 
         public override void Confirm(ConfirmConfig config) {
-            this.Dispatch(() => {
+            this.Dispatch(() =>  {
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, config.CancelText, config.OkText);
                 dlg.Clicked += (s, e) => {
                     var ok = (dlg.CancelButtonIndex != e.ButtonIndex);
@@ -45,7 +45,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
         public override void Toast(string message, int timeoutSeconds, Action onClick) {
             // TODO: no click callback in showtoast at the moment
-            this.Dispatch(() => {
+            this.Dispatch(() =>  {
                 var ms = timeoutSeconds * 1000;
                 BTProgressHUD.ShowToast(message, false, ms);
             });
@@ -53,30 +53,16 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
-        public override void DateTimePrompt(DateTimePromptConfig config) {
-            // TODO
-        }
-
-
-        public override void DurationPrompt(DurationPromptConfig config) {
-            // TODO
-        }
-
-
         public override void Prompt(PromptConfig config) {
-            this.Dispatch(() => {
+            this.Dispatch(() =>  {
                 var result = new PromptResult();
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, config.CancelText, config.OkText) {
-                    AlertViewStyle = config.Type == PromptType.Secure 
+                    AlertViewStyle = config.IsSecure
                         ? UIAlertViewStyle.SecureTextInput 
                         : UIAlertViewStyle.PlainTextInput
                 };
-                // TODO: multiline
-                //dlg.Add(new UITextView {
-                //    Editable = true
-                //});
                 var txt = dlg.GetTextField(0);
-                txt.SecureTextEntry = (config.Type == PromptType.Secure);
+                txt.SecureTextEntry = config.IsSecure;
                 txt.Placeholder = config.Placeholder;
 
                 //UITextView = editable
@@ -92,11 +78,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
         protected override IProgressDialog CreateDialogInstance() {
             return new TouchProgressDialog();
-        }
-
-
-        protected virtual UIView GetTopView() {
-            return UIApplication.SharedApplication.KeyWindow.Subviews.Last();
         }
 
 

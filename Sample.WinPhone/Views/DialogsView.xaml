@@ -34,6 +34,7 @@
                 <Button Content="Alert" Command="{Binding Alert}" />
                 <Button Content="Confirm" Command="{Binding Confirm}" />
                 <Button Content="Prompt" Command="{Binding Prompt}" />
+                <Button Content="Prompt (Secure)" Command="{Binding PromptSecure}" />
                 <Button Content="Toast" Command="{Binding Toast}" />
                 <Button Content="Loading" Command="{Binding Loading}" />
                 <Button Content="Loading (No Cancel)" Command="{Binding LoadingNoCancel}" />
