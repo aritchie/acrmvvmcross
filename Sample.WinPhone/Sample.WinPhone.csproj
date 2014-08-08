@@ -235,6 +235,14 @@
       <Project>{62822DE8-CEB9-4602-B780-84E9E3D11B88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem.WindowsPhone\Acr.MvvmCross.Plugins.FileSystem.WindowsPhone.csproj">
+      <Project>{2eaa8e49-371c-4732-8cdd-2121d4e8166c}</Project>
+      <Name>Acr.MvvmCross.Plugins.FileSystem.WindowsPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem\Acr.MvvmCross.Plugins.FileSystem.csproj">
+      <Project>{1c2c9bda-c39d-4ee9-ad1b-c7065f4365ac}</Project>
+      <Name>Acr.MvvmCross.Plugins.FileSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.WinPhone\Acr.MvvmCross.Plugins.Network.WinPhone.csproj">
       <Project>{9EAB5CDB-1DA9-48C4-B406-E2B4034BA54C}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.WinPhone</Name>
