@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Cirrious.CrossCore;
 using ZXing;
 using ZXing.Mobile;
 
@@ -38,7 +39,8 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 #if __IOS__
             var scanner = new MobileBarcodeScanner { UseCustomOverlay = false };
 #elif ANDROID
-            var scanner = new MobileBarcodeScanner(Android.App.Application.Context) { UseCustomOverlay = false };
+            var topActivity = Mvx.Resolve<Cirrious.CrossCore.Droid.Platform.IMvxAndroidCurrentTopActivity>().Activity;
+            var scanner = new MobileBarcodeScanner(topActivity) { UseCustomOverlay = false };
 #elif WINDOWS_PHONE
             var scanner = new MobileBarcodeScanner(System.Windows.Deployment.Current.Dispatcher) { UseCustomOverlay = false };
 #endif

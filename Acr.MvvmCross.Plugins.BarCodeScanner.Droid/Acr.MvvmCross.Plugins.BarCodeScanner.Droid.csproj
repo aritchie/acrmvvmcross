@@ -73,17 +73,15 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ZXing.Net.Mobile.1.4.5\lib\MonoAndroid\Xamarin.Android.Support.v4.dll</HintPath>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="zxing.monoandroid, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ZXing.Net.Mobile.1.4.5\lib\MonoAndroid\zxing.monoandroid.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\zxing.monoandroid.dll</HintPath>
     </Reference>
-    <Reference Include="ZXing.Net.Mobile, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ZXing.Net.Mobile, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ZXing.Net.Mobile.1.4.5\lib\MonoAndroid\ZXing.Net.Mobile.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\ZXing.Net.Mobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -75,6 +75,12 @@ namespace Acr.MvvmCross.Plugins.FileSystem {
         }
 
 
+        public bool FileExists(string fileName) {
+            var path = Path.Combine(this.FullName, fileName);
+            return System.IO.File.Exists(path);
+        }
+
+
         public IFile CreateFile(string fileName) {
             var path = Path.Combine(this.FullName, fileName);
             return new File(new FileInfo(path));
