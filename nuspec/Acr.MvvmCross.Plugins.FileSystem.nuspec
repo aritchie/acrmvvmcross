@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Acr.MvvmCross.Plugins.FileSystem</id>
+        <version>1.0.0</version>
+        <title>MvvmCross File System Plugin</title>
+        <description>File System platform plugin for MvvmCross (iOS, Android, and Windows Phone)</description>
+        <authors>Allan Ritchie</authors>
+        <owners>Allan Ritchie</owners>
+        <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+        <projectUrl>https://github.com/aritchie/acrmvvmcross</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>xamarin mvvmcross settings</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1, 3.2)" />
+        </dependencies>
+        <releaseNotes>
+1.0
+Initial Release
+        </releaseNotes>
+    </metadata>
+    <files>
+        <!-- PCL -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.Plugins.FileSystem.dll" />
+
+        <!-- droid -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.FileSystem.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.FileSystem.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.FileSystem.Droid.dll" />
+        <file src="BootstrapContent\FileSystemPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\FileSystemPluginBootstrap.cs.pp" />
+
+        <!-- touch -->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.FileSystem.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.FileSystem.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.FileSystem.Touch.dll" />
+        <file src="TouchBootstrapContent\TouchFileSystemPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\FileSystemPluginBootstrap.cs.pp" />
+
+        <!--winphone-->
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\wp8\Acr.MvvmCross.Plugins.FileSystem.dll" />
+        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.FileSystem.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.FileSystem.WindowsPhone.dll" />
+        <file src="BootstrapContent\FileSystemPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\FileSystemPluginBootstrap.cs.pp" />
+
+    </files>
+</package>

@@ -175,6 +175,14 @@
       <Project>{62822DE8-CEB9-4602-B780-84E9E3D11B88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem.Droid\Acr.MvvmCross.Plugins.FileSystem.Droid.csproj">
+      <Project>{e0895a1d-7257-4a00-8b48-a30c3ff7f4e6}</Project>
+      <Name>Acr.MvvmCross.Plugins.FileSystem.Droid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem\Acr.MvvmCross.Plugins.FileSystem.csproj">
+      <Project>{1c2c9bda-c39d-4ee9-ad1b-c7065f4365ac}</Project>
+      <Name>Acr.MvvmCross.Plugins.FileSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.Droid\Acr.MvvmCross.Plugins.Network.Droid.csproj">
       <Project>{872C26AC-5559-4E0D-8B8D-DBF39F7F4331}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.Droid</Name>

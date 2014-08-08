@@ -118,6 +118,14 @@
       <Project>{62822DE8-CEB9-4602-B780-84E9E3D11B88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem.Touch\Acr.MvvmCross.Plugins.FileSystem.Touch.csproj">
+      <Project>{c24fe984-a6d1-4e63-b8b2-0fec9688d13d}</Project>
+      <Name>Acr.MvvmCross.Plugins.FileSystem.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem\Acr.MvvmCross.Plugins.FileSystem.csproj">
+      <Project>{1c2c9bda-c39d-4ee9-ad1b-c7065f4365ac}</Project>
+      <Name>Acr.MvvmCross.Plugins.FileSystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network.Touch\Acr.MvvmCross.Plugins.Network.Touch.csproj">
       <Project>{E23D6213-060D-4FD3-9F9D-F49F55F4DB68}</Project>
       <Name>Acr.MvvmCross.Plugins.Network.Touch</Name>

@@ -26,46 +26,6 @@ namespace Sample.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::AndroidHUD.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
-			global::AndroidHUD.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
-			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
-			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::Sample.Droid.Resource.Attribute.ahCircleColor;
-			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::Sample.Droid.Resource.Attribute.ahDelayMillis;
-			global::AndroidHUD.Resource.Attribute.ahRadius = global::Sample.Droid.Resource.Attribute.ahRadius;
-			global::AndroidHUD.Resource.Attribute.ahRimColor = global::Sample.Droid.Resource.Attribute.ahRimColor;
-			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::Sample.Droid.Resource.Attribute.ahRimWidth;
-			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::Sample.Droid.Resource.Attribute.ahSpinSpeed;
-			global::AndroidHUD.Resource.Attribute.ahText = global::Sample.Droid.Resource.Attribute.ahText;
-			global::AndroidHUD.Resource.Attribute.ahTextColor = global::Sample.Droid.Resource.Attribute.ahTextColor;
-			global::AndroidHUD.Resource.Attribute.ahTextSize = global::Sample.Droid.Resource.Attribute.ahTextSize;
-			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::Sample.Droid.Resource.Drawable.ic_errorstatus;
-			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::Sample.Droid.Resource.Drawable.ic_successstatus;
-			global::AndroidHUD.Resource.Drawable.roundedbg = global::Sample.Droid.Resource.Drawable.roundedbg;
-			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::Sample.Droid.Resource.Drawable.roundedbgdark;
-			global::AndroidHUD.Resource.Id.loadingImage = global::Sample.Droid.Resource.Id.loadingImage;
-			global::AndroidHUD.Resource.Id.loadingProgressBar = global::Sample.Droid.Resource.Id.loadingProgressBar;
-			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::Sample.Droid.Resource.Id.loadingProgressWheel;
-			global::AndroidHUD.Resource.Id.textViewStatus = global::Sample.Droid.Resource.Id.textViewStatus;
-			global::AndroidHUD.Resource.Layout.loading = global::Sample.Droid.Resource.Layout.loading;
-			global::AndroidHUD.Resource.Layout.loadingimage = global::Sample.Droid.Resource.Layout.loadingimage;
-			global::AndroidHUD.Resource.Layout.loadingprogress = global::Sample.Droid.Resource.Layout.loadingprogress;
-			global::AndroidHUD.Resource.String.library_name = global::Sample.Droid.Resource.String.library_name;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::Sample.Droid.Resource.Styleable.ProgressWheel;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRadius;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahText;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
-			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
-			global::ZXing.Mobile.Resource.Id.contentFrame = global::Sample.Droid.Resource.Id.contentFrame;
-			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Sample.Droid.Resource.Layout.zxingscanneractivitylayout;
-			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Sample.Droid.Resource.Layout.zxingscannerfragmentlayout;
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.Id.contentFrame = global::Sample.Droid.Resource.Id.contentFrame;
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.Layout.zxingscanneractivitylayout = global::Sample.Droid.Resource.Layout.zxingscanneractivitylayout;
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.Layout.zxingscannerfragmentlayout = global::Sample.Droid.Resource.Layout.zxingscannerfragmentlayout;
@@ -73,6 +33,8 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.BarCodeScanner.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.DeviceInfo.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.DeviceInfo.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
+			global::Acr.MvvmCross.Plugins.FileSystem.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
+			global::Acr.MvvmCross.Plugins.FileSystem.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.Network.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.Network.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.Settings.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
@@ -116,6 +78,46 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahText = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahText;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahTextColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahTextSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::Sample.Droid.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::Sample.Droid.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::Sample.Droid.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::Sample.Droid.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::Sample.Droid.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::Sample.Droid.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::Sample.Droid.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::Sample.Droid.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::Sample.Droid.Resource.Attribute.ahTextSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::Sample.Droid.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::Sample.Droid.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::Sample.Droid.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::Sample.Droid.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::Sample.Droid.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::Sample.Droid.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::Sample.Droid.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::Sample.Droid.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::Sample.Droid.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::Sample.Droid.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::Sample.Droid.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::Sample.Droid.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::Sample.Droid.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::Sample.Droid.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::Sample.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::Sample.Droid.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Attribute
@@ -305,14 +307,14 @@ namespace Sample.Droid
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040002
+			public const int ApplicationName = 2130968578;
+			
 			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			public const int Hello = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
-			
-			// aapt resource value: 0x7f040002
-			public const int library_name = 2130968578;
+			public const int library_name = 2130968576;
 			
 			static String()
 			{
