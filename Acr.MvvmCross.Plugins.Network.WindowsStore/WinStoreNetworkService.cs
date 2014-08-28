@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Core;
 using Windows.Networking.Connectivity;
 
 
@@ -15,7 +16,7 @@ namespace Acr.MvvmCross.Plugins.Network.WindowsStore {
 
         
         
-        private void OnNetworkStatusChanged(object sender) {
+        private async void OnNetworkStatusChanged(object sender) {
             var profiles = NetworkInformation.GetConnectionProfiles();
             var inet = profiles.Any(x => 
                 x.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess || 
@@ -23,12 +24,19 @@ namespace Acr.MvvmCross.Plugins.Network.WindowsStore {
             );
             var wifi = profiles.Any(x => x.IsWwanConnectionProfile);
             var mobile = profiles.Any(x => x.IsWwanConnectionProfile);
-            this.SetStatus(inet, wifi, mobile, sender != null);
+
+            var dispatcher = CoreApplication.MainView.CoreWindow.Dispatcher;
+
+            await dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                this.SetStatus(inet, wifi, mobile, sender != null);
+            }
+            );
         }
 
 
         public override async Task<bool> IsHostReachable(string host) {
-            return false;
+            return await Task.FromResult<bool>(false);
         }
     }
 }
