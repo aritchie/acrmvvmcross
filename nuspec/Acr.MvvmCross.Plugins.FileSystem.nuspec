@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.FileSystem</id>
-        <version>1.0.2</version>
+        <version>1.0.0</version>
         <title>MvvmCross File System Plugin</title>
         <description>File System platform plugin for MvvmCross (iOS, Android, and Windows Phone)</description>
         <authors>Allan Ritchie</authors>
