@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.Networking;
 using Windows.Networking.Connectivity;
+using Windows.Networking.Sockets;
 
 
 namespace Acr.MvvmCross.Plugins.Network.WindowsStore {
@@ -23,12 +25,21 @@ namespace Acr.MvvmCross.Plugins.Network.WindowsStore {
             );
             var wifi = profiles.Any(x => x.IsWwanConnectionProfile);
             var mobile = profiles.Any(x => x.IsWwanConnectionProfile);
-            this.SetStatus(inet, wifi, mobile, sender != null);
+            this.SetStatus(inet, wifi, mobile, true);
         }
 
 
         public override async Task<bool> IsHostReachable(string host) {
-            return false;
+            try { 
+                var hostName = new HostName(host);
+                using (var socket = new StreamSocket()) {
+                    await socket.ConnectAsync(hostName, "http");
+                    return true;
+                }
+            }
+            catch {
+                return false;
+            }
         }
     }
 }
