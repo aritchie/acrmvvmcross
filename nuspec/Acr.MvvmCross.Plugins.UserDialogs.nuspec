@@ -13,10 +13,10 @@
         <tags>xamarin mvvmcross</tags>
         <dependencies>
             <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
             </group>
             <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
                 <dependency id="WPtoolkit" version="[4.2013.08.16, 5.0)" />
             </group>
         </dependencies>
