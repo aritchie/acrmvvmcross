@@ -38,7 +38,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
         public async Task<BarCodeResult> ReadAsync() {
 #if __IOS__
             var scanner = new MobileBarcodeScanner { UseCustomOverlay = false };
-#elif ANDROID
+#elif __ANDROID__
             var topActivity = Mvx.Resolve<Cirrious.CrossCore.Droid.Platform.IMvxAndroidCurrentTopActivity>().Activity;
             var scanner = new MobileBarcodeScanner(topActivity) { UseCustomOverlay = false };
 #elif WINDOWS_PHONE
