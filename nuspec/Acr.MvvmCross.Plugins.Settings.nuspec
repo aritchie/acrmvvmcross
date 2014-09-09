@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.Settings</id>
-        <version>2.1.0</version>
+        <version>2.1.1</version>
         <title>MvvmCross Settings Plugin</title>
         <description>Settings platform plugin for MvvmCross (iOS, Android, and Windows Phone)</description>
         <authors>Allan Ritchie</authors>
@@ -16,6 +16,9 @@
             <dependency id="Newtonsoft.Json" version="[6, 7)" />
         </dependencies>
         <releaseNotes>
+2.1.1
+Fix iOS Settings issue
+
 2.1
 Better structure to observable dictionary of settings
 FIX: bug with resync calling clear event which removes some necessary iOS settings
