@@ -1,14 +1,14 @@
 using System;
-using Acr.MvvmCross.Droid;
 using Android.App;
 using Android.Views;
+using Cirrious.MvvmCross.Droid.Views;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.Droid.Views {
     
     [Activity]
-    public class SettingsActivity : Mvx2Activity {
+    public class SettingsActivity : MvxActivity {
 
         public new SettingsViewModel ViewModel {
             get { return (SettingsViewModel)base.ViewModel; }

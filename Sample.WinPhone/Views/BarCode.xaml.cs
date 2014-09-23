@@ -1,10 +1,10 @@
 ﻿using System;
-using Acr.MvvmCross.WinPhone;
+using Cirrious.MvvmCross.WindowsPhone.Views;
 
 
 namespace Sample.WinPhone.Views {
 
-    public partial class BarCode : Mvx2PhonePage {
+    public partial class BarCode : MvxPhonePage {
     
         public BarCode() {
             InitializeComponent();

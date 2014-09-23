@@ -1,10 +1,10 @@
 ﻿using System;
-using Acr.MvvmCross.WinPhone;
+using Cirrious.MvvmCross.WindowsPhone.Views;
 
 
 namespace Sample.WinPhone.Views {
 
-    public partial class DeviceInfoView : Mvx2PhonePage {
+    public partial class DeviceInfoView : MvxPhonePage {
         public DeviceInfoView() {
             InitializeComponent();
         }

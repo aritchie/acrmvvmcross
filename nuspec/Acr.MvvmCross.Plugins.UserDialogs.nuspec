@@ -13,17 +13,17 @@
         <tags>xamarin mvvmcross</tags>
         <dependencies>
             <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
             </group>
             <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
                 <dependency id="WPtoolkit" version="[4.2013.08.16, 5.0)" />
             </group>
         </dependencies>
         <releaseNotes>
 2.1
 Use AlertController on iOS8
-Update to latest MvvmCross (3.2.1)
+Update to latest MvvmCross (3.2.1) BREAKING - this changes the profile from 158 to 78 dropping SL5 support
 Update to latest BTProgressHUD
 
 2.0.1

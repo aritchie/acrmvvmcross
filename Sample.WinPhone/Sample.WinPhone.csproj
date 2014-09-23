@@ -199,23 +199,29 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.CrossCore.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\wp8\Cirrious.CrossCore.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.CrossCore.WindowsPhone">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.CrossCore.WindowsPhone.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\wp8\Cirrious.CrossCore.WindowsPhone.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\wp8\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\wp8\Cirrious.MvvmCross.Localization.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\wp8\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
-      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.1.1\lib\wp8\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.2.1\lib\wp8\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.WindowsPhone">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\wp8\Cirrious.MvvmCross.WindowsPhone.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -262,10 +268,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
       <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.WinPhone\Acr.MvvmCross.WinPhone.csproj">
-      <Project>{F1C282D2-9D63-4088-B74D-1DDB752D4058}</Project>
-      <Name>Acr.MvvmCross.WinPhone</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
       <Project>{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D}</Project>

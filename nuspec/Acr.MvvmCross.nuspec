@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross</id>
-        <version>0.9.2</version>
+        <version>1.0.0</version>
         <title>MvvmCross Utilities</title>
         <description>Just some easy utility classes that assist with MvvmCross</description>
         <authors>Allan Ritchie</authors>
@@ -12,35 +12,12 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>		
         <tags>xamarin mvvmcross</tags>
         <dependencies>
-            <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="3.1.1" />
-                <dependency id="Newtonsoft.Json" version="6.0.2" />
-            </group>
-            <group targetFramework="MonoAndroid">
-                <dependency id="MvvmCross.HotTuna.Droid.Fragging" version="3.1.1" />
-                <dependency id="Xamarin.Android.Support.v4" version="19.0.2" />
-                <dependency id="Xamarin.Android.Support.v7.AppCompat" version="19.0.2" />
-            </group>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
+            <dependency id="Newtonsoft.Json" version="[6.0.5, 7.0)" />
         </dependencies>
     </metadata>
     <files>		
         <!-- PCL -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.dll" />
-
-        <!-- droid -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoAndroid\Acr.MvvmCross.dll" />
-        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Droid.dll" />
-      
-        <!-- touch -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\MonoTouch\Acr.MvvmCross.dll" />
-        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Touch.dll" />
-
-        <!-- winphone -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\wp8\Acr.MvvmCross.dll" />
-        <file src="..\bin\Release\WinPhone\Acr.MvvmCross.WinPhone.dll" target="lib\wp8\Acr.MvvmCross.WinPhone.dll" />
-
-        <!-- store -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\netcore45\Acr.MvvmCross.dll" />
-        <file src="..\bin\Release\WinStore\Acr.MvvmCross.WindowsStore.dll" target="lib\netcore45\Acr.MvvmCross.WindowsStore.dll" />
     </files>
 </package>

@@ -1,10 +1,10 @@
 ﻿using System;
-using Acr.MvvmCross.WinPhone;
+using Cirrious.MvvmCross.WindowsPhone.Views;
 
 
 namespace Sample.WinPhone.Views {
     
-    public partial class SettingsView : Mvx2PhonePage {
+    public partial class SettingsView : MvxPhonePage {
     
         public SettingsView() {
             InitializeComponent();

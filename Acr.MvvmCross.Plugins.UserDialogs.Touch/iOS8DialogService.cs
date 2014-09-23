@@ -35,7 +35,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 Message = config.Message
             };
             dlg.AddAction(UIAlertAction.Create(config.OkText, UIAlertActionStyle.Default, x => config.OnConfirm(true)));
-            dlg.AddAction(UIAlertAction.Create(config.OkText, UIAlertActionStyle.Default, x => config.OnConfirm(false)));
+            dlg.AddAction(UIAlertAction.Create(config.CancelText, UIAlertActionStyle.Default, x => config.OnConfirm(false)));
             this.Present(dlg);
         }
 
@@ -59,7 +59,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 result.Text = txt.Text.Trim();
                 config.OnResult(result);
             }));
-            dlg.AddAction(UIAlertAction.Create(config.OkText, UIAlertActionStyle.Default, x => {
+            dlg.AddAction(UIAlertAction.Create(config.CancelText, UIAlertActionStyle.Default, x => {
                 result.Ok = false;
                 result.Text = txt.Text.Trim();
                 config.OnResult(result);

@@ -167,23 +167,27 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Cirrious.CrossCore">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\netcore45\Cirrious.CrossCore.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\win81\Cirrious.CrossCore.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.CrossCore.WindowsStore">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\netcore45\Cirrious.CrossCore.WindowsStore.dll</HintPath>
+    <Reference Include="Cirrious.CrossCore.WindowsCommon">
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\win81\Cirrious.CrossCore.WindowsCommon.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\netcore45\Cirrious.MvvmCross.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\win81\Cirrious.MvvmCross.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Localization">
-      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.1.1\lib\netcore45\Cirrious.MvvmCross.Localization.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Localization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\win81\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger">
-      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.1.1\lib\netcore45\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Messenger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.2.1\lib\win81\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
-    <Reference Include="Cirrious.MvvmCross.WindowsStore">
-      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.1.1\lib\netcore45\Cirrious.MvvmCross.WindowsStore.dll</HintPath>
+    <Reference Include="Cirrious.MvvmCross.WindowsCommon">
+      <HintPath>..\packages\MvvmCross.HotTuna.MvvmCrossLibraries.3.2.1\lib\win81\Cirrious.MvvmCross.WindowsCommon.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -218,10 +222,6 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
       <Project>{fb69b463-0dd5-49d2-afed-6e3a31eb37a1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.WindowsStore\Acr.MvvmCross.WindowsStore.csproj">
-      <Project>{54be7cfc-77e3-4a79-9872-663a8e1db620}</Project>
-      <Name>Acr.MvvmCross.WindowsStore</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
       <Project>{85e3c63b-a17e-46ef-87ce-9a8e58fede4d}</Project>
