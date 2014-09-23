@@ -35,6 +35,8 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AbstractTouchUserDialogService.cs" />
+    <Compile Include="iOS8DialogService.cs" />
     <Compile Include="TouchProgressDialog.cs" />
     <Compile Include="TouchUserDialogService.cs" />
     <Compile Include="Plugin.cs" />
@@ -77,7 +79,7 @@
   <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">
       <Visible>False</Visible>
-      <Version>1.10</Version>
+      <Version>1.12</Version>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />

@@ -1,12 +1,11 @@
 using System;
 using System.Linq;
-using BigTed;
 using MonoTouch.UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     
-    public class TouchUserDialogService : AbstractUserDialogService {
+    public class TouchUserDialogService : AbstractTouchUserDialogService {
 
         public override void ActionSheet(ActionSheetConfig config) {
             this.Dispatch(() =>  {
@@ -25,7 +24,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, null, config.OkText);
                 if (config.OnOk != null) 
                     dlg.Clicked += (s, e) => config.OnOk();
-                
+
                 dlg.Show();
             });
         }
@@ -43,16 +42,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
-        public override void Toast(string message, int timeoutSeconds, Action onClick) {
-            // TODO: no click callback in showtoast at the moment
-            this.Dispatch(() =>  {
-                var ms = timeoutSeconds * 1000;
-                BTProgressHUD.ShowToast(message, false, ms);
-            });
-            
-        }
-
-
         public override void Prompt(PromptConfig config) {
             this.Dispatch(() =>  {
                 var result = new PromptResult();
@@ -65,7 +54,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 txt.SecureTextEntry = config.IsSecure;
                 txt.Placeholder = config.Placeholder;
 
-                //UITextView = editable
                 dlg.Clicked += (s, e) => {
                     result.Ok = (dlg.CancelButtonIndex != e.ButtonIndex);
                     result.Text = txt.Text;
@@ -73,16 +61,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 };
                 dlg.Show();
             });
-        }
-
-
-        protected override IProgressDialog CreateDialogInstance() {
-            return new TouchProgressDialog();
-        }
-
-
-        protected virtual void Dispatch(Action action) {
-            UIApplication.SharedApplication.InvokeOnMainThread(() => action());
         }
     }
 }
