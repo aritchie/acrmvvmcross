@@ -18,14 +18,14 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
 
         public override void ActionSheet(ActionSheetConfig config) {
-            var alert = UIAlertController.Create(config.Title ?? String.Empty, String.Empty, UIAlertControllerStyle.ActionSheet);
+            var sheet = UIAlertController.Create(config.Title ?? String.Empty, String.Empty, UIAlertControllerStyle.ActionSheet);
             config.Options.ToList().ForEach(x => 
                 sheet.AddAction(UIAlertAction.Create(x.Text, UIAlertActionStyle.Default, y => {
                     if (x.Action != null)
                         x.Action();
                 }))
             );
-            this.Present(alert);
+            this.Present(sheet);
         }
 
 
@@ -41,6 +41,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
 
         public override void Prompt(PromptConfig config) {
+            var result = new PromptResult();
+
             var dlg = new UIAlertController {
                 Title = config.Title ?? String.Empty,
                 Message = config.Message
