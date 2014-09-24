@@ -265,6 +265,10 @@
       <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.csproj">
+      <Project>{732d3a68-83f1-4cc0-97cb-ab5095998d70}</Project>
+      <Name>Acr.MvvmCross.Plugins.UserDialogs.WinPhone</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
       <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
