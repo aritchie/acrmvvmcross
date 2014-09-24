@@ -65,7 +65,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 Hint = config.PasswordPlaceholder,
                 TransformationMethod = PasswordTransformationMethod.Instance
             };
-            var layout = new LinearLayout(context);
+            var layout = new LinearLayout(context) {
+                Orientation = Orientation.Vertical
+            };
             layout.AddView(txtUser, ViewGroup.LayoutParams.MatchParent);
             layout.AddView(txtPass, ViewGroup.LayoutParams.MatchParent);
 
