@@ -1,4 +1,4 @@
-<windowsStore:Mvx2StorePage
+<windowsStore:MvxStorePage
     x:Class="Sample.WinStore.Views.HomeView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -25,4 +25,4 @@
             </GridView.ItemsPanel>-->
         </GridView>
     </Grid>
-</windowsStore:Mvx2StorePage>
+</windowsStore:MvxStorePage>

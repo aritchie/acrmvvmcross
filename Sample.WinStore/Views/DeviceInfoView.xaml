@@ -1,4 +1,4 @@
-﻿<windowsStore:MvxStorePage
+﻿<views:MvxStorePage
     x:Class="Sample.WinStore.Views.DeviceInfoView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -18,4 +18,4 @@
             <CheckBox IsChecked="{Binding Device.IsSimulator}" IsEnabled="False">Simulator Detected</CheckBox>
         </StackPanel>
     </Grid>
-</windowsStore:MvxStorePage>
+</views:MvxStorePage>

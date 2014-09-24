@@ -1,5 +1,4 @@
 using System;
-using Acr.MvvmCross.Plugins.UserDialogs;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs {
@@ -8,9 +7,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
 
         void Alert(AlertConfig config);
         void ActionSheet(ActionSheetConfig config);
-        
         void Confirm(ConfirmConfig config);
         void Prompt(PromptConfig config);
+        void Login(LoginConfig config);
         //void DateTimePrompt(DateTimePromptConfig config);
         //void DurationPrompt(DurationPromptConfig config);
         IProgressDialog Progress(ProgressConfig config);

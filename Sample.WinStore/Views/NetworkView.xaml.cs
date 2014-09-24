@@ -1,10 +1,10 @@
 ﻿using System;
-using Acr.MvvmCross.WindowsStore;
+using Cirrious.MvvmCross.WindowsStore.Views;
 
 
 namespace Sample.WinStore.Views {
 
-    public sealed partial class NetworkView : Mvx2StorePage {
+    public sealed partial class NetworkView : MvxStorePage {
 
         public NetworkView() {
             this.InitializeComponent();

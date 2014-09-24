@@ -30,30 +30,38 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
 
         public override void Confirm(ConfirmConfig config) {
-            var dlg = new UIAlertController {
-                Title = config.Title ?? String.Empty,
-                Message = config.Message
-            };
+            var dlg = UIAlertController.Create(config.Title ?? String.Empty, config.Message, UIAlertControllerStyle.Alert);
             dlg.AddAction(UIAlertAction.Create(config.OkText, UIAlertActionStyle.Default, x => config.OnConfirm(true)));
             dlg.AddAction(UIAlertAction.Create(config.CancelText, UIAlertActionStyle.Default, x => config.OnConfirm(false)));
             this.Present(dlg);
         }
 
 
+        public override void Login(LoginConfig config) {
+            UITextField txtUser = null;
+            UITextField txtPass = null;
+            var dlg = UIAlertController.Create(config.Title ?? String.Empty, config.Message, UIAlertControllerStyle.Alert);
+            dlg.AddAction(UIAlertAction.Create(config.OkText, UIAlertActionStyle.Default, x => config.OnResult(new LoginResult(txtUser.Text, txtPass.Text, true))));
+            dlg.AddAction(UIAlertAction.Create(config.CancelText, UIAlertActionStyle.Default, x => config.OnResult(new LoginResult(txtUser.Text, txtPass.Text, true))));
+            dlg.AddTextField(x => {
+                txtUser = x;
+                x.Placeholder = config.LoginPlaceholder;
+                x.Text = config.LoginValue ?? String.Empty;
+            });
+            dlg.AddTextField(x => {
+                txtPass = x;
+                x.Placeholder = config.PasswordPlaceholder;
+                x.SecureTextEntry = true;
+            });
+            this.Present(dlg);
+        }
+
+
         public override void Prompt(PromptConfig config) {
             var result = new PromptResult();
-
-            var dlg = new UIAlertController {
-                Title = config.Title ?? String.Empty,
-                Message = config.Message
-            };
-
+            var dlg = UIAlertController.Create(config.Title ?? String.Empty, config.Message, UIAlertControllerStyle.Alert);
             UITextField txt = null;
-            dlg.AddTextField(x => {
-                x.SecureTextEntry = config.IsSecure;
-                x.Placeholder = config.Placeholder;
-                txt = x;
-            });
+
             dlg.AddAction(UIAlertAction.Create(config.OkText, UIAlertActionStyle.Default, x => {
                 result.Ok = true;
                 result.Text = txt.Text.Trim();
@@ -64,6 +72,11 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 result.Text = txt.Text.Trim();
                 config.OnResult(result);
             }));
+            dlg.AddTextField(x => {
+                x.SecureTextEntry = config.IsSecure;
+                x.Placeholder = config.Placeholder ?? String.Empty;
+                txt = x;
+            });
             this.Present(dlg);
         }
 

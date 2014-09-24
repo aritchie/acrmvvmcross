@@ -24,6 +24,7 @@ namespace Sample.iOS.Views {
                     new StringElement("Action Sheet").Bind(bindings, x => x.SelectedCommand, x => x.ActionSheet),
                     new StringElement("Alert").Bind(bindings, x => x.SelectedCommand, x => x.Alert),
                     new StringElement("Confirm").Bind(bindings, x => x.SelectedCommand, x => x.Confirm),
+                    new StringElement("Login").Bind(bindings, x => x.SelectedCommand, x => x.Login),
                     new StringElement("Prompt").Bind(bindings, x => x.SelectedCommand, x => x.Prompt),
                     new StringElement("Prompt (Secure)").Bind(bindings, x => x.SelectedCommand, x => x.PromptSecure),
                     new StringElement("Toast").Bind(bindings, x => x.SelectedCommand, x => x.Toast),

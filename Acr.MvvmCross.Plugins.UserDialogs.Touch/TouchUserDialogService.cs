@@ -42,6 +42,26 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         }
 
 
+        public override void Login(LoginConfig config) {
+            this.Dispatch(() => {
+                var dlg = new UIAlertView { AlertViewStyle = UIAlertViewStyle.LoginAndPasswordInput };
+                var txtUser = dlg.GetTextField(0);
+                var txtPass = dlg.GetTextField(1);
+
+                txtUser.Placeholder = config.LoginPlaceholder;
+                txtUser.Text = config.LoginValue ?? String.Empty;
+                txtPass.Placeholder = config.PasswordPlaceholder;
+                txtPass.SecureTextEntry = true;
+
+                dlg.Clicked += (s, e) => {
+                    var ok = (dlg.CancelButtonIndex != e.ButtonIndex);
+                    config.OnResult(new LoginResult(txtUser.Text, txtPass.Text, ok));
+                };
+                dlg.Show();
+            });
+        }
+
+
         public override void Prompt(PromptConfig config) {
             this.Dispatch(() =>  {
                 var result = new PromptResult();

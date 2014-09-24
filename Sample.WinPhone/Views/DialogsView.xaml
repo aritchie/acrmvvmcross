@@ -33,6 +33,7 @@
                 <Button Content="Action Sheet" Command="{Binding ActionSheet}" />
                 <Button Content="Alert" Command="{Binding Alert}" />
                 <Button Content="Confirm" Command="{Binding Confirm}" />
+                <Button Content="Login" Command="{Binding Login}" />
                 <Button Content="Prompt" Command="{Binding Prompt}" />
                 <Button Content="Prompt (Secure)" Command="{Binding PromptSecure}" />
                 <Button Content="Toast" Command="{Binding Toast}" />

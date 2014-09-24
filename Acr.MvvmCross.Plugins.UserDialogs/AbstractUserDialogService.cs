@@ -4,10 +4,11 @@
 namespace Acr.MvvmCross.Plugins.UserDialogs {
 
     public abstract class AbstractUserDialogService : IUserDialogService {
-        
+
         public abstract void Alert(AlertConfig config);
         public abstract void ActionSheet(ActionSheetConfig config);
         public abstract void Confirm(ConfirmConfig config);
+        public abstract void Login(LoginConfig config);
         //public abstract void DateTimePrompt(DateTimePromptConfig config);
         //public abstract void DurationPrompt(DurationPromptConfig config);
         public abstract void Prompt(PromptConfig config);
@@ -37,10 +38,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
 
             if (config.OnCancel != null) 
                 dlg.SetCancel(config.OnCancel, config.CancelText);
-            
-            if (config.AutoShow) 
+
+            if (config.AutoShow)
                 dlg.Show();
-            
+
             return dlg;
         }
     }

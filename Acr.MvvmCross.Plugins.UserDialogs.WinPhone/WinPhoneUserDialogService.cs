@@ -61,7 +61,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
                 alert.Show();
             });
         }
- 
+
 
         public override void Confirm(ConfirmConfig config) {
             var confirm = new CustomMessageBox {
@@ -72,6 +72,33 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             };
             confirm.Dismissed += (sender, args) => config.OnConfirm(args.Result == CustomMessageBoxResult.LeftButton);
             this.Dispatch(confirm.Show);
+        }
+
+
+        public override void Login(LoginConfig config) {
+            var prompt = new CustomMessageBox {
+                Caption = config.Title,
+                Message = config.Message,
+                LeftButtonContent = config.OkText,
+                RightButtonContent = config.CancelText
+            };
+
+            var txtUser = new PhoneTextBox {
+                Hint = config.LoginPlaceholder,
+                Text = config.LoginValue ?? String.Empty
+            };
+            var txtPass = new PasswordBox();
+            var stack = new StackPanel();
+            stack.Children.Add(txtUser);
+            stack.Children.Add(txtPass);
+            prompt.Content = stack;
+
+            prompt.Dismissed += (sender, args) => config.OnResult(new LoginResult(
+                txtUser.Text, 
+                txtPass.Password, 
+                args.Result == CustomMessageBoxResult.LeftButton
+            ));
+            this.Dispatch(prompt.Show);
         }
 
 

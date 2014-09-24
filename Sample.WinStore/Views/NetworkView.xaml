@@ -1,4 +1,4 @@
-﻿<windowsStore:Mvx2StorePage
+﻿<windowsStore:MvxStorePage
     x:Class="Sample.WinStore.Views.NetworkView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -17,4 +17,4 @@
             <Button Command="{Binding Ping}">Ping Test</Button>
         </StackPanel>
     </Grid>
-</windowsStore:Mvx2StorePage>
+</windowsStore:MvxStorePage>

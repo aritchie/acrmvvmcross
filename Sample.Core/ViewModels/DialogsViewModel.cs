@@ -23,6 +23,7 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Alert { get; private set; }
         public IMvxCommand ActionSheet { get; private set; }
         public IMvxCommand Confirm { get; private set; }
+        public IMvxCommand Login { get; private set; }
         public IMvxCommand Progress { get; private set; }
         public IMvxCommand ProgressNoCancel { get; private set; }
         public IMvxCommand Loading { get; private set; }
@@ -77,6 +78,16 @@ namespace Sample.Core.ViewModels {
                 var r = await dialogService.ConfirmAsync("Pick a choice", "Pick Title", "Yes", "No");
                 var text = (r ? "Yes" : "No");
                 this.Result = "Confirmation Choice: " + text;
+            });
+
+            this.Login = new MvxCommand(async () => {
+                var r = await dialogService.LoginAsync(message: "Enter your user name & password below");
+                this.Result = String.Format(
+                    "Login {0} - User Name: {1} - Password: {2}",
+                    r.Ok ? "Success" : "Cancelled",
+                    r.LoginText,
+                    r.Password
+                );
             });
 
             this.Prompt = new MvxCommand(async () => {

@@ -1378,8 +1378,6 @@ Global
 		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|iPhone.ActiveCfg = Release|Any CPU
 		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|Mixed Platforms.Build.0 = Release|x86
-		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|Mixed Platforms.Deploy.0 = Release|x86
 		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|x64.ActiveCfg = Release|x64
 		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|x64.Build.0 = Release|x64
 		{3DBB63B1-4CF9-426D-ADC6-F808FEF56697}.Release|x64.Deploy.0 = Release|x64
