@@ -53,6 +53,6 @@ Initial Release
         <!-- winphone -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Network.dll" />
         <file src="..\bin\Release\WinPhone\Acr.MvvmCross.Plugins.Network.WindowsPhone.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Network.WindowsPhone.dll" />
-        <file src="BootstrapContent\NetworkPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\NetworkPluginBootstrap.cs.pp" />        
+        <file src="BootstrapContent\NetworkPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\NetworkPluginBootstrap.cs.pp" /> 
     </files>
 </package>

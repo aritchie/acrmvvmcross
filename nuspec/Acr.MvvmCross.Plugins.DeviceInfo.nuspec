@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross android ios winphone</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.11.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
         </dependencies>
         <releaseNotes>
 1.3
