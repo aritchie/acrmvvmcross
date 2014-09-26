@@ -12,11 +12,11 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross android ios winphone</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.11.1, 4.0)" />
         </dependencies>
         <releaseNotes>
 1.3
-Updating to MvvmCross 3.2.1
+Switching to profile78 to support MvvmCross 3.2.1
 
 1.2
 BREAKING: Android library no longer has the readphonestate permission built-in to allow the user the choice if they want to use it or not
