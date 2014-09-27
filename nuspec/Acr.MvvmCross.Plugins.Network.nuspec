@@ -16,6 +16,9 @@
             <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="[3.1.1, 4.0)" />
         </dependencies>
         <releaseNotes>
+1.2.1
+Fix PCL target in nuspec
+
 1.2
 Switching to profile78 to support MvvmCross 3.2.1
 
@@ -28,17 +31,17 @@ NullRef fix on missing active network for android
 
 1.1.1
 Move to profile 158 (fix defect for wrong profile)
-            
+
 1.1
 Adds Windows Phone 8 Support
-            
+
 1.0
 Initial Release
         </releaseNotes>
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+sl50+wp8\Acr.MvvmCross.Plugins.Network.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.Plugins.Network.dll" />
 
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Network.dll" />
