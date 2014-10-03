@@ -9,7 +9,7 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Touch {
     public class TouchDeviceInfoService : IDeviceInfoService {
 
         public string AppVersion {
-            get { return NSBundle.MainBundle.InfoDictionary["CFBundleShortVersionString"].ToString(); }
+            get { return NSBundle.MainBundle.InfoDictionary["CFBundleVersion"].ToString(); }
         }
 
 

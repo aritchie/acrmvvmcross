@@ -33,6 +33,10 @@
                 <TextBlock Text="{Binding Device.DeviceId}" />
             </StackPanel>
             <StackPanel Orientation="Vertical">
+                <TextBlock Text="App Version:" />
+                <TextBlock Text="{Binding Device.AppVersion}" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
                 <TextBlock Text="Screen Width:" />
                 <TextBlock Text="{Binding Device.ScreenWidth}" />
             </StackPanel>

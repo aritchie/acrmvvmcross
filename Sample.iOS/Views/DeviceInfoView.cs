@@ -23,7 +23,8 @@ namespace Sample.iOS.Views {
                     new StringElement("Operating System").Bind(bindings, x => x.Device.OperatingSystem)
                 },
                 new Section("Hardware") {
-                    new StringElement("Device ID").Bind(bindings, x => x.Device.DeviceId),
+					new StringElement("App Version").Bind(bindings, x => x.Device.AppVersion),
+					new StringElement("Device ID").Bind(bindings, x => x.Device.DeviceId),
                     new StringElement("Manufacturer").Bind(bindings, x => x.Device.Manufacturer),
                     new StringElement("Model").Bind(bindings, x => x.Device.Model),
                     new StringElement("Screen Height").Bind(bindings, x => x.Device.ScreenHeight),

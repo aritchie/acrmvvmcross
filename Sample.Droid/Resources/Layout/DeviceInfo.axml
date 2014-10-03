@@ -9,6 +9,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     <TextView
+        local:MvxBind="Text Format('App Version: {0}', Device.AppVersion)"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <TextView
         local:MvxBind="Text Format('Resolution: {0}x{1}', Device.ScreenWidth, Device.ScreenHeight)"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
