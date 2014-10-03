@@ -1,11 +1,17 @@
 using System;
+using MonoTouch.Foundation;
 using MonoTouch.ObjCRuntime;
 using MonoTouch.UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.DeviceInfo.Touch {
-    
+
     public class TouchDeviceInfoService : IDeviceInfoService {
+
+        public string AppVersion {
+            get { return NSBundle.MainBundle.InfoDictionary["CFBundleShortVersionString"].ToString(); }
+        }
+
 
         public int ScreenHeight {
             get { return (int)UIScreen.MainScreen.Bounds.Height; }

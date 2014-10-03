@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.DeviceInfo</id>
-        <version>1.3.2</version>
+        <version>1.4.0</version>
         <title>MvvmCross Device Information</title>
         <description>Device information platform plugin for MvvmCross (iOS, Android, and WP8)</description>
         <authors>Allan Ritchie</authors>
@@ -15,6 +15,9 @@
             <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
         </dependencies>
         <releaseNotes>
+1.4
+Adding AppVersion property
+
 1.3.2
 Fix nuspec pcl target
 

@@ -170,10 +170,6 @@
       <Project>{1ed7e825-98ed-4740-8dd7-96e4aa3f1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo.WindowsStore\Acr.MvvmCross.Plugins.DeviceInfo.WindowsStore.csproj">
-      <Project>{763dfc9d-bce1-4eff-8838-1939a2859e01}</Project>
-      <Name>Acr.MvvmCross.Plugins.DeviceInfo.WindowsStore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.DeviceInfo\Acr.MvvmCross.Plugins.DeviceInfo.csproj">
       <Project>{62822de8-ceb9-4602-b780-84e9e3d11b88}</Project>
       <Name>Acr.MvvmCross.Plugins.DeviceInfo</Name>

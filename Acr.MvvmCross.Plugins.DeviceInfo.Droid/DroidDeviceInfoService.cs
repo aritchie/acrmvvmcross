@@ -6,17 +6,21 @@ using Android.Content.Res;
 using Android.Telephony;
 using B = Android.OS.Build;
 
-        
+
 namespace Acr.MvvmCross.Plugins.DeviceInfo.Droid {
-    
+
     public class DroidDeviceInfoService : IDeviceInfoService {
 
         private readonly Lazy<string> deviceId;
         private readonly Lazy<int> screenHeight;
         private readonly Lazy<int> screenWidth;
+        private readonly Lazy<string> appVersion; 
 
 
         public DroidDeviceInfoService() {
+            this.appVersion = new Lazy<string>(() => 
+                Application.Context.PackageManager.GetPackageInfo(Application.Context.PackageName, 0).VersionName
+            );
             this.screenHeight = new Lazy<int>(() => {
                 var d = Resources.System.DisplayMetrics;
                 return (int)(d.HeightPixels / d.Density);
@@ -25,10 +29,15 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Droid {
                 var d = Resources.System.DisplayMetrics;
                 return (int)(d.WidthPixels / d.Density);
             });
-            this.deviceId = new Lazy<string>(() => {                
+            this.deviceId = new Lazy<string>(() => {
                 var tel = (TelephonyManager)Application.Context.ApplicationContext.GetSystemService(Context.TelephonyService);
-                return tel.DeviceId;   
+                return tel.DeviceId;
             });
+        }
+
+
+        public string AppVersion {
+            get { return this.appVersion.Value; }
         }
 
 
