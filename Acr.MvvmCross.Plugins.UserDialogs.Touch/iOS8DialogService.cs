@@ -84,6 +84,11 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         private void Present(UIAlertController controller) {
             this.Dispatch(() =>  {
                 var top = Utils.GetTopViewController();
+                var po = controller.PopoverPresentationController;
+                if (po != null) {
+                    po.SourceView = Utils.GetTopView();
+                    po.PermittedArrowDirections = UIPopoverArrowDirection.Down;
+                }
                 top.PresentViewController(controller, true, null);
             });
         }
