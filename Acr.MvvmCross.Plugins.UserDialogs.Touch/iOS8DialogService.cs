@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using MonoTouch.UIKit;
+using System.Drawing;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
@@ -86,8 +87,15 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 var top = Utils.GetTopViewController();
                 var po = controller.PopoverPresentationController;
                 if (po != null) {
-                    po.SourceView = Utils.GetTopView();
-                    po.PermittedArrowDirections = UIPopoverArrowDirection.Down;
+					po.SourceView = top.View;
+					var viewHeight = top.View.Frame.Height;
+					var viewWidth = top.View.Frame.Width;
+					var sheetHeight = 400;
+					var sheetWidth = 300;
+					var h = (viewHeight / 2) - (sheetHeight / 2);
+					var v = (viewWidth / 2) - (sheetWidth / 2);
+					po.SourceRect = new RectangleF(v, h, sheetWidth, sheetHeight);
+					po.PermittedArrowDirections = UIPopoverArrowDirection.Up;
                 }
                 top.PresentViewController(controller, true, null);
             });
