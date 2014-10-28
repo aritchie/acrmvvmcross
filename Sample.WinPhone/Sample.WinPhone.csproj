@@ -92,10 +92,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Bootstrap\BarCodeScannerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DeviceInfoPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SettingsPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\SignaturePadPluginBootstrap.cs" />
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LocalizedStrings.cs" />
@@ -213,6 +216,18 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.2.1\lib\wp8\Cirrious.MvvmCross.Localization.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Color.3.2.1\lib\wp8\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color.WindowsPhone">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Color.3.2.1\lib\wp8\Cirrious.MvvmCross.Plugins.Color.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.2.1\lib\wp8\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.WindowsPhone">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.2.1\lib\wp8\Cirrious.MvvmCross.Plugins.File.WindowsPhone.dll</HintPath>
+    </Reference>
     <Reference Include="Cirrious.MvvmCross.Plugins.Messenger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Messenger.3.2.1\lib\wp8\Cirrious.MvvmCross.Plugins.Messenger.dll</HintPath>
@@ -262,6 +277,14 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Settings\Acr.MvvmCross.Plugins.Settings.csproj">
       <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad.WindowsPhone\Acr.MvvmCross.Plugins.SignaturePad.WindowsPhone.csproj">
+      <Project>{fb73d461-d197-42a2-8928-086333277e54}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad.WindowsPhone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
+      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.WinPhone\Acr.MvvmCross.Plugins.UserDialogs.WinPhone.csproj">
       <Project>{732d3a68-83f1-4cc0-97cb-ab5095998d70}</Project>

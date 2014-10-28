@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:text="Save Button Text:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            local:MvxBind="Text SaveText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Cancel Button Text:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            local:MvxBind="Text CancelText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Prompt Text:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            local:MvxBind="Text PromptText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Caption Text:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            local:MvxBind="Text CaptionText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Background Color:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <MvxSpinner
+            local:MvxBind="ItemsSource Colors; SelectedItem BgColor"
+            local:MvxItemTemplate="@layout/spinnercolordefinition"
+            local:MvxDropDownItemTemplate="@layout/spinnercolordefinition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Signature Line Color:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <MvxSpinner
+            local:MvxBind="ItemsSource Colors; SelectedItem SignatureLineColor"
+            local:MvxItemTemplate="@layout/spinnercolordefinition"
+            local:MvxDropDownItemTemplate="@layout/spinnercolordefinition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Stroke Color:"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <MvxSpinner
+            local:MvxBind="ItemsSource Colors; SelectedItem StrokeColor"
+            local:MvxItemTemplate="@layout/spinnercolordefinition"
+            local:MvxDropDownItemTemplate="@layout/spinnercolordefinition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

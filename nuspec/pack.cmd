@@ -7,4 +7,5 @@ nuget pack Acr.MvvmCross.Plugins.DeviceInfo.nuspec
 nuget pack Acr.MvvmCross.Plugins.Settings.nuspec
 nuget pack Acr.MvvmCross.Plugins.UserDialogs.nuspec
 nuget pack Acr.MvvmCross.Plugins.Network.nuspec
+nuget pack Acr.MvvmCross.Plugins.SignaturePad.nuspec
 pause

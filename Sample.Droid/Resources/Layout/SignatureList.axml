@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        local:MvxBind="Click Create"
+        android:text="Create Signature"
+        android_layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        local:MvxBind="Click Configure"
+        android:text="Configuration"
+        android_layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <MvxListView
+        local:MvxBind="ItemsSource List; ItemLongClick Delete; ItemClick View; Visible If(List.Count == 0, false, true)"
+        local:MvxItemTemplate="@layout/homelistitem"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <TextView
+        local:MvxBind="Visible If(List.Count == 0, true, false)"
+        android:text="No Signatures Found"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+</LinearLayout>

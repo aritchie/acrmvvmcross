@@ -79,9 +79,11 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\SignaturePadPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
@@ -97,6 +99,8 @@
     <Compile Include="Bootstrap\UserDialogPluginBootstrap.cs" />
     <Compile Include="Views\NetworkView.cs" />
     <Compile Include="Views\SettingsView.cs" />
+    <Compile Include="Views\SignatureConfigurationView.cs" />
+    <Compile Include="Views\SignatureListView.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
@@ -142,6 +146,14 @@
       <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad.Touch\Acr.MvvmCross.Plugins.SignaturePad.Touch.csproj">
+      <Project>{b12d20aa-0edf-4903-b385-bb8090848532}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad.Touch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
+      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Touch\Acr.MvvmCross.Plugins.UserDialogs.Touch.csproj">
       <Project>{290F8977-F101-4BD8-8A29-19C78B4EBC23}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs.Touch</Name>
@@ -160,6 +172,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Color.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.Plugins.Color.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.Color.Touch">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.Color.3.2.1\lib\MonoTouch\Cirrious.MvvmCross.Plugins.Color.Touch.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Xml" />
