@@ -71,6 +71,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Signature.cs" />
+    <Compile Include="ViewModels\BarCodeCreateViewModel.cs" />
     <Compile Include="ViewModels\BarCodeViewModel.cs" />
     <Compile Include="ViewModels\SignatureConfigurationViewModel.cs" />
     <Compile Include="ViewModels\DeviceInfoViewModel.cs" />

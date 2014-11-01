@@ -22,13 +22,15 @@ namespace Sample.Core.ViewModels {
                 new MenuItemViewModel(
                     "Barcode Scanning",
                     () => {
-                        if (deviceInfo.IsRearCameraAvailable) {
+                        if (deviceInfo.IsRearCameraAvailable) 
                             this.ShowViewModel<BarCodeViewModel>();
-                        }
-                        else {
+                        else 
                             dialogs.Alert("Rear camera is unavailable");
-                        }
                     }
+                ),
+                new MenuItemViewModel(
+                    "Barcode Creation", 
+                    () => this.ShowViewModel<BarCodeCreateViewModel>()
                 ),
                 new MenuItemViewModel(
                     "Device Info",

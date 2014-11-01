@@ -149,6 +149,9 @@
     <AndroidResource Include="Resources\Layout\SignatureList.axml" />
     <AndroidResource Include="Resources\Layout\SignatureListItem.axml" />
     <AndroidResource Include="Resources\Layout\SpinnerColorDefinition.axml" />
+    <AndroidResource Include="Resources\Layout\BarCodeCreate.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Layout\Home.axml" />

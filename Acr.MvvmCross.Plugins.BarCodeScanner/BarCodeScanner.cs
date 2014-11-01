@@ -1,13 +1,16 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Android.Graphics;
 using Cirrious.CrossCore;
 using ZXing;
+using ZXing.Common;
 using ZXing.Mobile;
 
+#define __ANDROID__
 
 namespace Acr.MvvmCross.Plugins.BarCodeScanner {
-    
 
     public class BarCodeScanner : IBarCodeScanner {
 
@@ -32,6 +35,33 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 
         public void Read(Action<BarCodeResult> onRead) {
             this.ReadAsync().ContinueWith(x => onRead(x.Result));
+        }
+
+
+        public Stream CreateBarCode(BarCodeFormat format, string content, int height, int width, int margin, bool pureBarCode) {
+            // code 128, aztec,  - codeset B, height, width, margin, pure barcode
+            // qr - charset, disableECI, 
+            var writer = new BarcodeWriter {
+                Format = (BarcodeFormat)Enum.Parse(typeof(BarcodeFormat), format.ToString()),
+                Encoder = new MultiFormatWriter(),
+                Options = new EncodingOptions {
+                    Height = height,
+                    Margin = margin,
+                    Width = width,
+                    PureBarcode = pureBarCode
+                }
+            };
+#if __IOS__
+            return writer.Write(content).AsPNG().AsStream();
+#elif __ANDROID__
+            var ms = new MemoryStream();
+            using (var bitmap = writer.Write(content))
+                bitmap.Compress(Bitmap.CompressFormat.Png, 100, ms);
+
+            return ms;
+#elif WINDOWS_PHONE
+            return new MemoryStream(writer.Write(content).ToByteArray());
+#endif
         }
 
 

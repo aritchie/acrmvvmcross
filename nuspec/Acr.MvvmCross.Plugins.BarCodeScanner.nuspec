@@ -29,6 +29,9 @@
             </group>
         </dependencies>
         <releaseNotes>
+2.0
+* NEW * - Create barcodes
+
 1.4.1
 Fix pcl target in nuspec
 

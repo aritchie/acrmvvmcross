@@ -80,7 +80,6 @@
     <XamarinComponentReference Include="btprogresshud">
       <Visible>False</Visible>
       <Version>1.13</Version>
-      <InstallationInProgress>True</InstallationInProgress>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
