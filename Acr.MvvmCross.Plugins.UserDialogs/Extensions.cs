@@ -4,21 +4,21 @@ using System.Threading.Tasks;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs {
-    
+
     public static class Extensions {
 
         #region Async Helpers
 
         public static Task AlertAsync(this IUserDialogService dialogs, string message, string title = null, string okText = "OK") {
             var tcs = new TaskCompletionSource<object>();
-            dialogs.Alert(message, title, okText, () => tcs.SetResult(null));
+            dialogs.Alert(message, title, okText, () => tcs.TrySetResult(null));
             return tcs.Task;
         }
 
 
         public static Task AlertAsync(this IUserDialogService dialogs, AlertConfig config) {
             var tcs = new TaskCompletionSource<object>();
-            config.OnOk = () => tcs.SetResult(null);
+            config.OnOk = () => tcs.TrySetResult(null);
             dialogs.Alert(config);
             return tcs.Task;
         }
@@ -26,14 +26,14 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
 
         public static Task<bool> ConfirmAsync(this IUserDialogService dialogs, string message, string title = null, string okText = "OK", string cancelText = "Cancel") {
             var tcs = new TaskCompletionSource<bool>();
-            dialogs.Confirm(message, tcs.SetResult, title, okText, cancelText);
+            dialogs.Confirm(message, x => tcs.TrySetResult(x), title, okText, cancelText);
             return tcs.Task;
         }
 
 
         public static Task<bool> ConfirmAsync(this IUserDialogService dialogs, ConfirmConfig config) {
             var tcs = new TaskCompletionSource<bool>();
-            config.OnConfirm = tcs.SetResult;
+            config.OnConfirm = x => tcs.TrySetResult(x);
             dialogs.Confirm(config);
             return tcs.Task;
         }
@@ -80,14 +80,13 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
 
         public static Task<PromptResult> PromptAsync(this IUserDialogService dialogs, PromptConfig config) {
             var tcs = new TaskCompletionSource<PromptResult>();
-            config.OnResult = tcs.SetResult;
+            config.OnResult = x => tcs.TrySetResult(x);
             dialogs.Prompt(config);
             return tcs.Task;
         }
 
 
         #endregion
-
 
         #region Legacy Methods
 
@@ -155,6 +154,5 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         }
 
         #endregion
-
     }
 }

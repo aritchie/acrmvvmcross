@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Windows.Input;
 using Acr.MvvmCross.Plugins.BarCodeScanner;
 using Acr.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.ViewModels;
