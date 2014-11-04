@@ -2,13 +2,16 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+#if __ANDROID__
 using Android.Graphics;
+#elif WINDOWS_PHONE
+using System.Windows.Media.Imaging;
+#endif
 using Cirrious.CrossCore;
 using ZXing;
 using ZXing.Common;
 using ZXing.Mobile;
 
-#define __ANDROID__
 
 namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 

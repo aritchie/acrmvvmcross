@@ -39,6 +39,13 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.Network.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.Settings.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.Settings.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.Id.btnCancel = global::Sample.Droid.Resource.Id.btnCancel;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.Id.btnSave = global::Sample.Droid.Resource.Id.btnSave;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.Id.rootView = global::Sample.Droid.Resource.Id.rootView;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.Id.signatureView = global::Sample.Droid.Resource.Id.signatureView;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.Layout.SignaturePad = global::Sample.Droid.Resource.Layout.SignaturePad;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
+			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
@@ -221,8 +228,14 @@ namespace Sample.Droid
 			// aapt resource value: 0x7f050000
 			public const int MvxBindingTagUnique = 2131034112;
 			
-			// aapt resource value: 0x7f050005
-			public const int contentFrame = 2131034117;
+			// aapt resource value: 0x7f050007
+			public const int btnCancel = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int btnSave = 2131034120;
+			
+			// aapt resource value: 0x7f050009
+			public const int contentFrame = 2131034121;
 			
 			// aapt resource value: 0x7f050003
 			public const int loadingImage = 2131034115;
@@ -232,6 +245,12 @@ namespace Sample.Droid
 			
 			// aapt resource value: 0x7f050004
 			public const int loadingProgressWheel = 2131034116;
+			
+			// aapt resource value: 0x7f050005
+			public const int rootView = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int signatureView = 2131034118;
 			
 			// aapt resource value: 0x7f050002
 			public const int textViewStatus = 2131034114;
@@ -253,46 +272,61 @@ namespace Sample.Droid
 			public const int BarCode = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int DeviceInfo = 2130903041;
+			public const int BarCodeCreate = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Dialogs = 2130903042;
+			public const int DeviceInfo = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Home = 2130903043;
+			public const int Dialogs = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int HomeListItem = 2130903044;
+			public const int Home = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int loading = 2130903045;
+			public const int HomeListItem = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int loadingimage = 2130903046;
+			public const int loading = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int loadingprogress = 2130903047;
+			public const int loadingimage = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int Network = 2130903048;
+			public const int loadingprogress = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Settings = 2130903049;
+			public const int Network = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int SettingsListItem = 2130903050;
+			public const int Settings = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int Splash = 2130903051;
+			public const int SettingsListItem = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int TextToSpeech = 2130903052;
+			public const int SignatureConfiguration = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int zxingscanneractivitylayout = 2130903053;
+			public const int SignatureList = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int zxingscannerfragmentlayout = 2130903054;
+			public const int SignatureListItem = 2130903054;
+			
+			// aapt resource value: 0x7f03000f
+			public const int SignaturePad = 2130903055;
+			
+			// aapt resource value: 0x7f030010
+			public const int SpinnerColorDefinition = 2130903056;
+			
+			// aapt resource value: 0x7f030011
+			public const int Splash = 2130903057;
+			
+			// aapt resource value: 0x7f030012
+			public const int zxingscanneractivitylayout = 2130903058;
+			
+			// aapt resource value: 0x7f030013
+			public const int zxingscannerfragmentlayout = 2130903059;
 			
 			static Layout()
 			{

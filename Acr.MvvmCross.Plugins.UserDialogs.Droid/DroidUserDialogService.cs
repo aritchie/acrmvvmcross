@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Android.App;
+using Android.Text;
 using Android.Text.Method;
 using Android.Views;
 using Android.Widget;
@@ -63,6 +64,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             };
             var txtPass = new EditText(context) {
                 Hint = config.PasswordPlaceholder,
+                InputType = InputTypes.TextVariationPassword,
                 TransformationMethod = PasswordTransformationMethod.Instance
             };
             var layout = new LinearLayout(context) {
@@ -93,8 +95,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 var txt = new EditText(Utils.GetActivityContext()) {
                     Hint = config.Placeholder
                 };
-                if (config.IsSecure)
+                if (config.IsSecure) {
                     txt.TransformationMethod = PasswordTransformationMethod.Instance;
+                    txt.InputType = InputTypes.TextVariationPassword;
+                }
 
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
