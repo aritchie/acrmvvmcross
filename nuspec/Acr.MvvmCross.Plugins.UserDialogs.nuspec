@@ -13,10 +13,10 @@
         <tags>xamarin mvvmcross</tags>
         <dependencies>
             <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
             </group>
             <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
                 <dependency id="WPtoolkit" version="[4.2013.08.16, 5.0)" />
             </group>
         </dependencies>
@@ -65,7 +65,7 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\portable-win+net45+sl50+wp80+MonoAndroid10+MonoTouch10\Acr.MvvmCross.Plugins.UserDialogs.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.UserDialogs.dll" />
 
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.UserDialogs.dll" />
