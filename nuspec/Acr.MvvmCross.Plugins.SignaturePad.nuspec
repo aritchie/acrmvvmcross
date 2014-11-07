@@ -35,13 +35,13 @@ Initial Beta Release
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.SignaturePad.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.SignaturePad.dll" />
         <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.SignaturePad.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.SignaturePad.Droid.dll" />
         <file src="..\bin\Release\MonoAndroid\SignaturePad.Android.dll" target="lib\MonoAndroid\SignaturePad.Android.dll" />
-        <file src="SignaturePadPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\SignaturePadPluginBootstrap.cs.pp" />
+        <file src="BootstrapContent\SignaturePadPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\SignaturePadPluginBootstrap.cs.pp" />
 
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.SignaturePad.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.SignaturePad.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.SignaturePad.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.SignaturePad.Touch.dll" />
         <file src="..\bin\Release\MonoTouch\SignaturePad.iOS.dll" target="lib\MonoTouch\SignaturePad.iOS.dll" />
-        <file src="TouchSignaturePadPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\SignaturePadPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchSignaturePadPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\SignaturePadPluginBootstrap.cs.pp" />
 
         <!--winphone-->
         <!--<file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.SignaturePad.dll" target="lib\wp8\Acr.MvvmCross.Plugins.SignaturePad.dll" />
