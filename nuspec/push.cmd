@@ -9,4 +9,5 @@ nuget push Acr.MvvmCross.Plugins.Network.nuspec
 rem nuget push Acr.MvvmCross.nuspec
 rem nuget push Acr.MvvmCross.Plugins.BarCodeScanner.nuspec
 rem nuget push Acr.MvvmCross.Plugins.SignaturePad.nuspec
+rem nuget push Acr.MvvmCross.Pack.nuspec
 pause

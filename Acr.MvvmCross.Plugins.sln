@@ -5,6 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Common", ".Common", "{E950E9B4-0546-4D84-A7CC-F17474D230CC}"
 	ProjectSection(SolutionItems) = preProject
+		nuspec\Acr.MvvmCross.Pack.nuspec = nuspec\Acr.MvvmCross.Pack.nuspec
 		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
 		license.txt = license.txt
 		nuspec\nuget.exe = nuspec\nuget.exe
