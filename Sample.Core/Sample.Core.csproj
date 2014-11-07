@@ -11,7 +11,7 @@
     <RootNamespace>Sample.Core</RootNamespace>
     <AssemblyName>Sample.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -54,10 +54,6 @@
       <Project>{90AB40EB-C012-482C-8C61-FCF2BA56FB60}</Project>
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
-      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
-      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs\Acr.MvvmCross.Plugins.UserDialogs.csproj">
       <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
@@ -65,6 +61,10 @@
     <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
       <Project>{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D}</Project>
       <Name>Acr.MvvmCross</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
+      <Project>{B2AF970D-D640-451C-95AF-92AF531B8C1E}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

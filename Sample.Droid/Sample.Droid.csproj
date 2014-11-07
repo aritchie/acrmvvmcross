@@ -14,8 +14,6 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk>
-    </AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <MandroidI18n />
@@ -104,6 +102,12 @@
     <Reference Include="ZXing.Net.Mobile">
       <HintPath>..\packages\ZXing.Net.Mobile.1.4.6\lib\MonoAndroid\ZXing.Net.Mobile.dll</HintPath>
     </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.2.1\lib\MonoAndroid\Cirrious.MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Cirrious.MvvmCross.Plugins.File.Droid">
+      <HintPath>..\packages\MvvmCross.HotTuna.Plugin.File.3.2.1\lib\MonoAndroid\Cirrious.MvvmCross.Plugins.File.Droid.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
@@ -126,6 +130,8 @@
     <Compile Include="Views\SignatureConfigurationActivity.cs" />
     <Compile Include="Views\SignatureListActivity.cs" />
     <Compile Include="Views\SplashActivity.cs" />
+    <Compile Include="Bootstrap\FileSystemPluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -208,12 +214,8 @@
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad.Droid\Acr.MvvmCross.Plugins.SignaturePad.Droid.csproj">
-      <Project>{1d5482f6-aa89-422c-9e34-88a8a1ad8ab6}</Project>
+      <Project>{1D5482F6-AA89-422C-9E34-88A8A1AD8AB6}</Project>
       <Name>Acr.MvvmCross.Plugins.SignaturePad.Droid</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
-      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
-      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Droid\Acr.MvvmCross.Plugins.UserDialogs.Droid.csproj">
       <Project>{F68A14AB-0965-4582-9399-F22F5C4CEB15}</Project>
@@ -230,6 +232,10 @@
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{AC537269-FD5F-43E8-BA62-CECD983EB9D9}</Project>
       <Name>Sample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
+      <Project>{B2AF970D-D640-451C-95AF-92AF531B8C1E}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

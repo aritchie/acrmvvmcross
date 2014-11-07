@@ -5,7 +5,7 @@ using Cirrious.MvvmCross.Droid.Views;
 
 namespace Sample.Droid.Views {
 
-    [Activity(Label = "MVX Signature Pad Demo", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity]
     public class SignatureListActivity : MvxActivity {
 
         protected override void OnViewModelSet() {

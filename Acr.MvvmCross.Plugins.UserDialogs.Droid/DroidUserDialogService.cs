@@ -62,6 +62,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 Hint = config.LoginPlaceholder,
                 Text = config.LoginValue ?? String.Empty
             };
+
             var txtPass = new EditText(context) {
                 Hint = config.PasswordPlaceholder,
                 InputType = InputTypes.TextVariationPassword,
@@ -70,6 +71,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             var layout = new LinearLayout(context) {
                 Orientation = Orientation.Vertical
             };
+
+			txtUser.SetMaxLines(1);
+			txtPass.SetMaxLines(1);
+
             layout.AddView(txtUser, ViewGroup.LayoutParams.MatchParent);
             layout.AddView(txtPass, ViewGroup.LayoutParams.MatchParent);
 
@@ -95,7 +100,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 var txt = new EditText(Utils.GetActivityContext()) {
                     Hint = config.Placeholder
                 };
-                if (config.IsSecure) {
+
+                if (!config.IsSecure) 
+					txt.SetMaxLines(1);
+				else {
                     txt.TransformationMethod = PasswordTransformationMethod.Instance;
                     txt.InputType = InputTypes.TextVariationPassword;
                 }

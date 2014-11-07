@@ -7,6 +7,7 @@ using Cirrious.MvvmCross.Plugins.File;
 using Acr.MvvmCross.Plugins.UserDialogs;
 using Acr.MvvmCross.Plugins.SignaturePad;
 using Sample.Core.Models;
+using Acr.MvvmCross.Plugins.FileSystem;
 
 
 namespace Sample.Core.ViewModels {
@@ -14,15 +15,15 @@ namespace Sample.Core.ViewModels {
     public class SignatureListViewModel : MvxViewModel {
 
         private const string FILE_FORMAT = "{0:dd-MM-yyyy_hh-mm-ss_tt}.jpg";
-        private readonly IMvxFileStore store;
+        private readonly IFileSystem fileSystem;
         private readonly ISignatureService signatureService;
         private readonly IUserDialogService dialogService;
 
 
-        public SignatureListViewModel(IMvxFileStore store, 
+        public SignatureListViewModel(IFileSystem fileSystem, 
                                       IUserDialogService dialogService,
                                       ISignatureService signatureService) {
-            this.store = store;
+			this.fileSystem = fileSystem;
             this.dialogService = dialogService;
             this.signatureService = signatureService;
             this.Configure = new MvxCommand(() => this.ShowViewModel<SignatureConfigurationViewModel>());
@@ -35,11 +36,12 @@ namespace Sample.Core.ViewModels {
 
         public override void Start() {
             base.Start();
-            var files = this.store
-                .GetFilesIn(".")
+			var files = this.fileSystem
+				.Public
+				.Files
                 .Select(x => new Signature {
-                    FileName = Path.GetFileName(x),
-                    FilePath = x
+					FileName = x.Name,
+					FilePath = x.FullName
                 })
                 .ToList();
 
@@ -57,16 +59,17 @@ namespace Sample.Core.ViewModels {
 
         private void OnCreate() {
             this.signatureService.Request(result => {
-                var fileName = String.Format(FILE_FORMAT, DateTime.Now);
-                var path = this.store.NativePath(fileName);
+				if (result.Cancelled)
+					return;
 
-                using (var ms = new MemoryStream()) {
-                    result.Stream.CopyTo(ms);
-                    var bytes = ms.ToArray();
-                    this.store.WriteFile(path, bytes);
-                }
+                var fileName = String.Format(FILE_FORMAT, DateTime.Now);
+				var file = this.fileSystem.Public.CreateFile(fileName);
+
+				using (var fs = file.Create()) 
+                    result.Stream.CopyTo(fs);
+                
                 this.List.Add(new Signature {
-                    FilePath = path,
+					FilePath = file.FullName,
                     FileName = fileName
                 });
             });
@@ -80,7 +83,7 @@ namespace Sample.Core.ViewModels {
                 .Add("Delete", async () => {
                     var r = await this.dialogService.ConfirmAsync("Are you sure you want to delete " + signature.FileName);
                     if (r)
-                        this.store.DeleteFile(signature.FilePath);
+						this.fileSystem.GetFile(signature.FilePath).Delete();
                 })
                 .Add("Cancel")
             );
@@ -88,8 +91,10 @@ namespace Sample.Core.ViewModels {
 
 
         private void OnDelete(Signature signature) {
-            this.store.DeleteFile(signature.FilePath);
             this.List.Remove(signature);
+			var file = this.fileSystem.GetFile(signature.FilePath);
+			if (file.Exists)
+				file.Delete();
         }
     }
 }

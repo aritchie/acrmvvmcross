@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.FileSystem</id>
-        <version>1.1.0</version>
+        <version>1.2.0</version>
         <title>MvvmCross File System Plugin</title>
         <description>File System platform plugin for MvvmCross (iOS, Android, and Windows Phone)</description>
         <authors>Allan Ritchie</authors>
@@ -12,9 +12,12 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross settings</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
         </dependencies>
         <releaseNotes>
+1.2
+Update to profile 259
+
 1.1
 Updates to iOS8 file structure
 
@@ -24,7 +27,7 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.Plugins.FileSystem.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.FileSystem.dll" />
 
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.FileSystem.dll" />

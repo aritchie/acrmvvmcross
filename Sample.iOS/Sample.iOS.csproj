@@ -81,7 +81,6 @@
   <ItemGroup>
     <Compile Include="Bootstrap\ColorPluginBootstrap.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
-    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SignaturePadPluginBootstrap.cs" />
     <Compile Include="Bootstrap\NetworkPluginBootstrap.cs" />
@@ -104,6 +103,8 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FileSystemPluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner.Touch\Acr.MvvmCross.Plugins.BarCodeScanner.Touch.csproj">
@@ -147,12 +148,8 @@
       <Name>Acr.MvvmCross.Plugins.Settings</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad.Touch\Acr.MvvmCross.Plugins.SignaturePad.Touch.csproj">
-      <Project>{b12d20aa-0edf-4903-b385-bb8090848532}</Project>
+      <Project>{B12D20AA-0EDF-4903-B385-BB8090848532}</Project>
       <Name>Acr.MvvmCross.Plugins.SignaturePad.Touch</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
-      <Project>{b2af970d-d640-451c-95af-92af531b8c1e}</Project>
-      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.UserDialogs.Touch\Acr.MvvmCross.Plugins.UserDialogs.Touch.csproj">
       <Project>{290F8977-F101-4BD8-8A29-19C78B4EBC23}</Project>
@@ -169,6 +166,10 @@
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{AC537269-FD5F-43E8-BA62-CECD983EB9D9}</Project>
       <Name>Sample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
+      <Project>{B2AF970D-D640-451C-95AF-92AF531B8C1E}</Project>
+      <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

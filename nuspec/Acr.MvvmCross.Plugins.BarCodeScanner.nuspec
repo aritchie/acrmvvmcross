@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.BarCodeScanner</id>
-        <version>1.4.1</version>
+        <version>2.0.0</version>
         <title>MvvmCross Bar Code Scanner Plugin</title>
         <description>Barcode scanning plugin for MvvmCross built on ZXing.Net.Mobile.  Supports iOS, Android, and WinPhone8</description>
         <authors>Allan Ritchie</authors>
@@ -13,24 +13,25 @@
         <tags>xamarin mvvmcross barcode android ios winphone</tags>
         <dependencies>
             <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
             </group>
             <group targetFramework="MonoAndroid">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
                 <dependency id="ZXing.Net.Mobile" version="[1.4.6, 2.0)" />
             </group>
             <group targetFramework="MonoTouch">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
                 <dependency id="ZXing.Net.Mobile" version="[1.4.6, 2.0)" />
             </group>
             <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
                 <dependency id="ZXing.Net.Mobile" version="[1.4.6, 2.0)" />
             </group>
         </dependencies>
         <releaseNotes>
 2.0
 * NEW * - Create barcodes
+Update to profile 259
 
 1.4.1
 Fix pcl target in nuspec
@@ -65,7 +66,7 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.BarCodeScanner.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+wp8\Acr.MvvmCross.Plugins.BarCodeScanner.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.BarCodeScanner.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.BarCodeScanner.dll" />
 
         <!-- droid -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.BarCodeScanner.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.BarCodeScanner.dll" />

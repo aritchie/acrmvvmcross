@@ -32,6 +32,10 @@ namespace Sample.Core.ViewModels {
                     "Barcode Creation", 
                     () => this.ShowViewModel<BarCodeCreateViewModel>()
                 ),
+				new MenuItemViewModel(
+					"Signature List",
+					() => this.ShowViewModel<SignatureListViewModel>()
+				),
                 new MenuItemViewModel(
                     "Device Info",
                     () => this.ShowViewModel<DeviceInfoViewModel>()

@@ -86,19 +86,19 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="signature-pad">
+      <Version>1.3.5</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
       <Project>{B2AF970D-D640-451C-95AF-92AF531B8C1E}</Project>
       <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="signature-pad">
-      <Visible>False</Visible>
-      <Version>1.3.5</Version>
-    </XamarinComponentReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>
