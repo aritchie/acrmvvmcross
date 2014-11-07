@@ -17,6 +17,7 @@
         <releaseNotes>
 1.5
 Update to profile 259
+Fix iOS bug when reading properties outside main thread
 
 1.4
 Adding AppVersion property
