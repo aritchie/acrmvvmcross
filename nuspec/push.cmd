@@ -1,13 +1,12 @@
 @echo off
-del *.nupkg
-nuget push Acr.MvvmCross.Plugins.FileSystem.nuspec
-nuget push Acr.MvvmCross.Plugins.DeviceInfo.nuspec
-nuget push Acr.MvvmCross.Plugins.Settings.nuspec
-nuget push Acr.MvvmCross.Plugins.UserDialogs.nuspec
-nuget push Acr.MvvmCross.Plugins.Network.nuspec
+nuget push Acr.MvvmCross.Plugins.FileSystem.1.2.0.nupkg
+nuget push Acr.MvvmCross.Plugins.DeviceInfo.1.5.0.nupkg
+nuget push Acr.MvvmCross.Plugins.Settings.2.1.2.nupkg
+nuget push Acr.MvvmCross.Plugins.UserDialogs.2.2.0.nupkg
+nuget push Acr.MvvmCross.Plugins.Network.1.5.0.nupkg
 
-rem nuget push Acr.MvvmCross.nuspec
-rem nuget push Acr.MvvmCross.Plugins.BarCodeScanner.nuspec
-rem nuget push Acr.MvvmCross.Plugins.SignaturePad.nuspec
-rem nuget push Acr.MvvmCross.Pack.nuspec
+rem nuget push Acr.MvvmCross.1.0.0.nupkg
+rem nuget push Acr.MvvmCross.Plugins.BarCodeScanner.1.5.0.nupkg
+rem nuget push Acr.MvvmCross.Plugins.SignaturePad.2.0.0.nupkg
+rem nuget push Acr.MvvmCross.Pack.1.0.0.nupkg
 pause
