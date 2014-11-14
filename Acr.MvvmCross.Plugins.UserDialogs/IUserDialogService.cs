@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs {
@@ -17,5 +18,14 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         void ShowLoading(string title = "Loading");
         void HideLoading();
         void Toast(string message, int timeoutSeconds = 3, Action onClick = null);
+
+        Task AlertAsync(string message, string title = null, string okText = "OK");
+        Task AlertAsync(AlertConfig config);
+        Task<bool> ConfirmAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel");
+        Task<bool> ConfirmAsync(ConfirmConfig config);
+        Task<LoginResult> LoginAsync(string title = "Login", string message = null);
+        Task<LoginResult> LoginAsync(LoginConfig config);
+        Task<PromptResult> PromptAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = "", bool secure = false);
+        Task<PromptResult> PromptAsync(PromptConfig config);
     }
 }
