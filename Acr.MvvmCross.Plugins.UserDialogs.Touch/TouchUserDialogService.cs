@@ -4,7 +4,7 @@ using MonoTouch.UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
-    
+
     public class TouchUserDialogService : AbstractTouchUserDialogService {
 
         public override void ActionSheet(ActionSheetConfig config) {
@@ -12,7 +12,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 var action = new UIActionSheet(config.Title);
                 config.Options.ToList().ForEach(x => action.AddButton(x.Text));
 
-                action.Clicked += (sender, btn) => config.Options[btn.ButtonIndex].Action();
+                action.Dismissed += (sender, btn) => {
+                    if (btn.ButtonIndex > -1 && btn.ButtonIndex < config.Options.Count - 1)
+                        config.Options[btn.ButtonIndex].Action();
+                };
                 var view = Utils.GetTopView();
                 action.ShowInView(view);
             });
@@ -22,7 +25,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
         public override void Alert(AlertConfig config) {
             this.Dispatch(() =>  {
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, null, config.OkText);
-                if (config.OnOk != null) 
+                if (config.OnOk != null)
                     dlg.Clicked += (s, e) => config.OnOk();
 
                 dlg.Show();
@@ -67,7 +70,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 var result = new PromptResult();
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, config.CancelText, config.OkText) {
                     AlertViewStyle = config.IsSecure
-                        ? UIAlertViewStyle.SecureTextInput 
+                        ? UIAlertViewStyle.SecureTextInput
                         : UIAlertViewStyle.PlainTextInput
                 };
                 var txt = dlg.GetTextField(0);

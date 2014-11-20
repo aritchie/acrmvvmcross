@@ -12,6 +12,6 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
         void Read(Action<BarCodeResult> onRead);
         Task<BarCodeResult> ReadAsync();
 
-        Stream CreateBarCode(BarCodeFormat format, string content, int height, int width, int margin = 0, bool pureBarCode = false);
+        Stream Create(BarCodeFormat format, string content, int height, int width, int margin = 0, bool pureBarCode = false);
     }
 }
