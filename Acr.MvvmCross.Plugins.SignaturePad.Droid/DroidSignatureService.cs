@@ -1,32 +1,38 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Droid.Platform;
-using System.Collections.Generic;
 
 
 namespace Acr.MvvmCross.Plugins.SignaturePad.Droid {
     
-    public class DroidSignatureService : AbstractSignatureService {
-
-        internal static IEnumerable<DrawPoint> CurrentPoints { get; private set; }
-        internal static SignaturePadConfiguration CurrentConfig { get; private set; }
-        internal static Action<SignatureResult> OnResult { get; private set; }
+	public class DroidSignatureService : ISignatureService {
+		internal SignaturePadConfiguration CurrentConfig { get; private set; }
+		private TaskCompletionSource<SignatureResult> tcs;
 
 
-        public override void Request(Action<SignatureResult> onResult) { 
-            CurrentPoints = null;
-            CurrentConfig = this.Configuration;
-            OnResult = onResult;
-            var topActivity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
-            topActivity.StartActivity(typeof(SignaturePadActivity));
-        }
+		internal void Complete(SignatureResult result) {
+			this.tcs.TrySetResult(result);
+		}
 
 
-        public override void Load(IEnumerable<DrawPoint> points) {
-            CurrentConfig = this.Configuration;
-            CurrentPoints = points;
-            OnResult = null;
-        }
+		internal void Cancel() {
+			this.tcs.TrySetResult(new SignatureResult(true, null, null));
+		}
+
+
+		public virtual Task<SignatureResult> Request(SignaturePadConfiguration config, CancellationToken cancelToken) {
+			CurrentConfig = config ?? SignaturePadConfiguration.Default;
+
+			this.tcs = new TaskCompletionSource<SignatureResult>();
+			cancelToken.Register(this.Cancel);
+			var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+			activity.StartActivity(typeof(SignaturePadActivity));
+
+			return this.tcs.Task;
+		}
     }
 }

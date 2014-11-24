@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Acr.MvvmCross.Plugins.BarCodeScanner;
+using Acr.MvvmCross.Plugins.UserDialogs;
 using Acr.MvvmCross.ViewModels;
 using Cirrious.MvvmCross.ViewModels;
 
@@ -8,13 +9,17 @@ using Cirrious.MvvmCross.ViewModels;
 namespace Sample.Core.ViewModels {
 
     public class BarCodeCreateViewModel : ViewModel {
-        private readonly IBarCodeScanner barcode;
+        private readonly IBarCodeService service;
+		private readonly IUserDialogService dialogs;
 
 
-        public BarCodeCreateViewModel(IBarCodeScanner barcode) {
-            this.barcode = barcode;
+		public BarCodeCreateViewModel(IBarCodeService service, IUserDialogService dialogs) {
+			this.service = service;
+			this.dialogs = dialogs;
             this.Formats = Enum.GetNames(typeof(BarCodeFormat));
             this.selectedFormat = "QR_CODE";
+			this.width = 200;
+			this.height = 200;
         }
 
 
@@ -22,14 +27,27 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Create {
             get {
                 this.create = this.create ?? new MvxCommand(() => {
-                    var format = (BarCodeFormat)Enum.Parse(typeof(BarCodeFormat), this.SelectedFormat);
+					try {
+	                    var format = (BarCodeFormat)Enum.Parse(typeof(BarCodeFormat), this.SelectedFormat);
+						var cfg = new BarCodeCreateConfiguration {
+							BarCode = this.BarCode,
+							Height = this.Height,
+							Width = this.Width,
+							Format = format
+						};
 
-                    using (var stream = this.barcode.CreateBarCode(format, this.content, 200, 320)) {
-                        using (var ms = new MemoryStream()) {
-                            stream.CopyTo(ms);
-                            this.ImageBytes = ms.ToArray();
-                        }
-                    }
+						using (var stream = this.service.Create(cfg)) {
+	                        using (var ms = new MemoryStream()) {
+	                            stream.CopyTo(ms);
+								ms.Position = 0;
+	                            this.ImageBytes = ms.ToArray();
+								this.IsBarCodeReady = true;
+	                        }
+	                    }
+					}
+					catch (Exception ex) {
+						this.dialogs.Alert("Error creating barcode - " + ex);
+					}
                 });
                 return this.create;
             }
@@ -40,6 +58,13 @@ namespace Sample.Core.ViewModels {
         public string[] Formats { get; private set; }
 
 
+		private bool isBarCodeReady;
+		public bool IsBarCodeReady {
+			get { return this.isBarCodeReady; }
+			set { this.SetPropertyChange(ref this.isBarCodeReady, value); }
+		}
+
+
         private string selectedFormat;
         public string SelectedFormat {
             get { return this.selectedFormat; }
@@ -47,11 +72,37 @@ namespace Sample.Core.ViewModels {
         }
 
 
-        private string content;
-        public string Content {
-            get { return this.content; }
-            set { this.SetPropertyChange(ref this.content, value); }
+        private string barCode;
+        public string BarCode {
+			get { return this.barCode; }
+			set { this.SetPropertyChange(ref this.barCode, value); }
         }
+
+
+		private int height;
+		public int Height {
+			get { return this.height; }
+			set { 
+				this.height = (value <= 400 && value >= 50) 
+					? value
+					: 200;
+
+				this.RaisePropertyChanged(() => this.Height);
+			}
+		}
+
+
+		private int width;
+		public int Width {
+			get { return this.width; }
+			set { 
+				this.width = (value <= 400 && value >= 50) 
+					? value
+					: 200;
+
+				this.RaisePropertyChanged(() => this.Width);
+			}
+		}
 
 
         private byte[] imageBytes;

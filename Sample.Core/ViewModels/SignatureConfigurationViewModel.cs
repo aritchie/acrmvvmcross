@@ -31,7 +31,7 @@ namespace Sample.Core.ViewModels {
                 })
                 .ToList();
 
-            var cfg = this.signatureService.Configuration;
+			var cfg = SignaturePadConfiguration.Default;
             this.saveText = cfg.SaveText;
             this.cancelText = cfg.CancelText;
             this.promptText = cfg.PromptText;
@@ -78,7 +78,7 @@ namespace Sample.Core.ViewModels {
             get { return this.cancelText; }
             set { 
                 if (this.SetPropertyChange(ref this.cancelText, value))
-                    this.signatureService.Configuration.CancelText = value;
+					SignaturePadConfiguration.Default.CancelText = value;
             }
         }
 
@@ -88,7 +88,7 @@ namespace Sample.Core.ViewModels {
             get { return this.saveText; }
             set { 
                 if (this.SetPropertyChange(ref this.saveText, value))
-                    this.signatureService.Configuration.SaveText = value;
+					SignaturePadConfiguration.Default.SaveText = value;
             }
         }
 
@@ -98,7 +98,7 @@ namespace Sample.Core.ViewModels {
             get { return this.promptText; }
             set {
                 if (this.SetPropertyChange(ref this.promptText, value))
-                    this.signatureService.Configuration.PromptText = value;
+					SignaturePadConfiguration.Default.PromptText = value;
             }
         }
 
@@ -108,7 +108,7 @@ namespace Sample.Core.ViewModels {
             get { return this.captionText; }
             set {
                 if (this.SetPropertyChange(ref this.captionText, value))
-                    this.signatureService.Configuration.CaptionText = value;
+					SignaturePadConfiguration.Default.CaptionText = value;
             }
         }
 
@@ -118,7 +118,7 @@ namespace Sample.Core.ViewModels {
             get { return this.strokeWidth; }
             set {
                 if (this.SetPropertyChange(ref this.strokeWidth, value))
-                    this.signatureService.Configuration.StrokeWidth = value;
+					SignaturePadConfiguration.Default.StrokeWidth = value;
             }
         }
 
@@ -127,7 +127,7 @@ namespace Sample.Core.ViewModels {
             get { return this.signatureLineColor; }
             set {
                 if (this.SetPropertyChange(ref this.signatureLineColor, value))
-                    this.signatureService.Configuration.SignatureLineColor = value.Color;
+					SignaturePadConfiguration.Default.SignatureLineColor = value.Color;
             }
         }
 
@@ -137,7 +137,7 @@ namespace Sample.Core.ViewModels {
             get { return this.strokeColor; }
             set {
                 if (this.SetPropertyChange(ref this.strokeColor, value))
-                    this.signatureService.Configuration.StrokeColor = value.Color;
+					SignaturePadConfiguration.Default.StrokeColor = value.Color;
             }
         }
 
@@ -147,7 +147,7 @@ namespace Sample.Core.ViewModels {
             get { return this.captionTextColor; }
             set {
                 if (this.SetPropertyChange(ref this.captionTextColor, value))
-                    this.signatureService.Configuration.CaptionTextColor = value.Color;
+					SignaturePadConfiguration.Default.CaptionTextColor = value.Color;
             }
         }
 
@@ -157,7 +157,7 @@ namespace Sample.Core.ViewModels {
             get { return this.bgColor; }
             set {
                 if (this.SetPropertyChange(ref this.bgColor, value))
-                    this.signatureService.Configuration.BackgroundColor = value.Color;
+					SignaturePadConfiguration.Default.BackgroundColor = value.Color;
             }
         }
 
@@ -167,7 +167,7 @@ namespace Sample.Core.ViewModels {
             get { return this.promptTextColor; }
             set {
                 if (this.SetPropertyChange(ref this.promptTextColor, value))
-                    this.signatureService.Configuration.PromptTextColor = value.Color;
+					SignaturePadConfiguration.Default.PromptTextColor = value.Color;
             }
         }
 

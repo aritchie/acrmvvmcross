@@ -5,59 +5,38 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
         <Button
-            local:MvxBind="Click Scan"
-            android:text="Scan Barcode"
+            local:MvxBind="Click Create"
+            android:text="Create Barcode"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="Top Text"
+            android:text="Bar Code"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <EditText
-            local:MvxBind="Text Scanner.Configuration.TopText"
+            local:MvxBind="Text BarCode"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="Bottom Text"
+            android:text="Height"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <EditText
-            local:MvxBind="Text Scanner.Configuration.BottomText"
+            local:MvxBind="Text Height"
+            android:inputType="number"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <TextView
-            android:text="Flashlight Text"
+            android:text="Width"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <EditText
-            local:MvxBind="Text Scanner.Configuration.FlashlightText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="Cancel Text"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <EditText
-            local:MvxBind="Text Scanner.Configuration.CancelText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="Auto Rotate"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <CheckBox
-            local:MvxBind="Checked Scanner.Configuration.AutoRotate"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:text="Use Front Camera"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
-        <CheckBox
-            local:MvxBind="Checked Scanner.Configuration.UseFrontCameraIfAvailable"
+            local:MvxBind="Text Width"
+            android:inputType="number"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
         <TextView
@@ -68,5 +47,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             local:MvxBind="ItemsSource Formats; SelectedItem SelectedFormat;" />
+        <ImageView
+            local:MvxBind="Visible IsBarCodeReady; Height Height; Width Width; Bitmap ImageBytes, Converter=InMemoryImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
     </LinearLayout>
 </ScrollView>

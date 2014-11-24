@@ -4,10 +4,10 @@ using System.Linq;
 using System.Drawing;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
-using SignaturePad;
+using MonoTouch.Foundation;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Plugins.Color.Touch;
-using MonoTouch.Foundation;
+using SignaturePad;
 
 
 namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
@@ -15,8 +15,6 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
     public class MvxSignatureController : UIViewController {
 
         private MvxSignatureView view;
-
-        private IEnumerable<DrawPoint> points;
         private Action<SignatureResult> onResult;
         private readonly SignaturePadConfiguration config;
 
@@ -27,18 +25,13 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
         }
 
 
-        public MvxSignatureController(SignaturePadConfiguration config, IEnumerable<DrawPoint> points) {
-            this.config = config;
-            this.points = points;
-        }
-
-
         public override void LoadView() {
             base.LoadView();
 
             this.view = new MvxSignatureView();
             this.View = this.view;
         }
+
 
         public override void ViewDidLoad() {
             base.ViewDidLoad();
@@ -57,51 +50,32 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
             this.view.Signature.Layer.ShadowOffset = new SizeF(0, 0);
             this.view.Signature.Layer.ShadowOpacity = 1f;
 
-            if (this.onResult == null) {
-                this.view.CancelButton.Hidden = true;
-                this.view.SaveButton.Hidden = true;
-                this.view.Signature.ClearLabel.Hidden = true;
-                this.view.Signature.LoadPoints(this.points.Select(x => new PointF { X = x.X, Y = x.Y }).ToArray());
-            }
-            else {
-                this.view.SaveButton.SetTitle(this.config.SaveText, UIControlState.Normal);
-                this.view.SaveButton.TouchUpInside += (sender, args) => {
-                    if (this.view.Signature.IsBlank)
-                        return;
+            this.view.SaveButton.SetTitle(this.config.SaveText, UIControlState.Normal);
+            this.view.SaveButton.TouchUpInside += (sender, args) => {
+                if (this.view.Signature.IsBlank)
+                    return;
 
-                    var points = this.view
-                        .Signature
-                        .Points
-                        .Select(x => new DrawPoint(x.X, x.Y));
+                var points = this.view
+                    .Signature
+                    .Points
+                    .Select(x => new DrawPoint(x.X, x.Y));
 
-                    using (var image = this.view.Signature.GetImage()) {
-                        using (var stream = GetImageStream(image, this.config.ImageType)) {
-                            this.DismissViewController(true, null);
-                            this.onResult(new SignatureResult(false, stream, points));
-                        }
-                    }
-                };
+                using (var image = this.view.Signature.GetImage()) 
+                    using (var stream = GetImageStream(image, this.config.ImageType))
+						using (var fs = new FileStream("Signature.tmp", FileMode.Create)) 
+							stream.CopyTo(fs);
 
-                this.view.CancelButton.SetTitle(this.config.CancelText, UIControlState.Normal);
-                this.view.CancelButton.TouchUpInside += (sender, args) => {
-                    this.DismissViewController(true, null);
-                    this.onResult(new SignatureResult(true, null, null));
-                };
-            }
+				this.DismissViewController(true, null);
+				this.onResult(new SignatureResult(false, () => new FileStream("Signature.tmp", FileMode.Open, FileAccess.Read, FileShare.Read), points));
+            };
+
+            this.view.CancelButton.SetTitle(this.config.CancelText, UIControlState.Normal);
+            this.view.CancelButton.TouchUpInside += (sender, args) => {
+                this.DismissViewController(true, null);
+                this.onResult(new SignatureResult(true, null, null));
+            };
         }
-
-
-        public void LoadSignature(params PointF[] points) {
-            this.view.Signature.LoadPoints(points);
-        }
-
-
-//        public override void TouchesBegan(NSSet touches, UIEvent evt) {
-//            base.TouchesBegan(touches, evt);
-//            if (this.onResult == null)
-//                this.DismissViewController(true, null);
-//        }
-
+			
 
         private static Stream GetImageStream(UIImage image, ImageFormatType formatType) {
             if (formatType == ImageFormatType.Jpg)

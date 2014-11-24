@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.SignaturePad</id>
-        <version>1.2.0</version>
+        <version>2.0.0</version>
         <title>MvvmCross Signature Pad Plugin</title>
         <description>Signature Pad for MvvmCross.  Component by Xamarin.  Supports iOS and Android</description>
         <authors>Allan Ritchie</authors>
@@ -16,8 +16,9 @@
             <dependency id="MvvmCross.HotTuna.Plugin.Color" version="[3.2.1, 4.0)" />
         </dependencies>
         <releaseNotes>
-1.2
+2.0
 Update to profile259
+Simplified API
 
 1.1
 Switching to profile78 for MvvmCross 3.2.1 support

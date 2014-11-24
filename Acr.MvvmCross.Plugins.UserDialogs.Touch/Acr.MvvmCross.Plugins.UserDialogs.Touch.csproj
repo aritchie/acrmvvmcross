@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BTProgressHUD">
-      <HintPath>..\Components\btprogresshud-1.13\lib\ios\BTProgressHUD.dll</HintPath>
+      <HintPath>..\Components\btprogresshud-1.14\lib\ios\BTProgressHUD.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -76,11 +76,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">
-      <Visible>False</Visible>
       <Version>1.14</Version>
+      <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>

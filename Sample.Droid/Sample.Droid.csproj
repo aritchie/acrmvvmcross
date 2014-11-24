@@ -132,6 +132,7 @@
     <Compile Include="Views\SplashActivity.cs" />
     <Compile Include="Bootstrap\FileSystemPluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Views\BarCodeCreateActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

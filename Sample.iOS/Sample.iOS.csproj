@@ -105,12 +105,11 @@
     <None Include="packages.config" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FileSystemPluginBootstrap.cs" />
+    <Compile Include="Views\BarCodeCreateView.cs">
+      <DependentUpon>SignatureListView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner.Touch\Acr.MvvmCross.Plugins.BarCodeScanner.Touch.csproj">
-      <Project>{F1FCED90-6343-42B9-8769-5F5B1C5FE1E3}</Project>
-      <Name>Acr.MvvmCross.Plugins.BarCodeScanner.Touch</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\Acr.MvvmCross.Plugins.BarCodeScanner.csproj">
       <Project>{1ED7E825-98ED-4740-8DD7-96E4AA3F1128}</Project>
       <Name>Acr.MvvmCross.Plugins.BarCodeScanner</Name>
@@ -170,6 +169,10 @@
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
       <Project>{B2AF970D-D640-451C-95AF-92AF531B8C1E}</Project>
       <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acr.MvvmCross.Plugins.BarCodeScanner.Touch\Acr.MvvmCross.Plugins.BarCodeScanner.Touch.csproj">
+      <Project>{F1FCED90-6343-42B9-8769-5F5B1C5FE1E3}</Project>
+      <Name>Acr.MvvmCross.Plugins.BarCodeScanner.Touch</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

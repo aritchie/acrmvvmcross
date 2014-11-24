@@ -33,14 +33,14 @@
     <DefineConstants>__IOS__</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\BarCodeScanner.cs">
-      <Link>BarCodeScanner.cs</Link>
-    </Compile>
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\Acr.MvvmCross.Plugins.BarCodeScanner\BarCodeService.cs">
+      <Link>BarCodeService.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

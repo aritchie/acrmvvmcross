@@ -14,7 +14,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
                 action.Dismissed += (sender, btn) => {
                     if (btn.ButtonIndex > -1 && btn.ButtonIndex < config.Options.Count - 1)
-                        config.Options[btn.ButtonIndex].Action();
+						config.Options[btn.ButtonIndex].Action();
                 };
                 var view = Utils.GetTopView();
                 action.ShowInView(view);

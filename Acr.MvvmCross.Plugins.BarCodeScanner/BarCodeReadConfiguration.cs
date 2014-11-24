@@ -4,7 +4,21 @@ using System.Collections.Generic;
 
 namespace Acr.MvvmCross.Plugins.BarCodeScanner {
     
-    public class BarCodeScannerConfiguration {
+    public class BarCodeReadConfiguration {
+
+		private static BarCodeReadConfiguration @default;
+		public static BarCodeReadConfiguration Default { 
+			get {
+				@default = @default ?? new BarCodeReadConfiguration();
+				return @default;
+			}
+			set {
+				if (value == null)
+					throw new ArgumentNullException("Default barcode read options cannot be null");
+				@default = value;
+			}
+		}
+
 
         public string TopText { get; set; }
         public string BottomText { get; set; }
@@ -22,7 +36,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 
         public List<BarCodeFormat> Formats { get; set; }
 
-        public BarCodeScannerConfiguration() {
+		public BarCodeReadConfiguration() {
             this.TopText = "Hold the camera up to the barcode\nAbout 6 inches away";
             this.BottomText = "Wait for the barcode to automatically scan";
             this.Formats = new List<BarCodeFormat>(3);

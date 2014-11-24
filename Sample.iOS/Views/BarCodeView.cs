@@ -4,6 +4,7 @@ using Cirrious.MvvmCross.Dialog.Touch;
 using CrossUI.Touch.Dialog.Elements;
 using MonoTouch.Foundation;
 using Sample.Core.ViewModels;
+using Acr.MvvmCross.Plugins.BarCodeScanner;
 
 
 namespace Sample.iOS.Views {
@@ -23,13 +24,13 @@ namespace Sample.iOS.Views {
                     new StringElement("Scan Barcode").Bind(bindings, x => x.SelectedCommand, x => x.Scan)
                 },
                 new Section("Configuration") {
-                    new StringElement("Top Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.TopText),
-                    new StringElement("Bottom Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.BottomText),
-                    new StringElement("Cancel Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.CancelText),
-                    new StringElement("Flashlight Text").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.FlashlightText),
+					new StringElement("Top Text").Bind(bindings, x => x.Value, x => BarCodeReadConfiguration.Default.TopText),
+					new StringElement("Bottom Text").Bind(bindings, x => x.Value, x => BarCodeReadConfiguration.Default.BottomText),
+					new StringElement("Cancel Text").Bind(bindings, x => x.Value, x => BarCodeReadConfiguration.Default.CancelText),
+					new StringElement("Flashlight Text").Bind(bindings, x => x.Value, x => BarCodeReadConfiguration.Default.FlashlightText),
 
-                    new CheckboxElement("Auto-Rotate").Bind(bindings, x => x.Value, x => x.Scanner.Configuration.AutoRotate),
-                    new CheckboxElement("Try Harder").Bind(bindings, x => x.Value,  x => x.Scanner.Configuration.TryHarder)
+					new CheckboxElement("Auto-Rotate").Bind(bindings, x => x.Value, x => BarCodeReadConfiguration.Default.AutoRotate),
+					new CheckboxElement("Try Harder").Bind(bindings, x => x.Value,  x => BarCodeReadConfiguration.Default.TryHarder)
                 }
             };
         }

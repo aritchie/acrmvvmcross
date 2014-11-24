@@ -11,11 +11,11 @@ namespace Sample.Core.ViewModels {
     
     public class BarCodeViewModel : ViewModel {
 
-        public IBarCodeScanner Scanner { get; private set; }
+        public IBarCodeService Scanner { get; private set; }
         private readonly IUserDialogService dialogs;
 
 
-        public BarCodeViewModel(IBarCodeScanner scanner, IUserDialogService dialogs) {
+        public BarCodeViewModel(IBarCodeService scanner, IUserDialogService dialogs) {
             this.Scanner = scanner;
             this.dialogs = dialogs;
 
@@ -31,7 +31,7 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Scan {
             get {
                 return new MvxCommand(async () => {
-                    var result = await this.Scanner.ReadAsync();
+                    var result = await this.Scanner.Read();
                     if (result.Success) { 
                         this.dialogs.Alert(String.Format(
                             "Bar Code: {0} - Type: {1}",
@@ -58,10 +58,10 @@ namespace Sample.Core.ViewModels {
                     return;
 
                 this.selectedFormat = value;
-                this.Scanner.Configuration.Formats.Clear();
+				BarCodeReadConfiguration.Default.Formats.Clear();
                 if (value != "Any") {
                     var format = (BarCodeFormat)Enum.Parse(typeof(BarCodeFormat), value);
-                    this.Scanner.Configuration.Formats.Add(format);
+					BarCodeReadConfiguration.Default.Formats.Add(format);
                 }
                 this.RaisePropertyChanged(() => this.SelectedFormat);
             }

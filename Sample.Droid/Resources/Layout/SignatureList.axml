@@ -17,15 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <MvxListView
-        local:MvxBind="ItemsSource List; ItemLongClick Delete; ItemClick View; Visible If(List.Count == 0, false, true)"
-        local:MvxItemTemplate="@layout/homelistitem"
+        local:MvxBind="ItemsSource List; ItemClick View"
+        local:MvxItemTemplate="@layout/signaturelistitem"
         android:layout_weight="1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
-    <TextView
-        local:MvxBind="Visible If(List.Count == 0, true, false)"
-        android:text="No Signatures Found"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
 </LinearLayout>
