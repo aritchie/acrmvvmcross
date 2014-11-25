@@ -1,17 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 
 namespace Acr.MvvmCross.Plugins.SignaturePad.WindowsPhone {
     
-    public class WinPhoneSignatureService : AbstractSignatureService {
+    public class WinPhoneSignatureService : ISignatureService {
 
-        public override void Request(Action<SignatureResult> onResult) {
-            throw new NotImplementedException();
-        }
-
-
-        public override void Load(IEnumerable<DrawPoint> points) {
+        public Task<SignatureResult> Request(SignaturePadConfiguration config = null, CancellationToken cancelToken = new CancellationToken())
+        {
             throw new NotImplementedException();
         }
     }
