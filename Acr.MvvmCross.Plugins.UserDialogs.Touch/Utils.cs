@@ -8,8 +8,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
     public static class Utils {
 
         public static UIWindow GetTopWindow() {
-            return UIApplication
-                .SharedApplication
+            return UIApplication.SharedApplication
                 .Windows
                 .Reverse()
                 .FirstOrDefault(x => 
@@ -43,6 +42,18 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 return root.PresentedViewController;
 
             return root;
+        }
+
+        internal static UIKeyboardType GetKeyboardType(InputType inputType)
+        {
+            switch (inputType) {
+                case InputType.Email:
+                    return UIKeyboardType.EmailAddress;
+                case InputType.Number:
+                    return UIKeyboardType.NumberPad;
+                default:
+                    return UIKeyboardType.Default;
+            }
         }
     }
 }

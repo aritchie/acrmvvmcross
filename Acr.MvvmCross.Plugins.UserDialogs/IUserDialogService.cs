@@ -28,7 +28,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         Task<bool> ConfirmAsync(ConfirmConfig config);
         Task<LoginResult> LoginAsync(string title = "Login", string message = null);
         Task<LoginResult> LoginAsync(LoginConfig config);
-        Task<PromptResult> PromptAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = "", bool secure = false);
+        Task<PromptResult> PromptAsync(string message, string title = null, string okText = "OK", string cancelText = "Cancel", string placeholder = "", InputType inputType = InputType.Default);
         Task<PromptResult> PromptAsync(PromptConfig config);
     }
 }

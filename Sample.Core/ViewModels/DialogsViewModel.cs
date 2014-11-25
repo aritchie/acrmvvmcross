@@ -98,7 +98,7 @@ namespace Sample.Core.ViewModels {
             });
 
             this.PromptSecure = new MvxCommand(async () => {
-                var r = await dialogService.PromptAsync("Enter a value", secure: true);
+                var r = await dialogService.PromptAsync("Enter a value", inputType: InputType.Password);
                 this.Result = r.Ok
                     ? "OK " + r.Text
                     : "Secure Prompt Cancelled";

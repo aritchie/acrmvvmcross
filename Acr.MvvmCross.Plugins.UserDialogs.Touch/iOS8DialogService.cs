@@ -74,8 +74,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                 config.OnResult(result);
             }));
             dlg.AddTextField(x => {
-                x.SecureTextEntry = config.IsSecure;
+                x.SecureTextEntry = config.InputType == InputType.Password;
                 x.Placeholder = config.Placeholder ?? String.Empty;
+                x.KeyboardType = Utils.GetKeyboardType(config.InputType);
                 txt = x;
             });
             this.Present(dlg);

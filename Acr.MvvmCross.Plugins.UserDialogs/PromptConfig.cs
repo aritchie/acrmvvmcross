@@ -2,7 +2,6 @@
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs {
-
     public class PromptConfig {
 
         public string Title { get; set; }
@@ -13,7 +12,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         public string OkText { get; set; }
         public string CancelText { get; set; }
         public string Placeholder { get; set; }
-        public bool IsSecure { get; set; }
+        public InputType InputType { get; set; }
 
 
         public PromptConfig() {
@@ -59,8 +58,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
             return this;
         }
 
-        public PromptConfig SetSecure(bool isSecure) {
-            this.IsSecure = isSecure;
+        public PromptConfig SetInputMode(InputType inputType) {
+            this.InputType = inputType;
             return this;
         }
     }
