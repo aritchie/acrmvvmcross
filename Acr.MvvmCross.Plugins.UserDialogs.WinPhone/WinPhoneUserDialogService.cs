@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Media;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
@@ -111,19 +112,40 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
             };
 
             var password = new PasswordBox();
-            var txt = new PhoneTextBox { Hint = config.Placeholder };
-            if (config.IsSecure)
+            var inputScope = GetInputScope(config.InputType);
+            var txt = new PhoneTextBox { Hint = config.Placeholder, InputScope = inputScope };
+            var isSecure = config.InputType == InputType.Password;
+            if (isSecure)
                 prompt.Content = password;
             else 
                 prompt.Content = txt;
 
             prompt.Dismissed += (sender, args) => config.OnResult(new PromptResult {
                 Ok = args.Result == CustomMessageBoxResult.LeftButton,
-                Text = config.IsSecure
+                Text = isSecure
                     ? password.Password
                     : txt.Text.Trim()
             });
             this.Dispatch(prompt.Show);
+        }
+
+        private static InputScope GetInputScope(InputType inputType)
+        {
+            InputScopeNameValue value;
+            switch (inputType) {
+                case InputType.Email:
+                    value = InputScopeNameValue.EmailNameOrAddress;
+                    break;
+                case InputType.Number:
+                    value = InputScopeNameValue.Number;
+                    break;
+                default:
+                    value = InputScopeNameValue.Default;
+                    break;
+            }
+            var inputScope = new InputScope();
+            inputScope.Names.Add(new InputScopeName { NameValue = value });
+            return inputScope;
         }
 
 

@@ -134,7 +134,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
         }
 
 
-        public virtual Task<PromptResult> PromptAsync(string message, string title, string okText, string cancelText, string placeholder, bool secure) {
+        public virtual Task<PromptResult> PromptAsync(string message, string title, string okText, string cancelText, string placeholder, InputType inputType) {
             var tcs = new TaskCompletionSource<PromptResult>();
             this.Prompt(new PromptConfig {
                 Message = message,
@@ -142,7 +142,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
                 CancelText = cancelText,
                 OkText = okText,
                 Placeholder = placeholder,
-                IsSecure = secure,
+                InputType = inputType,
                 OnResult = x => tcs.TrySetResult(x)
             });
             return tcs.Task;
