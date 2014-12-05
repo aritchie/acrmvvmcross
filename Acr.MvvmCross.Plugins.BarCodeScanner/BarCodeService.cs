@@ -33,7 +33,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 				PureBarcode = def.PureBarcode,
 				TryHarder = def.TryHarder,
 				TryInverted = def.TryInverted,
-				UseFrontCameraIfAvailable = def.UseFrontCameraIfAvailable                
+				UseFrontCameraIfAvailable = def.UseFrontCameraIfAvailable
             };
         }
 
@@ -78,7 +78,7 @@ namespace Acr.MvvmCross.Plugins.BarCodeScanner {
 			stream.Position = 0;
             return stream;
 #elif WINDOWS_PHONE
-            return new MemoryStream(writer.Write(content).ToByteArray());
+            return new MemoryStream(writer.Write(cfg.BarCode).ToByteArray());
 #endif
         }
 
