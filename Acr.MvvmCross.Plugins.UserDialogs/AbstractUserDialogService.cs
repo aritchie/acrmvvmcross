@@ -102,6 +102,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs {
             var tcs = new TaskCompletionSource<bool>();
             this.Confirm(new ConfirmConfig {
                 Message = message,
+                Title = title,
                 CancelText = cancelText,
                 OkText = okText,
                 OnConfirm = x => tcs.TrySetResult(x)
