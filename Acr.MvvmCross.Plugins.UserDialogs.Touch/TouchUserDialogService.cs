@@ -69,13 +69,14 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
             this.Dispatch(() =>  {
                 var result = new PromptResult();
                 var dlg = new UIAlertView(config.Title ?? String.Empty, config.Message, null, config.CancelText, config.OkText) {
-                    AlertViewStyle = config.IsSecure
+                    AlertViewStyle = config.InputType == InputType.Password
                         ? UIAlertViewStyle.SecureTextInput
                         : UIAlertViewStyle.PlainTextInput
                 };
                 var txt = dlg.GetTextField(0);
-                txt.SecureTextEntry = config.IsSecure;
+                txt.SecureTextEntry = config.InputType == InputType.Password;
                 txt.Placeholder = config.Placeholder;
+                txt.KeyboardType = Utils.GetKeyboardType(config.InputType);
 
                 dlg.Clicked += (s, e) => {
                     result.Ok = (dlg.CancelButtonIndex != e.ButtonIndex);

@@ -1,9 +1,9 @@
-using Cirrious.MvvmCross.WindowsStore.Views;
+using Cirrious.MvvmCross.WindowsCommon.Views;
 
 
 namespace Sample.WinStore.Views {
 
-    public sealed partial class HomeView : MvxStorePage {
+    public sealed partial class HomeView : MvxWindowsPage {
 
         public HomeView() {
             this.InitializeComponent();

@@ -101,12 +101,10 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                     Hint = config.Placeholder
                 };
 
-                if (!config.IsSecure) 
+                if (config.InputType != InputType.Default) 
 					txt.SetMaxLines(1);
-				else {
-                    txt.TransformationMethod = PasswordTransformationMethod.Instance;
-                    txt.InputType = InputTypes.TextVariationPassword;
-                }
+
+                SetInputType(txt, config.InputType);
 
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
@@ -127,6 +125,21 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                     )
                     .Show();
             });
+        }
+
+        private static void SetInputType(TextView txt, InputType inputType) {
+            switch (inputType) {
+                case InputType.Email:
+                    txt.InputType = InputTypes.TextVariationEmailAddress;
+                    break;
+                case InputType.Number:
+                    txt.InputType = InputTypes.ClassNumber;
+                    break;
+                case InputType.Password:
+                    txt.TransformationMethod = PasswordTransformationMethod.Instance;
+                    txt.InputType = InputTypes.TextVariationPassword;
+                    break;
+            }
         }
 
 

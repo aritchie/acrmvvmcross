@@ -1,10 +1,10 @@
 ﻿using System;
-using Cirrious.MvvmCross.WindowsStore.Views;
+using Cirrious.MvvmCross.WindowsCommon.Views;
 
 
 namespace Sample.WinStore.Views {
 
-    public sealed partial class DialogsView : MvxStorePage {
+    public sealed partial class DialogsView : MvxWindowsPage {
         public DialogsView() {
             this.InitializeComponent();
         }
