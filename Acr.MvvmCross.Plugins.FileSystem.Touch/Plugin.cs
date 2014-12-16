@@ -9,6 +9,7 @@ namespace Acr.MvvmCross.Plugins.FileSystem.Touch {
 
         public void Load() {
             Mvx.RegisterSingleton<IFileSystem>(new FileSystemImpl());
+			Mvx.RegisterSingleton<IFileViewer>(new FileViewerImpl());
         }
     }
 }

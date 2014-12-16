@@ -20,7 +20,7 @@ namespace Sample.iOS.Views {
             var btnConfig = new UIBarButtonItem(UIBarButtonSystemItem.Edit);
             this.NavigationItem.RightBarButtonItems = new [] { btnAdd, btnConfig };
 
-            var src = new MvxStandardTableViewSource(this.TableView, "TitleText FileName");
+            var src = new MvxStandardTableViewSource(this.TableView, "TitleText Name");
 
             var set = this.CreateBindingSet<SignatureListView, SignatureListViewModel>();
             set.Bind(src).To(x => x.List);

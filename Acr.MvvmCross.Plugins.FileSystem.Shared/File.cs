@@ -107,21 +107,21 @@ namespace Acr.MvvmCross.Plugins.FileSystem {
 
 
         private string GetMimeType() {
-            // TODO
-//#if __ANDROID__
-//            var ext = Path.GetExtension(this.info.Name);
-//            var mime = "";
-//            if (ext != null) 
-//                mime = MimeTypeMap.Singleton.GetMimeTypeFromExtension(ext);
+#if __ANDROID__
+			var ext = Path.GetExtension(this.FullName);
+			if (ext == null)
+				return "*.*";
 
-//            return mime;
-//#elif __IOS__
-//            return String.Empty;
-//#elif WINDOWS_PHONE
-//            return String.Empty;
-//#else
+			ext = ext.ToLower().TrimStart('.');
+			var mimeType = MimeTypeMap.Singleton.GetMimeTypeFromExtension(ext);
+			return mimeType ?? "*.*";
+#elif __IOS__
             return String.Empty;
-//#endif
+#elif WINDOWS_PHONE
+            return String.Empty;
+#else
+            return String.Empty;
+#endif
         }
     }
 }

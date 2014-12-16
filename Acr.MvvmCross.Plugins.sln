@@ -1734,7 +1734,7 @@ Global
 		{FB73D461-D197-42A2-8928-086333277E54} = {A0BCDABE-9C62-4C91-862D-F69E09F41693}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Sample.Droid\Sample.Droid.csproj
+		StartupItem = Sample.iOS\Sample.iOS.csproj
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems*{3f67d482-1e3a-43cc-ab85-968fcb35ab79}*SharedItemsImports = 13

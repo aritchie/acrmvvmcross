@@ -8,7 +8,6 @@ using Cirrious.MvvmCross.Plugins.File;
 using Acr.MvvmCross.Plugins.UserDialogs;
 using Acr.MvvmCross.Plugins.SignaturePad;
 using Acr.MvvmCross.Plugins.FileSystem;
-using Sample.Core.Models;
 
 
 namespace Sample.Core.ViewModels {
@@ -17,20 +16,24 @@ namespace Sample.Core.ViewModels {
 
         private const string FILE_FORMAT = "{0:dd-MM-yyyy_hh-mm-ss_tt}.jpg";
         private readonly IFileSystem fileSystem;
+		private readonly IFileViewer fileViewer;
         private readonly ISignatureService signatureService;
         private readonly IUserDialogService dialogService;
 
 
         public SignatureListViewModel(IFileSystem fileSystem, 
+								      IFileViewer fileViewer,
                                       IUserDialogService dialogService,
-                                      ISignatureService signatureService) {
+                                      ISignatureService signatureService){
 			this.fileSystem = fileSystem;
+			this.fileViewer = fileViewer;
             this.dialogService = dialogService;
             this.signatureService = signatureService;
+
             this.Configure = new MvxCommand(() => this.ShowViewModel<SignatureConfigurationViewModel>());
 			this.Create = new MvxCommand(async () => await this.OnCreate());
-            this.View = new MvxCommand<Signature>(this.OnView);
-            this.List = new ObservableCollection<Signature>();
+            this.View = new MvxCommand<IFile>(this.OnView);
+			this.List = new ObservableCollection<IFile>();
         }
 
 
@@ -39,10 +42,6 @@ namespace Sample.Core.ViewModels {
 			var files = this.fileSystem
 				.Public
 				.Files
-                .Select(x => new Signature {
-					FileName = x.Name,
-					FilePath = x.FullName
-                })
                 .ToList();
 
             foreach (var file in files)
@@ -50,11 +49,11 @@ namespace Sample.Core.ViewModels {
         }
 
 
-        public ObservableCollection<Signature> List { get; private set; }
+        public ObservableCollection<IFile> List { get; private set; }
         public IMvxCommand Configure { get; private set; }
         public IMvxCommand Create { get; private set; }
-        public MvxCommand<Signature> View { get; private set; }
-        public MvxCommand<Signature> Delete { get; private set; }
+        public MvxCommand<IFile> View { get; private set; }
+        public MvxCommand<IFile> Delete { get; private set; }
 
 
 		private async Task OnCreate() {
@@ -69,21 +68,20 @@ namespace Sample.Core.ViewModels {
 				using (var stream = result.GetStream())
 					stream.CopyTo(fs);
             
-            this.List.Add(new Signature {
-				FilePath = file.FullName,
-                FileName = fileName
-            });
+            this.List.Add(file);
         }
 
 
-        private void OnView(Signature signature) {
+        private void OnView(IFile signature) {
             this.dialogService.ActionSheet(new ActionSheetConfig()
-                .Add("View", () => {
-                })
+				.Add("View", () => {
+					if (!this.fileViewer.Open(signature))
+						this.dialogService.Alert("Cannot open file");
+				})
                 .Add("Delete", async () => {
-                    var r = await this.dialogService.ConfirmAsync("Are you sure you want to delete " + signature.FileName);
+                    var r = await this.dialogService.ConfirmAsync("Are you sure you want to delete " + signature.Name);
 					if (r) {
-						this.fileSystem.GetFile(signature.FilePath).Delete();
+						signature.Delete();
 						this.List.Remove(signature);
 					}
                 })

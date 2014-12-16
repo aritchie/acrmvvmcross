@@ -9,6 +9,7 @@ namespace Acr.MvvmCross.Plugins.FileSystem.Droid {
 
         public void Load() {
             Mvx.RegisterSingleton<IFileSystem>(new FileSystemImpl());
+			Mvx.RegisterSingleton<IFileViewer>(new FileViewerImpl());
         }
     }
 }

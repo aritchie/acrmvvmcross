@@ -60,13 +60,14 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
                     .Points
                     .Select(x => new DrawPoint(x.X, x.Y));
 
+				var tempPath = GetTempFilePath();
                 using (var image = this.view.Signature.GetImage()) 
                     using (var stream = GetImageStream(image, this.config.ImageType))
-						using (var fs = new FileStream("Signature.tmp", FileMode.Create)) 
+						using (var fs = new FileStream(tempPath, FileMode.Create)) 
 							stream.CopyTo(fs);
 
 				this.DismissViewController(true, null);
-				this.onResult(new SignatureResult(false, () => new FileStream("Signature.tmp", FileMode.Open, FileAccess.Read, FileShare.Read), points));
+				this.onResult(new SignatureResult(false, () => new FileStream(tempPath, FileMode.Open, FileAccess.Read, FileShare.Read), points));
             };
 
             this.view.CancelButton.SetTitle(this.config.CancelText, UIControlState.Normal);
@@ -75,7 +76,17 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
                 this.onResult(new SignatureResult(true, null, null));
             };
         }
-			
+
+
+		private static string GetTempFilePath() {
+			var documents = UIDevice.CurrentDevice.CheckSystemVersion(8, 0)
+				? NSFileManager.DefaultManager.GetUrls (NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomain.User)[0].Path
+				: Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+			var tempPath = Path.Combine(documents, "..", "tmp");
+			return Path.Combine(tempPath, "Signature.tmp");
+		}
+
 
         private static Stream GetImageStream(UIImage image, ImageFormatType formatType) {
             if (formatType == ImageFormatType.Jpg)
