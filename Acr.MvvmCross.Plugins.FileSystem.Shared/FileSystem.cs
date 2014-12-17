@@ -23,7 +23,7 @@ namespace Acr.MvvmCross.Plugins.FileSystem {
 
             var library = Path.Combine(documents, "..", "Library");
             this.AppData = new Directory(library);
-            this.Cache = new Directory(Path.Combine (library, "Caches"));
+            this.Cache = new Directory(Path.Combine(library, "Caches"));
             this.Temp = new Directory(Path.Combine(documents, "..", "tmp"));
             this.Public = new Directory(documents);
 #elif __ANDROID__

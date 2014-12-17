@@ -107,19 +107,26 @@ namespace Acr.MvvmCross.Plugins.FileSystem {
 
 
         private string GetMimeType() {
+			var ext = Path.GetExtension(this.Name);
+
 #if __ANDROID__
-			var ext = Path.GetExtension(this.FullName);
 			if (ext == null)
 				return "*.*";
 
 			ext = ext.ToLower().TrimStart('.');
-			var mimeType = MimeTypeMap.Singleton.GetMimeTypeFromExtension(ext);
+			var mimeType = Android.Webkit.MimeTypeMap.Singleton.GetMimeTypeFromExtension(ext);
 			return mimeType ?? "*.*";
-#elif __IOS__
-            return String.Empty;
-#elif WINDOWS_PHONE
-            return String.Empty;
 #else
+//			if (ext == null)
+//				return String.Empty;
+//
+//			switch (ext.ToLower()) {
+//			case ".jpg" : return "image/jpg";
+//			case ".png" : return "image/png";
+//			case ".gif" : return "image/gif";
+//			case ".pdf" : return "application/pdf";
+//			case ".docs": return "application/";
+//			}
             return String.Empty;
 #endif
         }

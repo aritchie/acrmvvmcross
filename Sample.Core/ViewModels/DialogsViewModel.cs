@@ -33,22 +33,27 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Toast { get; private set; }
 
         public IMvxCommand SendBackgroundAlert { get; private set; }
+		private readonly IUserDialogService dialogs;
 
 
         private string result;
         public string Result {
             get { return this.result; }
-            private set {
-                this.SetPropertyChange(ref this.result, value);
-                //this.result = value;
-                //this.RaisePropertyChanged("Result");
-            }
+            private set { this.SetPropertyChange(ref this.result, value); }
         }
 
         private MvxSubscriptionToken backgroundToken;
 
 
+		public override async void Start() {
+			base.Start();
+			using (this.dialogs.Loading("StartAsync Test - 3...")) 
+				await Task.Delay(TimeSpan.FromSeconds(3));
+		}
+
+
         public DialogsViewModel(IUserDialogService dialogService, IMvxMessenger messenger) {
+			this.dialogs = dialogService;
             this.backgroundToken = messenger.Subscribe<BackgroundAlert>(msg => 
                 dialogService.Toast(msg.Message)
             );
