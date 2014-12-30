@@ -4,6 +4,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.Content.Res;
 using Android.Telephony;
+using Android.Provider;
 using B = Android.OS.Build;
 
 
@@ -31,7 +32,8 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Droid {
             });
             this.deviceId = new Lazy<string>(() => {
                 var tel = (TelephonyManager)Application.Context.ApplicationContext.GetSystemService(Context.TelephonyService);
-                return tel.DeviceId;
+				// Returns DeviceId from TelephonyManager for phones or AndroidId from Settings.Secure for tablets
+				return tel.DeviceId ?? Settings.Secure.GetString(Application.Context.ApplicationContext.ContentResolver, Settings.Secure.AndroidId);
             });
         }
 
