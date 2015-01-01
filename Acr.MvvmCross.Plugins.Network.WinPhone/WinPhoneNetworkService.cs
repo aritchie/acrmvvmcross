@@ -9,6 +9,7 @@ namespace Acr.MvvmCross.Plugins.Network.WinPhone {
 
         public WinPhoneNetworkService() {
             DeviceNetworkInformation.NetworkAvailabilityChanged += this.OnNetworkAvailabilityChanged;
+//			NetworkChange.NetworkAddressChanged += NetworkChange_NetworkAddressChanged; listen to this as well to fix
             this.SetStatus(
                 DeviceNetworkInformation.IsNetworkAvailable,
                 DeviceNetworkInformation.IsWiFiEnabled,
