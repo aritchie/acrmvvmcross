@@ -13,7 +13,7 @@
         <tags>xamarin mvvmcross settings</tags>
         <dependencies>
             <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.1.1, 4.0)" />
-            <dependency id="Newtonsoft.Json" version="[6.0.6, 7)" />
+            <dependency id="Newtonsoft.Json" version="[6.0.7, 7)" />
         </dependencies>
         <releaseNotes>
 2.1.1
@@ -33,16 +33,16 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmCross.Plugins.Settings.dll" />
 
         <!-- droid -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Settings.dll" />
-        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.Settings.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Settings.Droid.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.Settings.Droid.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.Settings.Droid.dll" />
         <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\SettingsPluginBootstrap.cs.pp" />
 
         <!-- touch -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Settings.dll" />
-        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Settings.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Settings.Touch.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Settings.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.Settings.Touch.dll" />
         <file src="TouchBootstrapContent\TouchSettingsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\SettingsPluginBootstrap.cs.pp" />
 
         <!--winphone-->

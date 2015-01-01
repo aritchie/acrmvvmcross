@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Linq;
 using UIKit;
 
@@ -90,7 +91,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 					po.SourceView = top.View;
 					var h = (top.View.Frame.Height / 2) - 400;
 					var v = (top.View.Frame.Width / 2) - 300;
-					po.SourceRect = new RectangleF(v, h, 0, 0);
+					po.SourceRect = new RectangleF((float)v, (float)h, 0, 0);
 					po.PermittedArrowDirections = UIPopoverArrowDirection.Any;
                 }
                 top.PresentViewController(controller, true, null);

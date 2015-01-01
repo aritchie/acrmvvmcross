@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C24FE984-A6D1-4E63-B8B2-0FEC9688D13D}</ProjectGuid>
-    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>Acr.MvvmCross.Plugins.FileSystem.Touch</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
@@ -59,7 +59,7 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="monotouch" />
+    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.FileSystem\Acr.MvvmCross.Plugins.FileSystem.csproj">
@@ -68,5 +68,5 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems" Label="Shared" Condition="Exists('..\Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems')" />
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -12,8 +12,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross android ios winphone</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
-            <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="[3.2.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="[3.5, 4.0)" />
             <dependency id="Acr.MvvmCross.Plugins.Settings" version="[2.1.2, 3.0)" />
             <dependency id="Acr.MvvmCross.Plugins.Network" version="[1.3.0, 2.0)" />
             <dependency id="Acr.MvvmCross.Plugins.FileSystem" version="[1.2.0, 2.0)" />

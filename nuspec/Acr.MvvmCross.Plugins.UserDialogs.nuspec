@@ -13,10 +13,10 @@
         <tags>xamarin mvvmcross</tags>
         <dependencies>
             <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
             </group>
             <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
+                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
                 <dependency id="WPtoolkit" version="[4.2013.08.16, 5.0)" />
             </group>
         </dependencies>
@@ -72,18 +72,18 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.UserDialogs.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmCross.Plugins.UserDialogs.dll" />
 
         <!-- droid -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.UserDialogs.dll" />
-        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.UserDialogs.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.UserDialogs.Droid.dll" />
-        <file src="..\bin\Release\MonoAndroid\AndHUD.dll" target="lib\MonoAndroid\AndHUD.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.UserDialogs.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.UserDialogs.Droid.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.UserDialogs.Droid.dll" />
+        <file src="..\bin\Release\MonoAndroid\AndHUD.dll" target="lib\MonoAndroid10\AndHUD.dll" />
         <file src="BootstrapContent\UserDialogsPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
 
         <!-- touch -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.dll" />
-        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.Touch.dll" />
-        <file src="..\bin\Release\MonoTouch\BTProgressHUD.dll" target="lib\MonoTouch\BTProgressHUD.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.UserDialogs.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.UserDialogs.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.UserDialogs.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.UserDialogs.Touch.dll" />
+        <file src="..\bin\Release\MonoTouch\BTProgressHUD.dll" target="lib\Xamarin.iOS10\BTProgressHUD.dll" />
         <file src="TouchBootstrapContent\TouchUserDialogsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\UserDialogsPluginBootstrap.cs.pp" />
 
         <!-- winphone -->

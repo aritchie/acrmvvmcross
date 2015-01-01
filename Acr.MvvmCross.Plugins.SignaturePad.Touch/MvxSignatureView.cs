@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using MonoTouch.UIKit;
-
+using UIKit;
 using SignaturePad;
+
 
 namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
 
@@ -50,20 +50,20 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
                     ? frame.Location.Y + sbframe.Height
                     : 0;
 
-                this.Frame = new RectangleF(x, y, width, height);
+                this.Frame = new RectangleF((float)x, (float)y, (float)width, (float)height);
 //            }
 
             ///Using different layouts for the iPhone and iPad, so setup device specific requirements here.
 //            if (UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
-                this.Signature.Frame = new RectangleF (10, 10, Bounds.Width - 20, Bounds.Height - 60);
+                this.Signature.Frame = new RectangleF (10, 10, (float)Bounds.Width - 20, (float)Bounds.Height - 60);
 //            else 
 //                this.Signature.Frame = new RectangleF (84, 84, Bounds.Width - 168, Bounds.Width / 2);
 //
 
             //Button locations are based on the Frame, so must have their own frames set after the view's
             //Frame has been set.
-            this.SaveButton.Frame = new RectangleF(10, this.Bounds.Height - 40, 120, 37);
-            this.CancelButton.Frame = new RectangleF(this.Bounds.Width - 130, this.Bounds.Height - 40, 120, 37);
+            this.SaveButton.Frame = new RectangleF(10, (float)this.Bounds.Height - 40, 120, 37);
+            this.CancelButton.Frame = new RectangleF((float)this.Bounds.Width - 130, (float)this.Bounds.Height - 40, 120, 37);
         }
     }
 }

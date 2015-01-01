@@ -12,8 +12,8 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross android ios winphone</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
-            <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="[3.2.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.Plugin.Messenger" version="[3.5, 4.0)" />
         </dependencies>
         <releaseNotes>
 1.3
@@ -44,16 +44,16 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.Network.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmCross.Plugins.Network.dll" />
 
         <!-- droid -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Network.dll" />
-        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.Network.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.Network.Droid.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.Network.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.Network.Droid.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.Network.Droid.dll" />
         <file src="BootstrapContent\NetworkPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\NetworkPluginBootstrap.cs.pp" />
 
         <!-- touch -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Network.dll" />
-        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Network.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.Network.Touch.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Network.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.Network.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Network.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.Network.Touch.dll" />
         <file src="TouchBootstrapContent\TouchNetworkPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\NetworkPluginBootstrap.cs.pp" />
 
         <!-- winphone -->

@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross android ios winphone</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
         </dependencies>
         <releaseNotes>
 1.5
@@ -45,16 +45,16 @@ Initial Release
     </metadata>
     <files>
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
 
         <!-- droid -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
-        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.dll" target="lib\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+        <file src="..\bin\Release\MonoAndroid\Acr.MvvmCross.Plugins.DeviceInfo.Droid.dll" target="lib\MonoAndroid10\Acr.MvvmCross.Plugins.DeviceInfo.Droid.dll" />
         <file src="BootstrapContent\DeviceInfoPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
 
         <!-- touch -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
-        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" target="lib\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
+        <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" />
         <file src="TouchBootstrapContent\TouchDeviceInfoPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
 
         <!--winphone-->

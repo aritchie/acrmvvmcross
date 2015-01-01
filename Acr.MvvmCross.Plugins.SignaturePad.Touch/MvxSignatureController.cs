@@ -2,12 +2,10 @@
 using System.IO;
 using System.Linq;
 using System.Drawing;
-using System.Collections.Generic;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
-using Cirrious.CrossCore;
+using UIKit;
+using Foundation;
+using Cirrious.MvvmCross.Plugins.Color;
 using Cirrious.MvvmCross.Plugins.Color.Touch;
-using SignaturePad;
 
 
 namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
@@ -15,7 +13,7 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
     public class MvxSignatureController : UIViewController {
 
         private MvxSignatureView view;
-        private Action<SignatureResult> onResult;
+        private readonly Action<SignatureResult> onResult;
         private readonly SignaturePadConfiguration config;
 
 
@@ -58,7 +56,7 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
                 var points = this.view
                     .Signature
                     .Points
-                    .Select(x => new DrawPoint(x.X, x.Y));
+                    .Select(x => new DrawPoint((float)x.X, (float)x.Y));
 
 				var tempPath = GetTempFilePath();
                 using (var image = this.view.Signature.GetImage()) 

@@ -1,7 +1,6 @@
 ﻿using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using System.Drawing;
+using Foundation;
+using UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.FileSystem.Touch {
@@ -42,11 +41,6 @@ namespace Acr.MvvmCross.Plugins.FileSystem.Touch {
 
 		public override UIView ViewForPreview (UIDocumentInteractionController controller) {
 			return this.view;
-		}
-
-
-		public override RectangleF RectangleForPreview (UIDocumentInteractionController controller) {
-			return this.view.Frame;
 		}
 	}
 }

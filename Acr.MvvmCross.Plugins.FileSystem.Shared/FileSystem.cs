@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
 #if __IOS__
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
+using UIKit;
+using Foundation;
 #endif
 
 namespace Acr.MvvmCross.Plugins.FileSystem {

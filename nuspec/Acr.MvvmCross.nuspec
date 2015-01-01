@@ -12,11 +12,11 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>		
         <tags>xamarin mvvmcross</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.2.1, 4.0)" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
         </dependencies>
     </metadata>
     <files>		
         <!-- PCL -->
-        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Acr.MvvmCross.dll" />
+        <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmCross.dll" />
     </files>
 </package>
