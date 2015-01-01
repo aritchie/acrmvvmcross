@@ -9,6 +9,8 @@ using Cirrious.CrossCore;
 using Java.Nio;
 using Android.Runtime;
 using Android.Graphics;
+#elif __IOS__
+using UIKit;
 #elif WINDOWS_PHONE
 using System.Windows.Media.Imaging;
 #endif

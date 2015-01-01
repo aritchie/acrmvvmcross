@@ -2,14 +2,14 @@ using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Touch.Views;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
 
-    [Register("SettingsView")]
+    [Foundation.Register("SettingsView")]
     public class SettingsView : MvxTableViewController {
 
         public override void ViewDidLoad() {

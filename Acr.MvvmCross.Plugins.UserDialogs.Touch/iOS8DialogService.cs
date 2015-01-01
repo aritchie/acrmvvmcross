@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
-using MonoTouch.UIKit;
-using System.Drawing;
+using UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {

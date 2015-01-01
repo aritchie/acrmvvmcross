@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoTouch.Foundation;
+using Foundation;
 
 
 namespace Acr.MvvmCross.Plugins.Settings.Touch {

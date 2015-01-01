@@ -1,15 +1,15 @@
-﻿using System;
+using System;
 using Cirrious.MvvmCross.Touch.Views;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Binding.BindingContext;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
 
-    [Register("SignatureListView")]
+    [Foundation.Register("SignatureListView")]
     public class SignatureListView : MvxTableViewController {
 
         public override void ViewDidLoad() {

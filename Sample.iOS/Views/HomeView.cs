@@ -2,13 +2,13 @@ using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Binding.Touch.Views;
 using Cirrious.MvvmCross.Touch.Views;
-using MonoTouch.Foundation;
+using Foundation;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
     
-    [Register("MainView")]
+    [Foundation.Register("MainView")]
     public class HomeView : MvxTableViewController {
 
         public override void ViewDidLoad() {

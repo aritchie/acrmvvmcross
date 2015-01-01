@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using MonoTouch.UIKit;
+using UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
@@ -44,8 +44,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
             return root;
         }
 
-        internal static UIKeyboardType GetKeyboardType(InputType inputType)
-        {
+
+        internal static UIKeyboardType GetKeyboardType(InputType inputType) {
             switch (inputType) {
                 case InputType.Email:
                     return UIKeyboardType.EmailAddress;

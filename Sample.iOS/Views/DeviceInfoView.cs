@@ -1,14 +1,27 @@
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
 using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Dialog.Touch;
 using CrossUI.Touch.Dialog.Elements;
-using MonoTouch.Foundation;
+using Foundation;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
     
-    [Register("DeviceInfoView")]
+    [Foundation.Register("DeviceInfoView")]
     public class DeviceInfoView : MvxDialogViewController {
 
         public DeviceInfoView() : base(pushing: true) { }

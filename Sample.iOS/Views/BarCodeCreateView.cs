@@ -1,16 +1,24 @@
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
 using System;
-using System.Drawing;
+using CoreGraphics;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Dialog.Touch;
 using CrossUI.Touch.Dialog.Elements;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
     
-    [Register("BarCodeCreateView")]
+    [Foundation.Register("BarCodeCreateView")]
     public class BarCodeCreateView : MvxDialogViewController {
 
         public BarCodeCreateView() : base(pushing: true) { }
@@ -21,7 +29,7 @@ namespace Sample.iOS.Views {
 			var vm = (BarCodeCreateViewModel)this.ViewModel;
             var bindings = this.CreateInlineBindingTarget<BarCodeCreateViewModel>();
 
-			var imageView = new UIImageView(new RectangleF(0, 0, 200, 200));
+			var imageView = new UIImageView(new CGRect(0, 0, 200, 200));
 			imageView.ContentMode = UIViewContentMode.Center;
 
             this.Root = new RootElement("Barcode Creation") {

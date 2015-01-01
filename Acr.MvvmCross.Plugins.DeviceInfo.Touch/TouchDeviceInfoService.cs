@@ -1,7 +1,8 @@
 using System;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.UIKit;
+using Mono;
+using Foundation;
+using ObjCRuntime;
+using UIKit;
 
 
 namespace Acr.MvvmCross.Plugins.DeviceInfo.Touch {

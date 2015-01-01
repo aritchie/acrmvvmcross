@@ -1,19 +1,19 @@
-﻿using System;
+using System;
 using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Touch.Platform;
 using Cirrious.MvvmCross.ViewModels;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 
 namespace Sample.iOS {
 
-    [Register("AppDelegate")]
+    [Foundation.Register("AppDelegate")]
     public class AppDelegate : MvxApplicationDelegate {
 
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
-            var window = new UIWindow(UIScreen.MainScreen.Bounds);
+            var window = new UIWindow((RectangleF)UIScreen.MainScreen.Bounds);
             window.MakeKeyAndVisible();
 
             var setup = new Setup(this, window);

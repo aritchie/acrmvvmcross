@@ -1,14 +1,29 @@
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
 using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Dialog.Touch;
 using CrossUI.Touch.Dialog.Elements;
-using MonoTouch.Foundation;
+using Foundation;
 using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
     
-    [Register("DialogsView")]
+    [Foundation.Register("DialogsView")]
     public class DialogsView : MvxDialogViewController {
 
         public DialogsView() : base(pushing: true) { }

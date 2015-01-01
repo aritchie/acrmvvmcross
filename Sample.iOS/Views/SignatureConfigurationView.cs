@@ -1,5 +1,10 @@
-﻿using System;
-using MonoTouch.Foundation;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using MonoTouch.Dialog;
+using System;
+using Foundation;
 using Cirrious.MvvmCross.Dialog.Touch;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using CrossUI.Touch.Dialog.Elements;
@@ -9,7 +14,7 @@ using Sample.Core;
 
 namespace Sample.iOS.Views {
 
-    [Register("SignatureConfigurationView")]
+    [Foundation.Register("SignatureConfigurationView")]
     public class SignatureConfigurationView : MvxDialogViewController {
 
         public SignatureConfigurationView() : base(pushing: true) { }

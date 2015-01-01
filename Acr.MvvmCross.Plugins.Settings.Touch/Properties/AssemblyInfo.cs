@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 
 [assembly: AssemblyTitle("Acr.MvvmCross.Plugins.Settings.Touch")]
 [assembly: AssemblyDescription("")]
