@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{B24E5835
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross", "Acr.MvvmCross\Acr.MvvmCross.csproj", "{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bar Codes", "Bar Codes", "{DD617AB3-E79F-44D8-9ED7-CE7DD06EA51A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Barcodes", "Barcodes", "{DD617AB3-E79F-44D8-9ED7-CE7DD06EA51A}"
 	ProjectSection(SolutionItems) = preProject
 		nuspec\Acr.MvvmCross.Plugins.BarCodeScanner.nuspec = nuspec\Acr.MvvmCross.Plugins.BarCodeScanner.nuspec
 		nuspec\BootstrapContent\BarCodeScannerPluginBootstrap.cs.pp = nuspec\BootstrapContent\BarCodeScannerPluginBootstrap.cs.pp

@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using Microsoft.Phone.Net.NetworkInformation;
 
 
 namespace Acr.MvvmCross.Plugins.Network.WinPhone {
-    
+
     public class WinPhoneNetworkService : AbstractNetworkService {
 
         public WinPhoneNetworkService() {
             DeviceNetworkInformation.NetworkAvailabilityChanged += this.OnNetworkAvailabilityChanged;
-//			NetworkChange.NetworkAddressChanged += NetworkChange_NetworkAddressChanged; listen to this as well to fix
+            NetworkChange.NetworkAddressChanged += (sender, args) => {}; // this has to be listened to as well to hear previous event
             this.SetStatus(
                 DeviceNetworkInformation.IsNetworkAvailable,
                 DeviceNetworkInformation.IsWiFiEnabled,
