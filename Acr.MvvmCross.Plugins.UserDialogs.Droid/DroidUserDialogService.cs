@@ -64,8 +64,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             };
 
             var txtPass = new EditText(context) {
-                Hint = config.PasswordPlaceholder,
-                InputType = InputTypes.TextVariationPassword,
+                Hint = config.PasswordPlaceholder ?? "*",
+                InputType = InputTypes.ClassText | InputTypes.TextVariationPassword,
                 TransformationMethod = PasswordTransformationMethod.Instance
             };
             var layout = new LinearLayout(context) {
