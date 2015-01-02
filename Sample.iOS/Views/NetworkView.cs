@@ -1,11 +1,3 @@
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
 using System;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Dialog.Touch;

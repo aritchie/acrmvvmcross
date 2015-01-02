@@ -51,7 +51,7 @@ namespace Sample.iOS
         public void Include(UIDatePicker date)
         {
             date.Date = date.Date.AddSeconds(1);
-            date.ValueChanged += (sender, args) => { date.Date = DateTime.MaxValue; };
+//            date.ValueChanged += (sender, args) => { date.Date = DateTime.MaxValue; };
         }
 
         public void Include(UISlider slider)

@@ -1,8 +1,3 @@
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
-using MonoTouch.Dialog;
 using System;
 using Foundation;
 using Cirrious.MvvmCross.Dialog.Touch;

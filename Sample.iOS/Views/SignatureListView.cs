@@ -34,6 +34,3 @@ namespace Sample.iOS.Views {
         }
     }
 }
-
-
-

@@ -11,9 +11,8 @@ namespace Sample.iOS {
     [Foundation.Register("AppDelegate")]
     public class AppDelegate : MvxApplicationDelegate {
 
-
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions) {
-            var window = new UIWindow((RectangleF)UIScreen.MainScreen.Bounds);
+            var window = new UIWindow(UIScreen.MainScreen.Bounds);
             window.MakeKeyAndVisible();
 
             var setup = new Setup(this, window);
