@@ -9,13 +9,13 @@
         <owners>Allan Ritchie</owners>
         <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
         <projectUrl>https://github.com/aritchie/mvvmcross-plugins</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>		
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross</tags>
         <dependencies>
             <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
         </dependencies>
     </metadata>
-    <files>		
+    <files>
         <!-- PCL -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.MvvmCross.dll" />
     </files>

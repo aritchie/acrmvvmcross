@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.FileSystem</id>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
         <title>MvvmCross File System Plugin</title>
         <description>File System platform plugin for MvvmCross (iOS, Android, and Windows Phone)</description>
         <authors>Allan Ritchie</authors>
@@ -15,6 +15,9 @@
             <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
         </dependencies>
         <releaseNotes>
+2.1
+Support iOS Unified API
+
 2.0
 New file viewer service
 Added mime type to IFile.  Only valid in android at the moment.

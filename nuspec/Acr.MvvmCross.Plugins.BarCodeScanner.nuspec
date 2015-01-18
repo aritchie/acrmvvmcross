@@ -17,15 +17,15 @@
             </group>
             <group targetFramework="MonoAndroid">
                 <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="ZXing.Net.Mobile" version="[1.4.6, 2.0)" />
+                <dependency id="ZXing.Net.Mobile" version="[1.4.7.1, 2.0)" />
             </group>
             <group targetFramework="MonoTouch">
                 <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="ZXing.Net.Mobile" version="[1.4.6, 2.0)" />
+                <dependency id="ZXing.Net.Mobile" version="[1.4.7.1, 2.0)" />
             </group>
             <group targetFramework="wp8">
                 <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="ZXing.Net.Mobile" version="[1.4.6, 2.0)" />
+                <dependency id="ZXing.Net.Mobile" version="[1.4.7.1, 2.0)" />
             </group>
         </dependencies>
         <releaseNotes>
