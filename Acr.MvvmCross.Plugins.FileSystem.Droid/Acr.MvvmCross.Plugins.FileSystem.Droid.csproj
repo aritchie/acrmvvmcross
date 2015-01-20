@@ -92,7 +92,6 @@
       <Name>Acr.MvvmCross.Plugins.FileSystem</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems" Label="Shared" Condition="Exists('..\Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

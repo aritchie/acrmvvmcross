@@ -83,7 +83,6 @@
   <ItemGroup>
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WinPhoneNetworkService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.Network\Acr.MvvmCross.Plugins.Network.csproj">

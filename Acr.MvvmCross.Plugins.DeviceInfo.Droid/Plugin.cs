@@ -1,4 +1,5 @@
 using System;
+using Acr.DeviceInfo;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
