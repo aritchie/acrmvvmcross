@@ -118,8 +118,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Plugins.FileS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Plugins.FileSystem.Droid", "Acr.MvvmCross.Plugins.FileSystem.Droid\Acr.MvvmCross.Plugins.FileSystem.Droid.csproj", "{E0895A1D-7257-4A00-8B48-A30C3FF7F4E6}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Acr.MvvmCross.Plugins.FileSystem.Shared", "Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.shproj", "{3F67D482-1E3A-43CC-AB85-968FCB35AB79}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Plugins.FileSystem.WindowsPhone", "Acr.MvvmCross.Plugins.FileSystem.WindowsPhone\Acr.MvvmCross.Plugins.FileSystem.WindowsPhone.csproj", "{2EAA8E49-371C-4732-8CDD-2121D4E8166C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Signature Pad", "Signature Pad", "{A0BCDABE-9C62-4C91-862D-F69E09F41693}"
@@ -139,7 +137,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acr.MvvmCross.Plugins.Signa
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems*{3f67d482-1e3a-43cc-ab85-968fcb35ab79}*SharedItemsImports = 13
 		Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems*{e0895a1d-7257-4a00-8b48-a30c3ff7f4e6}*SharedItemsImports = 4
 		Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems*{2eaa8e49-371c-4732-8cdd-2121d4e8166c}*SharedItemsImports = 4
 		Acr.MvvmCross.Plugins.FileSystem.Shared\Acr.MvvmCross.Plugins.FileSystem.Shared.projitems*{c24fe984-a6d1-4e63-b8b2-0fec9688d13d}*SharedItemsImports = 4
@@ -1688,7 +1685,6 @@ Global
 		{1C2C9BDA-C39D-4EE9-AD1B-C7065F4365AC} = {12FB0A10-D7BF-4312-BC1D-040FD69A1704}
 		{C24FE984-A6D1-4E63-B8B2-0FEC9688D13D} = {12FB0A10-D7BF-4312-BC1D-040FD69A1704}
 		{E0895A1D-7257-4A00-8B48-A30C3FF7F4E6} = {12FB0A10-D7BF-4312-BC1D-040FD69A1704}
-		{3F67D482-1E3A-43CC-AB85-968FCB35AB79} = {12FB0A10-D7BF-4312-BC1D-040FD69A1704}
 		{2EAA8E49-371C-4732-8CDD-2121D4E8166C} = {12FB0A10-D7BF-4312-BC1D-040FD69A1704}
 		{B2AF970D-D640-451C-95AF-92AF531B8C1E} = {A0BCDABE-9C62-4C91-862D-F69E09F41693}
 		{1D5482F6-AA89-422C-9E34-88A8A1AD8AB6} = {A0BCDABE-9C62-4C91-862D-F69E09F41693}

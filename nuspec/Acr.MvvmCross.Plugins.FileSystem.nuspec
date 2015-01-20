@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross settings</tags>
         <dependencies>
-            <dependency id="Acr.IO" version="[1.0, 2.0)" />
+            <dependency id="Acr.IO" version="[2.0, 3.0)" />
             <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
         </dependencies>
         <releaseNotes>
