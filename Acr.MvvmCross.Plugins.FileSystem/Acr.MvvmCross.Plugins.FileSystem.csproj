@@ -41,13 +41,8 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Extensions.cs" />
-    <Compile Include="IDirectory.cs" />
-    <Compile Include="IFile.cs" />
-    <Compile Include="IFileSystem.cs" />
     <Compile Include="PluginLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IFileViewer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.CrossCore">

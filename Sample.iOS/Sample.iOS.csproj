@@ -156,10 +156,6 @@
       <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
-      <Project>{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D}</Project>
-      <Name>Acr.MvvmCross</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
       <Project>{AC537269-FD5F-43E8-BA62-CECD983EB9D9}</Project>
       <Name>Sample.Core</Name>

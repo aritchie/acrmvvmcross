@@ -12,23 +12,13 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross barcode android ios winphone</tags>
         <dependencies>
-            <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-            </group>
-            <group targetFramework="MonoAndroid">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="ZXing.Net.Mobile" version="[1.4.7.1, 2.0)" />
-            </group>
-            <group targetFramework="MonoTouch">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="ZXing.Net.Mobile" version="[1.4.7.1, 2.0)" />
-            </group>
-            <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="ZXing.Net.Mobile" version="[1.4.7.1, 2.0)" />
-            </group>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
+            <dependency id="Acr.BarCodes" version="[3.0, 4.0)" />
         </dependencies>
         <releaseNotes>
+3.0
+New unified core with xamforms
+
 2.0
 * NEW * - Create barcodes
 Update to profile 259

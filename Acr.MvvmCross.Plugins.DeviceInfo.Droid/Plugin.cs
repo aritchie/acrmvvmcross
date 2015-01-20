@@ -8,7 +8,7 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.Droid {
     public class Plugin : IMvxPlugin {
 
         public void Load() {
-            Mvx.RegisterSingleton<IDeviceInfoService>(new DroidDeviceInfoService());
+            Mvx.RegisterSingleton<IDeviceInfo>(new DeviceInfoImpl());
         }
     }
 }

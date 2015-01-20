@@ -8,7 +8,7 @@ namespace Acr.MvvmCross.Plugins.DeviceInfo.WinPhone {
     public class Plugin : IMvxPlugin {
 
         public void Load() {
-            Mvx.RegisterSingleton<IDeviceInfoService>(new WinPhoneDeviceInfoService());
+            Mvx.RegisterSingleton<IDeviceInfo>(new DeviceInfoImpl());
         }
     }
 }

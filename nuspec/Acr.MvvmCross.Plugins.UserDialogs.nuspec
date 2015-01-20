@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.UserDialogs</id>
-        <version>2.4.0</version>
+        <version>3.0.0</version>
         <title>MvvmCross User Dialogs</title>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
@@ -12,15 +12,12 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <tags>xamarin mvvmcross</tags>
         <dependencies>
-            <group>
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-            </group>
-            <group targetFramework="wp8">
-                <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
-                <dependency id="WPtoolkit" version="[4.2013.08.16, 5.0)" />
-            </group>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="[3.5, 4.0)" />
+            <dependency id="Acr.UserDialogs" version="[3.0, 4.0)" />
         </dependencies>
         <releaseNotes>
+3.0
+Unifying libraries between XamForms and Mvx
 2.4
 Support iOS Unified API
 

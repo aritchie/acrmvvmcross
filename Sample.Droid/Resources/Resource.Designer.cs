@@ -46,45 +46,8 @@ namespace Sample.Droid
 			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.Layout.SignaturePad = global::Sample.Droid.Resource.Layout.SignaturePad;
 			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.SignaturePad.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahCircleColor = global::Sample.Droid.Resource.Attribute.ahCircleColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahDelayMillis = global::Sample.Droid.Resource.Attribute.ahDelayMillis;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahRadius = global::Sample.Droid.Resource.Attribute.ahRadius;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahRimColor = global::Sample.Droid.Resource.Attribute.ahRimColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahRimWidth = global::Sample.Droid.Resource.Attribute.ahRimWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahSpinSpeed = global::Sample.Droid.Resource.Attribute.ahSpinSpeed;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahText = global::Sample.Droid.Resource.Attribute.ahText;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahTextColor = global::Sample.Droid.Resource.Attribute.ahTextColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Attribute.ahTextSize = global::Sample.Droid.Resource.Attribute.ahTextSize;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.ic_errorstatus = global::Sample.Droid.Resource.Drawable.ic_errorstatus;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.ic_successstatus = global::Sample.Droid.Resource.Drawable.ic_successstatus;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.roundedbg = global::Sample.Droid.Resource.Drawable.roundedbg;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Drawable.roundedbgdark = global::Sample.Droid.Resource.Drawable.roundedbgdark;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Id.loadingImage = global::Sample.Droid.Resource.Id.loadingImage;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Id.loadingProgressBar = global::Sample.Droid.Resource.Id.loadingProgressBar;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Id.loadingProgressWheel = global::Sample.Droid.Resource.Id.loadingProgressWheel;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Id.textViewStatus = global::Sample.Droid.Resource.Id.textViewStatus;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Layout.loading = global::Sample.Droid.Resource.Layout.loading;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Layout.loadingimage = global::Sample.Droid.Resource.Layout.loadingimage;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Layout.loadingprogress = global::Sample.Droid.Resource.Layout.loadingprogress;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.String.ApplicationName = global::Sample.Droid.Resource.String.ApplicationName;
 			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.String.Hello = global::Sample.Droid.Resource.String.Hello;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.String.library_name = global::Sample.Droid.Resource.String.library_name;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel = global::Sample.Droid.Resource.Styleable.ProgressWheel;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahBarColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahBarLength = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahBarWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahCircleColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahRadius = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRadius;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahRimColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahRimWidth = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahText = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahText;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahTextColor = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
-			global::Acr.MvvmCross.Plugins.UserDialogs.Droid.Resource.Styleable.ProgressWheel_ahTextSize = global::Sample.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::AndroidHUD.Resource.Attribute.ahBarColor = global::Sample.Droid.Resource.Attribute.ahBarColor;
 			global::AndroidHUD.Resource.Attribute.ahBarLength = global::Sample.Droid.Resource.Attribute.ahBarLength;
 			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::Sample.Droid.Resource.Attribute.ahBarWidth;
@@ -341,14 +304,14 @@ namespace Sample.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040002
-			public const int ApplicationName = 2130968578;
-			
 			// aapt resource value: 0x7f040001
-			public const int Hello = 2130968577;
+			public const int ApplicationName = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int library_name = 2130968576;
+			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int library_name = 2130968578;
 			
 			static String()
 			{

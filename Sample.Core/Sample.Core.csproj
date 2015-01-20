@@ -58,10 +58,6 @@
       <Project>{FB69B463-0DD5-49D2-AFED-6E3A31EB37A1}</Project>
       <Name>Acr.MvvmCross.Plugins.UserDialogs</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Acr.MvvmCross\Acr.MvvmCross.csproj">
-      <Project>{85E3C63B-A17E-46EF-87CE-9A8E58FEDE4D}</Project>
-      <Name>Acr.MvvmCross</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Acr.MvvmCross.Plugins.SignaturePad\Acr.MvvmCross.Plugins.SignaturePad.csproj">
       <Project>{B2AF970D-D640-451C-95AF-92AF531B8C1E}</Project>
       <Name>Acr.MvvmCross.Plugins.SignaturePad</Name>
