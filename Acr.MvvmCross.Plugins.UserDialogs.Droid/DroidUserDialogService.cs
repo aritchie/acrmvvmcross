@@ -127,7 +127,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             });
         }
 
-        private static void SetInputType(TextView txt, InputType inputType) {
+        protected static void SetInputType(TextView txt, InputType inputType) {
             switch (inputType) {
                 case InputType.Email:
                     txt.InputType = InputTypes.TextVariationEmailAddress;
