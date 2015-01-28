@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.IO;
 using System.Threading.Tasks;
 using Cirrious.MvvmCross.ViewModels;
-using Cirrious.MvvmCross.Plugins.File;
-using Acr.MvvmCross.Plugins.UserDialogs;
+using Acr.IO;
 using Acr.MvvmCross.Plugins.SignaturePad;
-using Acr.MvvmCross.Plugins.FileSystem;
+using Acr.UserDialogs;
 
 
 namespace Sample.Core.ViewModels {
@@ -18,12 +16,12 @@ namespace Sample.Core.ViewModels {
         private readonly IFileSystem fileSystem;
 		private readonly IFileViewer fileViewer;
         private readonly ISignatureService signatureService;
-        private readonly IUserDialogService dialogService;
+        private readonly IUserDialogs dialogService;
 
 
         public SignatureListViewModel(IFileSystem fileSystem, 
 								      IFileViewer fileViewer,
-                                      IUserDialogService dialogService,
+                                      IUserDialogs dialogService,
                                       ISignatureService signatureService){
 			this.fileSystem = fileSystem;
 			this.fileViewer = fileViewer;

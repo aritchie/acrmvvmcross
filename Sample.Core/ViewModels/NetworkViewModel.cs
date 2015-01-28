@@ -1,6 +1,6 @@
 ﻿using System;
-using Acr.MvvmCross.Plugins.Network;
-using Acr.MvvmCross.Plugins.UserDialogs;
+using Acr.Networking;
+using Acr.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
 
 
@@ -11,7 +11,7 @@ namespace Sample.Core.ViewModels {
         public INetworkService Network { get; private set; }
 
 
-        public NetworkViewModel(INetworkService networkService, IUserDialogService dialogService) {
+        public NetworkViewModel(INetworkService networkService, IUserDialogs dialogService) {
             this.Host = "google.ca";
 
             this.Network = networkService;

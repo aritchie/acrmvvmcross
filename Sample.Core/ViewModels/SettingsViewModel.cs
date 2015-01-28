@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using Acr.MvvmCross.Plugins.Settings;
-using Acr.MvvmCross.Plugins.UserDialogs;
-using Acr.MvvmCross.ViewModels;
-using Cirrious.MvvmCross.ViewModels;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using Cirrious.MvvmCross.ViewModels;
+using Acr.Settings;
+using Acr.UserDialogs;
 
 
 namespace Sample.Core.ViewModels {
 
-    public class SettingsViewModel : ViewModel {
-        private readonly ISettingsService settings;
-        private readonly IUserDialogService dialogs;
+    public class SettingsViewModel : MvxViewModel {
+        private readonly ISettings settings;
+        private readonly IUserDialogs dialogs;
 
 
-        public SettingsViewModel(ISettingsService settings, IUserDialogService dialogs) {
+        public SettingsViewModel(ISettings settings, IUserDialogs dialogs) {
             this.settings = settings;
             this.dialogs = dialogs;
         }

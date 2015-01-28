@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Acr.MvvmCross.Plugins.DeviceInfo;
-using Acr.MvvmCross.Plugins.UserDialogs;
+using Acr.DeviceInfo;
+using Acr.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
 
 
@@ -17,7 +17,7 @@ namespace Sample.Core.ViewModels {
         }
 
 
-        public HomeViewModel(IDeviceInfoService deviceInfo, IUserDialogService dialogs) {
+        public HomeViewModel(IDeviceInfo deviceInfo, IUserDialogs dialogs) {
             this.Menu = new List<MenuItemViewModel> {
                 new MenuItemViewModel(
                     "Barcode Scanning",

@@ -1,10 +1,9 @@
 using System;
+using Acr.BarCodes;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using Cirrious.MvvmCross.Dialog.Touch;
 using CrossUI.Touch.Dialog.Elements;
-using Foundation;
 using Sample.Core.ViewModels;
-using Acr.MvvmCross.Plugins.BarCodeScanner;
 
 
 namespace Sample.iOS.Views {

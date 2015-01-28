@@ -1,19 +1,18 @@
 ﻿using System;
 using System.IO;
-using Acr.MvvmCross.Plugins.BarCodeScanner;
-using Acr.MvvmCross.Plugins.UserDialogs;
-using Acr.MvvmCross.ViewModels;
+using Acr.BarCodes;
+using Acr.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
 
 
 namespace Sample.Core.ViewModels {
 
-    public class BarCodeCreateViewModel : ViewModel {
-        private readonly IBarCodeService service;
-		private readonly IUserDialogService dialogs;
+    public class BarCodeCreateViewModel : MvxViewModel {
+        private readonly IBarCodes service;
+		private readonly IUserDialogs dialogs;
 
 
-		public BarCodeCreateViewModel(IBarCodeService service, IUserDialogService dialogs) {
+		public BarCodeCreateViewModel(IBarCodes service, IUserDialogs dialogs) {
 			this.service = service;
 			this.dialogs = dialogs;
             this.Formats = Enum.GetNames(typeof(BarCodeFormat));
@@ -61,21 +60,21 @@ namespace Sample.Core.ViewModels {
 		private bool isBarCodeReady;
 		public bool IsBarCodeReady {
 			get { return this.isBarCodeReady; }
-			set { this.SetPropertyChange(ref this.isBarCodeReady, value); }
+			set { this.SetProperty(ref this.isBarCodeReady, value); }
 		}
 
 
         private string selectedFormat;
         public string SelectedFormat {
             get { return this.selectedFormat; }
-            set { this.SetPropertyChange(ref this.selectedFormat, value); }
+            set { this.SetProperty(ref this.selectedFormat, value); }
         }
 
 
         private string barCode;
         public string BarCode {
 			get { return this.barCode; }
-			set { this.SetPropertyChange(ref this.barCode, value); }
+			set { this.SetProperty(ref this.barCode, value); }
         }
 
 
@@ -87,7 +86,7 @@ namespace Sample.Core.ViewModels {
 					? value
 					: 200;
 
-				this.RaisePropertyChanged(() => this.Height);
+				this.RaisePropertyChanged();
 			}
 		}
 
@@ -100,7 +99,7 @@ namespace Sample.Core.ViewModels {
 					? value
 					: 200;
 
-				this.RaisePropertyChanged(() => this.Width);
+				this.RaisePropertyChanged();
 			}
 		}
 
@@ -110,7 +109,7 @@ namespace Sample.Core.ViewModels {
             get { return this.imageBytes; }
             private set {
                 this.imageBytes = value;
-                this.RaisePropertyChanged(() => this.ImageBytes);
+                this.RaisePropertyChanged();
             }
         }
 

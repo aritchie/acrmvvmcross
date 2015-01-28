@@ -7,8 +7,8 @@ using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
-    
-    [Foundation.Register("NetworkView")]
+
+    [Register("NetworkView")]
     public class NetworkView : MvxDialogViewController {
 
         public NetworkView() : base(pushing: true) { }

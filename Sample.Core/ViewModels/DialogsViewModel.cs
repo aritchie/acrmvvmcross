@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Acr.MvvmCross.Plugins.UserDialogs;
-using Acr.MvvmCross.ViewModels;
+using Acr.UserDialogs;
 using Cirrious.MvvmCross.Plugins.Messenger;
 using Cirrious.MvvmCross.ViewModels;
 
@@ -18,7 +17,7 @@ namespace Sample.Core.ViewModels {
     }
     
 
-    public class DialogsViewModel : ViewModel {
+    public class DialogsViewModel : MvxViewModel {
 
         public IMvxCommand Alert { get; private set; }
         public IMvxCommand ActionSheet { get; private set; }
@@ -33,13 +32,13 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand Toast { get; private set; }
 
         public IMvxCommand SendBackgroundAlert { get; private set; }
-		private readonly IUserDialogService dialogs;
+		private readonly IUserDialogs dialogs;
 
 
         private string result;
         public string Result {
             get { return this.result; }
-            private set { this.SetPropertyChange(ref this.result, value); }
+            private set { this.SetProperty(ref this.result, value); }
         }
 
         private MvxSubscriptionToken backgroundToken;
@@ -52,7 +51,7 @@ namespace Sample.Core.ViewModels {
 		}
 
 
-        public DialogsViewModel(IUserDialogService dialogService, IMvxMessenger messenger) {
+        public DialogsViewModel(IUserDialogs dialogService, IMvxMessenger messenger) {
 			this.dialogs = dialogService;
             this.backgroundToken = messenger.Subscribe<BackgroundAlert>(msg => 
                 dialogService.Toast(msg.Message)

@@ -1,5 +1,4 @@
 using System;
-using Acr.UserDialogs;
 using Cirrious.CrossCore;
 using Cirrious.CrossCore.Plugins;
 
@@ -9,7 +8,8 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.WinPhone {
     public class Plugin : IMvxPlugin {
 
         public void Load() {
-            Mvx.RegisterSingleton<IUserDialogs>(new UserDialogsImpl());
+            Acr.UserDialogs.UserDialogs.Init();
+            Mvx.LazyConstructAndRegisterSingleton(() => Acr.UserDialogs.UserDialogs.Instance);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Acr.MvvmCross.Plugins.DeviceInfo;
+using Acr.DeviceInfo;
 using Cirrious.MvvmCross.ViewModels;
 
 
@@ -7,9 +7,9 @@ namespace Sample.Core.ViewModels {
     
     public class DeviceInfoViewModel : MvxViewModel {
 
-        public IDeviceInfoService Device { get; private set; }
+        public IDeviceInfo Device { get; private set; }
 
-        public DeviceInfoViewModel(IDeviceInfoService deviceInfo) {
+        public DeviceInfoViewModel(IDeviceInfo deviceInfo) {
             this.Device = deviceInfo;
         }
     }

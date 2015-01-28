@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Acr.MvvmCross.Plugins.BarCodeScanner;
-using Acr.MvvmCross.Plugins.UserDialogs;
-using Acr.MvvmCross.ViewModels;
+using Acr.BarCodes;
+using Acr.UserDialogs;
 using Cirrious.MvvmCross.ViewModels;
 
 
 namespace Sample.Core.ViewModels {
     
-    public class BarCodeViewModel : ViewModel {
+    public class BarCodeViewModel : MvxViewModel {
 
-        public IBarCodeService Scanner { get; private set; }
-        private readonly IUserDialogService dialogs;
+        public IBarCodes Scanner { get; private set; }
+        private readonly IUserDialogs dialogs;
 
 
-        public BarCodeViewModel(IBarCodeService scanner, IUserDialogService dialogs) {
+        public BarCodeViewModel(IBarCodes scanner, IUserDialogs dialogs) {
             this.Scanner = scanner;
             this.dialogs = dialogs;
 

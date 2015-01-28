@@ -7,8 +7,8 @@ using Sample.Core.ViewModels;
 
 
 namespace Sample.iOS.Views {
-    
-    [Foundation.Register("DeviceInfoView")]
+
+    [Register("DeviceInfoView")]
     public class DeviceInfoView : MvxDialogViewController {
 
         public DeviceInfoView() : base(pushing: true) { }
