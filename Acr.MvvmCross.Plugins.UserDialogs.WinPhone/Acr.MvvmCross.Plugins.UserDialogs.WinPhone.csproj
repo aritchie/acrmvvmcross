@@ -92,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.UserDialogs">
-      <HintPath>..\packages\Acr.UserDialogs.3.0.0-beta4\lib\wp8\Acr.UserDialogs.dll</HintPath>
+      <HintPath>..\packages\Acr.UserDialogs.3.0.0-beta5\lib\wp8\Acr.UserDialogs.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

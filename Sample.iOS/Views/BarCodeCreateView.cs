@@ -10,7 +10,7 @@ using Sample.Core.ViewModels;
 
 namespace Sample.iOS.Views {
     
-    [Foundation.Register("BarCodeCreateView")]
+    [Register("BarCodeCreateView")]
     public class BarCodeCreateView : MvxDialogViewController {
 
         public BarCodeCreateView() : base(pushing: true) { }

@@ -45,8 +45,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Acr.Networking">
-      <HintPath>..\packages\Acr.Networking.2.0.0-beta1\lib\Xamarin.iOS10\Acr.Networking.dll</HintPath>
+    <Reference Include="Acr.Networking, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Acr.Networking.2.0.0-beta2\lib\Xamarin.iOS10\Acr.Networking.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.CrossCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e16445fd9b451819, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

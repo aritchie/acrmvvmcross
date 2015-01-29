@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using Acr.MvvmCross.Plugins.SignaturePad;
 using Cirrious.MvvmCross.ViewModels;
 using Cirrious.CrossCore.UI;
@@ -44,29 +43,10 @@ namespace Sample.Core.ViewModels {
             this.strokeColor = this.GetColorDefinition(cfg.StrokeColor);
         }
 
-        #region Internals
 
         private ColorDefinition GetColorDefinition(MvxColor color) {
             return this.Colors.FirstOrDefault(x => x.Color.ARGB == color.ARGB);
         }
-
-
-        private void FirePropertyChanged([CallerMemberName] string propertyName = null) {
-            this.RaisePropertyChanged(propertyName);
-        }
-
-
-        private bool SetPropertyChange<T>(ref T property, T value, [CallerMemberName] string propertyName = null){
-            if (Object.Equals(property, value)) 
-                return false;
-
-            property = value;
-            this.RaisePropertyChanged(propertyName);
-
-            return true;
-        }
-
-        #endregion
 
         #region Binding Properties
 
@@ -77,7 +57,7 @@ namespace Sample.Core.ViewModels {
         public string CancelText {
             get { return this.cancelText; }
             set { 
-                if (this.SetPropertyChange(ref this.cancelText, value))
+                if (this.SetProperty(ref this.cancelText, value))
 					SignaturePadConfiguration.Default.CancelText = value;
             }
         }
@@ -87,7 +67,7 @@ namespace Sample.Core.ViewModels {
         public string SaveText {
             get { return this.saveText; }
             set { 
-                if (this.SetPropertyChange(ref this.saveText, value))
+                if (this.SetProperty(ref this.saveText, value))
 					SignaturePadConfiguration.Default.SaveText = value;
             }
         }
@@ -97,7 +77,7 @@ namespace Sample.Core.ViewModels {
         public string PromptText {
             get { return this.promptText; }
             set {
-                if (this.SetPropertyChange(ref this.promptText, value))
+                if (this.SetProperty(ref this.promptText, value))
 					SignaturePadConfiguration.Default.PromptText = value;
             }
         }
@@ -107,7 +87,7 @@ namespace Sample.Core.ViewModels {
         public string CaptionText {
             get { return this.captionText; }
             set {
-                if (this.SetPropertyChange(ref this.captionText, value))
+                if (this.SetProperty(ref this.captionText, value))
 					SignaturePadConfiguration.Default.CaptionText = value;
             }
         }
@@ -117,7 +97,7 @@ namespace Sample.Core.ViewModels {
         public float StrokeWidth {
             get { return this.strokeWidth; }
             set {
-                if (this.SetPropertyChange(ref this.strokeWidth, value))
+                if (this.SetProperty(ref this.strokeWidth, value))
 					SignaturePadConfiguration.Default.StrokeWidth = value;
             }
         }
@@ -126,7 +106,7 @@ namespace Sample.Core.ViewModels {
         public ColorDefinition SignatureLineColor {
             get { return this.signatureLineColor; }
             set {
-                if (this.SetPropertyChange(ref this.signatureLineColor, value))
+                if (this.SetProperty(ref this.signatureLineColor, value))
 					SignaturePadConfiguration.Default.SignatureLineColor = value.Color;
             }
         }
@@ -136,7 +116,7 @@ namespace Sample.Core.ViewModels {
         public ColorDefinition StrokeColor {
             get { return this.strokeColor; }
             set {
-                if (this.SetPropertyChange(ref this.strokeColor, value))
+                if (this.SetProperty(ref this.strokeColor, value))
 					SignaturePadConfiguration.Default.StrokeColor = value.Color;
             }
         }
@@ -146,7 +126,7 @@ namespace Sample.Core.ViewModels {
         public ColorDefinition CaptionTextColor {
             get { return this.captionTextColor; }
             set {
-                if (this.SetPropertyChange(ref this.captionTextColor, value))
+                if (this.SetProperty(ref this.captionTextColor, value))
 					SignaturePadConfiguration.Default.CaptionTextColor = value.Color;
             }
         }
@@ -156,7 +136,7 @@ namespace Sample.Core.ViewModels {
         public ColorDefinition BgColor {
             get { return this.bgColor; }
             set {
-                if (this.SetPropertyChange(ref this.bgColor, value))
+                if (this.SetProperty(ref this.bgColor, value))
 					SignaturePadConfiguration.Default.BackgroundColor = value.Color;
             }
         }
@@ -166,7 +146,7 @@ namespace Sample.Core.ViewModels {
         public ColorDefinition PromptTextColor {
             get { return this.promptTextColor; }
             set {
-                if (this.SetPropertyChange(ref this.promptTextColor, value))
+                if (this.SetProperty(ref this.promptTextColor, value))
 					SignaturePadConfiguration.Default.PromptTextColor = value.Color;
             }
         }
