@@ -95,7 +95,6 @@
     </Reference>
     <Reference Include="Acr.Settings">
       <HintPath>..\packages\Acr.Settings.3.0.0-beta1\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.Settings.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Acr.UserDialogs">
       <HintPath>..\packages\Acr.UserDialogs.3.0.0-beta5\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
