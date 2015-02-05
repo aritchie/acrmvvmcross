@@ -76,6 +76,7 @@
     <Compile Include="ViewModels\NetworkViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\SignatureListViewModel.cs" />
+    <Compile Include="ViewModels\AbstractBarCodeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

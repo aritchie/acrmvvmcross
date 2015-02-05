@@ -55,18 +55,18 @@ namespace Sample.Core.ViewModels {
 
 
 		private async Task OnCreate() {
-            //var result = await this.signatureService.Request(null);
-            //if (result.Cancelled)
-            //    return;
+            var result = await this.signatureService.Request();
+            if (result.Cancelled)
+                return;
 
-            //var fileName = String.Format(FILE_FORMAT, DateTime.Now);
-            //var file = this.fileSystem.Public.CreateFile(fileName);
+            var fileName = String.Format(FILE_FORMAT, DateTime.Now);
+            var file = this.fileSystem.Public.CreateFile(fileName);
 
-            //using (var fs = file.Create())
-            //    using (var stream = result.GetStream())
-            //        stream.CopyTo(fs);
+            using (var fs = file.Create())
+                using (var stream = result.GetStream())
+                    stream.CopyTo(fs);
 
-            //this.List.Add(file);
+            this.List.Add(file);
         }
 
 
