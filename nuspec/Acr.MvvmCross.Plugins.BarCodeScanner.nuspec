@@ -78,7 +78,7 @@ Initial Release
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.BarCodeScanner.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.BarCodeScanner.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.BarCodeScanner.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.BarCodeScanner.Touch.dll" />
-        <file src="TouchBootstrapContent\TouchBarCodeScannerPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\BarCodeScannerPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchBarCodeScannerPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\BarCodeScannerPluginBootstrap.cs.pp" />
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.BarCodeScanner.dll" target="lib\wp8\Acr.MvvmCross.Plugins.BarCodeScanner.dll" />

@@ -44,7 +44,7 @@ Initial Release
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.FileSystem.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.FileSystem.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.FileSystem.Touch.dll" />
-        <file src="TouchBootstrapContent\TouchFileSystemPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\FileSystemPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchFileSystemPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\FileSystemPluginBootstrap.cs.pp" />
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.FileSystem.dll" target="lib\wp8\Acr.MvvmCross.Plugins.FileSystem.dll" />

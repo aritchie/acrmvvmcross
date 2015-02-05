@@ -1,6 +1,10 @@
 using System;
 using BigTed;
+#if __UNIFIED__
 using UIKit;
+#else
+using MonoTouch.UIKit;
+#endif
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {

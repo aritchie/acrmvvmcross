@@ -16,6 +16,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             Utils.RequestMainThread(() => 
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
+                    .SetCancelable(false)
                     .SetMessage(config.Message)
                     .SetTitle(config.Title)
                     .SetPositiveButton(config.OkText, (o, e) => {
@@ -36,6 +37,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             Utils.RequestMainThread(() => 
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
+                    .SetCancelable(false)
                     .SetTitle(config.Title)
                     .SetItems(array, (sender, args) => config.Options[args.Which].Action())
                     .Show()
@@ -48,6 +50,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
                     .SetMessage(config.Message)
+                    .SetCancelable(false)
                     .SetTitle(config.Title)
                     .SetPositiveButton(config.OkText, (o, e) => config.OnConfirm(true))
                     .SetNegativeButton(config.CancelText, (o, e) => config.OnConfirm(false))
@@ -82,6 +85,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
                     .SetTitle(config.Title)
+                    .SetCancelable(false)
                     .SetMessage(config.Message)
                     .SetView(layout)
                     .SetPositiveButton(config.OkText, (o, e) =>
@@ -109,6 +113,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
                 new AlertDialog
                     .Builder(Utils.GetActivityContext())
                     .SetMessage(config.Message)
+                    .SetCancelable(false)
                     .SetTitle(config.Title)
                     .SetView(txt)
                     .SetPositiveButton(config.OkText, (o, e) =>
@@ -127,14 +132,18 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Droid {
             });
         }
 
-        private static void SetInputType(TextView txt, InputType inputType) {
+
+        protected virtual void SetInputType(TextView txt, InputType inputType) {
             switch (inputType) {
+
                 case InputType.Email:
                     txt.InputType = InputTypes.TextVariationEmailAddress;
                     break;
+
                 case InputType.Number:
                     txt.InputType = InputTypes.ClassNumber;
                     break;
+
                 case InputType.Password:
                     txt.TransformationMethod = PasswordTransformationMethod.Instance;
                     txt.InputType = InputTypes.TextVariationPassword;

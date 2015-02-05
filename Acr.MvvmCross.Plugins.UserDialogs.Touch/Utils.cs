@@ -1,6 +1,10 @@
 using System;
 using System.Linq;
+#if __UNIFIED__
 using UIKit;
+#else
+using MonoTouch.UIKit;
+#endif
 
 
 namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
@@ -15,11 +19,6 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
                     x.WindowLevel == UIWindowLevel.Normal && 
                     !x.Hidden
                 );
-
-            //return 
-            //    UIApplication.SharedApplication.KeyWindow
-            //    ?? UIApplication.SharedApplication.Windows.Last()
-            //    ?? UIApplication.SharedApplication.Delegate.Window;
         }
 
 
@@ -47,12 +46,9 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
 
         internal static UIKeyboardType GetKeyboardType(InputType inputType) {
             switch (inputType) {
-                case InputType.Email:
-                    return UIKeyboardType.EmailAddress;
-                case InputType.Number:
-                    return UIKeyboardType.NumberPad;
-                default:
-                    return UIKeyboardType.Default;
+                case InputType.Email  : return UIKeyboardType.EmailAddress;
+                case InputType.Number : return UIKeyboardType.NumberPad;
+                default               : return UIKeyboardType.Default;
             }
         }
     }

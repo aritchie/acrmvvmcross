@@ -46,7 +46,7 @@ Initial Release
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.Settings.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.Settings.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.Settings.Touch.dll" />
-        <file src="TouchBootstrapContent\TouchSettingsPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchSettingsPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\SettingsPluginBootstrap.cs.pp" />
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.Settings.dll" target="lib\wp8\Acr.MvvmCross.Plugins.Settings.dll" />

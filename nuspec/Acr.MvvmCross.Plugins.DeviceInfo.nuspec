@@ -58,7 +58,7 @@ Initial Release
         <!-- touch -->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
         <file src="..\bin\Release\MonoTouch\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" target="lib\Xamarin.iOS10\Acr.MvvmCross.Plugins.DeviceInfo.Touch.dll" />
-        <file src="TouchBootstrapContent\TouchDeviceInfoPluginBootstrap.cs.pp" target="content\MonoTouch\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
+        <file src="TouchBootstrapContent\TouchDeviceInfoPluginBootstrap.cs.pp" target="content\Xamarin.iOS10\Bootstrap\DeviceInfoPluginBootstrap.cs.pp" />
 
         <!--winphone-->
         <file src="..\bin\Release\Portable\Acr.MvvmCross.Plugins.DeviceInfo.dll" target="lib\wp8\Acr.MvvmCross.Plugins.DeviceInfo.dll" />
