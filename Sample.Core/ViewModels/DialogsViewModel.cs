@@ -8,15 +8,6 @@ using Cirrious.MvvmCross.ViewModels;
 
 namespace Sample.Core.ViewModels {
 
-    public class BackgroundAlert : MvxMessage {
-        public string Message { get; private set; }
-
-        public BackgroundAlert(object sender, string msg) : base(sender) {
-            this.Message = msg;
-        }
-    }
-    
-
     public class DialogsViewModel : MvxViewModel {
 
         public IMvxCommand Alert { get; private set; }
@@ -31,7 +22,6 @@ namespace Sample.Core.ViewModels {
         public IMvxCommand PromptSecure { get; private set; }
         public IMvxCommand Toast { get; private set; }
 
-        public IMvxCommand SendBackgroundAlert { get; private set; }
 		private readonly IUserDialogs dialogs;
 
 
@@ -53,13 +43,6 @@ namespace Sample.Core.ViewModels {
 
         public DialogsViewModel(IUserDialogs dialogService, IMvxMessenger messenger) {
 			this.dialogs = dialogService;
-            this.backgroundToken = messenger.Subscribe<BackgroundAlert>(msg => 
-                dialogService.Toast(msg.Message)
-            );
-
-            this.SendBackgroundAlert = new MvxCommand(() => 
-                messenger.Publish(new BackgroundAlert(this, "Test"))
-            );
 
             this.ActionSheet = new MvxCommand(() => 
                 dialogService.ActionSheet(new ActionSheetConfig()
