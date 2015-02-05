@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.BarCodeScanner</id>
-        <version>2.0.0</version>
+        <version>3.0.0-beta1</version>
         <title>MvvmCross Barcode Plugin</title>
         <description>Barcode scanning and creation plugin for MvvmCross built on ZXing.Net.Mobile.  Supports iOS, Android, and WinPhone8</description>
         <authors>Allan Ritchie</authors>
