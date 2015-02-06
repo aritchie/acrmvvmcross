@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.UserDialogs</id>
-        <version>2.4.0</version>
+        <version>2.5.0-beta1</version>
         <title>MvvmCross User Dialogs</title>
         <authors>Allan Ritchie</authors>
         <owners>Allan Ritchie</owners>
@@ -21,6 +21,11 @@
             </group>
         </dependencies>
         <releaseNotes>
+2.5
+Add iOS classic support back
+Fix android dialogs cannot be cancelled
+Add PR #27 - protected virtual instead of private
+
 2.4
 Support iOS Unified API
 
