@@ -182,13 +182,22 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.BarCodes">
-      <HintPath>..\packages\Acr.BarCodes.3.0.0-beta1\lib\Xamarin.iOS10\Acr.BarCodes.dll</HintPath>
+      <HintPath>..\packages\Acr.BarCodes.3.0.0\lib\Xamarin.iOS10\Acr.BarCodes.dll</HintPath>
     </Reference>
     <Reference Include="Acr.DeviceInfo">
-      <HintPath>..\packages\Acr.DeviceInfo.2.0.0-beta2\lib\Xamarin.iOS10\Acr.DeviceInfo.dll</HintPath>
+      <HintPath>..\packages\Acr.DeviceInfo.2.0.0\lib\Xamarin.iOS10\Acr.DeviceInfo.dll</HintPath>
     </Reference>
     <Reference Include="Acr.IO">
       <HintPath>..\packages\Acr.IO.2.0.0\lib\Xamarin.iOS10\Acr.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Settings">
+      <HintPath>..\packages\Acr.Settings.3.0.1\lib\Xamarin.iOS10\Acr.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.3.0.3\lib\Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\Acr.UserDialogs.3.0.3\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows" />
@@ -197,15 +206,6 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Acr.Networking">
       <HintPath>..\packages\Acr.Networking.2.0.0-beta2\lib\Xamarin.iOS10\Acr.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.Settings">
-      <HintPath>..\packages\Acr.Settings.3.0.0-beta1\lib\Xamarin.iOS10\Acr.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.UserDialogs">
-      <HintPath>..\packages\Acr.UserDialogs.3.0.0-beta5\lib\Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\packages\Acr.UserDialogs.3.0.0-beta5\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
     </Reference>
     <Reference Include="Cirrious.CrossCore">
       <HintPath>..\packages\MvvmCross.HotTuna.CrossCore.3.5.0\lib\Xamarin.iOS10\Cirrious.CrossCore.dll</HintPath>

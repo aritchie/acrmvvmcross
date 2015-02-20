@@ -16,11 +16,13 @@ namespace Sample.Core.ViewModels {
         public SettingsViewModel(ISettings settings, IUserDialogs dialogs) {
             this.settings = settings;
             this.dialogs = dialogs;
+
+            this.settings.Changed += (sender, args) => this.RaisePropertyChanged("List");
         }
 
 
-        public IDictionary<string, string> Settings {
-            get { return this.settings.All; }
+        public IReadOnlyDictionary<string, string> List {
+            get { return this.settings.List; }
         }
 
 

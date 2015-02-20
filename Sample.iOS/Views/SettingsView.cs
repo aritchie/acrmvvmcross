@@ -21,7 +21,7 @@ namespace Sample.iOS.Views {
             this.NavigationItem.RightBarButtonItem = btnAction;
 
             var set = this.CreateBindingSet<SettingsView, SettingsViewModel>();
-            set.Bind(src).To(x => x.Settings);
+            set.Bind(src).To(x => x.List);
             set.Bind(src).For(x => x.SelectionChangedCommand).To(x => x.Select);
             set.Bind(btnAction).To(x => x.Actions);
             set.Apply();

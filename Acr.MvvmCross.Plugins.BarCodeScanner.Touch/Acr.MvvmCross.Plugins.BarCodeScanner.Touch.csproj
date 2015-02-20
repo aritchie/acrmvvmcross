@@ -40,8 +40,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Acr.BarCodes">
-      <HintPath>..\packages\Acr.BarCodes.3.0.0-beta1\lib\Xamarin.iOS10\Acr.BarCodes.dll</HintPath>
+    <Reference Include="Acr.BarCodes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Acr.BarCodes.3.0.0\lib\Xamarin.iOS10\Acr.BarCodes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />

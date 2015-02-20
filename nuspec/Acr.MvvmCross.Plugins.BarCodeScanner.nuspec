@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.BarCodeScanner</id>
-        <version>3.0.0-beta1</version>
+        <version>3.0.0</version>
         <title>MvvmCross Barcode Plugin</title>
         <description>Barcode scanning and creation plugin for MvvmCross built on ZXing.Net.Mobile.  Supports iOS, Android, and WinPhone8</description>
         <authors>Allan Ritchie</authors>
@@ -16,44 +16,7 @@
             <dependency id="Acr.BarCodes" version="[3.0, 4.0)" />
         </dependencies>
         <releaseNotes>
-3.0
-New unified core with xamforms
-
-2.0
-* NEW * - Create barcodes
-Update to profile 259
-Simplified configuration a bit
-Unified iOS
-
-1.4.1
-Fix pcl target in nuspec
-
-1.4
-Switching to profile78 to support MvvmCross 3.2.1
-
-1.3
-Fix for Android
-Updating ZXing.Net.Mobile to 1.4.6
-
-1.2.1
-Update to ZXing.Net.Mobile
-Fix minor nuspec issue
-
-1.2
-Simplifying API calls
-
-1.1.1
-Fix broken nuspec reference
-Retarget to profile 158
-
-1.1
-Support for Windows Phone 8
-Support for passing advanced configuration options
-Default options so you can set and forget instead of constantly setting the text values (good for multilingual apps)
-Add callback method signature along side async version
-
-1.0
-Initial Release
+Using new Acr.BarCodes library
         </releaseNotes>
     </metadata>
     <files>

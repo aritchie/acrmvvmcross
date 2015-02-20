@@ -35,8 +35,9 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Acr.BarCodes">
-      <HintPath>..\packages\Acr.BarCodes.3.0.0-beta1\lib\MonoAndroid10\Acr.BarCodes.dll</HintPath>
+    <Reference Include="Acr.BarCodes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Acr.BarCodes.3.0.0\lib\MonoAndroid10\Acr.BarCodes.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />

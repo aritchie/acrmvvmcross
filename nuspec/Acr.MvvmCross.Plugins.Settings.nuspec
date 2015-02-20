@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Acr.MvvmCross.Plugins.Settings</id>
-        <version>2.2.0</version>
+        <version>3.0.0</version>
         <title>MvvmCross Settings Plugin</title>
         <description>Settings platform plugin for MvvmCross (iOS, Android, and Windows Phone)</description>
         <authors>Allan Ritchie</authors>
@@ -16,22 +16,7 @@
             <dependency id="Acr.Settings" version="[3.0, 4.0)" />
         </dependencies>
         <releaseNotes>
-2.2
-Support iOS Unified API
-
-2.1.1
-Fix iOS Settings issue
-
-2.1
-Better structure to observable dictionary of settings
-FIX: bug with resync calling clear event which removes some necessary iOS settings
-
-2.0
-Now works as an observable observable dictionary
-New extension methods for supporting several other data types
-
-1.0
-Initial Release
+Built on Acr.Settings
         </releaseNotes>
     </metadata>
     <files>
