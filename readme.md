@@ -1,91 +1,37 @@
-ACR MvvmCross Plugins
-=====================
+ACR Xamarin Forms (Any code here is now officially unsupported)
+=================
 
-I loved Stuart Lodge's MvvmCross, so I built several services on it that I've used
-on a few projects with great success.
-
-* All plugins will be available through nuget
-* WinStore & WinPhone platform plugins are in the works
-
+###User Dialogs
+This library has been replaced by Acr.UserDialogs
+[Nuget](https://www.nuget.org/packages/Acr.UserDialogs/)
+[Github](https://github.com/aritchie/userdialogs)
 
 
-##User Dialogs
-Allows for messagebox style dialogs
-
-* Action Sheet (multiple choice menu)
-* Alert
-* Prompt
-* Confirm
-* Loading
-* Progress
-* Toast
-
-#Powered By:
-* Android - Progress/Loading uses AndHUD
-* iOS - Progress/Loading uses BTProgressHUD
-* WinPhone - All dialogs by Coding4Fun Toolkit  
+###Settings
+This library has been replaced by Acr.Settings
+[Nuget](https://www.nuget.org/packages/Acr.Settings/)
+[Github](https://github.com/aritchie/settings)
 
 
-##Bar Code Scanner
-Powered by Redth's ZXing.Net.Mobile
-
-    new MvxCommand(async () => {
-        var scan = Mvx.Resolve<IBarCodeScanner>();
-        var r = await scan.Read(flashlightText: "Turn on flashlight", cancelText: "Cancel");
-
-        Result = (r.Success 
-            ? String.Format("Barcode Result - Format: {0} - Code: {1}", r.Format, r.Code)
-            : "Cancelled barcode scan"
-        );
-    });
+###Device Info
+This library has been replaced by Acr.DeviceInfo
+[Nuget](https://www.nuget.org/packages/Acr.DeviceInfo/)
+[Github](https://github.com/aritchie/deviceinfo)
 
 
-##Network
-I needed something beyond what MvvmCross had out of the box.  I had 
-a requirement for detecting network state changes so that we could inform
-the user when they were working in an offline state.
-
-* INetworkService subscribes to INotifyPropertyChanged and monitors the device network status
-* You can also use MvxMessenger to subscribe to NetworkStatusChangedMessage to watch for changes outside of your view model
+###Signature Pad
+Control provided by [Xamarin Signature Pad](https://github.com/xamarin/SignaturePad).  You can take the code from here or nuget, but it comes with no support
 
 
-##Settings
-A simple settings library that works differently than the traditional setting plugins out there.  Instead, my approach was to work
-with an observable dictionary.
+##Deprecated Libraries
+
+##Camera & Gallery
+This library is now deprecated.  Please use James Montemagno's excellent media plugin 
+[Github](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Media)
+[Nuget](https://www.nuget.org/packages/Xam.Plugin.Media/)
 
 
-##Device Info
-Allows you to get the information of the device for auditing purposes
-
-* Device Manufacturer
-* Operating System and Version
-* Front and rear facing cameras
-* Screen Resolution
-
-
-##Signature Pad for iOS and Android (Windows Phone 8 support coming soon)
-Call for a signature pad dialog in 1 line of xplat code from a view model!
-
-	signatureService.RequestSignature(result => {
-		if (result.Cancelled)
-			return;
-
-		// use the image stream to write to file or serialize the draw points
-		// result.Stream or result.Points
-	});
-
-
-	signatureService.LoadSignature(drawPoints);
-
-
-#Configuration
-
-	signatureService.DefaultConfiguration.ClearText = "Why clear?";
-
-	or pass overridden configuration to each method:
-
-	signatureService.RequestSignature(callback, new SignaturePadConfiguration {
-		SaveText = "Signed!",
-		CancelText = "No way!",
-		PromptText = "Right here"
-	});
+##Location Services
+This library is now deprecated.  Please use James Montemagno's excellent geolocation plugin 
+[Github](https://github.com/jamesmontemagno/Xamarin.Plugins/tree/master/Geolocation)
+[Nuget](https://www.nuget.org/packages/Xam.Plugin.Geolocation/)
