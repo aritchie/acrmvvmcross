@@ -20,8 +20,10 @@ This library has been replaced by Acr.DeviceInfo
 
 
 ###Signature Pad
-Control provided by [Xamarin Signature Pad](https://github.com/xamarin/SignaturePad).  You can take the code from here or nuget, but it comes with no support
-
+Control provided by [Xamarin Signature Pad](https://github.com/xamarin/SignaturePad).  
+This library has found a new home here: 
+[Github] (https://github.com/ecomerc/MvvmCross.SignaturePad)
+[Nuget] (TBR)
 
 ##Deprecated Libraries
 
