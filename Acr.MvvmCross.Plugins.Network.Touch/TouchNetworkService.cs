@@ -28,7 +28,7 @@ namespace Acr.MvvmCross.Plugins.Network.Touch {
                     break;
 
 				case NetworkStatus.ReachableViaWiFiNetwork:
-                    this.SetStatus(true, false, true, fireEvent);
+                    this.SetStatus(true, true, false, fireEvent);
 					break;
 			}
 		}
