@@ -32,7 +32,7 @@ namespace Acr.MvvmCross.Plugins.SignaturePad.Touch {
 //            if (new Version(MonoTouch.Constants.Version) >= new Version (7, 0)) {
                 var frame = this.Frame;
                 var sbframe = UIApplication.SharedApplication.StatusBarFrame;
-                var portrait = UIApplication.SharedApplication.StatusBarOrientation.HasFlag(UIDeviceOrientation.Portrait);
+                var portrait = UIApplication.SharedApplication.StatusBarOrientation.HasFlag(UIInterfaceOrientation.Portrait);
 
                 var width = portrait
                     ? frame.Size.Width
