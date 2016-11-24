@@ -31,7 +31,7 @@ namespace Acr.MvvmCross.Plugins.UserDialogs.Touch {
             var root = GetTopWindow().RootViewController;
             var tabs = root as UITabBarController;
             if (tabs != null)
-                return tabs.SelectedViewController;
+                return (tabs.PresentedViewController != null) ? tabs.PresentedViewController : tabs.SelectedViewController;
 
             var nav = root as UINavigationController;
             if (nav != null)
